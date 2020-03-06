@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="코로나19 국내 발생현황 및 관련정보를 한눈에 알아보세요!">
+    <meta name="author" content="Justcode">
+    <meta name="keywords" content="코로나19">
+
+    <!-- Title Page-->
+    <title>인포코로나 - 마스크 정보</title>
+
+
+    <!-- Fontfaces CSS-->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:700|Noto+Sans+KR&display=swap" rel="stylesheet">
+
+     <script type="text/javascript">
+ (function(w,d,v3){
+ w.chaportConfig = {
+ appId : '5e440199d9d3b143e8105db2'
+ };
+
+ if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push(arguments)};v3.on=function(e,fn){if(!v3._l[e])v3._l[e]=[];v3._l[e].push(fn)};var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://app.chaport.com/javascripts/insert.js';var ss=d.getElementsByTagName('script')[0];ss.parentNode.insertBefore(s,ss)})(window, document);
+ </script>
+
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- PAGE CONTENT-->
+        <div class="page-content--bgf7">
+
+            <!-- WELCOME-->
+            <section class="welcome p-t-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12" style="margin-top:30px; margin-left:10px;">
+                            <h1 style="font-size:25px;">마스크 5부제,<br>오늘 살 수 있는지 알려드릴게요.
+                            </h1><br>
+                            <hr class="line-seprate">
+                            <br>
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="index.html" role="tab" aria-controls="pills-home"
+                                                 aria-selected="true">현황</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="info.html" role="tab" aria-controls="pills-profile"
+                                                 aria-selected="false">정보</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="pills-contact-tab" data-toggle="pill" href="mask.html" role="tab" aria-controls="pills-contact"
+                                                 aria-selected="false">마스크</a>
+                                            </li>
+                                        </ul>
+                        
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END WELCOME-->
+
+
+            <section class="statistic statistic2">
+                <div class="container"><br><br><br><br><br>
+                    <div id="container_ghost">
+
+    <input id="ghost-input" type="number" placeholder="출생년도 입력" />
+    <div class="ghost">
+        <div class="ghost__face">
+            <div class="ghost__eyes">
+                <div class="ghost__eyes-l"></div>
+                <div class="ghost__eyes-r"></div>
+            </div>
+            <div class="ghost__mouth"></div>
+        </div>
+        <div class="ghost__torso"></div>
+        <div class="ghost__hands">
+            <div class="ghost__hands-l"></div>
+            <div class="ghost__hands-r"></div>
+        </div>
+        <div class="ghost__legs"></div>
+    </div>
+    <div class="chat-bubble" id="ghost-bubble">출생년도를 입력하면 오늘 마스크를 구매할 수 있는지 알려줄게요.</div>
+</div>
+<br>
+                </div>
+
+
+            </section>
+
+
+            <section class="statistic statistic2">
+                <div class="container">
+                    <div class="row" id="korea">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="statistic__item statistic__item--green" style="min-height: 300px;">
+                                <h2 id="suggestText">마스크 5부제
+                            </h2><br>
+                                <span class="desc">1. 출생연도 끝자리에 따라 2장씩 구매가 가능하며, 주중에 구매하지 못한 모든분들은 주말에 구입이 가능합니다.<br><br>2. 성인인 경우 신분증, 외국인의 경우 건강보험증과 외국인등록증, 미성년자의 경우 여권, 학생증, 등본 등을 지참해야 하며 본인이 직접 방문해야 합니다. 단, 장애인의 경우 예외적으로 대리인이 장애인 등록증을 지참하면 구매가 가능합니다.</span>
+                                <div class="icon">
+                                    <i class="zmdi zmdi-check-all"></i>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+
+                    
+            </section>
+
+            
+
+            <!-- COPYRIGHT-->
+            <section class="p-t-60 p-b-20">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="copyright">
+                                <p>Copyright © 2020 All rights reserved. <br>지도 연결 : <a href="http://ncov.mohw.go.kr">카카오맵</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END COPYRIGHT-->
+        </div>
+
+    </div>
+
+
+    <!-- Vue JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.3.4/vue-resource.js"></script>
+    <!-- Jquery JS-->
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="vendor/slick/slick.min.js">
+    </script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="vendor/select2/select2.min.js">
+    </script>
+
+    <!-- Main JS-->
+    <script src="js/main.js"></script>
+    <script src="js/custom_mask.js"></script>
+
+</body>
+<style>
+
+     input[type='number'] {
+     padding: 1em;
+     border: none;
+     border-radius: 0.2em;
+     background: gray;
+     transition: background 0.3s;
+}
+ input[type='number']:focus {
+     background: white;
+}
+ input[type='number']::placeholder {
+     color: rgba(0, 0, 0, 0.5);
+}
+ input[type='number']:focus + .ghost {
+     background: rgba(255, 255, 255, 0.2);
+     color: transparent;
+}
+ input[type='number']:focus + .ghost .ghost__torso {
+     transform: translate(-50%, 42px) scaleY(0.9);
+}
+ input[type='number']:focus + .ghost .ghost__eyes * {
+     background: rgba(0, 0, 0, 0.6);
+}
+ input[type='number']:focus + .ghost .ghost__face {
+     transform: translate(-50%, 0.4em);
+}
+ input[type='number']:focus + .ghost .ghost__mouth {
+     transform: scaleY(0.6);
+     border-color: rgba(0, 0, 0, 0.6);
+}
+ input[type='number']:focus + .ghost .ghost__hands {
+     transform: translate(-50%, 0.2em);
+}
+ input[type='number']:focus + .ghost .ghost__hands * {
+     background: transparent;
+}
+ input[type='number']:focus + .ghost .ghost__legs {
+     border-bottom-left-radius: 2em;
+     border-bottom-right-radius: 0.6em;
+     transform: translateX(-50%) scaleY(0.85);
+     transform-origin: top;
+}
+ .chat-bubble {
+     text-align: center;
+     width: 100%;
+     max-width: 80vw;
+     position: absolute;
+     left: 50%;
+     bottom: 100%;
+     transform: translateX(-50%);
+     margin-bottom: 5.3em;
+     color: black;
+}
+ #container_ghost {
+     animation: float 3s infinite alternate;
+     width:100%;
+}
+ @keyframes float {
+     from {
+         transform: translateY(0.5em);
+    }
+     to {
+         transform: translateY(-0.5em);
+    }
+}
+ .ghost {
+     background: white;
+     color: white;
+}
+ .ghost * {
+     transition: all 0.3s;
+}
+ .ghost > * {
+     position: absolute;
+     left: 50%;
+     bottom: 100%;
+     transform: translateX(-50%);
+}
+ .ghost__face {
+     margin-bottom: 1em;
+     background: none;
+}
+ .ghost__face .ghost__eyes-l, .ghost__face .ghost__eyes-r {
+     width: 0.8em;
+     height: 0.8em;
+     background: #333;
+     border-radius: 100%;
+     position: absolute;
+     bottom: 0.4em;
+}
+ .ghost__face .ghost__eyes-l {
+     right: 1em;
+}
+ .ghost__face .ghost__eyes-r {
+     left: 1em;
+}
+ .ghost__face .ghost__mouth {
+     width: 0.5em;
+     height: 0.3em;
+     border-radius: 50px;
+     border: 0.2em solid #333;
+     border-top: none;
+     border-top-left-radius: 0;
+     border-top-right-radius: 0;
+}
+ .ghost__face .ghost__mouth--open {
+     border-top: 0.2em solid #333;
+     height: 0.2em;
+}
+ .ghost__torso {
+     width: 5em;
+     height: 7em;
+     background: inherit;
+     border-radius: 100px;
+     box-shadow: 0 0 12px rgba(66, 66, 66, 1);
+     transition: all 0.3s background 0.4s 0.1s;
+     transform: translate(-50%, 50px);
+     z-index: -1;
+}
+ .ghost__hands {
+     color: inherit;
+}
+ .ghost__hands-r, .ghost__hands-l {
+     border-radius: 100px;
+     width: 1em;
+     height: 1.5em;
+     background: white;
+     box-shadow: 0 4px 4px rgba(51, 51, 51, 0.3);
+}
+ .ghost__hands-r {
+     transform: translate(1.5em, 1em) rotate(15deg);
+}
+ .ghost__hands-l {
+     transform: translate(-1.5em, 2.5em) rotate(-15deg);
+}
+ .ghost__legs {
+     width: 5em;
+     height: 1.5em;
+     top: 100%;
+     background: inherit;
+     box-shadow: 0 0 12px rgba(66, 66, 66, 1);
+     border-bottom-left-radius: 0.4em;
+     border-bottom-right-radius: 0.4em;
+}
+ 
+
+ @media (min-width: 1024px) {
+#container_ghost {
+     animation: float 3s infinite alternate;
+     width:20%;
+}
+
+}
+ </style>
+
+</html>
+<!-- end document-->

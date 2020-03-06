@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="코로나19 국내 발생현황 및 관련정보를 한눈에 알아보세요!">
+    <meta name="author" content="Justcode">
+    <meta name="keywords" content="코로나19">
+
+    <!-- Title Page-->
+    <title>인포코로나 - 국내 현황</title>
+
+
+    <!-- Fontfaces CSS-->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:700|Noto+Sans+KR&display=swap" rel="stylesheet">
+
+     <script type="text/javascript">
+ (function(w,d,v3){
+ w.chaportConfig = {
+ appId : '5e440199d9d3b143e8105db2'
+ };
+
+ if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push(arguments)};v3.on=function(e,fn){if(!v3._l[e])v3._l[e]=[];v3._l[e].push(fn)};var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://app.chaport.com/javascripts/insert.js';var ss=d.getElementsByTagName('script')[0];ss.parentNode.insertBefore(s,ss)})(window, document);
+ </script>
+
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- PAGE CONTENT-->
+        <div class="page-content--bgf7">
+
+            <!-- WELCOME-->
+            <section class="welcome p-t-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12" style="margin-top:30px; margin-left:10px;">
+                            <h1 style="font-size:25px;" id="suggestText">외출할 땐, <br>마스크를 꼭 착용하세요.
+                            </h1><br>
+                            <h6 class="pb-4 display-5" style="color:#a9a9a9;" id="whenUpdate">정보 가져오는 중...</h6>
+                            <hr class="line-seprate">
+                            <br>
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="index.html" role="tab" aria-controls="pills-home"
+                                                 aria-selected="true">현황</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="info.html" role="tab" aria-controls="pills-profile"
+                                                 aria-selected="false">정보</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="mask.html" role="tab" aria-controls="pills-contact"
+                                                 aria-selected="false">마스크</a>
+                                            </li>
+                                        </ul>
+                        
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END WELCOME-->
+
+            <!-- STATISTIC-->
+
+            <section class="statistic statistic2">
+                <div class="container">
+                    <div class="row" id="korea">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="statistic__item statistic__item--red">
+                                <h2 class="number" id="confirmed">로딩중</h2>
+                                <span class="desc">확진자</span>
+                                <div class="icon">
+                                    <i class="zmdi zmdi-account-o"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="statistic__item statistic__item--green">
+                                <h2 class="number" id="cure">로딩중</h2>
+                                <span class="desc">격리해제</span>
+                                <div class="icon">
+                                    <i class="zmdi zmdi-check-all"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="statistic__item statistic__item--black">
+                                <h2 class="number" id="death">로딩중</h2>
+                                <span class="desc">사망자</span>
+                                <div class="icon">
+                                    <i class="zmdi zmdi-accounts-outline"></i>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="row" id="globe" style="display: none;">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="statistic__item statistic__item--red">
+                                <h2 class="number" id="confirmed">로딩중</h2>
+                                <span class="desc">확진자</span>
+                                <div class="icon">
+                                    <i class="zmdi zmdi-account-o"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="statistic__item statistic__item--green">
+                                <h2 class="number" id="cure">로딩중</h2>
+                                <span class="desc">격리해제</span>
+                                <div class="icon">
+                                    <i class="zmdi zmdi-check-all"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="statistic__item statistic__item--black">
+                                <h2 class="number" id="death">로딩중</h2>
+                                <span class="desc">사망자</span>
+                                <div class="icon">
+                                    <i class="zmdi zmdi-accounts-outline"></i>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!-- END STATISTIC-->
+
+            <!-- STATISTIC CHART-->
+            <section class="statistic-chart" >
+                <div class="container" >
+                    <div class="row" >
+                        <div class="col-md-12" >
+                            <h3 style="margin-left:10px;">분석</h3><br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4">
+                            <!-- CHART-->
+                            <div class="statistic-chart-1">
+                                <div class="chart-wrap">
+                                    <h3>신규 <h3 style="color:#a9a9a9;">확진자 추이</h3></h3>
+                                    <canvas id="widgetChart5"></canvas>
+                                </div>
+                                <div class="statistic-chart-1-note">
+                                    <span>하루에 평균 </span>
+                                    <span class="big">533명</span>
+                                    <span>증가해요.</span>
+                                </div>
+                            </div>
+                            <!-- END CHART-->
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <!-- CHART PERCENT-->
+                            <div class="chart-percent-2">
+                                <div class="chart-wrap">
+                                    <h3>소재별 <h3 style="color:#a9a9a9;">확진자 현황</h3></h3><br>
+                                    <canvas id="doughutChart"></canvas>
+                                        <table></table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4">
+                            <!-- CHART PERCENT-->
+                            <div class="chart-percent-2">
+                                <div class="chart-wrap">
+                                    <h3>연령별 <h3 style="color:#a9a9a9;">사망자 현황</h3></h3><br>
+                                    <canvas id="singelBarChart"></canvas>
+                                        <table></table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END CHART PERCENT-->
+                        </div>
+                        <div class="col-lg-3">
+                                <h3 style="margin-left:10px;">지역별 확진자 현황</h3><br>
+                                <div class="au-card au-card--bg-blue au-card-top-countries m-b-40">
+                                    <div class="au-card-inner">
+                                        <div class="table-responsive">
+                                            <table class="table table-top-countries">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>인천</td>
+                                                        <td class="text-right">9</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>경기</td>
+                                                        <td class="text-right">120</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>강원</td>
+                                                        <td class="text-right">25</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>서울</td>
+                                                        <td class="text-right">105</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>충남</td>
+                                                        <td class="text-right">90</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>세종</td>
+                                                        <td class="text-right">1</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>충북</td>
+                                                        <td class="text-right">15</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>경북</td>
+                                                        <td class="text-right">984</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>대전</td>
+                                                        <td class="text-right">18</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>전북</td>
+                                                        <td class="text-right">7</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>대구</td>
+                                                        <td class="text-right">4,694</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>울산</td>
+                                                        <td class="text-right">23</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>광주</td>
+                                                        <td class="text-right">13</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>경남</td>
+                                                        <td class="text-right">77</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>부산</td>
+                                                        <td class="text-right">95</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>전남</td>
+                                                        <td class="text-right">4</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>제주</td>
+                                                        <td class="text-right">4</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                    </div>
+                </div>
+            </section>
+            <!-- END STATISTIC CHART-->
+
+            
+
+            <!-- COPYRIGHT-->
+            <section class="p-t-60 p-b-20">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="copyright">
+                                <p>Copyright © 2020 All rights reserved. <br>정보 제공 : <a href="http://ncov.mohw.go.kr">질병관리본부</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END COPYRIGHT-->
+        </div>
+
+    </div>
+
+
+    <!-- Vue JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.3.4/vue-resource.js"></script>
+    <!-- Jquery JS-->
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="vendor/slick/slick.min.js">
+    </script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="vendor/select2/select2.min.js">
+    </script>
+
+    <!-- Main JS-->
+    <script src="js/main.js"></script>
+    <script src="js/custom.js"></script>
+
+</body>
+
+</html>
+<!-- end document-->
