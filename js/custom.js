@@ -3,10 +3,6 @@
 window.onload = function() {
 var welcomeTxt = new Array('외출할 땐,<br>마스크를 착용하세요!', '올바른 손씻기는<br>비누로 30초 이상!', '예방 수칙 준수로<br>이겨낼 수 있습니다.', '기침할 땐,<br>옷소매로 가리고 해주세요.', '열심히 일하시는<br>의료진분들께 박수!', '확진자 더 이상<br>안 늘게 해주세요...☹');
 document.getElementById("suggestText").innerHTML = randomItem(welcomeTxt);
-document.getElementById('first').src = "https://youtube.com/embed/rTfY1xB-Drc?loop=1&showinfo=0&controls=1";
-document.getElementById('second').src = "https://youtube.com/embed/1LpaRylW6LM?loop=1&showinfo=0&controls=1";
-document.getElementById('third').src = "https://youtube.com/embed/EBrtOAAkEcE?loop=1&showinfo=0&controls=1";
-document.getElementById('forth').src = "https://youtube.com/embed/4ufdg6v4Jh4?loop=1&showinfo=0&controls=1";
 
 }
 
@@ -70,6 +66,11 @@ new Vue({
           var tempDate = allResponse.substr(dateTargetFirstString, 78);
           var dateValue = tempDate.replace("topStateLayer", "").replace(/\"/gi, "").replace("spanclass=info_count", "").replace("<", "").replace("/button>", "").replace(">", "");
           document.getElementById("whenUpdate").innerHTML = dateValue+"";
+
+          var confirmedPMTargetFirstString = allResponse.indexOf("info_variation");
+          var tempconfirmedPM = allResponse.substr(confirmedPMTargetFirstString, 94);
+          var confirmedPmValue = tempconfirmedPM.replace("info_variation", "").replace(/\"/gi, "").replace("<spanclass=", "").replace("<", "").replace("/button>", "").replace(">", "");
+          document.getElementById("confirmedPM").innerHTML = "확진자 (+"+confirmedPmValue+")";
         }
       )
     },
