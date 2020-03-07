@@ -57,7 +57,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12" style="margin-top:30px; margin-left:10px;">
-                            <h1 style="font-size:25px;">마스크 5부제,<br>오늘 살 수 있는지 알려드릴게요.
+                            <h1 style="font-size:25px;" id="mask_welcome">무슨 요일에 마스크<br>살 수 있는지<br>알려드릴게요.
                             </h1><br>
                             <hr class="line-seprate">
                             <br>
@@ -110,9 +110,29 @@
 
 
             </section>
+            <br><br>
 
+            <section class="statistic-chart" style="margin-left:-10px; margin-right:-10px;">
+                <div class="container" >
+<div class="col-md-4">
+<div class="card bg-primary">
+<div class="card-body">
+<blockquote class="blockquote mb-0 text-light"> 
+<p class="text-light"><h2 style="color:white;">근처 약국 찾기</h2>
+</p>
+<span style="font-size:14px;" id="statusLocation">아래 버튼을 누르고 위치 권한을 허용해주세요.</span><br><br>
+<div style="display:none;">
+<span style="font-size:14px;" id="currentLat"><br></span>
+    <span style="font-size:14px;" id="currentLong"><br><br></span>
+</div>
+<button type="button" class="btn btn-danger" onClick="javascript:nearby();">주변 약국 보기</button>
+</footer>
+</blockquote>
+</div>
+</div>
+</div>
 
-            <section class="statistic statistic2">
+            <section class="statistic statistic2" style="margin-top:-60px;">
                 <div class="container">
                     <div class="row" id="korea">
                         <div class="col-md-6 col-lg-3">
@@ -131,6 +151,8 @@
 
                     
             </section>
+        </div>
+    </section>
 
             
 
@@ -140,7 +162,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="copyright">
-                                <p>Copyright © 2020 All rights reserved. <br>지도 연결 : <a href="http://ncov.mohw.go.kr">카카오맵</a>.</p>
+                                <p>Copyright © 2020 All rights reserved. <br>약국 정보 : <a href="http://www.goodoc.co.kr/" target="_blank">굿닥</a>.</p>
                             </div>
                         </div>
                     </div>
@@ -148,7 +170,6 @@
             </section>
             <!-- END COPYRIGHT-->
         </div>
-
     </div>
 
 
@@ -238,7 +259,6 @@
 }
  #container_ghost {
      animation: float 3s infinite alternate;
-     width:100%;
 }
  @keyframes float {
      from {
