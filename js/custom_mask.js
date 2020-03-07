@@ -70,12 +70,55 @@ function mouse() {
 
 
 function nearby() {
-    navigator.geolocation.getCurrentPosition(function(pos) {
-    var latitude = pos.coords.latitude;
-    var longitude = pos.coords.longitude;
-    document.getElementById("statusLocation").innerText = "위치정보를 성공적으로 가져왔어요.";
-    window.open("https://www.goodoc.co.kr/pharmacies?latitude="+latitude+"&longitude="+longitude+"&list_open=1", "blank");
-});
+    tryGeolocation();
+    //document.getElementById("statusLocation").innerText = "위치정보를 성공적으로 가져왔어요.";
+    //window.open("https://www.goodoc.co.kr/pharmacies?latitude="+latitude+"&longitude="+longitude+"&list_open=1", "blank");
+
 
 
 }
+
+var apiGeolocationSuccess = function(position) {
+    document.getElementById("statusLocation").innerText = "위치정보를 성공적으로 가져왔어요.";
+    window.open("https://www.goodoc.co.kr/pharmacies?latitude="+position.coords.latitude+"&longitude="+position.coords.longitude+"&list_open=1", "blank");
+};
+
+var tryAPIGeolocation = function() {
+    jQuery.post( "https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDCa1LUe1vOczX1hO_iGYgyo8p_jYuGOPU", function(success) {
+        apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
+    })
+    .fail(function(err) {
+        document.getElementById("statusLocation").innerText = "위치정보를 가져오지 못했어요.";
+    });
+};
+
+var browserGeolocationSuccess = function(position) {
+   document.getElementById("statusLocation").innerText = "위치정보를 성공적으로 가져왔어요.";
+    window.open("https://www.goodoc.co.kr/pharmacies?latitude="+position.coords.latitude+"&longitude="+position.coords.longitude+"&list_open=1", "blank");
+};
+
+var browserGeolocationFail = function(error) {
+    switch (error.code) {
+        case error.TIMEOUT:
+            document.getElementById("statusLocation").innerText = "위치정보를 가져오지 못했어요.";
+            break;
+        case error.PERMISSION_DENIED:
+            if(error.message.indexOf("Only secure origins are allowed") == 0) {
+                tryAPIGeolocation();
+            }
+            break;
+        case error.POSITION_UNAVAILABLE:
+            document.getElementById("statusLocation").innerText = "위치정보를 가져오지 못했어요.";
+            break;
+    }
+};
+
+var tryGeolocation = function() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+                browserGeolocationSuccess,
+                browserGeolocationFail,
+                {maximumAge: 50000, timeout: 20000, enableHighAccuracy: true});
+    }
+};
+
