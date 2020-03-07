@@ -65,3 +65,17 @@ function mouse() {
       i++;
     }, 300);
 }
+
+
+
+
+function nearby() {
+    navigator.geolocation.getCurrentPosition(function(pos) {
+    var latitude = pos.coords.latitude;
+    var longitude = pos.coords.longitude;
+    document.getElementById("statusLocation").innerText = "위치정보를 성공적으로 가져왔어요.";
+    window.open("https://www.goodoc.co.kr/pharmacies?latitude="+latitude+"&longitude="+longitude+"&list_open=1", "blank");
+});
+
+
+}
