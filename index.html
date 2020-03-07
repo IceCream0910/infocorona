@@ -102,7 +102,7 @@
                         <div class="col-md-6 col-lg-3">
                             <div class="statistic__item statistic__item--red">
                                 <h2 class="number" id="confirmed">로딩중</h2>
-                                <span class="desc">확진자</span>
+                                <span class="desc" id="confirmedPM">확진자</span>
                                 <div class="icon">
                                     <i class="zmdi zmdi-account-o"></i>
                                 </div>
@@ -127,39 +127,11 @@
                             </div>
                         </div>
                         </div>
-
-                        <div class="row" id="globe" style="display: none;">
-                        <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--red">
-                                <h2 class="number" id="confirmed">로딩중</h2>
-                                <span class="desc">확진자</span>
-                                <div class="icon">
-                                    <i class="zmdi zmdi-account-o"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--green">
-                                <h2 class="number" id="cure">로딩중</h2>
-                                <span class="desc">격리해제</span>
-                                <div class="icon">
-                                    <i class="zmdi zmdi-check-all"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--black">
-                                <h2 class="number" id="death">로딩중</h2>
-                                <span class="desc">사망자</span>
-                                <div class="icon">
-                                    <i class="zmdi zmdi-accounts-outline"></i>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-
+<a href="#globalStatics" style="margin-bottom:20px;">전세계 현황 보기 ></a>
                     </div>
                 </div>
+
+                
             </section>
             <!-- END STATISTIC-->
 
@@ -211,8 +183,8 @@
                             <!-- END CHART PERCENT-->
                         </div>
                         <div class="col-lg-3">
-                                <h3 style="margin-left:10px;">지역별 확진자 현황</h3><br>
-                                <div class="au-card au-card--bg-blue au-card-top-countries m-b-40">
+                                <h3>지역별 확진자 현황</h3><br>
+                                <div class="au-card au-card--bg-blue au-card-top-countries m-b-40" style="margin-left:-10px; margin-right:-10px; padding:15px;">
                                     <div class="au-card-inner">
                                         <div class="table-responsive">
                                             <table class="table table-top-countries">
@@ -296,6 +268,37 @@
                 </div>
             </section>
             <!-- END STATISTIC CHART-->
+
+                        <!-- STATISTIC-->
+
+            <section class="statistic statistic2" id="globalStatics">
+                <div class="container">
+                    <h3>전세계 현황</h3><br>
+                    <div class="row" id="global">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="statistic__item statistic__item--red">
+                                <h2 class="number" id="globeConfirmed">로딩중</h2>
+                                <span class="desc">확진자</span>
+                                <div class="icon">
+                                    <i class="zmdi zmdi-account-o"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="statistic__item statistic__item--black">
+                                <h2 class="number" id="globeDeath">로딩중</h2>
+                                <span class="desc">사망자</span>
+                                <div class="icon">
+                                    <i class="zmdi zmdi-accounts-outline"></i>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!-- END STATISTIC-->
 
             
 
