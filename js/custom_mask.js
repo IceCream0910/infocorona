@@ -36,7 +36,11 @@ input.onkeydown = function (e) {
         	ableWeek = "금"
         }
 
-        if(today == ableWeek) {
+        if (today == '토' || today == '일') {
+                bubble.innerText = "주말에는 주중에 구입하지 못한 모든 분들이 구매할 수 있어요.";
+        	mouse();
+
+        } else if(today == ableWeek) {
         	bubble.innerText = "오늘 마스크를 구매할 수 있어요.";
         	mouse();
         } else {
