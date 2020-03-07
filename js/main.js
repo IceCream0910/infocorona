@@ -584,11 +584,11 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['2.26', '2.27', '2.28', '2.29', '3.1', '3.2', '3.3', '3.4', '3.5', '3.6(16시)'],
+          labels: ['2.26', '2.27', '2.28', '2.29', '3.1', '3.2', '3.3', '3.4', '3.5', '3.6'],
           datasets: [
             {
               label: "신규 확진자",
-              data: [505, 571, 813, 586, 476, 600, 516, 438, 518, 309],
+              data: [505, 571, 813, 586, 476, 600, 516, 438, 518, 483],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
@@ -1220,7 +1220,7 @@
           datasets: [
             {
               label: "사망자수",
-              data: [0, 0, 0, 1, 1, 5, 11, 14, 11],
+              data: [0, 0, 0, 1, 1, 5, 11, 14, 12],
               borderColor: "rgba(0, 0, 0, 0.9)",
               borderWidth: "0",
               backgroundColor: "rgba(0, 0, 0, 0.5)"
