@@ -588,7 +588,7 @@
           datasets: [
             {
               label: "신규 확진자",
-              data: [813, 586, 476, 600, 516, 438, 518, 483, 274, 367],
+              data: [571, 813, 586, 476, 600, 516, 483, 518, 483, 367],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
