@@ -1220,7 +1220,7 @@
           datasets: [
             {
               label: "사망자수",
-              data: [0, 0, 0, 1, 1, 5, 11, 15, 12],
+              data: [0, 0, 0, 1, 1, 5, 11, 18, 14],
               borderColor: "rgba(0, 0, 0, 0.9)",
               borderWidth: "0",
               backgroundColor: "rgba(0, 0, 0, 0.5)"
