@@ -7,7 +7,7 @@ var today = week[d.getDay()];
 var ableWeek = '';
 
 var input = document.getElementById('ghost-input');
-var bubble = document.getElementById('ghost-bubble');
+var bubble = document.getElementById('resultWhen');
 var mouth = document.querySelector('.ghost__mouth');
 
 input.onkeydown = function (e) {
@@ -67,8 +67,19 @@ function mouse() {
 }
 
 
+//초기화
+window.onload = function() {
+var welcomeTxt = new Array('무슨 요일에 마스크<br>살 수 있는지<br>알려드릴게요.', '주변 약국의 마스크 <br>재고를 알려줄게요.');
+document.getElementById("mask_welcome").innerHTML = randomItem(welcomeTxt);
 
+}
 
+// 상단 텍스트 랜덤변경
+function randomItem(a) {
+  return a[Math.floor(Math.random() * a.length)];
+}
+
+/*
 function nearby() {
 
 $.get("https://ipinfo.io", function(response) {
@@ -88,3 +99,4 @@ $.get("https://ipinfo.io", function(response) {
 }, "jsonp");
 
 }
+*/
