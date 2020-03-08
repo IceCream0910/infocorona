@@ -4298,6 +4298,10 @@ section {
     background: #fa4251;
 }
 
+.dot--black {
+    background: #0f0f0f;
+}
+
 .chart-note-wrap {
     margin-top: 20px;
 }
@@ -14733,6 +14737,10 @@ section {
     background: #fff;
 }
 
+.bg-orange {
+    background: #f05e23;
+}
+
 .bg-overlay {
     position: absolute;
     width: 100%;
@@ -14793,6 +14801,11 @@ section {
     overflow: hidden;
 }
 
+.img-30 {
+    height: 30px;
+    width: 30px;
+}
+
 .img-40 {
     height: 40px;
     width: 40px;
@@ -14808,6 +14821,8 @@ section {
     height: 400px;
 }
 
+
 .vue-lists ul, .vue-lists ol {
     padding-left: 30px;
 }
+
