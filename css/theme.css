@@ -2369,6 +2369,10 @@ section {
     position: relative;
 }
 
+#pills-tab {
+    font-size:13px;
+}
+
 .navbar-sidebar2 .navbar__list li {
     position: relative;
     cursor: pointer;
