@@ -82,78 +82,81 @@
             </section>
             <!-- END WELCOME-->
 
-
             <section class="statistic statistic2">
-                <div class="container"><br><br><br><br><br>
-                    <div id="container_ghost">
-
-    <input id="ghost-input" type="number" placeholder="출생년도 입력" />
-    <div class="ghost">
-        <div class="ghost__face">
-            <div class="ghost__eyes">
-                <div class="ghost__eyes-l"></div>
-                <div class="ghost__eyes-r"></div>
-            </div>
-            <div class="ghost__mouth"></div>
-        </div>
-        <div class="ghost__torso"></div>
-        <div class="ghost__hands">
-            <div class="ghost__hands-l"></div>
-            <div class="ghost__hands-r"></div>
-        </div>
-        <div class="ghost__legs"></div>
-    </div>
-    <div class="chat-bubble" id="ghost-bubble">출생년도를 입력하면 오늘 마스크를 구매할 수 있는지 알려줄게요.</div>
-</div>
-<br>
-                </div>
+                <div class="container">
 
 
-            </section>
-            <br><br>
-
-            <section class="statistic-chart" style="margin-left:-10px; margin-right:-10px;">
+                <section class="statistic-chart" style="margin-left:-30px; margin-right:-30px;">
                 <div class="container" >
 <div class="col-md-4">
-<div class="card bg-primary">
+<div class="card bg-success">
 <div class="card-body">
 <blockquote class="blockquote mb-0 text-light"> 
-<p class="text-light"><h2 style="color:white;">근처 약국 찾기</h2>
+<p><h2 style="color:white;">마스크 5부제,<br> 나는 언제?<br><br></h2>
 </p>
-<span style="font-size:14px;" id="statusLocation">IP주소를 통한 대략적인 위치를 기반으로 약국을 검색합니다.</span><br><br>
+<span class="desc" style="font-size:14px;" id="resultWhen">아래에 출생연도를 입력하면 무슨 요일에 마스크를 구매할 수 있는지 알려줄게요.</span><br><br>
+
+<input id="ghost-input" type="number" placeholder="출생연도 입력" style="width:100%; padding-left:10px; padding-right:10px; border-radius: 10px; height:50px;"/>
+</footer>
+</blockquote>
+</div>
+</div>
+</div>
+</section>
+
+<section class="statistic-chart" style="margin-left:-30px; margin-right:-30px;">
+                <div class="container" >
+<div class="col-md-4">
+<div class="card bg-danger">
+<div class="card-body">
+<blockquote class="blockquote mb-0 text-light"> 
+<p class="text-light"><h2 style="color:white;">마스크 스캐너</h2>
+</p>
+<span style="font-size:14px;" id="statusLocation">주변 약국의 공적 마스크 재고를 알려줄게요.</span><br><br>
 <div style="display:none;">
 <span style="font-size:14px;" id="currentLat"><br></span>
     <span style="font-size:14px;" id="currentLong"><br><br></span>
 </div>
-<button type="button" class="btn btn-danger" onClick="javascript:nearby();">주변 약국 보기</button>
-<button type="button" data-toggle="modal" style="text-align:left; font-size:13px; color:#a9a9a9;" data-target="#smallmodal">더 정확한 위치는 지원하지 않나요?</button>
+<a href="https://corona.goodoc.kr" target="_blank"><button type="button" class="btn btn-primary">마스크스캐너 작동</button></a>
 </footer>
 </blockquote>
 </div>
 </div>
 </div>
 
-            <section class="statistic statistic2" style="margin-top:-60px;">
-                <div class="container">
-                    <div class="row" id="korea">
-                        <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--green" style="min-height: 300px;">
-                                <h2 id="suggestText">마스크 5부제
-                            </h2><br>
-                                <span class="desc">1. 출생연도 끝자리에 따라 2장씩 구매가 가능하며, 주중에 구매하지 못한 모든분들은 주말에 구입이 가능합니다.<br><br>2. 성인인 경우 신분증, 외국인의 경우 건강보험증과 외국인등록증, 미성년자의 경우 여권, 학생증, 등본 등을 지참해야 하며 본인이 직접 방문해야 합니다. 단, 장애인의 경우 예외적으로 대리인이 장애인 등록증을 지참하면 구매가 가능합니다.</span>
-                                <div class="icon">
-                                    <i class="zmdi zmdi-check-all"></i>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
                     </div>
+            </section>
 
 
-                    
+
+<section class="statistic-chart" style="margin-left:-30px; margin-right:-30px;">
+                <div class="container" >
+<div class="col-md-4">
+<div class="card bg-primary">
+<div class="card-body">
+<blockquote class="blockquote mb-0 text-light"> 
+<p class="text-light"><h2 style="color:white;">마스크 5부제, 그게 뭐지?<BR><BR></h2>
+</p>
+<span style="font-size:14px;" id="statusLocation">1. 출생연도 끝자리에 따라 2장씩 구매가 가능하며, 주중에 구매하지 못한 모든분들은 주말에 구입이 가능합니다.<br><br>2. 성인인 경우 신분증, 외국인의 경우 건강보험증과 외국인등록증, 미성년자의 경우 여권, 학생증, 등본 등을 지참해야 하며 본인이 직접 방문해야 합니다. 단, 장애인의 경우 예외적으로 대리인이 장애인 등록증을 지참하면 구매가 가능합니다.</span><br><br>
+<div style="display:none;">
+<span style="font-size:14px;" id="currentLat"><br></span>
+    <span style="font-size:14px;" id="currentLong"><br><br></span>
+</div>
+<button type="button" data-toggle="modal" class="btn btn-danger" data-target="#smallmodal">자세히 보기</button>
+</footer>
+</footer>
+</blockquote>
+</div>
+</div>
+</div>
+
+                    </div>
             </section>
         </div>
     </section>
+
+
+    
 
             
 
@@ -163,7 +166,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="copyright">
-                                <p>Copyright © 2020 All rights reserved. <br>약국 정보 : <a href="http://www.goodoc.co.kr/" target="_blank">굿닥</a>.</p>
+                                <p>Copyright © 2020 All rights reserved. <br>마스크 스캐너는 <a href="http://www.goodoc.co.kr/" target="_blank">굿닥</a>에서 제공합니다.</p>
                             </div>
                         </div>
                     </div>
@@ -173,20 +176,18 @@
         </div>
     </div>
 
-
 <div class="modal fade" id="smallmodal" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
 <div class="modal-dialog modal-sm" role="document">
 <div class="modal-content">
 <div class="modal-header">
-<h5 class="modal-title" id="smallmodalLabel">더 정확한 위치는 지원하지 않나요?</h5>
+<h5 class="modal-title" id="smallmodalLabel">마스크 5부제</h5>
 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 <span aria-hidden="true">&times;</span>
 </button>
 </div>
 <div class="modal-body">
 <p style="font-size:13px;">
-인포코로나 사이트는 http를 기반으로 서비스되고 있습니다. 이 http는 https에 비해 상대적으로 보안이 취약한 웹 프로토콜입니다. http를 사용한다고 해서 개인정보가 유출되는 등 사용자에게 보안위협은 없으나,
-구글의 권고에 따라 대부분의 브라우저에서 GPS를 사용하지 못하게 되어있습니다. 이에 따라 ip주소를 이용해 대략적인 위치를 계산해 약국 정보를 보여주고 있으니 양해바랍니다.
+<img src="https://corona.goodoc.kr/static/media/notice1.9405e1ef.jpg" style="width:100%;">
 </p>
 </div>
 <div class="modal-footer">
@@ -195,6 +196,7 @@
 </div>
 </div>
 </div>
+
 
     <!-- Vue JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script>
@@ -225,161 +227,5 @@
     <script src="js/custom_mask.js"></script>
 
 </body>
-<style>
-
-     input[type='number'] {
-     padding: 1em;
-     border: none;
-     border-radius: 0.2em;
-     background: gray;
-     transition: background 0.3s;
-}
- input[type='number']:focus {
-     background: white;
-}
- input[type='number']::placeholder {
-     color: rgba(0, 0, 0, 0.5);
-}
- input[type='number']:focus + .ghost {
-     background: rgba(255, 255, 255, 0.2);
-     color: transparent;
-}
- input[type='number']:focus + .ghost .ghost__torso {
-     transform: translate(-50%, 42px) scaleY(0.9);
-}
- input[type='number']:focus + .ghost .ghost__eyes * {
-     background: rgba(0, 0, 0, 0.6);
-}
- input[type='number']:focus + .ghost .ghost__face {
-     transform: translate(-50%, 0.4em);
-}
- input[type='number']:focus + .ghost .ghost__mouth {
-     transform: scaleY(0.6);
-     border-color: rgba(0, 0, 0, 0.6);
-}
- input[type='number']:focus + .ghost .ghost__hands {
-     transform: translate(-50%, 0.2em);
-}
- input[type='number']:focus + .ghost .ghost__hands * {
-     background: transparent;
-}
- input[type='number']:focus + .ghost .ghost__legs {
-     border-bottom-left-radius: 2em;
-     border-bottom-right-radius: 0.6em;
-     transform: translateX(-50%) scaleY(0.85);
-     transform-origin: top;
-}
- .chat-bubble {
-     text-align: center;
-     width: 100%;
-     max-width: 80vw;
-     position: absolute;
-     left: 50%;
-     bottom: 100%;
-     transform: translateX(-50%);
-     margin-bottom: 5.3em;
-     color: black;
-}
- #container_ghost {
-     animation: float 3s infinite alternate;
-}
- @keyframes float {
-     from {
-         transform: translateY(0.5em);
-    }
-     to {
-         transform: translateY(-0.5em);
-    }
-}
- .ghost {
-     background: white;
-     color: white;
-}
- .ghost * {
-     transition: all 0.3s;
-}
- .ghost > * {
-     position: absolute;
-     left: 50%;
-     bottom: 100%;
-     transform: translateX(-50%);
-}
- .ghost__face {
-     margin-bottom: 1em;
-     background: none;
-}
- .ghost__face .ghost__eyes-l, .ghost__face .ghost__eyes-r {
-     width: 0.8em;
-     height: 0.8em;
-     background: #333;
-     border-radius: 100%;
-     position: absolute;
-     bottom: 0.4em;
-}
- .ghost__face .ghost__eyes-l {
-     right: 1em;
-}
- .ghost__face .ghost__eyes-r {
-     left: 1em;
-}
- .ghost__face .ghost__mouth {
-     width: 0.5em;
-     height: 0.3em;
-     border-radius: 50px;
-     border: 0.2em solid #333;
-     border-top: none;
-     border-top-left-radius: 0;
-     border-top-right-radius: 0;
-}
- .ghost__face .ghost__mouth--open {
-     border-top: 0.2em solid #333;
-     height: 0.2em;
-}
- .ghost__torso {
-     width: 5em;
-     height: 7em;
-     background: inherit;
-     border-radius: 100px;
-     box-shadow: 0 0 12px rgba(66, 66, 66, 1);
-     transition: all 0.3s background 0.4s 0.1s;
-     transform: translate(-50%, 50px);
-     z-index: -1;
-}
- .ghost__hands {
-     color: inherit;
-}
- .ghost__hands-r, .ghost__hands-l {
-     border-radius: 100px;
-     width: 1em;
-     height: 1.5em;
-     background: white;
-     box-shadow: 0 4px 4px rgba(51, 51, 51, 0.3);
-}
- .ghost__hands-r {
-     transform: translate(1.5em, 1em) rotate(15deg);
-}
- .ghost__hands-l {
-     transform: translate(-1.5em, 2.5em) rotate(-15deg);
-}
- .ghost__legs {
-     width: 5em;
-     height: 1.5em;
-     top: 100%;
-     background: inherit;
-     box-shadow: 0 0 12px rgba(66, 66, 66, 1);
-     border-bottom-left-radius: 0.4em;
-     border-bottom-right-radius: 0.4em;
-}
- 
-
- @media (min-width: 1024px) {
-#container_ghost {
-     animation: float 3s infinite alternate;
-     width:20%;
-}
-
-}
- </style>
-
 </html>
 <!-- end document-->
