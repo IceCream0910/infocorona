@@ -1,9 +1,311 @@
 
+    $(document).ready(function(){        
+        
+        //우클릭 방지
+        /*
+        $(document).on("contextmenu",function(e){
+            console.log("c"+e);
+            return false;
+        });
+
+        //드래그 방지
+        $(document).on("dragstart",function(e){
+            console.log("d"+e);
+            return false;
+        });
+        
+        //선택 방지 
+        $(document).on("selectstart",function(e){
+            console.log("s"+e);
+            return false;
+        });        
+        */        
+
+        //다음과 같이 이벤트를 한번에 등록가능
+        $(document).on("contextmenu dragstart selectstart",function(e){
+            return false;
+        });
+        //참고. IE에서는 텍스트컨트롤박스의 내용을 드래그해서 선택할수없었음
+        //      또한 파이어폭스에서는 selectstart 시 이벤트가 발생되지 않았음.
+
+
+        //disableSelection($("body")[0])
+    });
+    
+    //선택 방지. (파이어폭스도 적용됨)
+    function disableSelection(target)
+    {
+        //For IE This code will work
+        if (typeof target.onselectstart!="undefined") 
+        target.onselectstart=function(){return false}
+        
+        //For Firefox This code will work
+        else if (typeof target.style.MozUserSelect!="undefined") 
+        target.style.MozUserSelect="none"
+        
+        //All other  (ie: Opera) This code will work
+        else 
+        target.onmousedown=function(){return false}
+        target.style.cursor = "default";
+    }
+
+
+
+
+
 (function ($) {
   // USE STRICT
   "use strict";
 
+    try {
+    //일별 신규 확진자
+    var ctx = document.getElementById("widgetChart5");
+    if (ctx) {
+      ctx.height = 220;
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['2.27', '2.28', '2.29', '3.1', '3.2', '3.3', '3.4', '3.5', '3.6', '3.7'],
+          datasets: [
+            {
+              label: "신규 확진자",
+              data: [571, 813, 586, 476, 600, 516, 483, 518, 483, 367],
+              borderColor: "transparent",
+              borderWidth: "0",
+              backgroundColor: "#ccc",
+            }
+          ]
+        },
+        options: {
+          maintainAspectRatio: true,
+          legend: {
+            display: false
+          },
+          scales: {
+            xAxes: [{
+              display: false,
+              categoryPercentage: 1,
+              barPercentage: 0.65
+            }],
+            yAxes: [{
+              display: false
+            }]
+          }
+        }
+      });
+    }
+
+  } catch (error) {
+    console.log(error);
+  }
+
   try {
+
+    //소재별 확진자 현황
+    var ctx = document.getElementById("doughutChart");
+    if (ctx) {
+      ctx.height = 300;
+      var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          datasets: [{
+            data: [2074, 122, 51, 4297, 51, 91, 81],
+            backgroundColor: [
+              "rgba(250, 128, 114, 0.9)",
+              "rgba(255, 36, 0, 0.9)",
+              "rgba(124, 10, 2, 0.9)",
+              "rgba(224, 17, 95, 0.9)",
+              "rgba(178, 34, 34, 0.9)",
+              "rgba(150, 0, 24, 0.9)",
+              "rgba(216, 25, 27, 0.9)"
+            ],
+            hoverBackgroundColor: [
+              "rgba(0, 123, 255,0.9)",
+              "rgba(0, 123, 255,0.7)",
+              "rgba(0, 123, 255,0.5)",
+              "rgba(0, 123, 255,0.4)",
+              "rgba(0, 123, 255,0.3)",
+              "rgba(0, 123, 255,0.2)",
+              "rgba(0, 123, 255,0.1)",
+            ]
+
+          }],
+          labels: [
+            "기타",
+            "대남병원",
+            "봉화푸른요양원",
+            "신천지",
+            "이스라엘성지순례",
+            "천안운동시설",
+            "확진자 접촉"
+          ]
+        },
+        options: {
+          legend: {
+            position: 'center',
+            labels: {
+              fontFamily: 'Poppins'
+            }
+
+          },
+          responsive: true
+        }
+      });
+    }
+
+
+  } catch (error) {
+    console.log(error);
+  }
+
+  try {
+
+    // 연령별 사망자 분포
+    var ctx = document.getElementById("singelBarChart");
+    if (ctx) {
+      ctx.height = 250;
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ["0~9세", "10대", "20대", "30대", "40대", "50대", "60대", "70대", "80대이상"],
+          datasets: [
+            {
+              label: "사망자수",
+              data: [0, 0, 0, 1, 1, 5, 11, 18, 14],
+              borderColor: "rgba(0, 0, 0, 0.9)",
+              borderWidth: "0",
+              backgroundColor: "rgba(0, 0, 0, 0.5)"
+            }
+          ]
+        },
+        options: {
+          legend: {
+            position: 'center',
+            labels: {
+              fontFamily: 'Poppins'
+            }
+
+          },
+          scales: {
+            xAxes: [{
+              ticks: {
+                fontFamily: "Poppins"
+
+              }
+            }],
+            yAxes: [{
+              ticks: {
+                beginAtZero: true,
+                fontFamily: "Poppins"
+              }
+            }]
+          }
+        }
+      });
+    }
+
+  } catch (error) {
+    console.log(error);
+  }
+
+  try {
+        // 사망/격리해제 증가 추이
+    const confirmedColor = 'rgba(250, 66, 81,0.8)'
+    const deathColor = 'rgba(15,15,15,0.8)'
+    const cureColor = 'rgba(0, 173, 95,0.8)'
+
+    var elements = 10
+    //var data1 = [2337, 3150, 3736, 4212, 4812, 5328, 5766, 6284, 6767, 7134]
+    var data2 = [16, 17, 21, 28, 34, 34, 42, 44, 49, 50]
+    var data3 = [27, 28, 30, 31, 31, 41, 88, 108, 118, 130]
+
+    var ctx = document.getElementById("recent-rep-chart");
+    if (ctx) {
+      ctx.height = 250;
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['2.27', '2.28', '2.29', '3.1', '3.2', '3.3', '3.4', '3.5', '3.6', '3.7'],
+          datasets: [
+          {
+              label: '누적 사망',
+              backgroundColor: deathColor,
+              borderColor: 'transparent',
+              pointHoverBackgroundColor: deathColor,
+              borderWidth: 0,
+              data: data2
+
+            },
+            {
+              label: '누적 격리해제',
+              backgroundColor: cureColor,
+              borderColor: 'transparent',
+              pointHoverBackgroundColor: cureColor,
+              borderWidth: 0,
+              data: data3
+
+            }
+            /*
+            {
+              label: '누적 확진',
+              backgroundColor: confirmedColor,
+              borderColor: 'transparent',
+              pointHoverBackgroundColor: confirmedColor,
+              borderWidth: 0,
+              data: data1
+
+            }
+            */
+            
+          ]
+        },
+        options: {
+          maintainAspectRatio: true,
+          legend: {
+            display: false
+          },
+          responsive: true,
+          scales: {
+            xAxes: [{
+              gridLines: {
+                drawOnChartArea: true,
+                color: '#f2f2f2'
+              },
+              ticks: {
+                fontFamily: "Poppins",
+                fontSize: 12
+              }
+            }],
+            yAxes: [{
+              ticks: {
+                beginAtZero: true,
+                maxTicksLimit: 5000,
+                stepSize: 50,
+                max: 200,
+                fontFamily: "Poppins",
+                fontSize: 12
+              },
+              gridLines: {
+                display: true,
+                color: '#f2f2f2'
+
+              }
+            }]
+          },
+          elements: {
+            point: {
+              radius: 0,
+              hitRadius: 10,
+              hoverRadius: 4,
+              hoverBorderWidth: 3
+            }
+          }
+
+
+        }
+      });
+    }
+
     //WidgetChart 1
     var ctx = document.getElementById("widgetChart1");
     if (ctx) {
@@ -248,88 +550,7 @@
       });
     }
 
-    // Recent Report
-    const brandProduct = 'rgba(0,181,233,0.8)'
-    const brandService = 'rgba(0,173,95,0.8)'
-
-    var elements = 10
-    var data1 = [52, 60, 55, 50, 65, 80, 57, 70, 105, 115]
-    var data2 = [102, 70, 80, 100, 56, 53, 80, 75, 65, 90]
-
-    var ctx = document.getElementById("recent-rep-chart");
-    if (ctx) {
-      ctx.height = 250;
-      var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', ''],
-          datasets: [
-            {
-              label: 'My First dataset',
-              backgroundColor: brandService,
-              borderColor: 'transparent',
-              pointHoverBackgroundColor: '#fff',
-              borderWidth: 0,
-              data: data1
-
-            },
-            {
-              label: 'My Second dataset',
-              backgroundColor: brandProduct,
-              borderColor: 'transparent',
-              pointHoverBackgroundColor: '#fff',
-              borderWidth: 0,
-              data: data2
-
-            }
-          ]
-        },
-        options: {
-          maintainAspectRatio: true,
-          legend: {
-            display: false
-          },
-          responsive: true,
-          scales: {
-            xAxes: [{
-              gridLines: {
-                drawOnChartArea: true,
-                color: '#f2f2f2'
-              },
-              ticks: {
-                fontFamily: "Poppins",
-                fontSize: 12
-              }
-            }],
-            yAxes: [{
-              ticks: {
-                beginAtZero: true,
-                maxTicksLimit: 5,
-                stepSize: 50,
-                max: 150,
-                fontFamily: "Poppins",
-                fontSize: 12
-              },
-              gridLines: {
-                display: true,
-                color: '#f2f2f2'
-
-              }
-            }]
-          },
-          elements: {
-            point: {
-              radius: 0,
-              hitRadius: 10,
-              hoverRadius: 4,
-              hoverBorderWidth: 3
-            }
-          }
-
-
-        }
-      });
-    }
+    
 
     // Percent Chart
     var ctx = document.getElementById("percent-chart");
@@ -576,47 +797,7 @@
     console.log(error);
   }
 
-  try {
-    //WidgetChart 5
-    var ctx = document.getElementById("widgetChart5");
-    if (ctx) {
-      ctx.height = 220;
-      var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: ['2.27', '2.28', '2.29', '3.1', '3.2', '3.3', '3.4', '3.5', '3.6', '3.7'],
-          datasets: [
-            {
-              label: "신규 확진자",
-              data: [571, 813, 586, 476, 600, 516, 483, 518, 483, 367],
-              borderColor: "transparent",
-              borderWidth: "0",
-              backgroundColor: "#ccc",
-            }
-          ]
-        },
-        options: {
-          maintainAspectRatio: true,
-          legend: {
-            display: false
-          },
-          scales: {
-            xAxes: [{
-              display: false,
-              categoryPercentage: 1,
-              barPercentage: 0.65
-            }],
-            yAxes: [{
-              display: false
-            }]
-          }
-        }
-      });
-    }
 
-  } catch (error) {
-    console.log(error);
-  }
 
   try {
 
@@ -1054,64 +1235,7 @@
   }
 
 
-  try {
-
-    //doughut chart
-    var ctx = document.getElementById("doughutChart");
-    if (ctx) {
-      ctx.height = 300;
-      var myChart = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-          datasets: [{
-            data: [2074, 122, 51, 4297, 51, 91, 81],
-            backgroundColor: [
-              "rgba(250, 128, 114, 0.9)",
-              "rgba(255, 36, 0, 0.9)",
-              "rgba(124, 10, 2, 0.9)",
-              "rgba(224, 17, 95, 0.9)",
-              "rgba(178, 34, 34, 0.9)",
-              "rgba(150, 0, 24, 0.9)",
-              "rgba(216, 25, 27, 0.9)"
-            ],
-            hoverBackgroundColor: [
-              "rgba(0, 123, 255,0.9)",
-              "rgba(0, 123, 255,0.7)",
-              "rgba(0, 123, 255,0.5)",
-              "rgba(0, 123, 255,0.4)",
-              "rgba(0, 123, 255,0.3)",
-              "rgba(0, 123, 255,0.2)",
-              "rgba(0, 123, 255,0.1)",
-            ]
-
-          }],
-          labels: [
-            "기타",
-            "대남병원",
-            "봉화푸른요양원",
-            "신천지",
-            "이스라엘성지순례",
-            "천안운동시설",
-            "확진자 접촉"
-          ]
-        },
-        options: {
-          legend: {
-            position: 'center',
-            labels: {
-              fontFamily: 'Poppins'
-            }
-
-          },
-          responsive: true
-        }
-      });
-    }
-
-
-  } catch (error) {
-    console.log(error);
-  }
+  
 
 
   try {
@@ -1207,55 +1331,7 @@
     console.log(error);
   }
 
-  try {
-
-    // single bar chart
-    var ctx = document.getElementById("singelBarChart");
-    if (ctx) {
-      ctx.height = 250;
-      var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: ["0~9세", "10대", "20대", "30대", "40대", "50대", "60대", "70대", "80대이상"],
-          datasets: [
-            {
-              label: "사망자수",
-              data: [0, 0, 0, 1, 1, 5, 11, 18, 14],
-              borderColor: "rgba(0, 0, 0, 0.9)",
-              borderWidth: "0",
-              backgroundColor: "rgba(0, 0, 0, 0.5)"
-            }
-          ]
-        },
-        options: {
-          legend: {
-            position: 'center',
-            labels: {
-              fontFamily: 'Poppins'
-            }
-
-          },
-          scales: {
-            xAxes: [{
-              ticks: {
-                fontFamily: "Poppins"
-
-              }
-            }],
-            yAxes: [{
-              ticks: {
-                beginAtZero: true,
-                fontFamily: "Poppins"
-              }
-            }]
-          }
-        }
-      });
-    }
-
-  } catch (error) {
-    console.log(error);
-  }
+  
 
 })(jQuery);
 
