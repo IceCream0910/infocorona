@@ -100,7 +100,7 @@
                 <div class="container">
                     <div class="row" id="korea">
                         <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--red">
+                            <div class="statistic__item statistic__item--red" style="border-radius: 10px;">
                                 <h2 class="number" id="confirmed">로딩중</h2>
                                 <span class="desc" id="confirmedPM">확진자</span>
                                 <div class="icon">
@@ -109,7 +109,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--green">
+                            <div class="statistic__item statistic__item--green" style="border-radius: 10px;">
                                 <h2 class="number" id="cure">로딩중</h2>
                                 <span class="desc">격리해제</span>
                                 <div class="icon">
@@ -118,7 +118,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--black">
+                            <div class="statistic__item statistic__item--black" style="border-radius: 10px;">
                                 <h2 class="number" id="death">로딩중</h2>
                                 <span class="desc">사망자</span>
                                 <div class="icon">
@@ -140,13 +140,14 @@
                 <div class="container" >
                     <div class="row" >
                         <div class="col-md-12" >
-                            <h3 style="margin-left:10px;">분석</h3><br>
+                            <h3 style="margin-left:10px;">통계</h3><br>
                         </div>
                     </div>
+                    
                     <div class="row">
                         <div class="col-md-6 col-lg-4">
                             <!-- CHART-->
-                            <div class="statistic-chart-1">
+                            <div class="statistic-chart-1" style="border-radius: 10px;">
                                 <div class="chart-wrap">
                                     <h3>신규 <h3 style="color:#a9a9a9;">확진자 추이</h3></h3>
                                     <canvas id="widgetChart5"></canvas>
@@ -154,14 +155,40 @@
                                 <div class="statistic-chart-1-note">
                                     <span>하루에 평균 </span>
                                     <span class="big">507명</span>
-                                    <span>증가해요.<br><span style=color:#a9a9a9; font-size:13px;">(최근 10일 기준)</span></span>
+                                    <span>증가해요.<br><span style="color:#a9a9a9; font-size:13px;">(최근 10일 기준)</span></span>
                                 </div>
                             </div>
                             <!-- END CHART-->
                         </div>
+
+                        <div class="col-lg-6">
+                                <div class="au-card recent-report" style="border-radius: 10px;">
+                                    <div class="au-card-inner">
+                                        <h3>사망/격리해제 <h3 style="color:#a9a9a9;">증가 추이</h3></h3><br>
+                                        <div class="chart-info">
+                                            <div class="chart-info__left">
+                                                <div class="chart-note mr-0">
+                                                    <span class="dot dot--black"></span>
+                                                    <span>사망자</span>
+                                                </div>
+                                                <div class="chart-note mr-0">
+                                                    <span class="dot dot--green"></span>
+                                                    <span>격리해제자</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="recent-report__chart">
+                                            <canvas id="recent-rep-chart"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
                         <div class="col-md-6 col-lg-4">
                             <!-- CHART PERCENT-->
-                            <div class="chart-percent-2">
+                            <div class="chart-percent-2" style="border-radius: 10px;">
                                 <div class="chart-wrap">
                                     <h3>소재별 <h3 style="color:#a9a9a9;">확진자 현황</h3></h3><br>
                                     <canvas id="doughutChart"></canvas>
@@ -172,7 +199,7 @@
 
                             <div class="col-md-6 col-lg-4">
                             <!-- CHART PERCENT-->
-                            <div class="chart-percent-2">
+                            <div class="chart-percent-2" style="border-radius: 10px;">
                                 <div class="chart-wrap">
                                     <h3>연령별 <h3 style="color:#a9a9a9;">사망자 현황</h3></h3><br>
                                     <canvas id="singelBarChart"></canvas>
@@ -181,10 +208,11 @@
                                 </div>
                             </div>
                             <!-- END CHART PERCENT-->
-                        </div>
+                        
+                            
                         <div class="col-lg-3">
                                 <h3>지역별 확진자 현황</h3><br>
-                                <div class="au-card au-card--bg-blue au-card-top-countries m-b-40" style="margin-left:-10px; margin-right:-10px; padding:15px;">
+                                <div class="au-card au-card--bg-blue au-card-top-countries m-b-40" style=" padding:15px;">
                                     <div class="au-card-inner">
                                         <div class="table-responsive">
                                             <table class="table table-top-countries">
@@ -266,6 +294,7 @@
                         
                     </div>
                 </div>
+</div>
             </section>
             <!-- END STATISTIC CHART-->
 
@@ -276,7 +305,7 @@
                     <h3>전세계 현황</h3><br>
                     <div class="row" id="global">
                         <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--red">
+                            <div class="statistic__item statistic__item--red" style="border-radius: 10px;">
                                 <h2 class="number" id="globeConfirmed">로딩중</h2>
                                 <span class="desc">확진자</span>
                                 <div class="icon">
@@ -285,7 +314,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--black">
+                            <div class="statistic__item statistic__item--black" style="border-radius: 10px;">
                                 <h2 class="number" id="globeDeath">로딩중</h2>
                                 <span class="desc">사망자</span>
                                 <div class="icon">
