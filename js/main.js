@@ -7,7 +7,6 @@
             console.log("c"+e);
             return false;
         });
-
         //드래그 방지
         $(document).on("dragstart",function(e){
             console.log("d"+e);
@@ -253,7 +252,6 @@
               pointHoverBackgroundColor: confirmedColor,
               borderWidth: 0,
               data: data1
-
             }
             */
             
