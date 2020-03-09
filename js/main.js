@@ -64,11 +64,11 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['2.28', '2.29', '3.1', '3.2', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8 16시'],
+          labels: ['2.28', '2.29', '3.1', '3.2', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8'],
           datasets: [
             {
               label: "신규 확진자",
-              data: [813, 586, 476, 600, 516, 483, 518, 483, 367, 179],
+              data: [813, 586, 476, 600, 516, 483, 518, 483, 367, 248],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
@@ -108,7 +108,7 @@
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [2074, 122, 51, 4297, 51, 91, 81],
+            data: [1719, 122, 51, 4482, 51, 94, 615],
             backgroundColor: [
               "rgba(250, 128, 114, 0.9)",
               "rgba(255, 36, 0, 0.9)",
@@ -170,7 +170,7 @@
           datasets: [
             {
               label: "사망자수",
-              data: [0, 0, 0, 1, 1, 5, 11, 18, 14],
+              data: [0, 0, 0, 1, 1, 5, 11, 19, 14],
               borderColor: "rgba(0, 0, 0, 0.9)",
               borderWidth: "0",
               backgroundColor: "rgba(0, 0, 0, 0.5)"
@@ -213,10 +213,10 @@
     const deathColor = 'rgba(15,15,15,0.8)'
     const cureColor = 'rgba(0, 173, 95,0.8)'
 
-    var elements = 10
+    var elements = 7
     //var data1 = [2337, 3150, 3736, 4212, 4812, 5328, 5766, 6284, 6767, 7134]
-    var data2 = [16, 17, 21, 28, 34, 34, 42, 44, 49, 50]
-    var data3 = [27, 28, 30, 31, 31, 41, 88, 108, 118, 130]
+    var data2 = [22, 28, 32, 35, 42, 44, 50]
+    var data3 = [31, 34, 41, 88, 108, 118, 130]
 
     var ctx = document.getElementById("recent-rep-chart");
     if (ctx) {
@@ -224,7 +224,7 @@
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['2.27', '2.28', '2.29', '3.1', '3.2', '3.3', '3.4', '3.5', '3.6', '3.7'],
+          labels: ['3.2', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8'],
           datasets: [
           {
               label: '누적 사망',
