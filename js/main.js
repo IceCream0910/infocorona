@@ -215,8 +215,8 @@
 
     var elements = 7
     //var data1 = [2337, 3150, 3736, 4212, 4812, 5328, 5766, 6284, 6767, 7134]
-    var data2 = [22, 28, 32, 35, 42, 44, 50, 51]
-    var data3 = [31, 34, 41, 88, 108, 118, 166]
+    var data2 = [28, 32, 35, 42, 44, 50, 51]
+    var data3 = [34, 41, 88, 108, 118, 130, 166]
 
     var ctx = document.getElementById("recent-rep-chart");
     if (ctx) {
@@ -224,7 +224,7 @@
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['3.2', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8', '3.9'],
+          labels: ['3.3', '3.4', '3.5', '3.6', '3.7', '3.8', '3.9'],
           datasets: [
           {
               label: '누적 사망',
