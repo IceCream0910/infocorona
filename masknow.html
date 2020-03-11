@@ -1,213 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ko">
 
 <head>
-    <!-- Required meta tags-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="코로나19 국내 발생현황 및 관련정보를 한눈에 알아보세요!">
-    <meta name="author" content="Justcode">
-    <meta name="keywords" content="코로나19">
-
-    <!-- Title Page-->
-    <title>인포코로나 - 마스크 정보</title>
-
-
-    <!-- Fontfaces CSS-->
-    <link href="css/font-face.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-
-    <!-- Bootstrap CSS-->
-    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
-
-    <!-- Vendor CSS-->
-    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
-    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
-    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
-    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
-
-
-    <!-- Main CSS-->
-    <link href="css/theme.css" rel="stylesheet" media="all">
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:700|Noto+Sans+KR&display=swap" rel="stylesheet">
-
-     <script type="text/javascript">
- (function(w,d,v3){
- w.chaportConfig = {
- appId : '5e440199d9d3b143e8105db2'
- };
-
- if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push(arguments)};v3.on=function(e,fn){if(!v3._l[e])v3._l[e]=[];v3._l[e].push(fn)};var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://app.chaport.com/javascripts/insert.js';var ss=d.getElementsByTagName('script')[0];ss.parentNode.insertBefore(s,ss)})(window, document);
- </script>
-
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700&display=swap&subset=korean" rel="stylesheet">
+    <script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=7833b265dbc43bd88c1350814daf47b8&libraries=services,clusterer,drawing"></script>
+    <title>마스크 NOW</title>
+    <link href="css/maskscan.css" rel="stylesheet">
+    <link href="css/maskscanMain.css" rel="stylesheet">
 </head>
 
-<body class="animsition">
-    <div class="page-wrapper">
-        <!-- PAGE CONTENT-->
-        <div class="page-content--bgf7">
+<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
+    <noscript>자바스크립트를 허용해주세요.</noscript>
+    <div id="root"></div>
+    <script>
+        ! function(e) {
+            function t(t) {
+                for (var n, u, l = t[0], p = t[1], f = t[2], c = 0, s = []; c < l.length; c++) u = l[c], Object.prototype.hasOwnProperty.call(o, u) && o[u] && s.push(o[u][0]), o[u] = 0;
+                for (n in p) Object.prototype.hasOwnProperty.call(p, n) && (e[n] = p[n]);
+                for (i && i(t); s.length;) s.shift()();
+                return a.push.apply(a, f || []), r()
+            }
 
-            <!-- WELCOME-->
-            <section class="welcome p-t-10">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12" style="margin-top:5px; margin-left:10px;">
-                            <img src="https://image.flaticon.com/icons/png/512/60/60775.png" style="width:25px; height:25px; margin-left:-15px;">
-                            <hr class="line-seprate" style=" margin-left:-30px; margin-right:-30px; width:100%;">
-                            <br>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- END WELCOME-->
+            function r() {
+                for (var e, t = 0; t < a.length; t++) {
+                    for (var r = a[t], n = !0, l = 1; l < r.length; l++) {
+                        var p = r[l];
+                        0 !== o[p] && (n = !1)
+                    }
+                    n && (a.splice(t--, 1), e = u(u.s = r[0]))
+                }
+                return e
+            }
+            var n = {},
+                o = {
+                    1: 0
+                },
+                a = [];
 
-
-
-<div id="app">
-
-  <div class="container">
-    
-    <div class="row mb-5">
-    
-      <div class="col-sm-12">
-          
-          <h2>마스크 NOW</h2>
-        
-          <p>주변 공적 마스크 판매처의 실시간 재고 현황을 알려드릴게요.</p><br>
-
-          <!--<input id="ghost-input" name="adress" type="text" placeholder="시/구/동 입력 (예: 서울특별시 송파구)" style="width:100%; padding-left:10px; padding-right:10px; border-radius: 10px; height:50px; background:#d3d3d3;"/>-->
-
-
-
-
-        
-      
-      </div>
-      
-    </div>
-  
-    <div class="row">
-    
-      <div class="col-md-8 offset-md-2 p-0">
-  
-        <div class="container" v-for="source in sources">
-
-          <div class="row">
-
-            <div class="container">
-
-              <div class="row mb-5" v-for="post in source.posts">
-
-                <div class="col-md-12">
-
-                  <h4 v-html='post.name'></h4>
-
-                  <h6 class="text-muted" v-html='post.stock_at'></h6>
-
-                </div>
-
-                <div class="col-md-12">
-
-                  <div v-html='post.addr'></div>
-
-                  <div class="text-right">
-
-<div v-if="post.remain_stat == 'empty'" style="color:#a9a9a9;">
-  품절
-</div>
-<div v-else-if="post.remain_stat == 'plenty'" style="color:#228B22;">
-  100개 이상
-</div>
-<div v-else-if="post.remain_stat == 'some'" style="color:#fda50F;">
-  30~99개
-</div>
-<div v-else-if="post.remain_stat == 'few'" style="color:#D92121;">
-  2~29개
-</div>
-<div v-else-if="post.remain_stat == null" style="color:#a9a9a9;">
-  정보 없음
-</div>
-
-                     <h3 id="jego-num" style="color:green; display: none;" v-html='post.remain_stat'></h3>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    
-    </div>
-    
-  </div>
-
-</div>
-
-            
-
-            <!-- COPYRIGHT-->
-            <section class="p-t-60 p-b-20">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="copyright">
-                                <p>Copyright © 2020 All rights reserved. <br>마스크 재고 정보는 <a href="http://www.data.go.kr/" target="_blank">공공데이터포털</a>에서 제공합니다.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- END COPYRIGHT-->
-        </div>
-    </div>
-
-    <!-- Vue JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.3.4/vue-resource.js"></script>
-    <!-- Jquery JS-->
-    <script src="vendor/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap JS-->
-    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <!-- Vendor JS       -->
-    <script src="vendor/slick/slick.min.js">
+            function u(t) {
+                if (n[t]) return n[t].exports;
+                var r = n[t] = {
+                    i: t,
+                    l: !1,
+                    exports: {}
+                };
+                return e[t].call(r.exports, r, r.exports, u), r.l = !0, r.exports
+            }
+            u.m = e, u.c = n, u.d = function(e, t, r) {
+                u.o(e, t) || Object.defineProperty(e, t, {
+                    enumerable: !0,
+                    get: r
+                })
+            }, u.r = function(e) {
+                "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
+                    value: "Module"
+                }), Object.defineProperty(e, "__esModule", {
+                    value: !0
+                })
+            }, u.t = function(e, t) {
+                if (1 & t && (e = u(e)), 8 & t) return e;
+                if (4 & t && "object" == typeof e && e && e.__esModule) return e;
+                var r = Object.create(null);
+                if (u.r(r), Object.defineProperty(r, "default", {
+                        enumerable: !0,
+                        value: e
+                    }), 2 & t && "string" != typeof e)
+                    for (var n in e) u.d(r, n, function(t) {
+                        return e[t]
+                    }.bind(null, n));
+                return r
+            }, u.n = function(e) {
+                var t = e && e.__esModule ? function() {
+                    return e.default
+                } : function() {
+                    return e
+                };
+                return u.d(t, "a", t), t
+            }, u.o = function(e, t) {
+                return Object.prototype.hasOwnProperty.call(e, t)
+            }, u.p = "/";
+            var l = this["webpackJsonpreact-kakaomap-templates"] = this["webpackJsonpreact-kakaomap-templates"] || [],
+                p = l.push.bind(l);
+            l.push = t, l = l.slice();
+            for (var f = 0; f < l.length; f++) t(l[f]);
+            var i = p;
+            r()
+        }([])
     </script>
-    <script src="vendor/wow/wow.min.js"></script>
-    <script src="vendor/animsition/animsition.min.js"></script>
-    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
-    </script>
-    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
-    <script src="vendor/counter-up/jquery.counterup.min.js">
-    </script>
-    <script src="vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="vendor/select2/select2.min.js">
-    </script>
-
-    <!-- Main JS-->
-    <script src="js/main.js"></script>
-    <script src="js/custom_maskscan.js"></script>
-
+    <script src="js/maskscan.js"></script>
+    <script src="js/maskscanMain.js"></script>
 </body>
-</html>
-<!-- end document-->
 
-<style>
-     .sharedaddy {
-     display: none;
-}
- 
-</style>
+</html>
