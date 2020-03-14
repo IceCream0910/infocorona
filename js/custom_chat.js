@@ -6,7 +6,6 @@ var btn = $('button');
 var wrap = $('.wrapper');
 var input = $('textarea.message');
 var usernameInput = $('input.username');
-
 var user = [];
 
 (function($) {
@@ -59,6 +58,11 @@ function sendBtn() {
 
 
 messages.limitToLast(100).on("child_added", function(snap) {
-	wrap.prepend('<li><span><i class="fa fa-quote-right" aria-hidden="true" style="margin-right:5px;"></i></span> ' + $.sanitize(snap.val().message) + '</li>');
+	if($.sanitize(snap.val().user) == 'admin') {
+		wrap.prepend('<li><div style="background-color:#fa4251; border-radius:10px; width:50px; font-size:14px; padding: 2px 4px; margin-bottom:5px;"><span style="color:white;">개발자</div></span> ' + $.sanitize(snap.val().message) + '</li>');
+	} else {
+		wrap.prepend('<li><span><i class="fa fa-quote-right" aria-hidden="true" style="margin-right:5px;"></i></span> ' + $.sanitize(snap.val().message) + '</li>');
+	}
+	//아래부터 스택할 때 필요하지만 위로 스택하므로 불필요
 	//window.scrollTo(0,document.body.scrollHeight);
 });
