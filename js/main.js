@@ -64,11 +64,11 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['3.3', '3.4', '3.5', '3.6', '3.7', '3.8', '3.9', '3.10', '3.11', '3.12'],
+          labels: ['3.4', '3.5', '3.6', '3.7', '3.8', '3.9', '3.10', '3.11', '3.12', '3.13'],
           datasets: [
             {
               label: "신규 확진자",
-              data: [516, 483, 518, 483, 367, 248, 131, 242, 114, 110],
+              data: [483, 518, 483, 367, 248, 131, 242, 114, 110, 107],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
@@ -108,7 +108,7 @@
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [99, 1869, 122, 54, 4723, 51, 107, 749],
+            data: [109, 1960, 122, 58, 4780, 51, 114, 785],
             backgroundColor: [
               "rgba(250, 128, 114, 0.9)",
               "rgba(255, 36, 0, 0.9)",
@@ -173,7 +173,7 @@
           datasets: [
             {
               label: "사망자수",
-              data: [0, 0, 0, 1, 1, 6, 13, 26, 21],
+              data: [0, 0, 0, 1, 1, 6, 13, 28, 23],
               borderColor: "rgba(0, 0, 0, 0.9)",
               borderWidth: "0",
               backgroundColor: "rgba(0, 0, 0, 0.5)"
@@ -218,7 +218,7 @@
 
     var elements = 7
     //var data1 = [2337, 3150, 3736, 4212, 4812, 5328, 5766, 6284, 6767, 7134]
-    var data2 = [44, 50, 51, 54, 60, 66, 68]
+    var data2 = [44, 50, 51, 54, 60, 66, 67]
     var data3 = [118, 130, 166, 247, 288, 333, 510]
 
     var ctx = document.getElementById("recent-rep-chart");
@@ -227,7 +227,7 @@
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['3.6', '3.7', '3.8', '3.9', '3.10', '3.11', '3.12'],
+          labels: ['3.7', '3.8', '3.9', '3.10', '3.11', '3.12', '3.13'],
           datasets: [
           {
               label: '누적 사망',
