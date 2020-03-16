@@ -64,11 +64,11 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['3.5', '3.6', '3.7', '3.8', '3.9', '3.10', '3.11', '3.12', '3.13', '3.14'],
+          labels: ['3.6', '3.7', '3.8', '3.9', '3.10', '3.11', '3.12', '3.13', '3.14', '3.15'],
           datasets: [
             {
               label: "신규 확진자",
-              data: [518, 483, 367, 248, 131, 242, 114, 110, 107, 76],
+              data: [483, 367, 248, 131, 242, 114, 110, 107, 76, 74],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
@@ -173,7 +173,7 @@
           datasets: [
             {
               label: "사망자수",
-              data: [0, 0, 0, 1, 1, 6, 13, 28, 24],
+              data: [0, 0, 0, 1, 1, 6, 13, 29, 25],
               borderColor: "rgba(0, 0, 0, 0.9)",
               borderWidth: "0",
               backgroundColor: "rgba(0, 0, 0, 0.5)"
@@ -218,8 +218,8 @@
 
     var elements = 7
     //var data1 = [2337, 3150, 3736, 4212, 4812, 5328, 5766, 6284, 6767, 7134]
-    var data2 = [50, 51, 54, 60, 66, 67, 72]
-    var data3 = [130, 166, 247, 288, 333, 510, 714]
+    var data2 = [54, 60, 66, 67, 72, 75, 75]
+    var data3 = [247, 288, 333, 510, 714, 834, 1137]
 
     var ctx = document.getElementById("recent-rep-chart");
     if (ctx) {
@@ -227,7 +227,7 @@
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['3.8', '3.9', '3.10', '3.11', '3.12', '3.13', '3.14'],
+          labels: ['3.10', '3.11', '3.12', '3.13', '3.14', '3.15', '3.16'],
           datasets: [
           {
               label: '누적 사망',
@@ -281,8 +281,8 @@
               ticks: {
                 beginAtZero: true,
                 maxTicksLimit: 5000,
-                stepSize: 50,
-                max: 750,
+                stepSize: 100,
+                max: 1200,
                 fontFamily: "Poppins",
                 fontSize: 12
               },
