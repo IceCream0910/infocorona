@@ -64,11 +64,11 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['3.6', '3.7', '3.8', '3.9', '3.10', '3.11', '3.12', '3.13', '3.14', '3.15'],
+          labels: ['3.7', '3.8', '3.9', '3.10', '3.11', '3.12', '3.13', '3.14', '3.15', '3.16'],
           datasets: [
             {
               label: "신규 확진자",
-              data: [483, 367, 248, 131, 242, 114, 110, 107, 76, 74],
+              data: [367, 248, 131, 242, 114, 110, 107, 76, 74, 84],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
@@ -108,7 +108,7 @@
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [115, 1908, 122, 58, 5013, 51, 115, 704],
+            data: [129, 2001, 122, 58, 5011, 51, 115, 749],
             backgroundColor: [
               "rgba(250, 128, 114, 0.9)",
               "rgba(255, 36, 0, 0.9)",
@@ -173,7 +173,7 @@
           datasets: [
             {
               label: "사망자수",
-              data: [0, 0, 0, 1, 1, 6, 13, 29, 25],
+              data: [0, 0, 0, 1, 1, 6, 15, 30, 28],
               borderColor: "rgba(0, 0, 0, 0.9)",
               borderWidth: "0",
               backgroundColor: "rgba(0, 0, 0, 0.5)"
