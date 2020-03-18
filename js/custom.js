@@ -13,17 +13,26 @@ function randomItem(a) {
   return a[Math.floor(Math.random() * a.length)];
 }
 
-function voiceBtn() {
-  if(audioFile.currentTime > 0) {
-   audioFile.pause();
-   audioFile.currentTime = 0;
-   document.getElementById('voicebtn').src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/1200px-Speaker_Icon.svg.png';
- } else {
-    audioFile.play();
-    document.getElementById('voicebtn').src = 'https://www.transparentpng.com/thumb/pause-button/HpwO0H-pause-button-clipart-png-photos.png';
-  }
+var track = document.getElementById('track');
+
+var controlBtn = document.getElementById('play-pause');
+
+function playPause() {
+    if (track.paused) {
+        track.play();
+        //controlBtn.textContent = "Pause";
+        controlBtn.className = "pause";
+    } else { 
+        track.pause();
+         //controlBtn.textContent = "Play";
+        controlBtn.className = "play";
+    }
 }
 
+controlBtn.addEventListener("click", playPause);
+track.addEventListener("ended", function() {
+  controlBtn.className = "play";
+});
 
 
 //현황 크롤링
