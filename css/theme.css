@@ -52,6 +52,20 @@ ul {
     margin: 0;
 }
 
+#player-container #play-pause {
+  cursor: pointer;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/1200px-Speaker_Icon.svg.png');
+  background-repeat:no-repeat;
+  background-position:left;
+  background-size:25px;
+}
+.play {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/1200px-Speaker_Icon.svg.png');
+}
+.pause {
+   background-image: url('https://s5.gifyu.com/images/ezgif-2-c360660be55b.gif')!important;
+}
+
 #prevent_btn a {
     border: 4px solid #3F3F3F;
     color: #3F3F3F;
