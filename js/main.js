@@ -21,7 +21,7 @@
         */        
 
         //다음과 같이 이벤트를 한번에 등록가능
-        $(document).on("contextmenu dragstart selectstart",function(e){
+        $(document).on("contextmenu selectstart",function(e){
             return false;
         });
         //참고. IE에서는 텍스트컨트롤박스의 내용을 드래그해서 선택할수없었음
@@ -98,48 +98,31 @@
     console.log(error);
   }
 
+
   try {
 
     //소재별 확진자 현황
-    var ctx = document.getElementById("doughutChart");
+    var ctx = document.getElementById("doughutChart_sex");
     if (ctx) {
       ctx.height = 300;
       var myChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [129, 2001, 122, 58, 5011, 51, 115, 749],
+            data: [3240, 5173],
             backgroundColor: [
-              "rgba(250, 128, 114, 0.9)",
-              "rgba(255, 36, 0, 0.9)",
-              "rgba(124, 10, 2, 0.9)",
-              "rgba(224, 17, 95, 0.9)",
-              "rgba(178, 34, 34, 0.9)",
-              "rgba(150, 0, 24, 0.9)",
-              "rgba(216, 25, 27, 0.9)",
-              "rgba(216, 25, 27, 0.9)",
+              '#00b5e9',
+              '#fa4251',
             ],
             hoverBackgroundColor: [
-              "rgba(0, 123, 255,1.0)",
-              "rgba(0, 123, 255,0.9)",
-              "rgba(0, 123, 255,0.8)",
-              "rgba(0, 123, 255,0.7)",
-              "rgba(0, 123, 255,0.6)",
-              "rgba(0, 123, 255,0.5)",
-              "rgba(0, 123, 255,0.4)",
-              "rgba(0, 123, 255,0.3)",
+              '#00b5e9',
+              '#fa4251',
             ]
 
           }],
           labels: [
-            "구로구 콜센터",
-            "기타",
-            "대남병원",
-            "봉화푸른요양원",
-            "신천지",
-            "이스라엘 성지순례",
-            "천안운동시설",
-            "확진자 접촉",
+            "남성",
+            "여성"
           ]
         },
         options: {
@@ -177,6 +160,56 @@
               borderColor: "rgba(0, 0, 0, 0.9)",
               borderWidth: "0",
               backgroundColor: "rgba(0, 0, 0, 0.5)"
+            }
+          ]
+        },
+        options: {
+          legend: {
+            position: 'center',
+            labels: {
+              fontFamily: 'Poppins'
+            }
+
+          },
+          scales: {
+            xAxes: [{
+              ticks: {
+                fontFamily: "Poppins"
+
+              }
+            }],
+            yAxes: [{
+              ticks: {
+                beginAtZero: true,
+                fontFamily: "Poppins"
+              }
+            }]
+          }
+        }
+      });
+    }
+
+  } catch (error) {
+    console.log(error);
+  }
+
+  try {
+
+    // 연령별 사망자 분포
+    var ctx = document.getElementById("singelBarChart_2");
+    if (ctx) {
+      ctx.height = 250;
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ["0~9세", "10대", "20대", "30대", "40대", "50대", "60대", "70대", "80대이상"],
+          datasets: [
+            {
+              label: "확진자 수",
+              data: [87, 438, 2342, 873, 1717, 1615, 1059, 542, 286],
+              borderColor: "rgba(255, 40, 0, 1)",
+              borderWidth: "0",
+              backgroundColor: "rgba(255, 40, 0, 0.8)"
             }
           ]
         },
@@ -553,17 +586,17 @@
 
     
 
-    // Percent Chart
+    //
     var ctx = document.getElementById("percent-chart");
     if (ctx) {
-      ctx.height = 280;
+      ctx.height = 300;
       var myChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
           datasets: [
             {
-              label: "My First dataset",
-              data: [60, 40],
+              label: "확진자 수",
+              data: [3240, 5173],
               backgroundColor: [
                 '#00b5e9',
                 '#fa4251'
@@ -582,8 +615,8 @@
             }
           ],
           labels: [
-            'Products',
-            'Services'
+            '남성',
+            '여성'
           ]
         },
         options: {
