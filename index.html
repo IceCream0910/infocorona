@@ -21,7 +21,7 @@
 
 
     <!-- Title Page-->
-    <title>인포코로나 - 국내 현황</title>
+    <title></title>
 
 
     <!-- Fontfaces CSS-->
@@ -190,16 +190,6 @@
                         </div>
 
                         <div class="row">
-                        <div class="col-md-6 col-lg-4">
-                            <!-- CHART PERCENT-->
-                            <div class="chart-percent-2" style="border-radius: 10px;">
-                                <div class="chart-wrap">
-                                    <h3>소재별 <h3 style="color:#a9a9a9;">확진자 현황</h3></h3><br>
-                                    <canvas id="doughutChart"></canvas>
-                                        <table></table>
-                                    </div>
-                                </div>
-                            </div>
 
                             <div class="col-md-6 col-lg-4">
                             <!-- CHART PERCENT-->
@@ -212,9 +202,162 @@
                                 </div>
                             </div>
                             <!-- END CHART PERCENT-->
+
+                            <div class="col-md-6 col-lg-4">
+                            <!-- CHART PERCENT-->
+                            <div class="chart-percent-2" style="border-radius: 10px;">
+                                <div class="chart-wrap">
+                                    <h3>연령별 <h3 style="color:#a9a9a9;">확진자 현황</h3></h3><br>
+                                    <canvas id="singelBarChart_2"></canvas>
+                                        <table></table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END CHART PERCENT-->
+
+                            <div class="col-md-6 col-lg-4">
+                            <!-- CHART PERCENT-->
+                            <div class="chart-percent-2" style="border-radius: 10px;">
+                                <div class="chart-wrap">
+                                    <h3>성별 <h3 style="color:#a9a9a9;">확진자 현황</h3></h3><br>
+                                    <canvas id="doughutChart_sex"></canvas>
+                                        <table></table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                         
-                            
-                        <div class="col-lg-3">
+                        
+                            <div class="col-lg-9">
+                                <h3>지역별 <span style="color:#a0a0a0;">현황<span style="font-size:15px;"> (명)<br><span style="font-size:15px;">좌우로 드래그할 수 있어요.</span></span></span></h3><br>
+
+                                <div class="table-responsive table--no-card m-b-40" style="margin-left:-15px; width:113%;">
+                                    <table class="table table-borderless table-striped table-earning" style="width:113%;">
+                                        <thead>
+                                            <tr>
+                                                <th>지역</th>
+                                                <th>누적 확진자</th>
+                                                <th>격리해제자</th>
+                                                <th>사망자</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr onClick="javascript:window.open('http://www.seoul.go.kr/coronaV/coronaStatus.do');">
+                                                <td>서울</td>
+                                                <td>270</td>
+                                                <td>55</td>
+                                                <td>270</td>
+                                            </tr>
+                                            <tr onClick="javascript:window.open('http://www.busan.go.kr/corona19/index');">
+                                                <td>부산</td>
+                                                <td>107</td>
+                                                <td>58</td>
+                                                <td>1</td>
+                                            </tr>
+                                            <tr onClick="javascript:window.open('http://www.daegu.go.kr/');">
+                                                <td>대구</td>
+                                                <td>6,144</td>
+                                                <td>1,048</td>
+                                                <td>58</td>
+                                            </tr>
+                                            <tr onClick="javascript:window.open('https://www.incheon.go.kr/corona19/IC010001');">
+                                                <td>인천</td>
+                                                <td>32</td>
+                                                <td>6</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr onClick="javascript:window.open('https://www.gwangju.go.kr/');">
+                                                <td>광주</td>
+                                                <td>17</td>
+                                                <td>6</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr onClick="javascript:window.open('https://www.daejeon.go.kr/corona19/index.do');">
+                                                <td>대전</td>
+                                                <td>22</td>
+                                                <td>4</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr onClick="javascript:window.open('http://www.ulsan.go.kr/corona.jsp');">
+                                                <td>울산</td>
+                                                <td>30</td>
+                                                <td>9</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr onClick="javascript:window.open('https://www.sejong.go.kr/life/sub05_0704.do');">
+                                                <td>세종</td>
+                                                <td>41</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr onClick="javascript:window.open('https://www.gg.go.kr/bbs/boardView.do?bsIdx=464&bIdx=2296956&menuId=1535');">
+                                                <td>경기</td>
+                                                <td>277</td>
+                                                <td>59</td>
+                                                <td>3</td>
+                                            </tr>
+                                            <tr onClick="javascript:window.open('http://www.provin.gangwon.kr/covid-19.html');">
+                                                <td>강원</td>
+                                                <td>30</td>
+                                                <td>8</td>
+                                                <td>1</td>
+                                            </tr>
+                                            <tr onClick="javascript:window.open('http://www.chungbuk.go.kr/www/covid-19/index.html');">
+                                                <td>충북</td>
+                                                <td>32</td>
+                                                <td>5</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr onClick="javascript:window.open('http://www.chungnam.go.kr/coronaStatus.do');">
+                                                <td>충남</td>
+                                                <td>118</td>
+                                                <td>16</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr onClick="javascript:window.open('http://www.jeonbuk.go.kr/board/list.jeonbuk?boardId=BBS_0000105&menuCd=DOM_000000105010004000&contentsSid=1189&cpath=');">
+                                                <td>전북</td>
+                                                <td>9</td>
+                                                <td>5</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr onClick="javascript:window.open('https://www.jeonnam.go.kr/coronaMainPage.do');">
+                                                <td>전남</td>
+                                                <td>5</td>
+                                                <td>2</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr onClick="javascript:window.open('http://www.gb.go.kr/Main/open_contents/section/wel/page.do?mnu_uid=5760&LARGE_CODE=360&MEDIUM_CODE=10&SMALL_CODE=50&SMALL_CODE2=60mnu_order=2');">
+                                                <td>경북</td>
+                                                <td>1,178</td>
+                                                <td>235</td>
+                                                <td>21</td>
+                                            </tr>
+                                            <tr onClick="javascript:window.open('http://www.gyeongnam.go.kr/corona.html');">
+                                                <td>경남</td>
+                                                <td>86</td>
+                                                <td>23</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr onClick="javascript:window.open('https://jeju.go.kr/covid19.jsp');">
+                                                <td>제주</td>
+                                                <td>4</td>
+                                                <td>2</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr onClick="javascript:window.open('http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=14&ncvContSeq=&contSeq=&board_id=&gubun=');">
+                                                <td>검역</td>
+                                                <td>11</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!--
+
                                 <h3>지역별 확진자 현황</h3><br>
                                 <div class="au-card au-card--bg-blue au-card-top-countries m-b-40" style=" padding:15px;">
                                     <div class="au-card-inner">
@@ -294,7 +437,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            -->
+
                         
                     </div>
                 </div>
@@ -325,6 +469,21 @@
                                     <i class="zmdi zmdi-accounts-outline"></i>
                                 </div>
                             </div>
+
+                             <h4 style="margin-bottom: 10px;">치사율</h4>
+                                        <div class="progress mb-2" style="height:30px;">
+                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 38%" aria-valuenow="3.82%" aria-valuemin="0" aria-valuemax="100">3.82%</div>
+                                        </div><br>
+
+                                        <h4 style="margin-bottom: 10px;">재생산지수(R0)</h4>
+                                        <div class="progress mb-2" style="height:30px;">
+                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="2.5" aria-valuemin="0" aria-valuemax="100">2.5</div>
+                                        </div><br>
+
+                                         <h4 style="margin-bottom: 10px;">완치율</h4>
+                                        <div class="progress mb-2" style="height:30px;">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 45%" aria-valuenow="45.073" aria-valuemin="0" aria-valuemax="100">45.073%</div>
+                                        </div><br>
                         </div>
                         </div>
 
@@ -341,7 +500,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="copyright">
-                                <p>Copyright © 2020 All rights reserved. <br>정보 제공 : <a href="http://ncov.mohw.go.kr" target="_blank">중앙방역대책본부</a>.</p>
+                                <p>Copyright © 2020 All rights reserved. <br>정보 제공 : <a href="http://ncov.mohw.go.kr" target="_blank">중앙재난안전대책본부</a>.</p>
                             </div>
                         </div>
                     </div>
@@ -361,7 +520,7 @@
     <!-- Bootstrap JS-->
     <script src="vendor/bootstrap-4.1/popper.min.js"></script>
     <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <!-- Vendor JS       -->
+    <!-- Vendor JS-->
     <script src="vendor/slick/slick.min.js">
     </script>
     <script src="vendor/wow/wow.min.js"></script>
