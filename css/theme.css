@@ -4399,6 +4399,7 @@ section {
     -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+    width:100%;
 }
 
 .table-earning thead th {
@@ -4409,7 +4410,7 @@ section {
     font-weight: 400;
     text-transform: capitalize;
     line-height: 1;
-    padding: 22px 40px;
+    padding: 22px 15px;
     white-space: nowrap;
 }
 
@@ -4420,13 +4421,13 @@ section {
 
 .table-earning tbody td {
     color: #808080;
-    padding: 12px 40px;
+    padding: 10px 15px;
     white-space: nowrap;
 }
 
 .table-earning tbody td.text-right {
-    padding-left: 15px;
-    padding-right: 65px;
+    padding-left: 0px;
+    padding-right: 5px;
 }
 
 .table-earning tbody tr:hover td {
@@ -5231,7 +5232,7 @@ section {
 
 /* ----- Progress ----- */
 .au-progress .au-progress__bar {
-    height: 10px;
+    height: 20px;
     position: relative;
     background: #d9d9d9;
     -webkit-border-radius: 5px;
