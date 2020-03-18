@@ -6,10 +6,24 @@ document.getElementById("suggestText").innerHTML = randomItem(welcomeTxt);
 
 }
 
+var audioFile = new Audio('voice0318.mp3');
+
 // 상단 텍스트 랜덤변경
 function randomItem(a) {
   return a[Math.floor(Math.random() * a.length)];
 }
+
+function voiceBtn() {
+  if(audioFile.currentTime > 0) {
+   audioFile.pause();
+   audioFile.currentTime = 0;
+   document.getElementById('voicebtn').src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/1200px-Speaker_Icon.svg.png';
+ } else {
+    audioFile.play();
+    document.getElementById('voicebtn').src = 'https://www.transparentpng.com/thumb/pause-button/HpwO0H-pause-button-clipart-png-photos.png';
+  }
+}
+
 
 
 //현황 크롤링
