@@ -68,7 +68,7 @@
           datasets: [
             {
               label: "신규 확진자",
-              data: [367, 248, 131, 242, 114, 110, 107, 76, 74, 84],
+              data: [248, 131, 242, 114, 110, 107, 76, 74, 84, 93],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
@@ -173,7 +173,7 @@
           datasets: [
             {
               label: "사망자수",
-              data: [0, 0, 0, 1, 1, 6, 15, 30, 28],
+              data: [0, 0, 0, 1, 1, 6, 15, 30, 31],
               borderColor: "rgba(0, 0, 0, 0.9)",
               borderWidth: "0",
               backgroundColor: "rgba(0, 0, 0, 0.5)"
