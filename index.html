@@ -56,6 +56,10 @@
  if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push(arguments)};v3.on=function(e,fn){if(!v3._l[e])v3._l[e]=[];v3._l[e].push(fn)};var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://app.chaport.com/javascripts/insert.js';var ss=d.getElementsByTagName('script')[0];ss.parentNode.insertBefore(s,ss)})(window, document);
  </script>
 
+ <audio id="track">
+  <source src="voice.mp3" type="audio/mpeg" />
+</audio>
+
 </head>
 
 <body class="animsition">
@@ -71,8 +75,15 @@
                             <h1 style="font-size:25px;" id="suggestText">여기에 <br>메시지 표시
                             </h1><br>
                             <h6 class="pb-4 display-5" style="color:#a9a9a9;" id="whenUpdate">정보 가져오는 중...</h6>
-                            <img style="width:25px; height:25px; margin-right:10px;" class="voicebtn" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/1200px-Speaker_Icon.svg.png" onclick="javascript:voiceBtn();;">
-                            <span style="color:#5E35A6;">보이스 브리핑 듣기</span> 
+                            
+                            <div id="player-container">
+                                
+                            <div id="play-pause" class="play"><span style="margin-left:40px;">보이스 브리핑</span></div>
+
+                            
+
+                            </div>
+
                             <hr class="line-seprate">
                             <br>
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
