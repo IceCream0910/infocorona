@@ -64,11 +64,11 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['3.7', '3.8', '3.9', '3.10', '3.11', '3.12', '3.13', '3.14', '3.15', '3.16'],
+          labels: ['3.9', '3.10', '3.11', '3.12', '3.13', '3.14', '3.15', '3.16', '3.17', '3.18'],
           datasets: [
             {
               label: "신규 확진자",
-              data: [248, 131, 242, 114, 110, 107, 76, 74, 84, 93],
+              data: [131, 242, 114, 110, 107, 76, 74, 84, 93, 152],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
@@ -156,7 +156,7 @@
           datasets: [
             {
               label: "사망자수",
-              data: [0, 0, 0, 1, 1, 6, 15, 30, 31],
+              data: [0, 0, 0, 1, 1, 6, 17, 35, 32],
               borderColor: "rgba(0, 0, 0, 0.9)",
               borderWidth: "0",
               backgroundColor: "rgba(0, 0, 0, 0.5)"
@@ -195,7 +195,7 @@
 
   try {
 
-    // 연령별 사망자 분포
+    // 연령별 확진자 분포
     var ctx = document.getElementById("singelBarChart_2");
     if (ctx) {
       ctx.height = 250;
