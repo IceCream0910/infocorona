@@ -251,8 +251,8 @@
 
     var elements = 7
     //var data1 = [2337, 3150, 3736, 4212, 4812, 5328, 5766, 6284, 6767, 7134]
-    var data2 = [66, 67, 72, 75, 75, 81, 84]
-    var data3 = [333, 510, 714, 834, 1137, 1401, 1540]
+    var data2 = [67, 72, 75, 75, 81, 84, 91]
+    var data3 = [510, 714, 834, 1137, 1401, 1540, 1947]
 
     var ctx = document.getElementById("recent-rep-chart");
     if (ctx) {
@@ -260,10 +260,10 @@
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['3.12', '3.13', '3.14', '3.15', '3.16', '3.17', '3.18'],
+          labels: ['3.13', '3.14', '3.15', '3.16', '3.17', '3.18', '3.19'],
           datasets: [
           {
-              label: '누적 사망',
+              label: '사망',
               backgroundColor: deathColor,
               borderColor: 'transparent',
               pointHoverBackgroundColor: deathColor,
@@ -272,7 +272,7 @@
 
             },
             {
-              label: '누적 격리해제',
+              label: '완치',
               backgroundColor: cureColor,
               borderColor: 'transparent',
               pointHoverBackgroundColor: cureColor,
