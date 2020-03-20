@@ -64,11 +64,11 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['3.9', '3.10', '3.11', '3.12', '3.13', '3.14', '3.15', '3.16', '3.17', '3.18'],
+          labels: ['3.10', '3.11', '3.12', '3.13', '3.14', '3.15', '3.16', '3.17', '3.18', '3.19'],
           datasets: [
             {
               label: "신규 확진자",
-              data: [131, 242, 114, 110, 107, 76, 74, 84, 93, 152],
+              data: [242, 114, 110, 107, 76, 74, 84, 93, 152, 87],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
@@ -109,7 +109,7 @@
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [3240, 5173],
+            data: [3296, 5269],
             backgroundColor: [
               '#00b5e9',
               '#fa4251',
@@ -156,7 +156,7 @@
           datasets: [
             {
               label: "사망자수",
-              data: [0, 0, 0, 1, 1, 6, 17, 35, 32],
+              data: [0, 0, 0, 1, 1, 6, 17, 36, 33],
               borderColor: "rgba(0, 0, 0, 0.9)",
               borderWidth: "0",
               backgroundColor: "rgba(0, 0, 0, 0.5)"
@@ -206,7 +206,7 @@
           datasets: [
             {
               label: "확진자 수",
-              data: [87, 438, 2342, 873, 1717, 1615, 1059, 542, 286],
+              data: [91, 444, 2358, 886, 1181, 1642, 1080, 562, 321],
               borderColor: "rgba(255, 40, 0, 1)",
               borderWidth: "0",
               backgroundColor: "rgba(255, 40, 0, 0.8)"
