@@ -314,8 +314,8 @@
               ticks: {
                 beginAtZero: true,
                 maxTicksLimit: 5000,
-                stepSize: 200,
-                max:2000,
+                stepSize: 500,
+                max:2300,
                 fontFamily: "Poppins",
                 fontSize: 12
               },
