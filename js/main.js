@@ -315,7 +315,7 @@
                 beginAtZero: true,
                 maxTicksLimit: 5000,
                 stepSize: 500,
-                max:2300,
+                max:2650,
                 fontFamily: "Poppins",
                 fontSize: 12
               },
