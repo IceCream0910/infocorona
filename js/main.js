@@ -109,7 +109,7 @@
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [3296, 5269],
+            data: [3430, 5467],
             backgroundColor: [
               '#00b5e9',
               '#fa4251',
@@ -156,7 +156,7 @@
           datasets: [
             {
               label: "사망자수",
-              data: [0, 0, 0, 1, 1, 6, 17, 36, 33],
+              data: [0, 0, 0, 1, 1, 6, 17, 38, 41],
               borderColor: "rgba(0, 0, 0, 0.9)",
               borderWidth: "0",
               backgroundColor: "rgba(0, 0, 0, 0.5)"
@@ -206,7 +206,7 @@
           datasets: [
             {
               label: "확진자 수",
-              data: [91, 444, 2358, 886, 1181, 1642, 1080, 562, 321],
+              data: [101, 460, 2396, 909, 1221, 1691, 1132, 595, 392],
               borderColor: "rgba(255, 40, 0, 1)",
               borderWidth: "0",
               backgroundColor: "rgba(255, 40, 0, 0.8)"
@@ -251,8 +251,8 @@
 
     var elements = 7
     //var data1 = [2337, 3150, 3736, 4212, 4812, 5328, 5766, 6284, 6767, 7134]
-    var data2 = [72, 75, 75, 81, 84, 91, 94]
-    var data3 = [714, 834, 1137, 1401, 1540, 1947, 2233]
+    var data2 = [75, 75, 81, 84, 91, 94, 102]
+    var data3 = [834, 1137, 1401, 1540, 1947, 2233, 2612]
 
     var ctx = document.getElementById("recent-rep-chart");
     if (ctx) {
@@ -260,7 +260,7 @@
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['3.14', '3.15', '3.16', '3.17', '3.18', '3.19', '3.20'],
+          labels: ['3.15', '3.16', '3.17', '3.18', '3.19', '3.20', '3.21'],
           datasets: [
           {
               label: '사망',
