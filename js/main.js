@@ -109,7 +109,7 @@
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [3430, 5467],
+            data: [3457, 5504],
             backgroundColor: [
               '#00b5e9',
               '#fa4251',
@@ -206,7 +206,7 @@
           datasets: [
             {
               label: "확진자 수",
-              data: [101, 460, 2396, 909, 1221, 1691, 1132, 595, 392],
+              data: [103, 460, 2417, 917, 1228, 1702, 1139, 599, 396],
               borderColor: "rgba(255, 40, 0, 1)",
               borderWidth: "0",
               backgroundColor: "rgba(255, 40, 0, 0.8)"
