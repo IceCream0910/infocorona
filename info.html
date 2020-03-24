@@ -35,8 +35,9 @@
     <link href="css/theme.css" rel="stylesheet" media="all">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:700|Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://apis.google.com/js/client.js"></script>
-    <script src="https://cdn.plyr.io/3.5.10/plyr.js"></script>
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.5.10/plyr.css" />
+    <script src="https://cdn.plrjs.com/player/rfayfi545seai/b2ya8wao32em.js"></script>
+
+    
 
 
      <script type="text/javascript">
@@ -60,8 +61,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12" style="margin-top:30px; margin-left:10px;">
-                                 <h5 style="color:gray;">예방수칙 부터 팩트체크까지</h5>
-     <h1 style="margin-top:0px;">#정보</h1><br>
+                                 <h5 style="color:gray;">예방수칙 부터 최신뉴스까지</h5>
+     <h3 style="margin-top:0px;">여기서 확인하세요.</h3><br>
                             <hr class="line-seprate">
                             <br>
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -71,7 +72,7 @@
                                             </li>
                                             <li class="nav-item">
                                                 <a class="nav-link active" id="pills-profile-tab" data-toggle="pill" href="info.html" role="tab" aria-controls="pills-profile"
-                                                 aria-selected="false">소식</a>
+                                                 aria-selected="false">정보</a>
                                             </li>
                                             <li class="nav-item">
                                                 <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="mask.html" role="tab" aria-controls="pills-contact"
@@ -93,51 +94,33 @@
             <section class="statistic statistic2">
                 <div class="container">
 
+
+<script>
+   var player1 = new Playerjs({id:"player1", file:"https://youtube.com/embed/ZFUnG41xJOY"});
+   var player2 = new Playerjs({id:"player2", file:"https://youtube.com/embed/hFQgnG70vDU"});
+   var player3 = new Playerjs({id:"player3", file:"https://youtube.com/embed/rTfY1xB-Drc"});
+   var player4 = new Playerjs({id:"player4", file:"https://youtube.com/embed/1LpaRylW6LM"});
+   var player5 = new Playerjs({id:"player5", file:"https://youtube.com/embed/wfaFAUvkCek"});
+
+
+</script>
+
  <!-- 예방수칙 -->
 <h3 style="margin-left:10px;">예방수칙</h3><br>
+
 <div style="white-space: nowrap;
     overflow-y: hidden;
     overflow-x: scroll;
     padding: 20px
     width: 100%;">
 
-  <div class="plyr__video-embed" id="player" style="width:80%; margin-left:10px; display:inline-block;">
-    <iframe class="plyrFrame"
-        src="https://www.youtube.com/embed/ZFUnG41xJOY?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
-        allowfullscreen
-        allowtransparency
-    ></iframe>
-</div>
-
-<div class="plyr__video-embed" id="player" style="width:80%; margin-left:10px; display:inline-block;">
-    <iframe class="plyrFrame"
-        src="https://www.youtube.com/embed/1LpaRylW6LM?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
-        allowfullscreen
-        allowtransparency
-    ></iframe>
-</div>
-
-<div class="plyr__video-embed" id="player" style="width:80%; margin-left:10px; display:inline-block;">
-    <iframe class="plyrFrame"
-        src="https://www.youtube.com/embed/EBrtOAAkEcE?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
-        allowfullscreen
-        allowtransparency
-    ></iframe>
-</div>
-
-<div class="plyr__video-embed" id="player" style="width:80%; margin-left:10px; display:inline-block;">
-    <iframe class="plyrFrame"
-        src="https://www.youtube.com/embed/rTfY1xB-Drc?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
-        allowfullscreen
-        allowtransparency
-    ></iframe>
-</div>
-
-
-
-
+    <div style="width:80%; margin-left:10px; display:inline-block; border-radius: 10px;" id="player1"></div>
+    <div style="width:80%; margin-left:10px; display:inline-block; border-radius: 10px;" id="player2"></div>
+    <div style="width:80%; margin-left:10px; display:inline-block; border-radius: 10px;" id="player3"></div>
+    <div style="width:80%; margin-left:10px; display:inline-block; border-radius: 10px;" id="player4"></div>
 
 </div>
+
 <br>
 
      <div id="prevent_btn" style="margin-left:-10px;">
@@ -161,7 +144,12 @@
     </symbol>
   </defs>
 </svg>
-<br>
+
+<div id="suple" style="background-color:#282a39; width:111%; margin-left:-20px; margin-right:-20px; margin-bottom:30px; padding:25px 25px; align-content: left;">
+    <h3 style="color:white;">숫자로 보는,<br> 코로나19.</h3><br>
+    <h6 style="color:gray;">영상 : <a href="https://youtube.com/channel/UC5RMl_yYFDMAuww6rhW-oLA" style="text-decoration: none; color:gray;">헤럴드스토리</a></h6>
+    <div style="width:100%; margin-top:20px;" id="player5"></div>
+</div>
  
 
  <div id="frontier" ng-app="myApp">
