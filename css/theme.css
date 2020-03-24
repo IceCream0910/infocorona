@@ -52,6 +52,21 @@ ul {
     margin: 0;
 }
 
+.plyr__video-embed iframe {
+    top: -50%;
+    height: 200%;
+    background-color:transparent;
+}
+
+.plyr__menu__container {
+    display:none;
+}
+
+button .plyr__control {
+    display:none;
+}
+
+
 #player-container #play-pause {
   cursor: pointer;
   background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/1200px-Speaker_Icon.svg.png');
@@ -74,7 +89,7 @@ ul {
     font-weight: bold;
     line-height: 24px;
     margin-left:20px;
-    margin-right:20px;
+    margin-right:10px;
     padding: 10px 30px 10px 80px;
     position: relative;
     text-decoration: none;
