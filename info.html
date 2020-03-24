@@ -10,7 +10,6 @@
     <meta name="keywords" content="코로나19">
 
     <!-- Title Page-->
-    <title>인포코로나 - 코로나19 관련 정보</title>
 
 
     <!-- Fontfaces CSS-->
@@ -36,6 +35,9 @@
     <link href="css/theme.css" rel="stylesheet" media="all">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:700|Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://apis.google.com/js/client.js"></script>
+    <script src="https://cdn.plyr.io/3.5.10/plyr.js"></script>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.5.10/plyr.css" />
+
 
      <script type="text/javascript">
  (function(w,d,v3){
@@ -90,45 +92,54 @@
 
             <section class="statistic statistic2">
                 <div class="container">
-                    
+
  <!-- 예방수칙 -->
 <h3 style="margin-left:10px;">예방수칙</h3><br>
-     <div style="white-space: nowrap;
+<div style="white-space: nowrap;
     overflow-y: hidden;
     overflow-x: scroll;
     padding: 20px
     width: 100%;">
-     <iframe src="https://youtube.com/embed/rTfY1xB-Drc?loop=1&showinfo=0&controls=1" id="first" style=" display: inline-block;
-  border-radius: 15px;
-  height: 139px;
-  width: 250px;
-  margin-top:10px;
-          margin-left:10px;
-          margin-right: 10px;
-          margin-bottom: 30px;
-        text-decoration: none;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-        <iframe src="https://youtube.com/embed/1LpaRylW6LM?loop=1&showinfo=0&controls=1" id="second" style=" display: inline-block;
-  border-radius: 15px;
-  height: 139px;
-  width: 250px;
-          margin-right: 10px;
-          margin-bottom: 30px;
-        text-decoration: none;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-        <iframe src="https://youtube.com/embed/EBrtOAAkEcE?loop=1&showinfo=0&controls=1" id="third" style=" display: inline-block;
-  border-radius: 15px;
-  height: 139px;
-  width: 250px;
-          margin-right: 10px;
-          margin-bottom: 30px;
-        text-decoration: none;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-        <iframe src="https://youtube.com/embed/4ufdg6v4Jh4?loop=1&showinfo=0&controls=1" id="forth" style=" display: inline-block;
-  border-radius: 15px;
-  height: 139px;
-  width: 250px;
-          margin-right: 20px;
-          margin-bottom: 30px;
-        text-decoration: none;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-     </div>
+
+  <div class="plyr__video-embed" id="player" style="width:80%; margin-left:10px; display:inline-block;">
+    <iframe class="plyrFrame"
+        src="https://www.youtube.com/embed/ZFUnG41xJOY?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+        allowfullscreen
+        allowtransparency
+    ></iframe>
+</div>
+
+<div class="plyr__video-embed" id="player" style="width:80%; margin-left:10px; display:inline-block;">
+    <iframe class="plyrFrame"
+        src="https://www.youtube.com/embed/1LpaRylW6LM?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+        allowfullscreen
+        allowtransparency
+    ></iframe>
+</div>
+
+<div class="plyr__video-embed" id="player" style="width:80%; margin-left:10px; display:inline-block;">
+    <iframe class="plyrFrame"
+        src="https://www.youtube.com/embed/EBrtOAAkEcE?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+        allowfullscreen
+        allowtransparency
+    ></iframe>
+</div>
+
+<div class="plyr__video-embed" id="player" style="width:80%; margin-left:10px; display:inline-block;">
+    <iframe class="plyrFrame"
+        src="https://www.youtube.com/embed/rTfY1xB-Drc?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+        allowfullscreen
+        allowtransparency
+    ></iframe>
+</div>
+
+
+
+
+
+</div>
+<br>
+
      <div id="prevent_btn" style="margin-left:-10px;">
      <a href="http://www.mohw.go.kr/react/popup_200128.html" target="_blank">
     <svg class="icon-arrow before">
