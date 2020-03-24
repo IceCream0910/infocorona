@@ -1,5 +1,5 @@
 const player = new Plyr('#player', {
-    controls: ['play-large', 'play', 'progress', 'fullscreen'],
+    controls: ['play-large', 'play', 'progress', 'mute'],
 });
 const players = Plyr.setup('#player');
 
