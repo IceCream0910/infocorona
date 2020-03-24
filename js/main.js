@@ -264,7 +264,7 @@
           datasets: [
           {
               label: '확진',
-              backgroundColor: deathColor,
+              backgroundColor: confirmedColor,
               borderColor: 'transparent',
               pointHoverBackgroundColor: confirmedColor,
               borderWidth: 0,
@@ -283,7 +283,7 @@
             
             {
               label: '누적 완치',
-              backgroundColor: confirmedColor,
+              backgroundColor: cureStackColor,
               borderColor: 'transparent',
               pointHoverBackgroundColor: cureStackColor,
               borderWidth: 0,
@@ -296,7 +296,8 @@
         options: {
           maintainAspectRatio: true,
           legend: {
-            display: false
+            display: true,
+            position: 'bottom'
           },
           responsive: true,
           scales: {
