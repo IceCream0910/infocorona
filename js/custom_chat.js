@@ -66,3 +66,57 @@ messages.limitToLast(100).on("child_added", function(snap) {
 	//아래부터 스택할 때 필요하지만 위로 스택하므로 불필요
 	//window.scrollTo(0,document.body.scrollHeight);
 });
+
+
+
+var config = {
+  apiKey: "AIzaSyBuCapEMeGtlo9QhJlXlPYTsvHIhd6nQwg",
+  authDomain: "coronacocheart.firebaseapp.com",
+  databaseURL: "https://coronacocheart.firebaseio.com",
+  projectId: "coronacocheart",
+  storageBucket: "coronacocheart.appspot.com",
+  messagingSenderId: "185995198724"
+};
+
+firebase.initializeApp(config);
+
+// Create a variable to reference the database
+var database = firebase.database();
+
+var counter = 150;
+var initialValue = 150;
+
+database.ref('counter').on('value', function(snapshot) {
+  if (snapshot.val() && snapshot.val().clickCounter) {
+    counter = snapshot.val().clickCounter;
+  }
+  
+  renderCounter();
+}, function(errorObject) {
+  // In case of error this will print the error
+  console.log("The read failed: " + errorObject.code);
+});
+
+
+if (!counter) {
+  counter = initialValue;
+} else {
+  counter = parseInt(counter);
+}
+
+function renderCounter() {
+  $('.counter').html(counter+'개의 하트가 모였어요.');
+} 
+
+$('.decrease').on('click', function() {
+  counter++;
+
+  if (counter === 0) {
+    counter = initialValue;
+  }
+  
+  database.ref('counter').set({
+    clickCounter: counter
+  })
+  renderCounter();
+})
