@@ -64,11 +64,11 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['3.13', '3.14', '3.15', '3.16', '3.17', '3.18', '3.19', '3.20', '3.21', '3.22'],
+          labels: ['3.14', '3.15', '3.16', '3.17', '3.18', '3.19', '3.20', '3.21', '3.22', '3.23'],
           datasets: [
             {
               label: "신규 확진자",
-              data: [107, 76, 74, 84, 93, 152, 87, 147, 98, 64],
+              data: [76, 74, 84, 93, 152, 87, 147, 98, 64, 76],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
@@ -109,7 +109,7 @@
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [3457, 5504],
+            data: [3497, 5540],
             backgroundColor: [
               '#00b5e9',
               '#fa4251',
@@ -156,7 +156,7 @@
           datasets: [
             {
               label: "사망자수",
-              data: [0, 0, 0, 1, 1, 6, 17, 39, 46],
+              data: [0, 0, 0, 1, 1, 6, 20, 39, 52],
               borderColor: "rgba(0, 0, 0, 0.9)",
               borderWidth: "0",
               backgroundColor: "rgba(0, 0, 0, 0.5)"
@@ -206,7 +206,7 @@
           datasets: [
             {
               label: "확진자 수",
-              data: [103, 460, 2417, 917, 1228, 1702, 1139, 599, 396],
+              data: [105, 468, 2438, 921, 1234, 1716, 1146, 608, 401],
               borderColor: "rgba(255, 40, 0, 1)",
               borderWidth: "0",
               backgroundColor: "rgba(255, 40, 0, 0.8)"
@@ -244,15 +244,15 @@
   }
 
   try {
-        // 사망/격리해제 증가 추이
+        // 일별 사망/격리해제 증가 추이
     const confirmedColor = 'rgba(250, 66, 81,0.8)'
-    const deathColor = 'rgba(15,15,15,0.8)'
+    const cureStackColor = 'rgba(0,173,95, 0.4)'
     const cureColor = 'rgba(0, 173, 95,0.8)'
 
     var elements = 7
-    //var data1 = [2337, 3150, 3736, 4212, 4812, 5328, 5766, 6284, 6767, 7134]
-    var data2 = [75, 81, 84, 91, 94, 102, 104]
-    var data3 = [1137, 1401, 1540, 1947, 2233, 2612, 2909]
+    var data1 = [1401, 1540, 1947, 2233, 2612, 2909, 3166]
+    var data2 = [84, 93, 152, 87, 147, 98, 64]
+    var data3 = [264, 139, 407, 286, 379, 297, 257]
 
     var ctx = document.getElementById("recent-rep-chart");
     if (ctx) {
@@ -260,13 +260,13 @@
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['3.16', '3.17', '3.18', '3.19', '3.20', '3.21', '3.22'],
+          labels: ['3.17', '3.18', '3.19', '3.20', '3.21', '3.22', '3.23'],
           datasets: [
           {
-              label: '사망',
+              label: '확진',
               backgroundColor: deathColor,
               borderColor: 'transparent',
-              pointHoverBackgroundColor: deathColor,
+              pointHoverBackgroundColor: confirmedColor,
               borderWidth: 0,
               data: data2
 
@@ -279,17 +279,17 @@
               borderWidth: 0,
               data: data3
 
-            }
-            /*
+            },
+            
             {
-              label: '누적 확진',
+              label: '누적 완치',
               backgroundColor: confirmedColor,
               borderColor: 'transparent',
-              pointHoverBackgroundColor: confirmedColor,
+              pointHoverBackgroundColor: cureStackColor,
               borderWidth: 0,
               data: data1
             }
-            */
+            
             
           ]
         },
@@ -315,7 +315,7 @@
                 beginAtZero: true,
                 maxTicksLimit: 5000,
                 stepSize: 500,
-                max:3000,
+                max:4000,
                 fontFamily: "Poppins",
                 fontSize: 12
               },
