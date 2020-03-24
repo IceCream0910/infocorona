@@ -1,9 +1,3 @@
-const player = new Plyr('#player', {
-    controls: ['play-large', 'play', 'progress', 'mute'],
-});
-const players = Plyr.setup('#player');
-
-
 
 angular.module("myApp", ['ngRoute'])
 
