@@ -244,6 +244,75 @@
   }
 
   try {
+    //bar chart
+    var ctx = document.getElementById("barChart");
+    if (ctx) {
+      ctx.height = 300;
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        defaultFontFamily: 'Poppins',
+        data: {
+          labels: ['3.20', '3.21', '3.22', '3.23', '3.24', '3.25', '3.26'],
+          datasets: [
+            {
+              label: "확진",
+              data: [87, 147, 98, 64, 76, 100, 104],
+              borderColor: "rgba(250, 66, 81, 0.8)",
+              borderWidth: "0",
+              backgroundColor: "rgba(250, 66, 81,0.5)",
+              fontFamily: "Poppins"
+            },
+            {
+              label: "완치",
+              data: [286, 379, 297, 257, 341, 223, 414],
+              borderColor: "rgba(0,173,95, 0.8)",
+              borderWidth: "0",
+              backgroundColor: "rgba(0,173,95, 0.5)",
+              fontFamily: "Poppins"
+            },
+            {
+              label: "사망",
+              data: [8, 2, 7, 7, 7, 6, 0],
+              borderColor: "rgba(0,0,0, 0.8)",
+              borderWidth: "0",
+              backgroundColor: "rgba(0,0,0, 0.5)",
+              fontFamily: "Poppins"
+            },
+
+          ]
+        },
+        options: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              fontFamily: 'Poppins'
+            }
+
+          },
+          scales: {
+            xAxes: [{
+              ticks: {
+                fontFamily: "Poppins"
+
+              }
+            }],
+            yAxes: [{
+              ticks: {
+                beginAtZero: true,
+                fontFamily: "Poppins"
+              }
+            }]
+          }
+        }
+      });
+    }
+
+
+  } catch (error) {
+    console.log(error);
+  }
+
+  try {
         // 일별 사망/격리해제 증가 추이
     const confirmedColor = 'rgba(250, 66, 81,0.8)'
     const cureStackColor = 'rgba(0,173,95, 0.4)'
@@ -1089,65 +1158,7 @@
     console.log(error);
   }
 
-  try {
-    //bar chart
-    var ctx = document.getElementById("barChart");
-    if (ctx) {
-      ctx.height = 200;
-      var myChart = new Chart(ctx, {
-        type: 'bar',
-        defaultFontFamily: 'Poppins',
-        data: {
-          labels: ["January", "February", "March", "April", "May", "June", "July"],
-          datasets: [
-            {
-              label: "My First dataset",
-              data: [65, 59, 80, 81, 56, 55, 40],
-              borderColor: "rgba(0, 123, 255, 0.9)",
-              borderWidth: "0",
-              backgroundColor: "rgba(0, 123, 255, 0.5)",
-              fontFamily: "Poppins"
-            },
-            {
-              label: "My Second dataset",
-              data: [28, 48, 40, 19, 86, 27, 90],
-              borderColor: "rgba(0,0,0,0.09)",
-              borderWidth: "0",
-              backgroundColor: "rgba(0,0,0,0.07)",
-              fontFamily: "Poppins"
-            }
-          ]
-        },
-        options: {
-          legend: {
-            position: 'top',
-            labels: {
-              fontFamily: 'Poppins'
-            }
-
-          },
-          scales: {
-            xAxes: [{
-              ticks: {
-                fontFamily: "Poppins"
-
-              }
-            }],
-            yAxes: [{
-              ticks: {
-                beginAtZero: true,
-                fontFamily: "Poppins"
-              }
-            }]
-          }
-        }
-      });
-    }
-
-
-  } catch (error) {
-    console.log(error);
-  }
+  
 
   try {
 
