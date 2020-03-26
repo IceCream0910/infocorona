@@ -64,11 +64,11 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['3.15', '3.16', '3.17', '3.18', '3.19', '3.20', '3.21', '3.22', '3.23', '3.24'],
+          labels: ['3.16', '3.17', '3.18', '3.19', '3.20', '3.21', '3.22', '3.23', '3.24', '3.25'],
           datasets: [
             {
               label: "신규 확진자",
-              data: [74, 84, 93, 152, 87, 147, 98, 64, 76, 100],
+              data: [84, 93, 152, 87, 147, 98, 64, 76, 100, 104],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
@@ -109,7 +109,7 @@
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [3550, 5587],
+            data: [3598, 5643],
             backgroundColor: [
               '#00b5e9',
               '#fa4251',
@@ -156,7 +156,7 @@
           datasets: [
             {
               label: "사망자수",
-              data: [0, 0, 0, 1, 1, 10, 20, 39, 55],
+              data: [0, 0, 0, 1, 1, 10, 20, 41, 58],
               borderColor: "rgba(0, 0, 0, 0.9)",
               borderWidth: "0",
               backgroundColor: "rgba(0, 0, 0, 0.5)"
@@ -206,7 +206,7 @@
           datasets: [
             {
               label: "확진자 수",
-              data: [105, 475, 2473, 943, 1246, 1724, 1154, 611, 406],
+              data: [106, 488, 2508, 955, 1252, 1738, 1162, 616, 416],
               borderColor: "rgba(255, 40, 0, 1)",
               borderWidth: "0",
               backgroundColor: "rgba(255, 40, 0, 0.8)"
@@ -250,9 +250,9 @@
     const cureColor = 'rgba(0, 173, 95,0.8)'
 
     var elements = 7
-    var data1 = [1540, 1947, 2233, 2612, 2909, 3166, 3507]
-    var data2 = [93, 152, 87, 147, 98, 64, 76]
-    var data3 = [139, 407, 286, 379, 297, 257, 341]
+    var data1 = [1947, 2233, 2612, 2909, 3166, 3507, 3730]
+    var data2 = [152, 87, 147, 98, 64, 76, 100]
+    var data3 = [407, 286, 379, 297, 257, 341, 223]
 
     var ctx = document.getElementById("recent-rep-chart");
     if (ctx) {
@@ -260,7 +260,7 @@
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['3.18', '3.19', '3.20', '3.21', '3.22', '3.23', '3.24'],
+          labels: ['3.19', '3.20', '3.21', '3.22', '3.23', '3.24', '3.25'],
           datasets: [
           {
               label: '확진',
