@@ -52,6 +52,14 @@ ul {
     margin: 0;
 }
 
+.highlight {
+    display: inline;
+    background: #384b77;
+    color: #fff;
+    padding: 1px;
+    word-wrap: break-word;
+}
+
 .plyr__video-embed iframe {
     top: -50%;
     height: 200%;
