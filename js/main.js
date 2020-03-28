@@ -68,7 +68,7 @@
           datasets: [
             {
               label: "신규 확진자",
-              data: [93, 152, 87, 147, 98, 64, 76, 100, 104, 91, 146],
+              data: [152, 87, 147, 98, 64, 76, 100, 104, 91, 146],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
