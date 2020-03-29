@@ -131,11 +131,64 @@ new Vue({
           document.getElementById("globeDeath").innerHTML = globedeathValue+"<span>명</span>";
         }
       )
-    }
+    },
+
+    runScraperCBS: function() {
+      this.scraperRunning = true
+
+      if(!this.url.includes("http")) {
+        this.url = "https://cors-anywhere.herokuapp.com/https://m.search.naver.com/search.naver?sm=mtb_hty.top&where=m&query=%EC%82%AC%ED%9A%8C%EC%95%88%EC%A0%84+%EC%9E%AC%EB%82%9C%EB%AC%B8%EC%9E%90";
+
+      } else {
+        this.url = "https://cors-anywhere.herokuapp.com/https://m.search.naver.com/search.naver?sm=mtb_hty.top&where=m&query=%EC%82%AC%ED%9A%8C%EC%95%88%EC%A0%84+%EC%9E%AC%EB%82%9C%EB%AC%B8%EC%9E%90";
+      }
+
+      // GET URL
+      this.$http.get(this.url).then(
+        // success callback
+        response => {
+          this.scraperRunning = false
+
+          let responseEl = document.createElement("div");
+          responseEl.innerHTML = response.body;
+          //start traversing the responseEl to scrape data
+
+          var allCBSresponse = response.body;
+          var CBSfrom1FirstString = allCBSresponse.indexOf("area_name");
+          var tempCBSfrom1 = allCBSresponse.substr(CBSfrom1FirstString, 123);
+          var resultCBSfrom1 = tempCBSfrom1.replace("area_name", "").replace(/\"/gi, "").replace("<button", "").replace("<", "").replace("/em>", "").replace(">", "");
+          document.getElementById("cbs_from1").innerHTML = resultCBSfrom1;
+
+          var allCBSresponse = response.body;
+          var CBSCT1FirstString = allCBSresponse.indexOf("dsc _text");
+          var tempCBSCT1 = allCBSresponse.substr(CBSCT1FirstString, 213);
+          var resultCBSCT1 = tempCBSCT1.replace("dsc _text", "").replace(/\"/gi, "").replace("펼쳐보기", "").replace("h1Deaths:", "").replace(">", "");
+          document.getElementById("cbs_ct1").innerHTML = resultCBSCT1+"<span>...</span>";
+
+
+          ////
+
+          var SecondCBSresponse = response.body.substr(CBSfrom1FirstString+213, 800);
+          var CBSfrom2FirstString = SecondCBSresponse.indexOf("area_name");
+          var tempCBSfrom2 = SecondCBSresponse.substr(CBSfrom2FirstString, 123);
+          var resultCBSfrom2 = tempCBSfrom2.replace("area_name", "").replace(/\"/gi, "").replace("<button", "").replace("<", "").replace("/em>", "").replace(">", "");
+          document.getElementById("cbs_from2").innerHTML = resultCBSfrom2+"<br>";
+
+          var SecondCBSresponse = response.body.substr(CBSfrom1FirstString+500, 800);
+          var CBSCT2FirstString = SecondCBSresponse.indexOf("dsc _text");
+          var tempCBSCT2 = SecondCBSresponse.substr(CBSCT2FirstString, 213);
+          var resultCBSCT2 = tempCBSCT2.replace("dsc _text", "").replace(/\"/gi, "").replace("펼쳐보기", "").replace("h1Deaths:", "").replace(">", "");
+          document.getElementById("cbs_ct2").innerHTML = resultCBSCT2+"<span>...</span>";
+        }
+      )
+    },
+
+    
   },
    beforeMount(){
     this.runScraper()
     this.runScraperGlobe()
+    this.runScraperCBS()
  }
 });
 
