@@ -109,7 +109,7 @@
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [3736, 5742],
+            data: [3799, 5784],
             backgroundColor: [
               '#00b5e9',
               '#fa4251',
@@ -156,7 +156,7 @@
           datasets: [
             {
               label: "사망자수",
-              data: [0, 0, 0, 1, 1, 10, 21, 41, 70],
+              data: [0, 0, 0, 1, 1, 10, 21, 43, 76],
               borderColor: "rgba(0, 0, 0, 0.9)",
               borderWidth: "0",
               backgroundColor: "rgba(0, 0, 0, 0.5)"
@@ -206,7 +206,7 @@
           datasets: [
             {
               label: "확진자 수",
-              data: [109, 501, 2567, 976, 1278, 1780, 1201, 632, 432],
+              data: [111, 508, 2602, 993, 1292, 1798, 1210, 635, 434],
               borderColor: "rgba(255, 40, 0, 1)",
               borderWidth: "0",
               backgroundColor: "rgba(255, 40, 0, 0.8)"
@@ -252,11 +252,11 @@
         type: 'bar',
         defaultFontFamily: 'Poppins',
         data: {
-          labels: ['3.22', '3.23', '3.24', '3.25', '3.26', '3.27'],
+          labels: ['3.23', '3.24', '3.25', '3.26', '3.27', '3.28'],
           datasets: [
             {
               label: "확진",
-              data: [64, 76, 100, 104, 91, 146],
+              data: [76, 100, 104, 91, 146, 105],
               borderColor: "rgba(250, 66, 81, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(250, 66, 81,0.5)",
@@ -264,7 +264,7 @@
             },
             {
               label: "완치",
-              data: [257, 341, 223, 414, 384, 283],
+              data: [341, 223, 414, 384, 283, 222],
               borderColor: "rgba(0,173,95, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,173,95, 0.5)",
@@ -272,7 +272,7 @@
             },
             {
               label: "사망",
-              data: [7, 7, 7, 4, 8, 5],
+              data: [7, 7, 4, 8, 5, 8],
               borderColor: "rgba(0,0,0, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,0,0, 0.5)",
@@ -320,8 +320,8 @@
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [14540, 13628, 15440, 14278, 14369, 16564] //일일 검사
-    var data4 = [8961, 9037, 9137, 9241, 9332, 9478] //누적 확진
+    var data3 = [13628, 15440, 14278, 14369, 16564, 15028] //일일 검사
+    var data4 = [9037, 9137, 9241, 9332, 9478, 9583] //누적 확진
 
     var ctx = document.getElementById("recent-rep2-chart");
     if (ctx) {
@@ -329,7 +329,7 @@
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['3.22', '3.23', '3.24', '3.25', '3.26', '3.27'],
+          labels: ['3.23', '3.24', '3.25', '3.26', '3.27', '3.28'],
           datasets: [
             {
               label: '일일 검사',    
