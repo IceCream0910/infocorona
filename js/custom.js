@@ -174,7 +174,7 @@ new Vue({
           var resultCBSfrom2 = tempCBSfrom2.replace("area_name", "").replace(/\"/gi, "").replace("<button", "").replace("<", "").replace("/em>", "").replace(">", "");
           document.getElementById("cbs_from2").innerHTML = resultCBSfrom2+"<br>";
 
-          var SecondCBSresponse = response.body.substr(CBSfrom1FirstString+500, 800);
+          var SecondCBSresponse = response.body.substr(CBSfrom1FirstString+500, 1000);
           var CBSCT2FirstString = SecondCBSresponse.indexOf("dsc _text");
           var tempCBSCT2 = SecondCBSresponse.substr(CBSCT2FirstString, 213);
           var resultCBSCT2 = tempCBSCT2.replace("dsc _text", "").replace(/\"/gi, "").replace("펼쳐보기", "").replace("h1Deaths:", "").replace(">", "");
