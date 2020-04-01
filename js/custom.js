@@ -133,6 +133,37 @@ new Vue({
       )
     },
 
+    runScraperTableByCountry: function() {
+      this.scraperRunning = true
+
+      if(!this.url.includes("http")) {
+        this.url = "https://cors-anywhere.herokuapp.com/https://www.worldometers.info/coronavirus/countries-where-coronavirus-has-spread/";
+
+      } else {
+        this.url = "https://cors-anywhere.herokuapp.com/https://www.worldometers.info/coronavirus/countries-where-coronavirus-has-spread/";
+      }
+
+      // GET URL
+      this.$http.get(this.url).then(
+        // success callback
+        response => {
+          this.scraperRunning = false
+
+          let responseEl = document.createElement("div");
+          responseEl.innerHTML = response.body;
+
+          //start traversing the responseEl to scrape data
+
+          var allTableResponse = response.body;
+          var globeTableInitial = allTableResponse.indexOf("table-responsive");
+          var tempGlobeTable = allTableResponse.substr(globeTableInitial+19, 6000);
+          var globeTableByCountry = tempGlobeTable.replace("Country", "국가").replace("Cases", "확진자").replace("Deaths", "사망자").replace("Region", "대륙");
+          document.getElementById("tableByCountry").innerHTML = globeTableByCountry;
+
+        }
+      )
+    },
+
     runScraperCBS: function() {
       this.scraperRunning = true
 
@@ -181,7 +212,7 @@ new Vue({
           document.getElementById("cbs_ct2").innerHTML = resultCBSCT2+"<span>...</span>";
         }
       )
-    },
+    }
 
     
   },
@@ -189,6 +220,7 @@ new Vue({
     this.runScraper()
     this.runScraperGlobe()
     this.runScraperCBS()
+    this.runScraperTableByCountry()
  }
 });
 
