@@ -2,9 +2,12 @@
 //If you fork this, please change this database link to your own.
 var fb = new Firebase("https://coronacocchat.firebaseio.com/");
 var messages = fb.child("messages");
+var messages_spring = fb.child("messages_spring");
 var btn = $('button');
 var wrap = $('.wrapper');
+var wrapSpring = $('.wrapper_spring');
 var input = $('textarea.message');
+var inputSpring = $('textarea.messageSpring');
 var usernameInput = $('input.username');
 var user = [];
 
@@ -56,12 +59,36 @@ function sendBtn() {
 	}
 }
 
+function sendBtnSpring() {
+	var curUsername = user.join();
+	if (inputSpring.val().length > 0) {
+		var getTxt = inputSpring.val();
+		messages_spring.push({
+			user: curUsername,
+			message: getTxt
+		});
+		inputSpring.val('');
+	}
+}
+
 
 messages.limitToLast(100).on("child_added", function(snap) {
 	if($.sanitize(snap.val().user) == 'admin') {
 		wrap.prepend('<li><div style="background-color:#fa4251; border-radius:10px; width:50px; font-size:14px; padding: 2px 4px; margin-bottom:5px;"><span style="color:white;">개발자</div></span> ' + $.sanitize(snap.val().message) + '</li>');
 	} else {
 		wrap.prepend('<li><span><i class="fa fa-quote-right" aria-hidden="true" style="margin-right:5px;"></i></span> ' + $.sanitize(snap.val().message) + '</li>');
+	}
+	//아래부터 스택할 때 필요하지만 위로 스택하므로 불필요
+	//window.scrollTo(0,document.body.scrollHeight);
+});
+
+var flowerIcon = "https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v816-ning-03.png?auto=&bg=transparent&con=3&cs=srgb&dpr=1&fm=png&ixlib=php-3.1.0&mark=rawpixel-watermark.png&markalpha=90&markpad=13&markscale=10&markx=25&q=75&usm=15&vib=3&w=1400&s=3411567a38b1b5fc781e0e842dc48a5c";
+messages_spring.limitToLast(100).on("child_added", function(snap) {
+	if($.sanitize(snap.val().user) == 'admin') {
+
+		wrapSpring.prepend('<li><div style="background-color:#fa4251; border-radius:10px; width:50px; font-size:14px; padding: 2px 4px; margin-bottom:5px;"><span style="color:white;">개발자</div></span> ' + $.sanitize(snap.val().message) + '</li>');
+	} else {
+		wrapSpring.prepend('<li><span>🌸 </span>' + $.sanitize(snap.val().message) + '</li>');
 	}
 	//아래부터 스택할 때 필요하지만 위로 스택하므로 불필요
 	//window.scrollTo(0,document.body.scrollHeight);
@@ -94,7 +121,7 @@ database.ref('counter').on('value', function(snapshot) {
   renderCounter();
 }, function(errorObject) {
   // In case of error this will print the error
-  console.log("The read failed: " + errorObject.code);
+  console.log("오류 : " + errorObject.code);
 });
 
 
@@ -105,7 +132,7 @@ if (!counter) {
 }
 
 function renderCounter() {
-  $('.counter').html(counter+'개의 하트가 모였어요.');
+  $('.counter').html(counter+"개");
 } 
 
 $('.decrease').on('click', function() {
