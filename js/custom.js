@@ -157,8 +157,12 @@ new Vue({
           var allTableResponse = response.body;
           var globeTableInitial = allTableResponse.indexOf("table-responsive");
           var tempGlobeTable = allTableResponse.substr(globeTableInitial+19, 6000);
-          var globeTableByCountry = tempGlobeTable.replace("Country", "국가").replace("Cases", "확진자").replace("Deaths", "사망자").replace("Region", "대륙");
-          document.getElementById("tableByCountry").innerHTML = globeTableByCountry;
+          var globeTableByCountry = tempGlobeTable.replace("Country", "국가").replace("Cases", "확진자").replace("Deaths", "사망자").replace("Region", "대륙")
+          .replace("United States", "미국").replace("Italy", "이탈리아").replace("Spain", "스페인").replace("China", "중국").replace("Germany", "독일")
+          .replace("France", "프랑스").replace("Iran", "이란").replace("United Kingdom", "영국").replace("Switzerland", "스위스").replace("Turkey", "터키")
+          .replace("Belgium", "벨기에").replace("Netherlands", "네덜란드").replace("Austria", "호주").replace("South Korea", "대한민국").replace("Canada", "캐나다")
+          .replace("Portugal", "________");
+          document.getElementById("tableByCountry").innerHTML = globeTableByCountry.substr(0, 5400);
 
         }
       )
@@ -194,7 +198,7 @@ new Vue({
           var CBSCT1FirstString = allCBSresponse.indexOf("dsc _text");
           var tempCBSCT1 = allCBSresponse.substr(CBSCT1FirstString, 213);
           var resultCBSCT1 = tempCBSCT1.replace("dsc _text", "").replace(/\"/gi, "").replace("펼쳐보기", "").replace("h1Deaths:", "").replace(">", "");
-          document.getElementById("cbs_ct1").innerHTML = resultCBSCT1+"<span>...</span>";
+          document.getElementById("cbs_ct1").innerHTML = resultCBSCT1;
 
 
           ////
@@ -209,7 +213,7 @@ new Vue({
           var CBSCT2FirstString = SecondCBSresponse.indexOf("dsc _text");
           var tempCBSCT2 = SecondCBSresponse.substr(CBSCT2FirstString, 213);
           var resultCBSCT2 = tempCBSCT2.replace("dsc _text", "").replace(/\"/gi, "").replace("펼쳐보기", "").replace("h1Deaths:", "").replace(">", "");
-          document.getElementById("cbs_ct2").innerHTML = resultCBSCT2+"<span>...</span>";
+          document.getElementById("cbs_ct2").innerHTML = resultCBSCT2;
         }
       )
     }
