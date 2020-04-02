@@ -10,8 +10,6 @@
     <meta name="keywords" content="코로나19">
 
     <!-- Title Page-->
-    <title>#힘내라_대한민국 - 코로나콕</title>
-
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -30,6 +28,9 @@
     <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+    <script src="https://cdn.plrjs.com/player/rfayfi545seai/b2ya8wao32em.js" type="text/javascript"></script>
+
+
 
 
     <!-- Main CSS-->
@@ -38,7 +39,6 @@
 
 
 </head>
-<a href="#Rtop" id="return-to-top"><i class="fas fa-arrow-up"></i></a>
 <body class="animsition">
     <div class="page-wrapper">
         <!-- PAGE CONTENT-->
@@ -49,7 +49,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12" style="margin-top:30px; margin-left:10px;">
-                            <h1 style="font-size:25px;">대한민국을<br>응원해주세요!
+                            <h1 style="font-size:25px;">당신의 따뜻한 마음,<br>모두에게 나눠주세요!
                             </h1><br>
                             <hr class="line-seprate">
                             <br>
@@ -83,41 +83,82 @@
 
 <!--여기부터 chat box-->
 
-<section class="statistic statistic2" >
+
+<!-- STATISTIC CHART-->
+            <section class="statistic-chart" >
+                <div class="container" >
+                    
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4">
+                            <br>
+                            <!-- CHART-->
+                            <div class="statistic-chart-1" style="border-radius: 10px; padding: 25px 25px;">
+                                <div class="chart-wrap">
+                                    <h3>하트로<h3 style="color:#a9a9a9; margin-bottom: 30px;">응원해주세요</h3></h3>
+                                     <button class="decrease" style="display:inline-block;">
+                        <img src="https://purepng.com/public/uploads/large/heart-icon-jst.png" style="margin-top:0px; width:60px; height:60px; margin-right:5px;"> 
+                        </button>
+<h3 class="counter" style="display:inline-block;">로딩중</h3>
+                                </div>
+                            </div>
+                            <!-- END CHART-->
+
+
+                            
+                        </div>
+                    </div>
+
+                        
+                        <div class="row">
+                        <div class="col-md-6 col-lg-4">
+                        <!-- CHART-->
+                            <div class="statistic-chart-1" style="border-radius: 10px; padding: 25px 25px; background-image:url(https://image.freepik.com/free-vector/social-media-popularity_74855-4576.jpg); background-repeat: no-repeat;" data-toggle="modal" data-target="#myModalFullscreen" contenteditable="false">
+                                <div class="chart-wrap">
+                                    <h3 style="color:#fff;">함께<h3 style="color:#fff; margin-bottom: 30px;">대한민국을 응원해주세요!</h3></h3>
+
+                                </div>
+                            </div>
+                            <!-- END CHART-->
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4">
+
+                        <!-- CHART-->
+                            <div class="statistic-chart-1" style="border-radius: 10px; padding: 25px 25px; background-image:url(https://image.freepik.com/free-vector/hand-drawn-spring-background_23-2148429775.jpg); background-repeat: no-repeat;" data-toggle="modal" data-target="#myModalFullscreen2" contenteditable="false" onclick="javascript:playerStart();"> 
+                                <div class="chart-wrap">
+                                    <h3>놓치고 있는 [봄]은<h3 style="color:#203354; margin-bottom: 30px;">우리에게 어떤 의미일까요?</h3></h3>
+                                </div>
+                            </div>
+                            <!-- END CHART-->
+                        </div>
+                    </div>
+
+
+                            <!-- /힘내라대한민국 채팅창 -->
+<div class="modal fade modal-fullscreen  footer-to-bottom" id="myModalFullscreen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog animated fadeInDown">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>#힘내라_대한민국!</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    
+
+            </div>
+            <div class="modal-body" style="overflow-y:scroll; margin-left:-15px; margin-right: -15px;">
+                <section class="statistic statistic2">
                 <div class="container" style="margin-top:-70px;">
                     <div class="dap_ins">
 
-                         <!---->
-                        <div style="white-space: nowrap; width:100%; height:40px;">
-                        <button class="decrease" style="display:inline-block;">
-                        <img src="https://purepng.com/public/uploads/large/heart-icon-jst.png" style="margin-top:0px; width:40px; height:40px; margin-right:5px;"> 
-                        </button>
-<h5 class="counter" style="display:inline-block;">로딩중</h5>
-</div>
-<!---->
-
             <div style="margin-top:0px; ">
-<br>
-                <textarea name="content" class="message" type="text" id="re_content" placeholder="글 남기기"></textarea>
+                <textarea name="content" class="message" type="text" id="re_content" placeholder="응원 메시지 남기기"></textarea>
                 <button onClick="javascript:sendBtn();" id="rep_bt" class="re_bt"><i class="fas fa-paper-plane"></i></button>
             </div>
     </div>
 
-<div class="sufee-alert alert with-close alert-success alert-dismissible fade show" style="margin-right:10px;">
-<span class="badge badge-pill badge-success">업데이트 내역</span>
-<button type="button" data-toggle="modal" style="color:black;" data-target="#smallmodal2">최근 업데이트 사항</button>
-<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-</div>
 
-    <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show" style="margin-right:10px;">
-<span class="badge badge-pill badge-danger">주의</span>
-<button type="button" data-toggle="modal" style="color:black;" data-target="#smallmodal">이런 글은 삭제될 수 있어요.</button>
-<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-</div>
 
 <div class="wrapper">
 
@@ -125,6 +166,104 @@
 </div>
 </div>
 </section>
+            </div>
+            <div class="modal-footer" style="height:45px;">
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="padding:10px; padding-left: 50px;">닫기</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<!-- /봄스페셜 채팅창 -->
+<div class="modal fade modal-fullscreen  footer-to-bottom" id="myModalFullscreen2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog animated fadeInDown">
+        <div class="modal-content">
+            <div style="background-color:#ff6961; border-radius:20px 20px 0 0; height:80px;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-top:10px; position: fixed; right:20px; z-index: 999999999;"  onclick="javascript:playerStop();">×</button>
+                    
+
+            </div>
+
+            <div class="modal-body" style="overflow-y:scroll; margin-left:-15px; margin-right: -15px; margin-top:-40px;">
+                <div style="background-color:#ff6961; border-radius: 0 0 20px 20px;">
+                <h3 style="color:white; margin-left:20px; margin-right:15px; margin-bottom: 40px; margin-top: 15px; font-size:22px;">집콕하느라 봄을<br> 놓치고 있는 당신을 위해</h3>
+                <div id="player" style="margin:20px; border-radius: 10px;"></div>
+                <br>
+
+                <script>
+                 var player = new Playerjs({id:"player", file:"https://youtube.com/embed/2ooqq0WDprs"});
+
+                 function playerStop() {
+                    player.api("pause");
+                 }
+
+                 function playerStart() {
+                    player.api("play");
+                 }
+                </script>
+            </div>
+                <section class="statistic statistic2">
+                <div class="container" style="margin-top:-70px;">
+                    <div class="dap_ins">
+
+            <div style="margin-top:0px; ">
+                <textarea name="content" class="messageSpring" type="text" id="re_content" placeholder="당신에게 [봄]은 어떤 의미인가요?"></textarea>
+                <button onClick="javascript:sendBtnSpring();" id="rep_bt" class="re_bt"><i class="fas fa-paper-plane"></i></button>
+            </div>
+    </div>
+
+
+
+<div class="wrapper_spring">
+
+
+</div>
+</div>
+</section>
+            </div>
+            <div class="modal-footer" style="height: 45px;">
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="padding:10px; padding-left: 50px;">닫기</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+
+                            
+
+                        <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
+<span class="badge badge-pill badge-success">업데이트 내역</span>
+<button type="button" data-toggle="modal" style="color:black;" data-target="#smallmodal2">최근 업데이트 사항</button>
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+
+    <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
+<span class="badge badge-pill badge-danger">주의</span>
+<button type="button" data-toggle="modal" style="color:black;" data-target="#smallmodal">이런 글은 삭제될 수 있어요.</button>
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<br>
+<br>
+                            
+                        </div>
+                        
+                        
+                </div>
+
+                        <!-- STATISTIC-->
+
+
 
 
 <!-- 여기까지 chat box-->
@@ -135,7 +274,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="copyright">
-                                <p>Copyright © 2020 All rights reserved. <br>DB 서버 제공 : <a href="https://firebase.com" target="_blank">Firebase</a>.</p>
+                                <p>Copyright © 2020 All rights reserved.</p>
                             </div>
                         </div>
                     </div>
@@ -193,24 +332,25 @@
 <div class="modal-dialog modal-sm" role="document">
 <div class="modal-content">
 <div class="modal-header">
-<h5 class="modal-title" id="smallmodalLabel">최근 업데이트 사항</h5>
+<h5 class="modal-title" id="smallmodalLabel">03-31 업데이트 사항</h5>
 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 <span aria-hidden="true">&times;</span>
 </button>
 </div>
-<div class="modal-body">
-<p style="font-size:13px;">
+<div class="modal-body"><p style="font-size:13px;">
+    <h4>04-02 업데이트</h4>
+    1. TOP15 발생국 현황 추가(현황 탭)<br>
+    - 기존 일부 영문 표기를 수정했습니다.<br>
+    2. 게시판 개편<br>
+    - 디자인 개편<br>
+    - [봄] 게시판 추가<br><br>
+
     <h4>04-01 업데이트</h4>
     1. 전세계 발생국가(확진자수 내림차순 15개)별 현황 추가(현황 탭)<br>
     - 테스트중인 기능으로 내용이 영문으로 표시됩니다. 양해 바랍니다.<br><br>
-    
-    <h4>03-31 업데이트</h4>
-    1. 자주묻는 질문 업데이트(정보 탭)<br>
-    - 질병관리본부 자료를 기반으로 더 다양한 Q&A를 준비했어요.<br>
-    2. 맨 위로 가기 버튼 추가<br>
-    3. 폰트 관련 오류 수정<br><br>
     * 일일 현황 업데이트는 업데이트 내역에 포함되지 않습니다.
 
+</p>
 </p>
 </div>
 <div class="modal-footer">
@@ -293,16 +433,47 @@
      overflow-x: hidden;
      word-break: break-all;
 }
+
+ .wrapper_spring {
+     width: 100%;
+     margin: 0 auto;
+     padding-bottom: 70px;
+     overflow-x: hidden;
+     word-break: break-all;
+}
+
  .wrapper li {
      padding: 10px 20px;
      color: #34495e;
      word-break: break-all;
 }
+
+ .wrapper_spring li {
+     padding: 10px 20px;
+     color: #34495e;
+     word-break: break-all;
+}
+
  .wrapper li span {
      color: #e74c3c;
      font-weight: 700;
 }
+
+ .wrapper_spring li span {
+     color: #e74c3c;
+     font-weight: 700;
+}
+
   .message {
+     margin-bottom:30px;
+     height:80px;
+     width:75%;
+     background-color: #c5c7c4;
+     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
+     padding: 10px 20px;
+}
+
+.messageSpring {
      margin-bottom:30px;
      height:80px;
      width:75%;
@@ -314,12 +485,68 @@
      outline: none;
 }
 
+  .messageSpring:focus {
+     outline: none;
+}
+
 .re_bt {
 width:20%;
 background:#fa4251;
 color:white;
 margin-left:0px;
 height:80px;
+}
+
+
+
+
+.modal.modal-fullscreen .modal-dialog,
+.modal.modal-fullscreen .modal-content {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 20px;
+}
+
+@media (min-width: 1024px) {
+.modal.modal-fullscreen .modal-dialog,
+.modal.modal-fullscreen .modal-content {
+  bottom: 0;
+  left: 5%;
+  position: fixed;
+  top: 10%;
+}
+}
+
+.modal.modal-fullscreen .modal-dialog {
+  margin: 0;
+  width: 100%;
+  animation-duration:0.6s;
+}
+.modal.modal-fullscreen .modal-content {
+  border: none;
+  -moz-border-radius: 20px;
+  border-radius: 20px 20px 0 0 ;
+  -webkit-box-shadow: inherit;
+  -moz-box-shadow: inherit;
+  -o-box-shadow: inherit;
+  box-shadow: inherit;
+}
+.modal.modal-fullscreen.force-fullscreen .modal-body {
+  padding: 0;
+}
+.modal.modal-fullscreen.force-fullscreen .modal-header,
+.modal.modal-fullscreen.force-fullscreen .modal-footer {
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+.modal.modal-fullscreen.force-fullscreen .modal-header {
+  top: 0;
+}
+.modal.modal-fullscreen.force-fullscreen .modal-footer {
+  bottom: 0;
 }
  
 </style>
