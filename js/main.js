@@ -18,10 +18,10 @@
             console.log("s"+e);
             return false;
         });        
-        */        
+        */       
 
         //다음과 같이 이벤트를 한번에 등록가능
-        $(document).on("contextmenu dragstart",function(e){
+        $(document).on("contextmenu dragstart selectstart",function(e){
             return false;
         });
         //참고. IE에서는 텍스트컨트롤박스의 내용을 드래그해서 선택할수없었음
