@@ -4,6 +4,80 @@ window.onload = function() {
 var welcomeTxt = new Array('사회적 거리두기에<br>동참해주세요.', '증상 발생 시,<br>1339로 전화하세요!', '올바른 손씻기는<br>비누로 30초 이상!', '예방 수칙 준수로<br>이겨낼 수 있습니다.', '기침할 땐,<br>옷소매로 가리고 해주세요.', '열심히 일하시는<br>의료진분들께 박수!', '확진자 더 이상<br>안 늘게 해주세요...☹', '예배, 집회, 모임 등은<br>자제해주세요!');
 document.getElementById("suggestText").innerHTML = randomItem(welcomeTxt);
 
+$.getJSON("http://www.ipinfo.io/json", function(result) {
+      var regionKR = '전국(불러오지 못함)';
+        switch(result.region) {
+          case "Gyeonggi-do":
+           regionKR = "경기";
+           break;
+
+          case "Seoul":
+           regionKR = "서울";
+           break;
+
+          case "Busan":
+           regionKR = "부산";
+           break;
+
+          case "Daegu":
+           regionKR = "대구";
+           break;
+
+          case "Incheon":
+           regionKR = "인천";
+           break;
+
+          case "Gwangju":
+           regionKR = "광주";
+           break;
+           
+          case "Daejeon":
+           regionKR = "대전";
+           break;  
+
+          case "Ulsan":
+           regionKR = "울산";
+           break; 
+
+          case "Sejong":
+           regionKR = "세종시";
+           break; 
+
+          case "Gangwon-do":
+           regionKR = "강원";
+           break; 
+
+          case "Chungbuk-do":
+           regionKR = "충청북도";
+           break; 
+
+          case "Chungnam-do":
+           regionKR = "충청남도";
+           break; 
+
+          case "Jeollabuk-do":
+           regionKR = "전라북도";
+           break; 
+
+          case "Jeollanam-do":
+           regionKR = "전라남도";
+           break; 
+
+          case "Gyeongbuk-do":
+           regionKR = "경상북도";
+           break; 
+
+          case "Gyeongnam-do":
+           regionKR = "경상남도";
+           break; 
+
+
+        }
+
+        $(".myRegion").html(regionKR);
+
+    });
+
 }
 
 var audioFile = new Audio('voice.mp3');
@@ -172,10 +246,15 @@ new Vue({
       this.scraperRunning = true
 
       if(!this.url.includes("http")) {
-        this.url = "https://cors-anywhere.herokuapp.com/https://m.search.naver.com/search.naver?sm=mtb_hty.top&where=m&query=%EC%82%AC%ED%9A%8C%EC%95%88%EC%A0%84+%EC%9E%AC%EB%82%9C%EB%AC%B8%EC%9E%90";
+        this.url = "https://cors-anywhere.herokuapp.com/https://m.search.naver.com/search.naver?sm=mtb_hty.top&where=m&query="+regionKR+"%20사회안전 재난문자";
 
       } else {
-        this.url = "https://cors-anywhere.herokuapp.com/https://m.search.naver.com/search.naver?sm=mtb_hty.top&where=m&query=%EC%82%AC%ED%9A%8C%EC%95%88%EC%A0%84+%EC%9E%AC%EB%82%9C%EB%AC%B8%EC%9E%90";
+
+        setTimeout(function() {
+        var regionKR = $(".myRegion").html();
+        }, 2000);
+        this.url = "https://cors-anywhere.herokuapp.com/https://m.search.naver.com/search.naver?sm=mtb_hty.top&where=m&query=경기%20사회안전 재난문자";
+        
       }
 
       // GET URL
