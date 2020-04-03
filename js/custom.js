@@ -4,7 +4,7 @@ window.onload = function() {
 var welcomeTxt = new Array('사회적 거리두기에<br>동참해주세요.', '증상 발생 시,<br>1339로 전화하세요!', '올바른 손씻기는<br>비누로 30초 이상!', '예방 수칙 준수로<br>이겨낼 수 있습니다.', '기침할 땐,<br>옷소매로 가리고 해주세요.', '열심히 일하시는<br>의료진분들께 박수!', '확진자 더 이상<br>안 늘게 해주세요...☹', '예배, 집회, 모임 등은<br>자제해주세요!');
 document.getElementById("suggestText").innerHTML = randomItem(welcomeTxt);
 
-$.getJSON("http://www.ipinfo.io/json", function(result) {
+$.getJSON("https://www.ipinfo.io/json", function(result) {
       var regionKR = '전국';
         switch(result.region) {
           case "Gyeonggi-do":
