@@ -5,7 +5,7 @@ var welcomeTxt = new Array('사회적 거리두기에<br>동참해주세요.', '
 document.getElementById("suggestText").innerHTML = randomItem(welcomeTxt);
 
 $.getJSON("http://www.ipinfo.io/json", function(result) {
-      var regionKR = '전국(불러오지 못함)';
+      var regionKR = '';
         switch(result.region) {
           case "Gyeonggi-do":
            regionKR = "경기";
