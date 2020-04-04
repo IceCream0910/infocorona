@@ -408,6 +408,470 @@
                         </div>
                         </div>
 
+                        <!-- 감염자 예측-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.27/moment-timezone-with-data.min.js"></script>
+<br>
+
+<div class="col-md-6 col-lg-4">
+                            <!-- CHART PERCENT-->
+                            <div class="chart-percent-2" style="border-radius: 10px; margin-left:-15px; margin-right: -15px;">
+                                <div class="chart-wrap">
+                                   <h3><span style="color:#a0a0a0;">전세계 </span>감염자 예측<span style="font-size:10px;"> Beta<br><span style="font-size:12px;">실시간 감염자수를 예측합니다.</span></span></span></h3><br>
+    <div style="align-content: center; text-align: left; display: flex; justify-content: left;">
+        <div style="max-width: 1400px; width: 100%">
+            <div style="font-size: xx-large; font-weight: bold; margin: 0px;">
+                <span id="infectedCount" >Predicted infected count calculating...</span><span>명</span>
+            </div>
+            <!--
+                <div class="chartjs-size-monitor">
+                    <div class="chartjs-size-monitor-expand">
+                        <div class=""></div>
+                    </div>
+                    <div class="chartjs-size-monitor-shrink">
+                        <div class=""></div>
+                    </div>
+                </div>
+                <canvas style="display: block" class="chartjs-render-monitor"></canvas>
+            -->
+            <br>
+            <button id="toggleScale" style="display: none;"><b>∡ Logaritmic / Linear Scale Toggle</b></button>
+
+            일일 신규 환자 증가율은 <b id="iDailyGrowthPercent" style="color: darkorange">로딩중... </b>입니다.<br>
+            예측 결과는 최근 5일의 데이터를 기반으로 계산됩니다.<br>
+            <span style="font-size:14px; color:red;">* 위 결과는 최근 데이터에서 확인되는 추이가 지속된다는 가정 하에 산출됩니다. 이 수치를 신뢰하지 마세요.</span>
+
+            <br>
+                                    </div>
+                                </div>
+                            </div>
+    
+
+            <div style="display: none;">
+            
+                <select id="locationSelect" style="width: 150px"></select>
+                <button id="clearDatasets" style="border-radius: 0"><b>Clear</b></button>
+                <button id="toggleScalePerCountry"><b>∡ Log Scale Toggle</b></button>
+            </span>
+            <div class="chartjs-size-monitor">
+                <div class="chartjs-size-monitor-expand">
+                    <div class=""></div>
+                </div>
+                <div class="chartjs-size-monitor-shrink">
+                    <div class=""></div>
+                </div>
+            </div>
+        </div>
+
+            <script src="https://www.coronaviruschart.com/jquery-3.3.1.slim.min.js"></script>
+            <script src="https://www.coronaviruschart.com/jquery.csv.min.js"></script>
+
+            <script>
+                let worldPlusChinaData = [
+                    { d: '2020-03-25', i: 471036, t: 21284, w: 389751},
+                    { d: '2020-03-26', i: 532237, t: 24089, w: 532237-81340},
+                    { d: '2020-03-27', i: 597252, t: 27365, w: 597252-81394},
+                    { d: '2020-03-28', i: 663748, t: 30880, w: 663748-81394},
+                    { d: '2020-03-29', i: 723700, t: 34018, w: 723700-81470},
+                    { d: '2020-03-30', i: 785979, t: 37810, w: 785979-87956},
+                    { d: '2020-03-31', i: 859032, t: 42322, w: 859032-81554},
+                    { d: '2020-04-01', i: 937567, t: 47256, w: 937567-81589},
+                    { d: '2020-04-02', i: 1016193, t: 53069, w: 1016128-81620},
+                    { d: '2020-04-03', i: 1134124, t: 60405, w: 1016128-81620},
+
+                ];
+
+                let sourceDataLength = worldPlusChinaData.length;
+
+                let ahead = 3;
+                let [data, infectedNow, iDailyGrowthPercent] = predict(worldPlusChinaData, ahead);
+                updateIC();
+                document.getElementById('iDailyGrowthPercent').innerText = Math.floor(iDailyGrowthPercent).toString() + '%';
+
+                function infectedNowToString(infectedNow) {
+                    let s = infectedNow.toString();
+                    // if (!s.includes('.')) {
+                    //     s = s + '.0';
+                    // }
+                    return s;
+                }
+
+                function updateIC() {
+                    [data, infectedNow, iDailyGrowthPercent] = predict(worldPlusChinaData, 0);
+                    document.getElementById('infectedCount').innerText = infectedNowToString(infectedNow).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+                }
+
+                setInterval(updateIC, 500);
+
+                var color = Chart.helpers.color;
+
+                function pointColors(normalColor) {
+                    let bcs = [];
+                    for (let i = 0; i < sourceDataLength + ahead; i++) {
+                        if (i < sourceDataLength) {
+                            bcs.push(normalColor);
+                        } else {
+                            bcs.push(color(window.chartColors.blue).alpha(1).rgbString());
+                        }
+                    }
+                    return bcs;
+                }
+
+                let bcs = pointColors(color(window.chartColors.yellow).alpha(1).rgbString());
+                let tbcs = pointColors(color(window.chartColors.red).alpha(1).rgbString());
+                let wbcs = pointColors(color(window.chartColors.purple).alpha(1).rgbString());
+
+
+
+                var type = 'linear';
+
+                var timeFormat = 'YYYY-MM-DD';
+
+                var config = {
+                    type: 'line',
+                    data: {
+                        labels: data.map(d => new Date(d.d)),
+                        datasets: [
+                            // {
+                            //  label: '☣  Infected w/o China',
+                            //  backgroundColor: color(window.chartColors.purple).alpha(1).rgbString(),
+                            //  borderColor: window.chartColors.purple,
+                            //  pointBackgroundColor: wbcs,
+                            //  pointBorderColor: wbcs,
+                            //  hidden: false,
+                            //  fill: false,
+                            //  data: data.map(d => d.w),
+                            // },
+                            {
+                                label: '확진',
+                                backgroundColor: color(window.chartColors.yellow).alpha(1).rgbString(),
+                                borderColor: window.chartColors.yellow,
+                                pointBackgroundColor: bcs,
+                                pointBorderColor: bcs,
+                                hidden: false,
+                                fill: false,
+                                data: data.map(d => d.i),
+                            },
+                            {
+                                label: '사망자',
+                                backgroundColor: color(window.chartColors.red).alpha(1).rgbString(),
+                                borderColor: window.chartColors.red,
+                                pointBackgroundColor: tbcs,
+                                pointBorderColor: tbcs,
+                                hidden: false,
+                                fill: false,
+                                data: data.map(d => d.t),
+                            },
+                            // {
+                            //  label: '☣  Infected Model',
+                            //  backgroundColor: color(window.chartColors.blue).alpha(1).rgbString(),
+                            //  borderColor: window.chartColors.blue,
+                            //  // pointBackgroundColor: bcs,
+                            //  // pointBorderColor: bcs,
+                            //  hidden: true,
+                            //  fill: false,
+                            //  data: data.map(d => d.im),
+                            // },
+                            // {
+                            //  label: '✝ Dead Model',
+                            //  backgroundColor: color(window.chartColors.blue).alpha(1).rgbString(),
+                            //  borderColor: window.chartColors.blue,
+                            //  // pointBackgroundColor: bcs,
+                            //  // pointBorderColor: bcs,
+                            //  hidden: true,
+                            //  fill: false,
+                            //  data: data.map(d => d.tm),
+                            // },
+                        ]
+                    },
+                    options: {
+                        // maintainAspectRatio: false,
+                        title: {
+                            text: '예측 그래프'
+                        },
+                        scales: {
+                            xAxes: [{
+                                type: 'time',
+                                time: {
+                                    parser: timeFormat,
+                                    round: 'day',
+                                    tooltipFormat: 'll',
+                                    unit: 'day',
+                                    displayFormats: {
+                                        day: 'MM.DD'
+                                    }
+                                },
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: ''
+                                }
+                            }],
+                            yAxes: [{
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: '환자 수(명)'
+                                }
+                            }]
+                        },
+                    }
+                };
+
+                var configPerCountry = {
+                    type: 'line',
+                    data: {
+                        labels: [],
+                        datasets: []
+                    },
+                    options: {
+                        // maintainAspectRatio: false,
+                        title: {
+                            text: 'Coronavirus Infected and Dead Chart'
+                        },
+                        scales: {
+                            xAxes: [{
+                                type: 'time',
+                                time: {
+                                    parser: timeFormat,
+                                    round: 'day',
+                                    tooltipFormat: 'll',
+                                    unit: 'day',
+                                    displayFormats: {
+                                        day: 'DD/MM'
+                                    }
+                                },
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Date'
+                                }
+                            }],
+                            yAxes: [{
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: '# people (logarithmic scale)'
+                                },
+                                type: 'logarithmic'
+                            }]
+                        },
+                    }
+                };
+
+                document.getElementById('toggleScale').addEventListener('click', function() {
+                    type = type === 'linear' ? 'logarithmic' : 'linear';
+                    window.myLine.options.title.text = 'Chart.js Line Chart - ' + type;
+                    window.myLine.options.scales.yAxes[0] = {
+                        scaleLabel: {
+                            display: true,
+                            labelString: `# people (${type} scale)`
+                        },
+                        type: type
+                    };
+
+                    window.myLine.update();
+                });
+
+                document.getElementById('toggleScalePerCountry').addEventListener('click', function() {
+                    type = type === 'linear' ? 'logarithmic' : 'linear';
+                    window.myLinePerCountry.options.title.text = 'Chart.js Line Chart - ' + type;
+                    window.myLinePerCountry.options.scales.yAxes[0] = {
+                        scaleLabel: {
+                            display: true,
+                            labelString: `# people (${type} scale)`
+                        },
+                        type: type
+                    };
+
+                    window.myLinePerCountry.update();
+                });
+
+
+                var colorNames = Object.keys(window.chartColors);
+                function addCountryDataset(locationName) {
+                    var colorName = colorNames[configPerCountry.data.datasets.length % colorNames.length];
+                    var newColor = window.chartColors[colorName];
+                    // TODO add predictionOne
+                    // var data = window.perCountry[locationName];
+                    // let dateStrings = configPerCountry.data.dateStrings;
+                    // var [predData, predDateStrings, now, dailyGrowth] = predictOne(data, dateStrings, 3);
+                    // TODO colorization:
+                    // let bcs = pointColors(color(window.chartColors.yellow).alpha(1).rgbString());
+
+                    var newDataset = {
+                        label: locationName,
+                        borderColor: newColor,
+                        backgroundColor: color(newColor).alpha(0.5).rgbString(),
+                        fill: false,
+                        data: window.perCountry[locationName]
+                    };
+                    configPerCountry.data.datasets.push(newDataset);
+                    window.myLinePerCountry.update();
+
+                }
+                document.getElementById('locationSelect').addEventListener('change', function() {
+                    var sel = document.getElementById('locationSelect');
+                    let option = sel.options[sel.selectedIndex];
+                    var locationName = option.value;
+                    addCountryDataset(locationName);
+                });
+
+                document.getElementById('clearDatasets').addEventListener('click', function() {
+                   configPerCountry.data.datasets = [];
+                    window.myLinePerCountry.update();
+                });
+
+                window.onload = function() {
+                    var ctx = document.getElementById('canvas').getContext('2d');
+                    window.myLine = new Chart(ctx, config);
+
+                    csvParsedPromise.then(r => {
+                        var ctxPerCountry = document.getElementById('canvasPerCountry').getContext('2d');
+                        window.myLinePerCountry = new Chart(ctxPerCountry, configPerCountry);
+
+                        addCountryDataset('US');
+                        addCountryDataset('Italy');
+                        addCountryDataset('China');
+                    });
+
+                };
+
+                function findLineByLeastSquares(values_x, values_y) {
+                    var x_sum = 0;
+                    var y_sum = 0;
+                    var xy_sum = 0;
+                    var xx_sum = 0;
+                    var count = 0;
+
+                    /*
+                     * The above is just for quick access, makes the program faster
+                     */
+                    var x = 0;
+                    var y = 0;
+                    var values_length = values_x.length;
+
+                    if (values_length !== values_y.length) {
+                        throw new Error('The parameters values_x and values_y need to have same size!');
+                    }
+
+                    /*
+                     * Above and below cover edge cases
+                     */
+                    if (values_length === 0) {
+                        return [ [], [] ];
+                    }
+
+                    /*
+                     * Calculate the sum for each of the parts necessary.
+                     * FIT ONLY last 5!
+                     */
+                    for (let i = values_length - 5; i< values_length; i++) {
+                        x = values_x[i];
+                        y = values_y[i];
+                        x_sum+= x;
+                        y_sum+= y;
+                        xx_sum += x*x;
+                        xy_sum += x*y;
+                        count++;
+                    }
+
+                    /*
+                     * Calculate m and b for the line equation:
+                     * y = x * m + b
+                     */
+                    var m = (count*xy_sum - x_sum*y_sum) / (count*xx_sum - x_sum*x_sum);
+                    var b = (y_sum/count) - (m*x_sum)/count;
+
+
+                    return [m, b]
+                }
+
+                function predictOne(arr, dateStrings, ahead) {
+                    let dayIndexes = [...Array(arr.length).keys()];
+                    let [m, b] = findLineByLeastSquares(dayIndexes, arr);
+                    let latestDateString = dateStrings[dateStrings.length - 1];
+                    let seconds = moment().diff(moment(latestDateString).add(1, 'days')) / 1000;
+                    let now = Math.floor(Math.exp((arr.length - 1 + seconds / (60*60*24)) * m + b));
+                    let previous_date = undefined;
+                    for (let i = 0; i < arr.length + ahead; i++) {
+                        let y = Math.floor(Math.exp(i * m + b));
+                        let datum = arr[i];
+                        if (!datum) {
+                            let v = y;
+                            let d = moment(previous_date).add(1,'days').format('YYYY-MM-DD');
+                            arr.push(v);
+                            dateStrings.push(d);
+                        }
+                        previous_date = dateStrings[i]
+                    }
+                    let dailyGrowthPercent = (Math.exp(m) - 1) * 100;
+                    return [arr, dateStrings, now, dailyGrowthPercent];
+
+                }
+
+                function predict(data, ahead) {
+
+                    let log_infecteds = data.map(d=>Math.log(d.i));
+                    let log_toll = data.map(d=>Math.log(d.t));
+                    let log_world = data.map(d=>Math.log(d.w));
+                    let days = [...Array(data.length).keys()];
+
+                    let [m, b] = findLineByLeastSquares(days, log_infecteds);
+                    let [mt, bt] = findLineByLeastSquares(days, log_toll);
+                    let [mw, bw] = findLineByLeastSquares(days, log_world);
+
+                    let latest = data[log_infecteds.length - 1];
+                    let seconds = moment().diff(moment(latest.d).add(1, 'days')) / 1000;
+                    let infectedNow = Math.floor(Math.exp((log_infecteds.length - 1 + seconds / (60*60*24)) * m + b));
+                    let worldNow = Math.floor(Math.exp((log_world.length - 1 + seconds / (60*60*24)) * mw + bw));
+
+                    // predict next 3 values
+                    // let previous_date = data[log_infecteds.length - 1].d;
+                    let previous_date = undefined;
+                    for (let i = 0; i < log_infecteds.length + ahead; i++) {
+                        let y = Math.floor(Math.exp(i * m + b));
+                        let yt = Math.floor(Math.exp(i * mt + bt));
+                        let yw = Math.floor(Math.exp(i * mw + bw));
+                        let datum = data[i];
+                        if (!datum) {
+                            datum = {};
+                            datum.i = y;
+                            datum.t = yt;
+                            datum.w = yw;
+                            datum.d = moment(previous_date).add(1,'days').format('YYYY-MM-DD');
+                            data.push(datum);
+                        }
+                        datum.im = y;
+                        datum.tm = yt;
+                        datum.wm = yw;
+                        previous_date = datum.d
+                    }
+                    let iDailyGrowthPercent = (Math.exp(m) - 1) * 100;
+                    return [data, infectedNow, iDailyGrowthPercent];
+                }
+
+                window.fetch('https://health.machinesrental.com/?type=range&from=' + moment().add(-1, 'days').format('YYYY-MM-DD'))
+                    .then(r => r.json())
+                    .then(news => {
+                        document.getElementById('news').innerHTML =
+                                '<li>' +
+                                    news.data.map(n => {
+                                        let localDate = moment.tz(n.date, 'Europe/Berlin').local().format('MM/DD HH:mm');
+                                        return `<b>${localDate}</b> <a href="${n.source_url}" rel="nofollow" target="_blank">${n.title}</a>`;
+                                    })
+                                    .slice(0, Math.min(10, news.data.length))
+                                    .join('</li>\n<li>')
+                                + '</li>';
+                    });
+
+
+            </script>
+
+
+            <br>
+
+        </div>
+    </div>
+
                         <!-- TASK PROGRESS-->
                                     <h4 style="margin-bottom: 10px;">치사율</h4>
                                         <div class="progress mb-2" style="height:30px;">
@@ -579,3 +1043,54 @@ R0 수치가 2라고 가정하면, 감염자 1명이 다른 사람 2명 이상�
 
 </html>
 <!-- end document-->
+
+    <style type="text/css">/* Chart.js */
+@keyframes chartjs-render-animation {
+    from {
+        opacity: .99
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.chartjs-render-monitor {
+    animation: chartjs-render-animation 1ms
+}
+
+.chartjs-size-monitor, .chartjs-size-monitor-expand, .chartjs-size-monitor-shrink {
+    position: absolute;
+    direction: ltr;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    pointer-events: none;
+    visibility: hidden;
+    z-index: -1
+}
+
+.chartjs-size-monitor-expand > div {
+    position: absolute;
+    width: 1000000px;
+    height: 1000000px;
+    left: 0;
+    top: 0
+}
+
+.chartjs-size-monitor-shrink > div {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    left: 0;
+    top: 0
+}
+
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+
+</style>
