@@ -127,7 +127,8 @@
                         <div class="col-md-6 col-lg-3">
                             <div class="statistic__item statistic__item--red" style="border-radius: 10px;">
                                 <h2 class="number" id="confirmed">로딩중</h2>
-                                <span class="desc" id="confirmedPM">확진자</span>
+                                <span class="desc" id="confirmedPM">확진자</span><br>
+                                <span class="desc" id="cureNow"></span>
                                 <div class="icon">
                                     <i class="zmdi zmdi-account-o"></i>
                                 </div>
@@ -199,7 +200,8 @@
                              <div class="col-lg-6">
                                 <div class="au-card m-b-30">
                                     <div class="recent-report__chart">
-                                        <h3>국내 일별 <h3 style="color:#a9a9a9;">검사 현황<br><br></h3></h3>
+                                        <h3>국내 <h3 style="color:#a9a9a9;">검사 현황<br><br>
+                                            <h5>확진율 : 2.2%</h5><br></h3></h3>
                                         <canvas id="recent-rep2-chart"></canvas>
                                     </div>
                                 </div>
@@ -641,8 +643,10 @@ R0 수치가 2라고 가정하면, 감염자 1명이 다른 사람 2명 이상�
             <div style=" width: auto; font-size: xx-large; font-weight: bold; margin: 10px;">
                 <h4 style="margin-top:-20px;">내일 누적 확진자 예측</h4>
                 <span id="infectedPrediction">계산중...</span><span>명</span>
+                <span style="font-size:15px;" id="infectedPrePM">계산중...</span>
                 <h4 style="margin-top:20px;">내일 누적 사망자 예측</h4>
                 <span id="deathPrediction">계산중...</span><span>명</span>
+                <span style="font-size:15px;" id="deathPrePM">계산중...</span>
                 <p style="font-size:13px; color:#d92121; margin-top:20px;">
 위 수치는 지금까지의 발생 동향을 기반으로 계산된 단순 추정치입니다.<br>단순 참고용으로만 사용하여 주시고, 해당 자료를 신뢰하지 마시기 바랍니다.
 </p> 
@@ -720,6 +724,10 @@ R0 수치가 2라고 가정하면, 감염자 1명이 다른 사람 2명 이상�
 
                 document.getElementById('infectedPrediction').innerText = data.map(d => d.i)[6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                 document.getElementById('deathPrediction').innerText = data.map(d => d.t)[6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+                document.getElementById('infectedPrePM').innerText = "(+ "+(data.map(d => d.i)[6]-data.map(d => d.i)[5])+")";
+                document.getElementById('deathPrePM').innerText = "(+ "+(data.map(d => d.t)[6]-data.map(d => d.t)[5])+")";
+
 
                 var type = 'linear';
 
