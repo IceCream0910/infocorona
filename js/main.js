@@ -327,7 +327,7 @@ $(window).scroll(function() {
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [16585, 17885, 18908, 20144, 19571, 19295] //일일 검사
+    var data3 = [16585, 17885, 18908, 20144, 19571, 19295] //검사중
     var data4 = [9887, 9976, 10062, 10156, 10237, 10284] //누적 확진
 
     var ctx = document.getElementById("recent-rep2-chart");
@@ -339,7 +339,7 @@ $(window).scroll(function() {
           labels: ['3.31', '4.1', '4.2', '4.3', '4.4', '4.5'],
           datasets: [
             {
-              label: '일일 검사',    
+              label: '검사 중',    
               borderColor: bd_brandService2,
               pointHoverBackgroundColor: '#fff',
               borderWidth: 0,
