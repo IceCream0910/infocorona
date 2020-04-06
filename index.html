@@ -152,7 +152,8 @@
                             </div>
                         </div>
                         </div>
-<a href="#globalStatics" style="margin-bottom:20px;">전세계 현황 보기 ></a>
+<a href="#globalStatics">전세계 현황 보기 ></a><br>
+<button type="button" data-toggle="modal" data-target="#smallmodal2" style="margin-bottom:20px; color:#d92121;">국내 상황 예측 ></button>
                     </div>
                 </div>
 
@@ -408,86 +409,276 @@
                         </div>
                         </div>
 
-                        <!-- 감염자 예측-->
+                       
+                        <!-- TASK PROGRESS-->
+                                    <h4 style="margin-bottom: 10px;">치사율</h4>
+                                        <div class="progress mb-2" style="height:30px;">
+                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 25%" aria-valuenow="5.296%" aria-valuemin="0" aria-valuemax="100">5.296%</div>
+                                        </div><br>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.27/moment-timezone-with-data.min.js"></script>
-<br>
+                                        <h4 style="margin-bottom: 10px;">재생산지수(R0) <button type="button" data-toggle="modal" data-target="#smallmodal"><img style="width:25px; height:25px;" src="https://img.pngio.com/help-icon-transparent-background-83167-free-icons-library-help-icon-png-2000_2000.jpg"></button></h4>
+                                        <div class="progress mb-2" style="height:30px;">
+                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 16%" aria-valuenow="2.6" aria-valuemin="0" aria-valuemax="100">2.6</div>
+                                        </div><br>
 
-<div class="col-md-6 col-lg-4">
-                            <!-- CHART PERCENT-->
-                            <div class="chart-percent-2" style="border-radius: 10px; margin-left:-15px; margin-right: -15px;">
-                                <div class="chart-wrap">
-                                   <h3><span style="color:#a0a0a0;">전세계 </span>감염자 예측<span style="font-size:10px;"> Beta<br><span style="font-size:12px;">실시간 감염자수를 예측합니다.</span></span></span></h3><br>
-    <div style="align-content: center; text-align: left; display: flex; justify-content: left;">
-        <div style="max-width: 1400px; width: 100%">
-            <div style="font-size: xx-large; font-weight: bold; margin: 0px;">
-                <span id="infectedCount" >Predicted infected count calculating...</span><span>명</span>
-            </div>
-            <!--
-                <div class="chartjs-size-monitor">
-                    <div class="chartjs-size-monitor-expand">
-                        <div class=""></div>
-                    </div>
-                    <div class="chartjs-size-monitor-shrink">
-                        <div class=""></div>
+                                         <h4 style="margin-bottom: 10px;">완치율</h4>
+                                        <div class="progress mb-2" style="height:30px;">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 42%" aria-valuenow="20.751%" aria-valuemin="0" aria-valuemax="100">20.751%</div>
+                                        </div><br>
+
+                                <div class="col-md-6 col-lg-4"> <!-- CHART--> 
+                                    <div class="statistic-chart-1" style="border-radius: 10px; margin-left:-15px; margin-right:-15px;"> 
+                                        <div class="chart-wrap" style="overflow:scroll; margin:-20px;"> <h3 style="background-color:#fff; margin-left:15px;">
+                                            TOP15<h3 style="color:#a9a9a9; margin-left:15px;">발생국 현황<br></h3></h3> 
+                                            <div id="tableByCountry" style="margin-top:30px;"></div> 
+                                        </div> 
+                                        <a href="http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=14&ncvContSeq=&contSeq=&board_id=&gubun=" target="_blank" style=" text-align:right; margin-left:-15px;"><br>더보기 ></a>
+                                        <br><Br> 
+                                    </div> 
+                                    <!-- END CHART-->
+                                     </div>
+
                     </div>
                 </div>
-                <canvas style="display: block" class="chartjs-render-monitor"></canvas>
-            -->
-            <br>
-            <button id="toggleScale" style="display: none;"><b>∡ Logaritmic / Linear Scale Toggle</b></button>
+            </section>
+            <!-- END STATISTIC-->
 
-            일일 신규 환자 증가율은 <b id="iDailyGrowthPercent" style="color: darkorange">로딩중... </b>입니다.<br>
-            예측 결과는 최근 5일의 데이터를 기반으로 계산됩니다.<br>
-            <span style="font-size:14px; color:red;">* 위 결과는 최근 데이터에서 확인되는 추이가 지속된다는 가정 하에 산출됩니다. 이 수치를 신뢰하지 마세요.</span>
+            <section id="frontier">
+                      <h3 style="text-align: left; width:90%; margin-top:40px; margin-left:25px;">재난문자 <span style="font-size:15px;" class="myRegion">위치 찾는 중...</a></h3><br>
+                      <div class="article" style="border-color: red; width:90%; margin-left:15px; margin-right:15px;">
+        <a href="http://www.safekorea.go.kr/idsiSFK/neo/main_m/dis/disasterDataList.html" id="infotainer" target="_blank">
+          <h2 class="itemName" id="cbs_ct1">[내용]</h2>
 
-            <br>
-                                    </div>
-                                </div>
+          <h4 class="itemAuthorName" id="cbs_from1" style="margin-bottom:15px;">[발송처]</h4>
+        </a>
+        <!--         infotainer end -->
+      </div>
+
+      <div class="article" style="border-color: red; width:90%; margin-left:15px; margin-right:15px;">
+        <a href="http://www.safekorea.go.kr/idsiSFK/neo/main_m/dis/disasterDataList.html" id="infotainer" target="_blank">
+          <h2 class="itemName" id="cbs_ct2">[내용]</h2>
+
+          <h4 class="itemAuthorName" id="cbs_from2" style="margin-bottom:15px;">[발송처]</h4>
+        </a>
+        <!--         infotainer end -->
+      </div>
+  <a href="http://www.safekorea.go.kr/idsiSFK/neo/main_m/dis/disasterDataList.html" target="_blank" style=" text-align:right; margin-left:20px;">더보기 ></a><br><Br>
+
+
+
+            </section>
+
+                <div id="frontier" ng-app="myApp">
+
+
+  <div ng-controller="mainCtrl" style="margin-right:15px; margin-left:15px; padding-top:20px;">
+   
+    <div class="flexCont">
+      <h3 style="text-align: left; width:100%; margin-bottom:20px; margin-left:10px;">최신뉴스</h3><br>
+
+      <div class="article" ng-repeat="item in articles">
+         
+        
+        <a href="{{item.url}}" id="infotainer" target="_blank">
+          <h2 class="itemName">{{item.title}}</h2>
+
+          <h4 class="itemAuthorName">{{item.author}}</h4>
+          <p class="itemDesc">{{item.description}}</p>
+        </a>
+        <!--         infotainer end -->
+      </div>
+      <!--     end ng-repeat div -->
+    </div>
+    <!--     end flexCont -->
+  </div>
+  <!-- end main controller div -->
+  <a href="https://search.naver.com/search.naver?where=news&sm=tab_jum&query=%EC%BD%94%EB%A1%9C%EB%82%9819" target="_blank" style=" text-align:right; margin-left:20px;">더 많은 뉴스 보기 ></a>
+  
+</div>
+<!-- end frontier div -->
+</div>
+            </section>
+            <!-- END STATISTIC CHART-->
+
+                
+
+            
+
+            <!-- COPYRIGHT-->
+            <section class="p-t-60 p-b-20">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="copyright">
+                                <p>Copyright © 2020 All rights reserved. <br>정보 제공 : <a href="http://ncov.mohw.go.kr" target="_blank">중앙재난안전대책본부</a>.</p>
                             </div>
-    
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END COPYRIGHT-->
+        </div>
 
+    </div>
+
+
+
+
+    <div class="modal fade" id="smallmodal" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
+<div class="modal-dialog modal-sm" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="smallmodalLabel">용어설명 - 재생산지수(R0)</h5>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<p style="font-size:15px;">
+재생산지수란 전염성이 사람 간 전파되는 정도를 수치로 나타낸 것으로 쉽게 말하면 감염병의 전파성을 나타내는 지수이다.<br>
+R0 수치가 2라고 가정하면, 감염자 1명이 다른 사람 2명 이상에게 전파가 가능하다는 의미이다.<br>
+</p>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="modal fade" id="smallmodal2" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
+<div class="modal-dialog modal-sm" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="smallmodalLabel">국내 현황 예측 결과</h5>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+
+
+
+<!DOCTYPE html>
+<head>
+
+    <!--    <script async="" src="./index_files/analytics.js"></script>-->
+
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.27/moment-timezone-with-data-1970-2030.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.27/moment-timezone-with-data.min.js"></script>
+
+
+
+<!--    <script src="./index_files/Chart.min.js"></script>-->
+    <script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
+
+
+<!--    <script src="./index_files/utils.js"></script>-->
+    <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
+    <style>
+
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+
+    </style>
+<style type="text/css">/* Chart.js */
+@keyframes chartjs-render-animation {
+    from {
+        opacity: .99
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.chartjs-render-monitor {
+    animation: chartjs-render-animation 1ms
+}
+
+.chartjs-size-monitor, .chartjs-size-monitor-expand, .chartjs-size-monitor-shrink {
+    position: absolute;
+    direction: ltr;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    pointer-events: none;
+    visibility: hidden;
+    z-index: -1
+}
+
+.chartjs-size-monitor-expand > div {
+    position: absolute;
+    width: 1000000px;
+    height: 1000000px;
+    left: 0;
+    top: 0
+}
+
+.chartjs-size-monitor-shrink > div {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    left: 0;
+    top: 0
+}</style>
+</head>
+
+<body>
+
+    <div style="align-content: center; text-align: left; display: flex; justify-content: left;">
+        <div style="width: 100%">
+            <br>
+            <div style=" width: auto; font-size: xx-large; font-weight: bold; margin: 10px;">
+                <h4 style="margin-top:-20px;">내일 누적 확진자 예측</h4>
+                <span id="infectedPrediction">계산중...</span><span>명</span>
+                <h4 style="margin-top:20px;">내일 누적 사망자 예측</h4>
+                <span id="deathPrediction">계산중...</span><span>명</span>
+                <p style="font-size:13px; color:#d92121; margin-top:20px;">
+위 수치는 지금까지의 발생 동향을 기반으로 계산된 단순 추정치입니다.<br>단순 참고용으로만 사용하여 주시고, 해당 자료를 신뢰하지 마시기 바랍니다.
+</p> 
+                <span id="infectedCount" style="display: none;">Predicted infected count calculating...</span>
+            </div>
+            <button id="toggleScale" style="display: none;"><b>∡ Logaritmic / Linear Scale Toggle</b></button><br>
+            
+            <b style="display:none;" id="iDailyGrowthPercent" style="color: darkorange">로딩중... </b>
             <div style="display: none;">
             
                 <select id="locationSelect" style="width: 150px"></select>
                 <button id="clearDatasets" style="border-radius: 0"><b>Clear</b></button>
                 <button id="toggleScalePerCountry"><b>∡ Log Scale Toggle</b></button>
             </span>
-            <div class="chartjs-size-monitor">
-                <div class="chartjs-size-monitor-expand">
-                    <div class=""></div>
-                </div>
-                <div class="chartjs-size-monitor-shrink">
-                    <div class=""></div>
-                </div>
-            </div>
-        </div>
 
             <script src="https://www.coronaviruschart.com/jquery-3.3.1.slim.min.js"></script>
             <script src="https://www.coronaviruschart.com/jquery.csv.min.js"></script>
 
             <script>
-                let worldPlusChinaData = [
-                    { d: '2020-03-25', i: 471035, t: 21284, w: 389751},
-                    { d: '2020-03-26', i: 531865, t: 24089, w: 532237-81340},
-                    { d: '2020-03-27', i: 596366, t: 27365, w: 597252-81394},
-                    { d: '2020-03-28', i: 663127, t: 30880, w: 663748-81394},
-                    { d: '2020-03-29', i: 723390, t: 34018, w: 723700-81470},
-                    { d: '2020-03-30', i: 784741, t: 37810, w: 785979-87956},
-                    { d: '2020-03-31', i: 858361, t: 42322, w: 859032-81554},
-                    { d: '2020-04-01', i: 935232, t: 47256, w: 937567-81589},
-                    { d: '2020-04-02', i: 1015096, t: 53069, w: 1016128-81620},
-                    { d: '2020-04-03', i: 1116662, t: 60405, w: 1016128-81620},
-                    { d: '2020-04-04', i: 1201473, t: 64710, w: 1016128-81620},
-                    { d: '2020-04-05', i: 1272900, t: 69426, w: 1016128-81620},
+                // 여기를 바꿔주세요
+                // 최근 6일까지의 수치만 입력해야 합니다.
+                let recentKoreaData = [
+                    { d: '2020-03-31', i: 9887, t: 165, w: 785979-87956},
+                    { d: '2020-04-01', i: 9976, t: 169, w: 859032-81554},
+                    { d: '2020-04-02', i: 10062, t: 174, w: 937567-81589},
+                    { d: '2020-04-03', i: 10156, t: 177, w: 1016128-81620},
+                    { d: '2020-04-04', i: 10237, t: 183, w: 1016128-81620},
+                    { d: '2020-04-05', i: 10284, t: 186, w: 1016128-81620},
 
                 ];
 
-                let sourceDataLength = worldPlusChinaData.length;
+
+                let sourceDataLength = recentKoreaData.length;
 
                 let ahead = 3;
-                let [data, infectedNow, iDailyGrowthPercent] = predict(worldPlusChinaData, ahead);
+                let [data, infectedNow, iDailyGrowthPercent] = predict(recentKoreaData, ahead);
                 updateIC();
                 document.getElementById('iDailyGrowthPercent').innerText = Math.floor(iDailyGrowthPercent).toString() + '%';
 
@@ -500,10 +691,12 @@
                 }
 
                 function updateIC() {
-                    [data, infectedNow, iDailyGrowthPercent] = predict(worldPlusChinaData, 0);
+                    [data, infectedNow, iDailyGrowthPercent] = predict(recentKoreaData, 0);
                     document.getElementById('infectedCount').innerText = infectedNowToString(infectedNow).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
                 }
+
+                
 
                 setInterval(updateIC, 500);
 
@@ -525,168 +718,12 @@
                 let tbcs = pointColors(color(window.chartColors.red).alpha(1).rgbString());
                 let wbcs = pointColors(color(window.chartColors.purple).alpha(1).rgbString());
 
-
+                document.getElementById('infectedPrediction').innerText = data.map(d => d.i)[6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                document.getElementById('deathPrediction').innerText = data.map(d => d.t)[6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
                 var type = 'linear';
 
                 var timeFormat = 'YYYY-MM-DD';
-
-                var config = {
-                    type: 'line',
-                    data: {
-                        labels: data.map(d => new Date(d.d)),
-                        datasets: [
-                            // {
-                            //  label: '☣  Infected w/o China',
-                            //  backgroundColor: color(window.chartColors.purple).alpha(1).rgbString(),
-                            //  borderColor: window.chartColors.purple,
-                            //  pointBackgroundColor: wbcs,
-                            //  pointBorderColor: wbcs,
-                            //  hidden: false,
-                            //  fill: false,
-                            //  data: data.map(d => d.w),
-                            // },
-                            {
-                                label: '확진',
-                                backgroundColor: color(window.chartColors.yellow).alpha(1).rgbString(),
-                                borderColor: window.chartColors.yellow,
-                                pointBackgroundColor: bcs,
-                                pointBorderColor: bcs,
-                                hidden: false,
-                                fill: false,
-                                data: data.map(d => d.i),
-                            },
-                            {
-                                label: '사망자',
-                                backgroundColor: color(window.chartColors.red).alpha(1).rgbString(),
-                                borderColor: window.chartColors.red,
-                                pointBackgroundColor: tbcs,
-                                pointBorderColor: tbcs,
-                                hidden: false,
-                                fill: false,
-                                data: data.map(d => d.t),
-                            },
-                            // {
-                            //  label: '☣  Infected Model',
-                            //  backgroundColor: color(window.chartColors.blue).alpha(1).rgbString(),
-                            //  borderColor: window.chartColors.blue,
-                            //  // pointBackgroundColor: bcs,
-                            //  // pointBorderColor: bcs,
-                            //  hidden: true,
-                            //  fill: false,
-                            //  data: data.map(d => d.im),
-                            // },
-                            // {
-                            //  label: '✝ Dead Model',
-                            //  backgroundColor: color(window.chartColors.blue).alpha(1).rgbString(),
-                            //  borderColor: window.chartColors.blue,
-                            //  // pointBackgroundColor: bcs,
-                            //  // pointBorderColor: bcs,
-                            //  hidden: true,
-                            //  fill: false,
-                            //  data: data.map(d => d.tm),
-                            // },
-                        ]
-                    },
-                    options: {
-                        // maintainAspectRatio: false,
-                        title: {
-                            text: '예측 그래프'
-                        },
-                        scales: {
-                            xAxes: [{
-                                type: 'time',
-                                time: {
-                                    parser: timeFormat,
-                                    round: 'day',
-                                    tooltipFormat: 'll',
-                                    unit: 'day',
-                                    displayFormats: {
-                                        day: 'MM.DD'
-                                    }
-                                },
-                                scaleLabel: {
-                                    display: true,
-                                    labelString: ''
-                                }
-                            }],
-                            yAxes: [{
-                                scaleLabel: {
-                                    display: true,
-                                    labelString: '환자 수(명)'
-                                }
-                            }]
-                        },
-                    }
-                };
-
-                var configPerCountry = {
-                    type: 'line',
-                    data: {
-                        labels: [],
-                        datasets: []
-                    },
-                    options: {
-                        // maintainAspectRatio: false,
-                        title: {
-                            text: 'Coronavirus Infected and Dead Chart'
-                        },
-                        scales: {
-                            xAxes: [{
-                                type: 'time',
-                                time: {
-                                    parser: timeFormat,
-                                    round: 'day',
-                                    tooltipFormat: 'll',
-                                    unit: 'day',
-                                    displayFormats: {
-                                        day: 'DD/MM'
-                                    }
-                                },
-                                scaleLabel: {
-                                    display: true,
-                                    labelString: 'Date'
-                                }
-                            }],
-                            yAxes: [{
-                                scaleLabel: {
-                                    display: true,
-                                    labelString: '# people (logarithmic scale)'
-                                },
-                                type: 'logarithmic'
-                            }]
-                        },
-                    }
-                };
-
-                document.getElementById('toggleScale').addEventListener('click', function() {
-                    type = type === 'linear' ? 'logarithmic' : 'linear';
-                    window.myLine.options.title.text = 'Chart.js Line Chart - ' + type;
-                    window.myLine.options.scales.yAxes[0] = {
-                        scaleLabel: {
-                            display: true,
-                            labelString: `# people (${type} scale)`
-                        },
-                        type: type
-                    };
-
-                    window.myLine.update();
-                });
-
-                document.getElementById('toggleScalePerCountry').addEventListener('click', function() {
-                    type = type === 'linear' ? 'logarithmic' : 'linear';
-                    window.myLinePerCountry.options.title.text = 'Chart.js Line Chart - ' + type;
-                    window.myLinePerCountry.options.scales.yAxes[0] = {
-                        scaleLabel: {
-                            display: true,
-                            labelString: `# people (${type} scale)`
-                        },
-                        type: type
-                    };
-
-                    window.myLinePerCountry.update();
-                });
-
 
                 var colorNames = Object.keys(window.chartColors);
                 function addCountryDataset(locationName) {
@@ -851,20 +888,6 @@
                     return [data, infectedNow, iDailyGrowthPercent];
                 }
 
-                window.fetch('https://health.machinesrental.com/?type=range&from=' + moment().add(-1, 'days').format('YYYY-MM-DD'))
-                    .then(r => r.json())
-                    .then(news => {
-                        document.getElementById('news').innerHTML =
-                                '<li>' +
-                                    news.data.map(n => {
-                                        let localDate = moment.tz(n.date, 'Europe/Berlin').local().format('MM/DD HH:mm');
-                                        return `<b>${localDate}</b> <a href="${n.source_url}" rel="nofollow" target="_blank">${n.title}</a>`;
-                                    })
-                                    .slice(0, Math.min(10, news.data.length))
-                                    .join('</li>\n<li>')
-                                + '</li>';
-                    });
-
 
             </script>
 
@@ -874,134 +897,12 @@
         </div>
     </div>
 
-                        <!-- TASK PROGRESS-->
-                                    <h4 style="margin-bottom: 10px;">치사율</h4>
-                                        <div class="progress mb-2" style="height:30px;">
-                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 25%" aria-valuenow="5.296%" aria-valuemin="0" aria-valuemax="100">5.296%</div>
-                                        </div><br>
-
-                                        <h4 style="margin-bottom: 10px;">재생산지수(R0) <button type="button" data-toggle="modal" data-target="#smallmodal"><img style="width:25px; height:25px;" src="https://img.pngio.com/help-icon-transparent-background-83167-free-icons-library-help-icon-png-2000_2000.jpg"></button></h4>
-                                        <div class="progress mb-2" style="height:30px;">
-                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 16%" aria-valuenow="2.6" aria-valuemin="0" aria-valuemax="100">2.6</div>
-                                        </div><br>
-
-                                         <h4 style="margin-bottom: 10px;">완치율</h4>
-                                        <div class="progress mb-2" style="height:30px;">
-                                            <div class="progress-bar bg-success" role="progressbar" style="width: 42%" aria-valuenow="20.751%" aria-valuemin="0" aria-valuemax="100">20.751%</div>
-                                        </div><br>
-
-                                <div class="col-md-6 col-lg-4"> <!-- CHART--> 
-                                    <div class="statistic-chart-1" style="border-radius: 10px; margin-left:-15px; margin-right:-15px;"> 
-                                        <div class="chart-wrap" style="overflow:scroll; margin:-20px;"> <h3 style="background-color:#fff; margin-left:15px;">
-                                            TOP15<h3 style="color:#a9a9a9; margin-left:15px;">발생국 현황<br></h3></h3> 
-                                            <div id="tableByCountry" style="margin-top:30px;"></div> 
-                                        </div> 
-                                        <a href="http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=14&ncvContSeq=&contSeq=&board_id=&gubun=" target="_blank" style=" text-align:right; margin-left:-15px;"><br>더보기 ></a>
-                                        <br><Br> 
-                                    </div> 
-                                    <!-- END CHART-->
-                                     </div>
-
-                    </div>
-                </div>
-            </section>
-            <!-- END STATISTIC-->
-
-            <section id="frontier">
-                      <h3 style="text-align: left; width:90%; margin-top:40px; margin-left:25px;">재난문자 <span style="font-size:15px;" class="myRegion">위치 찾는 중...</a></h3><br>
-                      <div class="article" style="border-color: red; width:90%; margin-left:15px; margin-right:15px;">
-        <a href="http://www.safekorea.go.kr/idsiSFK/neo/main_m/dis/disasterDataList.html" id="infotainer" target="_blank">
-          <h2 class="itemName" id="cbs_ct1">[내용]</h2>
-
-          <h4 class="itemAuthorName" id="cbs_from1" style="margin-bottom:15px;">[발송처]</h4>
-        </a>
-        <!--         infotainer end -->
-      </div>
-
-      <div class="article" style="border-color: red; width:90%; margin-left:15px; margin-right:15px;">
-        <a href="http://www.safekorea.go.kr/idsiSFK/neo/main_m/dis/disasterDataList.html" id="infotainer" target="_blank">
-          <h2 class="itemName" id="cbs_ct2">[내용]</h2>
-
-          <h4 class="itemAuthorName" id="cbs_from2" style="margin-bottom:15px;">[발송처]</h4>
-        </a>
-        <!--         infotainer end -->
-      </div>
-  <a href="http://www.safekorea.go.kr/idsiSFK/neo/main_m/dis/disasterDataList.html" target="_blank" style=" text-align:right; margin-left:20px;">더보기 ></a><br><Br>
-
-
-
-            </section>
-
-                <div id="frontier" ng-app="myApp">
-
-
-  <div ng-controller="mainCtrl" style="margin-right:15px; margin-left:15px; padding-top:20px;">
-   
-    <div class="flexCont">
-      <h3 style="text-align: left; width:100%; margin-bottom:20px; margin-left:10px;">최신뉴스</h3><br>
-
-      <div class="article" ng-repeat="item in articles">
-         
-        
-        <a href="{{item.url}}" id="infotainer" target="_blank">
-          <h2 class="itemName">{{item.title}}</h2>
-
-          <h4 class="itemAuthorName">{{item.author}}</h4>
-          <p class="itemDesc">{{item.description}}</p>
-        </a>
-        <!--         infotainer end -->
-      </div>
-      <!--     end ng-repeat div -->
-    </div>
-    <!--     end flexCont -->
-  </div>
-  <!-- end main controller div -->
-  <a href="https://search.naver.com/search.naver?where=news&sm=tab_jum&query=%EC%BD%94%EB%A1%9C%EB%82%9819" target="_blank" style=" text-align:right; margin-left:20px;">더 많은 뉴스 보기 ></a>
-  
-</div>
-<!-- end frontier div -->
-</div>
-            </section>
-            <!-- END STATISTIC CHART-->
-
-                
-
-            
-
-            <!-- COPYRIGHT-->
-            <section class="p-t-60 p-b-20">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="copyright">
-                                <p>Copyright © 2020 All rights reserved. <br>정보 제공 : <a href="http://ncov.mohw.go.kr" target="_blank">중앙재난안전대책본부</a>.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- END COPYRIGHT-->
-        </div>
-
-    </div>
+</body>
+</html>
 
 
 
 
-    <div class="modal fade" id="smallmodal" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
-<div class="modal-dialog modal-sm" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<h5 class="modal-title" id="smallmodalLabel">용어설명 - 재생산지수(R0)</h5>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-</div>
-<div class="modal-body">
-<p style="font-size:15px;">
-재생산지수란 전염성이 사람 간 전파되는 정도를 수치로 나타낸 것으로 쉽게 말하면 감염병의 전파성을 나타내는 지수이다.<br>
-R0 수치가 2라고 가정하면, 감염자 1명이 다른 사람 2명 이상에게 전파가 가능하다는 의미이다.<br>
-</p>
 </div>
 <div class="modal-footer">
 <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
