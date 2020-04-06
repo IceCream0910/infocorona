@@ -336,7 +336,7 @@ $(window).scroll(function() {
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['3.31', '4.1', '4.2', '4.3', '4.4', "4.5'],
+          labels: ['3.31', '4.1', '4.2', '4.3', '4.4', '4.5'],
           datasets: [
             {
               label: '일일 검사',    
