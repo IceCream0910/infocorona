@@ -263,7 +263,7 @@ $(window).scroll(function() {
           datasets: [
             {
               label: "확진",
-              data: [81, 47, 47, 53, 39, 27, 30],
+              data: [47, 47, 53, 39, 27, 30],
               borderColor: "rgba(250, 66, 81, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(250, 66, 81,0.5)",
