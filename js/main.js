@@ -332,7 +332,7 @@ $(window).scroll(function() {
 
     var ctx = document.getElementById("recent-rep2-chart");
     if (ctx) {
-      ctx.height = 190;
+      ctx.height = 210;
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
