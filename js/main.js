@@ -375,7 +375,7 @@ $(window).scroll(function() {
             }],
             yAxes: [{
               ticks: {
-                beginAtZero: true,
+                beginAtZero: false,
                 maxTicksLimit: 5,
                 stepSize: 2000,
                 max: 21000,
