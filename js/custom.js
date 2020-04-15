@@ -44,7 +44,7 @@ angular.module("myApp", ['ngRoute'])
                                                     var tupyoTime = data.TUPYO.basetime;
                                                     tupyoTime = tupyoTime.substring(8,10)+":"+tupyoTime.substring(10,12);
                                                     
-                                                    var appendHtml = '<a href="https://news.naver.com/main/election/nation2020/index.nhn" title="투개표 페이지 이동" target="_blank">';
+                                                    var appendHtml = '<a href="https://m.news.naver.com/election/nation2020/result/index.nhn?p=party" title="투개표 페이지 이동" target="_blank">';
                                                     appendHtml += ' <span class="title">최종 투표율</span>';
                                                     appendHtml += ' <strong><span class="num" style="font-size:22px;">'+data.TUPYO.tupyoryl+'</span><span class="percent">%, </span></strong>';
                                                    
