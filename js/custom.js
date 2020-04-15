@@ -45,8 +45,11 @@ angular.module("myApp", ['ngRoute'])
                                                     tupyoTime = tupyoTime.substring(8,10)+":"+tupyoTime.substring(10,12);
                                                     
                                                     var appendHtml = '<a href="https://news.naver.com/main/election/nation2020/index.nhn" title="투개표 페이지 이동" target="_blank">';
-                                                    appendHtml += ' <span class="title">전국 투표율</span>';
-                                                    appendHtml += ' <strong><span class="num" style="font-size:22px;">'+data.TUPYO.tupyoryl+'</span><span class="percent">%</span></strong>';
+                                                    appendHtml += ' <span class="title">최종 투표율 : 집계중%, 개표율</span>';
+                                                    appendHtml += ' <strong><span class="num" style="font-size:22px;">'+data.TUPYO.gaepyoryl_sgg+'</span><span class="percent">%, </span></strong>';
+                                                    appendHtml += ' <span class="title">비례 개표율</span>';
+                                                    appendHtml += ' <strong><span class="num" style="font-size:22px;">'+data.TUPYO.gaepyoryl_birye+'</span><span class="percent">%</span></strong>';
+                                                   
                                                     appendHtml += ' <span class="time">'+' ('+tupyoTime+' 기준)</span>';
                                                     appendHtml += '</a>';
                                                     $(".election2020-rate-box").html("");
