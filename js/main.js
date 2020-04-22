@@ -91,7 +91,7 @@ $(window).scroll(function() {
             xAxes: [{
               display: false,
               categoryPercentage: 1,
-              barPercentage: 0.65
+              barPercentage: 0.7
             }],
             yAxes: [{
               display: false
