@@ -94,7 +94,12 @@ $(window).scroll(function() {
               barPercentage: 0.65
             }],
             yAxes: [{
-              display: false
+              display: false,
+              ticks: {
+                beginAtZero: true,
+                maxTicksLimit: 5,
+                stepSize: 5,
+              }
             }]
           }
         }
