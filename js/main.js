@@ -90,8 +90,8 @@ $(window).scroll(function() {
           scales: {
             xAxes: [{
               display: false,
-              categoryPercentage: 0.7,
-              barPercentage: 0.75
+              categoryPercentage: 1,
+              barPercentage: 0.65
             }],
             yAxes: [{
               display: false
