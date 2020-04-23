@@ -48,7 +48,23 @@ input.on('keyup', function(e) {
 */
 
 function sendBtn() {
-	var curUsername = user.join();
+
+  var result = ValidateCaptcha();
+  if( $("#UserCaptchaCode").val() == "" || $("#UserCaptchaCode").val() == null || $("#UserCaptchaCode").val() == "undefined") {
+    $('#WrongCaptchaError').text('아래에 표시된 자동 입력 방지 문자를 입력하세요.').show();
+    $('#UserCaptchaCode').focus();
+  } else {
+    if(result == false) { 
+      $('#WrongCaptchaError').text('자동입력방지 문자가 올바르지 않습니다.').show();
+      CreateCaptcha();
+      $('#UserCaptchaCode').focus().select();
+    }
+    else { 
+      $('#UserCaptchaCode').val('').attr('place-holder','Enter Captcha - Case Sensitive');
+      CreateCaptcha();
+      $('#WrongCaptchaError').fadeOut(100);
+      $('#SuccessMessage').fadeIn(500).css('display','block').delay(5000).fadeOut(250);
+      var curUsername = user.join();
 	if (input.val().length > 0) {
 		var getTxt = input.val();
 		messages.push({
@@ -57,6 +73,9 @@ function sendBtn() {
 		});
 		input.val('');
 	}
+    }
+  }  
+	
 }
 
 function sendBtnSpring() {
@@ -136,7 +155,9 @@ function renderCounter() {
 } 
 
 $('.decrease').on('click', function() {
-  counter++;
+	var currentTxt= $('.counter').html();
+	if(currentTxt != "로딩중") {
+		counter++;
 
   if (counter === 0) {
     counter = initialValue;
@@ -146,4 +167,6 @@ $('.decrease').on('click', function() {
     clickCounter: counter
   })
   renderCounter();
+	}
+  
 })
