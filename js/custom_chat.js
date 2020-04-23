@@ -47,8 +47,8 @@ input.on('keyup', function(e) {
 });
 */
 
+var UploadCnt = 0;
 function sendBtn() {
-
   var result = ValidateCaptcha();
   if( $("#UserCaptchaCode").val() == "" || $("#UserCaptchaCode").val() == null || $("#UserCaptchaCode").val() == "undefined") {
     $('#WrongCaptchaError').text('아래에 표시된 자동 입력 방지 문자를 입력하세요.').show();
@@ -60,6 +60,7 @@ function sendBtn() {
       $('#UserCaptchaCode').focus().select();
     }
     else { 
+    	UploadCnt++;
       $('#UserCaptchaCode').val('').attr('place-holder','Enter Captcha - Case Sensitive');
       CreateCaptcha();
       $('#WrongCaptchaError').fadeOut(100);
@@ -91,7 +92,7 @@ function sendBtnSpring() {
 }
 
 
-messages.limitToLast(500).on("child_added", function(snap) {
+messages.limitToLast(100).on("child_added", function(snap) {
 	if($.sanitize(snap.val().user) == 'admin') {
 		wrap.prepend('<li><div style="background-color:#fa4251; border-radius:10px; width:50px; font-size:14px; padding: 2px 4px; margin-bottom:5px;"><span style="color:white;">개발자</div></span> ' + $.sanitize(snap.val().message) + '</li>');
 	} else {
@@ -169,4 +170,20 @@ $('.decrease').on('click', function() {
   renderCounter();
 	}
   
-})
+});
+
+var timeCnt =0;
+var timer = setInterval(function(){
+       timeCnt++;
+       if(timeCnt < 30) {
+       	if(UploadCnt >= 3) {
+       	alert('도배 방지를 위해 30초 이내에 글 3개 이상을 작성하실 수 없습니다.');
+       	timeCnt =0;
+       	UploadCnt=0;
+       }
+       } else {
+       	timeCnt =0;
+       	UploadCnt=0;
+       }
+       
+    }, 1000)
