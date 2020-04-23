@@ -48,7 +48,6 @@ input.on('keyup', function(e) {
 */
 
 var UploadCnt = 0;
-var uploadAllow = 0;
 function sendBtn() {
   var result = ValidateCaptcha();
   if( $("#UserCaptchaCode").val() == "" || $("#UserCaptchaCode").val() == null || $("#UserCaptchaCode").val() == "undefined") {
@@ -61,7 +60,6 @@ function sendBtn() {
       $('#UserCaptchaCode').focus().select();
     }
     else { 
-if(uploadAllow == 1) {
     	UploadCnt++;
       $('#UserCaptchaCode').val('').attr('place-holder','Enter Captcha - Case Sensitive');
       CreateCaptcha();
@@ -75,7 +73,7 @@ if(uploadAllow == 1) {
 			message: getTxt
 		});
 		input.val('');
-	}
+	
     }
   }  
 	
@@ -179,17 +177,13 @@ var timer = setInterval(function(){
        timeCnt++;
        if(timeCnt < 30) {
        	if(UploadCnt >= 3) {
-        uploadAllow = 0;
        	alert('도배 방지를 위해 30초 이내에 글 3개 이상을 작성하실 수 없습니다.');
        	timeCnt =0;
        	UploadCnt=0;
-       } else {
-uploadAllow = 1;
-}
+        }
        } else {
        	timeCnt =0;
        	UploadCnt=0;
-        uploadAllow = 1;
        }
        
     }, 1000)
