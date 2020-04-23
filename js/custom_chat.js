@@ -73,7 +73,7 @@ function sendBtn() {
 			message: getTxt
 		});
 		input.val('');
-	
+	}
     }
   }  
 	
@@ -180,7 +180,7 @@ var timer = setInterval(function(){
        	alert('도배 방지를 위해 30초 이내에 글 3개 이상을 작성하실 수 없습니다.');
        	timeCnt =0;
        	UploadCnt=0;
-        }
+       }
        } else {
        	timeCnt =0;
        	UploadCnt=0;
