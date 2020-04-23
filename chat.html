@@ -98,7 +98,7 @@
                                      <button class="decrease" style="display:inline-block;">
                         <img src="https://vectorified.com/images/heart-icon-14.png" style="margin-top:0px; width:60px; height:60px; margin-right:5px;"> 
                         </button>
-<h3 class="counter" style="display:inline-block;">로딩중</h3>
+<h3 class="counter" id="counter" style="display:inline-block;">로딩중</h3>
                                 </div>
                             </div>
                             <!-- END CHART-->
@@ -108,40 +108,34 @@
                         </div>
                     </div>
 
-                    
-                    
-                    <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
-<span class="badge badge-pill badge-danger">공지</span> 현재 게시판 내 도배성 글이 지속적으로 발생함에 따라 게시판 기능을 일시 폐쇄합니다. 조속히 복구하겠습니다.
-<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-</div>
-                    
-                    
-                        <!--
+                        
                         <div class="row">
                         <div class="col-md-6 col-lg-4">
+                        <!-- CHART-->
                             <div class="statistic-chart-1" style="border-radius: 10px; padding: 25px 25px; background-image:url(https://image.freepik.com/free-vector/social-media-popularity_74855-4576.jpg); background-repeat: no-repeat;" data-toggle="modal" data-target="#myModalFullscreen" contenteditable="false">
                                 <div class="chart-wrap">
                                     <h3 style="color:#fff;">함께<h3 style="color:#fff; margin-bottom: 30px;">대한민국을 응원해주세요!</h3></h3>
 
                                 </div>
                             </div>
+                            <!-- END CHART-->
                         </div>
                     </div>
-            
 
 
                     <div class="row">
                         <div class="col-md-6 col-lg-4">
+
+                        <!-- CHART-->
                             <div class="statistic-chart-1" style="border-radius: 10px; padding: 25px 25px; background-image:url(https://image.freepik.com/free-vector/hand-drawn-spring-background_23-2148429775.jpg); background-repeat: no-repeat;" data-toggle="modal" data-target="#myModalFullscreen2" contenteditable="false" onclick="javascript:playerStart();"> 
                                 <div class="chart-wrap">
                                     <h3>놓치고 있는 [봄]은<h3 style="color:#203354; margin-bottom: 30px;">우리에게 어떤 의미일까요?</h3></h3>
                                 </div>
                             </div>
+                            <!-- END CHART-->
                         </div>
                     </div>
--->
+
 
                             <!-- /힘내라대한민국 채팅창 -->
 <div class="modal fade modal-fullscreen  footer-to-bottom" id="myModalFullscreen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -161,7 +155,21 @@
             <div style="margin-top:0px; ">
                 <textarea name="content" class="message" type="text" id="re_content" placeholder="응원 메시지 남기기"></textarea>
                 <button onClick="javascript:sendBtn();" id="rep_bt" class="re_bt"><i class="fas fa-paper-plane"></i></button>
+
+    <input style="position:inline-block;" type="text" id="UserCaptchaCode" class="CaptchaTxtField" placeholder='아래의 매크로 방지 문자를 입력해주세요.'>
+    
+    <span id="WrongCaptchaError" class="error"></span>
+    <div class='CaptchaWrap'>
+
+      <div id="CaptchaImageCode" class="CaptchaTxtField">
+
+        <canvas id="CapCode" class="capcode" width="100%" height="80"></canvas>
+
+      </div> 
+      
+    </div>
             </div>
+
     </div>
 
 
@@ -323,7 +331,9 @@
     - 스팸<br>
     - 사칭 <br>
     - 허위 뉴스<br><br>
-    5. 이외에 운영자가 부적절하다고 판단하는 모든 글<br><br>
+    5. 쾌적한 게시판 조성<br>
+    - 도배성 글<br>
+    - 게시판 목적에서 벗어나는 글<br><br>
 </p>
 </div>
 <div class="modal-footer">
@@ -344,14 +354,14 @@
 </button>
 </div>
 <div class="modal-body"><p style="font-size:13px;">
+    <h4>04-23 업데이트</h4>
+    1. 게시판 안정성 개선<br>
+    - 자동입력방지 문자(Captcha) 추가<br>
+    - 간헐적으로 하트가 초기화되는 오류 수정<br><br>
+
     <h4>04-20 업데이트</h4>
     1. 현황 탭 영어 지원<br>
     - 차트와 같이 일부 번역되지 않은 내용이 있을 수 있습니다.<br>
-
-    <h4>04-16 업데이트</h4>
-    1. 실시간 통계 서버 증설<br>
-    2. 자가진단 사이트 주소 변경(정보 탭)<br><br>
-    
     * 일일 현황 업데이트는 업데이트 내역에 포함되지 않습니다.
 
 </p>
@@ -469,7 +479,6 @@
 }
 
   .message {
-     margin-bottom:30px;
      height:80px;
      width:75%;
      background-color: #c5c7c4;
@@ -553,4 +562,151 @@ height:80px;
   bottom: 0;
 }
  
+
+
+.CaptchaWrap { position: relative; }
+.CaptchaTxtField { 
+  border-radius: 5px 5px 0 0; 
+  border: 1px solid #ccc; 
+  display: block;  
+  box-sizing: border-box;
+}
+
+#UserCaptchaCode { 
+     height:40px;
+     width:97%;
+     background-color: #c5c7c4;
+     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
+     padding: 10px 20px;
+}
+
+#CaptchaImageCode { 
+  text-align:center;
+  margin-bottom: 20px;
+  padding: 0px 0;
+  width: 97%;
+  height:80px;
+  overflow: hidden;
+  border-radius:0 0 5px 5px;
+}
+
+.capcode {
+    width:100%;
+  display: block; 
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none; 
+  cursor: default;
+  letter-spacing: 0.6px;
+  color: #ccc;
+  font-family: 'Roboto Slab', serif;
+  font-style: italic;
+  padding-left:-20px;
+}
+
+.ReloadBtn { 
+  background:url('https://cdn3.iconfinder.com/data/icons/basic-interface/100/update-64.png') left top no-repeat;   
+  background-size : 100%;
+  width: 25px; 
+  height: 25px;
+  border: 0px; outline none;
+  position: relative;
+  outline: none;
+  cursor: pointer; /**/
+}
+
+.error { 
+  color: red; 
+  font-size: 12px; 
+  display: none; 
+}
+.success {
+  color: green;
+  font-size: 18px;
+  margin-bottom: 15px;
+  display: none;
+}
 </style>
+
+
+<script>
+    var cd;
+
+$(function(){
+  CreateCaptcha();
+});
+
+// Create Captcha
+function CreateCaptcha() {
+  //$('#InvalidCapthcaError').hide();
+  var alpha = new Array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
+                    
+  var i;
+  for (i = 0; i < 6; i++) {
+    var a = alpha[Math.floor(Math.random() * alpha.length)];
+    var b = alpha[Math.floor(Math.random() * alpha.length)];
+    var c = alpha[Math.floor(Math.random() * alpha.length)];
+    var d = alpha[Math.floor(Math.random() * alpha.length)];
+    var e = alpha[Math.floor(Math.random() * alpha.length)];
+  }
+  cd = a + ' ' + b + ' ' + c + ' ' + d + ' ' + e;
+  $('#CaptchaImageCode').empty().append('<canvas id="CapCode" class="capcode"></canvas>')
+  
+  var c = document.getElementById("CapCode"),
+      ctx=c.getContext("2d"),
+      x = c.width / 2,
+      img = new Image();
+
+  img.src = "https://pixelsharing.files.wordpress.com/2010/11/salvage-tileable-and-seamless-pattern.jpg";
+  img.onload = function () {
+      var pattern = ctx.createPattern(img, "repeat");
+      ctx.fillStyle = pattern;
+      ctx.fillRect(0, 0, c.width, c.height);
+      ctx.font="46px Roboto Slab";
+      ctx.fillStyle = '#ccc';
+      ctx.textAlign = 'center';
+      ctx.setTransform (1, -0.12, 0, 1, 0, 15);
+      ctx.fillText(cd,x,55);
+  };
+  
+  
+}
+
+// Validate Captcha
+function ValidateCaptcha() {
+  var string1 = removeSpaces(cd);
+  var string2 = removeSpaces($('#UserCaptchaCode').val());
+  if (string1 == string2) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+// Remove Spaces
+function removeSpaces(string) {
+  return string.split(' ').join('');
+}
+
+// Check Captcha
+function CheckCaptcha() {
+  var result = ValidateCaptcha();
+  if( $("#UserCaptchaCode").val() == "" || $("#UserCaptchaCode").val() == null || $("#UserCaptchaCode").val() == "undefined") {
+    $('#WrongCaptchaError').text('Please enter code given below in a picture.').show();
+    $('#UserCaptchaCode').focus();
+  } else {
+    if(result == false) { 
+      $('#WrongCaptchaError').text('Invalid Captcha! Please try again.').show();
+      CreateCaptcha();
+      $('#UserCaptchaCode').focus().select();
+    }
+    else { 
+      $('#UserCaptchaCode').val('').attr('place-holder','Enter Captcha - Case Sensitive');
+      CreateCaptcha();
+      $('#WrongCaptchaError').fadeOut(100);
+      $('#SuccessMessage').fadeIn(500).css('display','block').delay(5000).fadeOut(250);
+    }
+  }  
+}
+</script>
