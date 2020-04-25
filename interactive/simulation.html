@@ -1,25 +1,27 @@
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Pex.Js Engine by Ahmad Faisal Jawed">
-	<meta name="author" content="Ahmad Faisal Jawed">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.min.css" rel="stylesheet">
-	
-	<title>코로나콕 인터랙티브 컨텐츠 - 사회적 거리두기 시뮬레이션</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pex.Js Engine by Ahmad Faisal Jawed">
+  <meta name="author" content="Ahmad Faisal Jawed">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.min.css" rel="stylesheet">
+  <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script> <!-- 제이쿼리 사용시 필수 -->
+
+  
+  <title>코로나콕 인터랙티브 컨텐츠 - 사회적 거리두기 시뮬레이션</title>
 
 
-	<header>
-		 <a href="javascript:history.back();"><img style="display:inline-block; width:10px; height:20px; margin-right: 10px;" src="https://www.pngkit.com/png/full/155-1554499_kudos-back-white-icon-png.png"></a>
-		<h4 style="color:white; display:inline-block;">사회적 거리두기 시뮬레이션</h4>
+  <header>
+     <a href="javascript:history.back();"><img style="display:inline-block; width:10px; height:20px; margin-right: 10px;" src="https://www.pngkit.com/png/full/155-1554499_kudos-back-white-icon-png.png"></a>
+    <h4 style="color:white; display:inline-block;">사회적 거리두기 시뮬레이션</h4>
 </header>
 </head>
 
 
 <body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
 
-	<section>
+  <section>
   <canvas id="population" width="2000" height="1200"></canvas>
   <div class="info">
     <canvas id="graph" height="400" width="1500"></canvas>
@@ -48,15 +50,15 @@
         </select>
       </span>
       &nbsp;
-      <button class="button is-primary" id="run">시작하기</button>
+      <button class="button is-danger" id="run">시작하기</button>
     </div>
   </div>
 </section>
 
 
-	<style>
+  <style>
 header {
-	position:fixed;
+  position:fixed;
    background: linear-gradient(#000, rgba(0,0,0,0.0));
   color: #fff;
   padding:0px 20px;
@@ -67,8 +69,8 @@ header {
 }
 
 body {
-	background: #000;
-	margin:0;
+  background: #000;
+  margin:0;
 }
 
 
@@ -155,10 +157,10 @@ li {
   justify-content: space-between;
 }
 
-	</style>
+  </style>
 
-	<script>
-		console.clear();
+  <script>
+    console.clear();
 
 const PI = Math.PI;
 const PI2 = PI * 2;
@@ -407,7 +409,8 @@ $run.addEventListener("click", () => {
   const pop = new Population(1000, q, 3);
   const graph = new Graph(pop);
   graph.context.clearRect(0, 0, graph.width, graph.height);
-  $overlay.classList.remove("active");
+  $(".active").hide();
+
 
   function run() {
     pop.tick();
