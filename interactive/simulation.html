@@ -415,7 +415,7 @@ $run.addEventListener("click", () => {
   function run() {
     pop.tick();
     graph.tick();
-    if (graph.done) $overlay.classList.add("active");else
+    if (graph.done)   $(".active").show();else
     requestAnimationFrame(run);
   }
 
