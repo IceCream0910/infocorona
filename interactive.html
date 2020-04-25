@@ -55,7 +55,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12" style="margin-top:30px; margin-left:10px;">
-                            <h1 style="font-size:22px;">코로나19와 관련된<br>콘텐츠를 확인해보세요.
+                            <h1 style="font-size:22px;">다양한 재미있는<br>콘텐츠를 확인해보세요.
                             </h1><br>
                             <hr class="line-seprate">
                             <br>
@@ -83,10 +83,27 @@
                 </div>
             </section>
             <!-- END WELCOME-->
-
-            <section class="statistic statistic2">
-                <div class="container">
-            </section>
+<br>
+                    <section class="cardCollection cardCollection-recommendedContent">
+  <article class="card-base card" onclick="location.href='interactive/shooting.html';">
+    
+    <section class="card_info">
+      <div class="card_type" style="color:#4272d7;">게임</div>
+      <h2 class="card_title">슈팅 게임</h2>
+      <p class="card_description">당신에게 다가오는 코로나 바이러스를 제거하세요. 가끔 백신과 면역력 보충제가 나오지만 영원히 안전할 수는 없을 겁니다.</p>
+    </section>
+  </article>
+  <article class="card-base card" onclick="location.href='interactive/simulation.html';">
+    
+    <section class="card_info">
+      <div class="card_type" style="color:#ff4b5a">캠페인</div>
+      <h2 class="card_title">사회적 거리두기 시뮬레이션</h2>
+      <p class="card_description">사회적 거리두기 정도에 따른 감염 확산 상황을 시뮬레이션해보세요. 사회적 거리두기가 바이러스를 예방하는 데 얼마나 중요한 지 더 잘 알게될 겁니다.</p>
+    </section>
+  </article>
+  <img src="https://media3.giphy.com/media/WtSIcxye2GZRC/source.gif" class="rocketImg">
+  <h3 style="margin-top:20px;">더 많은 콘텐츠 준비중 </h3>
+</section>
 
 
             <section class="p-t-60 p-b-20">
@@ -94,7 +111,6 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="copyright">
-                                <h4>이곳에는 코로나19와 관련된 게임이나 시뮬레이션 등 다양한 컨텐츠들이 업데이트됩니다.<br>현재 준비중인 탭이니 조금만 기다려주세요.</h4>
                                 <p>Copyright © 2020 All rights reserved.</p>
                             </div>
                         </div>
@@ -139,158 +155,207 @@
 <!-- end document-->
 
 <style>
-    .center {
+.rocketImg {
+    width:40%;
+}
+
+@media ( min-width: 1024px ) {
+  .rocketImg {
+    width:10%;
+    margin-right: 10px;
+}
+}
+
+.image_backgroundContainer,
+.card-base.card .card_image {
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+}
+.image_backgroundContainer img {
+  background-color: inherit;
+  background-size: cover;
+  background-image: inherit;
+  background-position: 50% 50%;
+  content: "";
+  display: block;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.error {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-content: center;
-}
-
-.number {
-  font-family: "Lato", sans-serif;
-  color: #293b49;
-  font-weight: 700;
-  font-size: 11rem;
-  line-height: 1;
-}
-
-.illustration {
-  position: relative;
-  width: 12.2rem;
-  margin: 0 2.1rem;
-}
-
-.circle {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 12.2rem;
-  height: 11.4rem;
-  border-radius: 50%;
-  background-color: #293b49;
-}
-
-.clip {
-  position: absolute;
-  bottom: 0.3rem;
-  left: 50%;
-  transform: translateX(-50%);
+  max-width: 100%;
+  object-fit: scale-down;
+  object-position: 200% 200%;
   overflow: hidden;
-  width: 12.5rem;
-  height: 13rem;
-  border-radius: 0 0 50% 50%;
+  padding-left: 100%;
 }
-
-.paper {
-  position: absolute;
-  bottom: -0.3rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 9.2rem;
-  height: 12.4rem;
-  border: 0.3rem solid #293b49;
-  background-color: white;
-  border-radius: 0.8rem;
-}
-
-.paper::before {
-    content: "";
-    position: absolute;
-    top: -0.7rem;
-    right: -0.7rem;
-    width: 1.4rem;
-    height: 1rem;
-    background-color: white;
-    border-bottom: 0.3rem solid #293b49;
-    transform: rotate(45deg);
-  }
-
-.face {
+.type .overflow,
+.card-base.card .card_description,
+.card-base.card .card_title {
+  background-color: inherit;
+  /* stylelint-disable property-no-unknown */
+  box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  /* stylelint-enable */
+  color: inherit;
+  display: box;
+  display: -webkit-box;
+  display: -moz-box;
+  margin: 0;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0;
   position: relative;
-  margin-top: 2.3rem;
+  text-overflow: -o-ellipsis-lastline;
+  text-overflow: ellipsis;
 }
-
-.eyes {
+.cardCollection {
+  align-items: center;
+  align-content: flex-start;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1278px;
+}
+.card-base.card {
+  box-shadow: 0 0 0 1px #e5f6eb;
+  border-radius: 20px;
+  color: #323232;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: column;
+  height: auto;
+  max-width: calc(100% - 36px);
+  position: relative;
+  width: 100%;
+}
+.card-base.card .card_image {
+  height: 224px;
+}
+.card-base.card .card_info {
+  background-color: #FFF;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  height: auto;
+  padding: 20px;
+  border-radius: 20px;
+}
+.card-base.card .card_cta {
+  margin-top: auto;
+}
+.card-base.card .card_description,
+.card-base.card .card_title {
+  line-height: 26px;
+  width: 100%;
+}
+.card-base.card .card_description {
+    margin-top:-15px;
+  font-size: 16px;
+  max-height: 78px;
+  -webkit-line-clamp: 3;
+}
+.card-base.card .card_title {
+  font-size: 22px;
+  margin: 12px 0 32px;
+  max-height: 52px;
+  -webkit-line-clamp: 2;
+}
+.link.link-video {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+.link.link-video:after,
+.link.link-video:before {
+  content: '';
+  display: block;
   position: absolute;
-  top: 0;
-  left: 2.4rem;
-  width: 4.6rem;
-  height: 0.8rem;
 }
-
-.eye {
-  position: absolute;
-  bottom: 0;
-  width: 0.8rem;
-  height: 0.8rem;
-  border-radius: 50%;
-  background-color: #293b49;
-  animation-name: eye;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+.link.link-video:after {
+  border-top: 0.9375rem solid transparent;
+  border-bottom: 0.9375rem solid transparent;
+  border-left: 1.5625rem solid #fff;
+  margin: 0 0 0 0.25rem;
+  z-index: 2;
 }
-
-.eye-left {
-    left: 0;
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .link.link-video:after {
+    left: 45.5%;
+    top: 42%;
   }
-
-.eye-right {
+}
+.link.link-video:before {
+  background-color: #1473e6;
+  height: 5rem;
+  width: 5rem;
+  z-index: 1;
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .link.link-video:before {
+    left: 33%;
+    top: 31%;
+  }
+}
+.link.link-video:hover:before {
+  background-color: #0d66d0;
+}
+.link.link-video:active:before {
+  background-color: #0d66d0;
+}
+.link.link-video:focus:before {
+  background-color: #0d66d0;
+}
+/*
+* @textClampOverflowConfig
+* An Array of config strings consisting of:
+- valid selector **(class, id, and other specific selectors must be evaluated ~'(#.+~)String')**
+- the number of lines before the overflow treatment is applied
+- and the line height of the elment being effected
+* {Selector} {Max Number of Lines} {Line Height of Type}...
+* {Selector} {Max Number of Lines} {Line Height of Type}...
+*/
+@-moz-document url-prefix() {
+  .gradientPsuedoElement,
+  .card_description:after,
+  .card_title:after {
+    content: "";
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff);
+    position: absolute;
     right: 0;
+    text-align: right;
+    width: 36%;
   }
-
-@keyframes eye {
-  0% {
-    height: 0.8rem;
+  .card_description:after {
+    height: 26px;
+    top: 52px;
   }
-  50% {
-    height: 0.8rem;
+  .card_title:after {
+    height: 26px;
+    top: 26px;
   }
-  52% {
-    height: 0.1rem;
+}
+@supports (-ms-ime-align: auto) {
+  .gradientPsuedoElement,
+  .card_description:after,
+  .card_title:after {
+    content: "";
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff);
+    position: absolute;
+    right: 0;
+    text-align: right;
+    width: 36%;
   }
-  54% {
-    height: 0.8rem;
+  .card_description:after {
+    height: 26px;
+    top: 52px;
   }
-  100% {
-    height: 0.8rem;
+  .card_title:after {
+    height: 26px;
+    top: 26px;
   }
 }
 
-.rosyCheeks {
-  position: absolute;
-  top: 1.6rem;
-  width: 1rem;
-  height: 0.2rem;
-  border-radius: 50%;
-  background-color: #fdabaf;
-}
-
-.rosyCheeks-left {
-    left: 1.4rem;
-  }
-
-.rosyCheeks-right {
-    right: 1.4rem;
-  }
-
-.mouth {
-  position: absolute;
-  top: 3.1rem;
-  left: 50%;
-  width: 1.6rem;
-  height: 0.2rem;
-  border-radius: 0.1rem;
-  transform: translateX(-50%);
-  background-color: #293b49;
-}
 
 </style>
