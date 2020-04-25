@@ -110,6 +110,62 @@ $(window).scroll(function() {
     console.log(error);
   }
 
+   try {
+
+    //해외유입 국가별 현황
+    var ctx = document.getElementById("doughutChart_abroad");
+    if (ctx) {
+      ctx.height = 300;
+      var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          datasets: [{
+            data: [17, 112, 443, 3, 451, 1],
+            backgroundColor: [
+              '#FFA500',
+              '#FFFF00',
+              '#00FFFF',
+              '#800080',
+              '#FFC0CB',
+              '#32CD32'
+            ],
+            hoverBackgroundColor: [
+              '#FFA500',
+              '#FFFF00',
+              '#00FFFF',
+              '#800080',
+              '#FFC0CB',
+              '#32CD32'
+            ]
+
+          }],
+          labels: [
+            "중국",
+            "중국 외 아시아",
+            "유럽",
+            "아프리카",
+            "미주",
+            "호주"
+          ]
+        },
+        options: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              fontFamily: 'Poppins'
+            }
+
+          },
+          responsive: true
+        }
+      });
+    }
+
+
+  } catch (error) {
+    console.log(error);
+  }
+
 
   try {
 
