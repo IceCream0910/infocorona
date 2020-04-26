@@ -71,11 +71,11 @@ $(window).scroll(function() {
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['4.15', '4.16', '4.17', '4.18', '4.19', '4.20', '4.21', '4.22', '4.23', '4.24'],
+          labels: ['4.16', '4.17', '4.18', '4.19', '4.20', '4.21', '4.22', '4.23', '4.24', '4.25'],
           datasets: [
             {
               label: "신규 확진자",
-              data: [22, 22, 18, 8, 13, 9, 11, 8, 6, 10],
+              data: [22, 18, 8, 13, 9, 11, 8, 6, 10, 10],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
@@ -120,7 +120,7 @@ $(window).scroll(function() {
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [17, 112, 443, 3, 451, 1],
+            data: [17, 115, 446, 3, 455, 1],
             backgroundColor: [
               '#FFA500',
               '#FFFF00',
@@ -177,7 +177,7 @@ $(window).scroll(function() {
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [4327, 6391],
+            data: [4333, 6395],
             backgroundColor: [
               '#00b5e9',
               '#fa4251',
@@ -224,7 +224,7 @@ $(window).scroll(function() {
           datasets: [
             {
               label: "사망자수",
-              data: [0, 0, 0, 2, 3, 15, 35, 71, 114],
+              data: [0, 0, 0, 2, 3, 15, 35, 72, 115],
               borderColor: "rgba(0, 0, 0, 0.9)",
               borderWidth: "0",
               backgroundColor: "rgba(0, 0, 0, 0.5)"
@@ -274,7 +274,7 @@ $(window).scroll(function() {
           datasets: [
             {
               label: "확진자 수",
-              data: [139, 586, 2937, 1143, 1420, 1953, 1347, 708, 485],
+              data: [141, 586, 2940, 1147, 1421, 1953, 1347, 708, 485],
               borderColor: "rgba(255, 40, 0, 1)",
               borderWidth: "0",
               backgroundColor: "rgba(255, 40, 0, 0.8)"
@@ -320,11 +320,11 @@ $(window).scroll(function() {
         type: 'bar',
         defaultFontFamily: 'Poppins',
         data: {
-          labels: ['4.19', '4.20', '4.21', '4.22', '4.23', '4.24'],
+          labels: ['4.20', '4.21', '4.22', '4.23', '4.24', '4.25'],
           datasets: [
             {
               label: "확진",
-              data: [13, 9, 11, 8, 6, 10],
+              data: [9, 11, 8, 6, 10, 10],
               borderColor: "rgba(250, 66, 81, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(250, 66, 81,0.5)",
@@ -332,7 +332,7 @@ $(window).scroll(function() {
             },
             {
               label: "완치",
-              data: [72, 99, 64, 134, 90, 134],
+              data: [99, 64, 134, 90, 134, 82],
               borderColor: "rgba(0,173,95, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,173,95, 0.5)",
@@ -340,7 +340,7 @@ $(window).scroll(function() {
             },
             {
               label: "사망",
-              data: [2, 1, 1, 2, 0, 0],
+              data: [1, 1, 2, 0, 0, 2],
               borderColor: "rgba(0,0,0, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,0,0, 0.5)",
@@ -388,8 +388,8 @@ $(window).scroll(function() {
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [11981, 12721, 12121, 10139, 9600, 9259] //검사중
-    var data4 = [10674, 10683, 10694, 10702, 10708, 10718] //누적 확진
+    var data3 = [12721, 12121, 10139, 9600, 9259, 8999] //검사중
+    var data4 = [10683, 10694, 10702, 10708, 10718, 10728] //누적 확진
 
     var ctx = document.getElementById("recent-rep2-chart");
     if (ctx) {
@@ -397,7 +397,7 @@ $(window).scroll(function() {
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['4.19', '4.20', '4.21', '4.22', '4.23', '4.23'],
+          labels: ['4.20', '4.21', '4.22', '4.23', '4.24', '4.25'],
           datasets: [
             {
               label: '검사 중',    
