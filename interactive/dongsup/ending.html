@@ -21,26 +21,47 @@
   <title>코로나콕 인터랙티브 컨텐츠 - 지켜봐요, 예방의숲</title>
 
   <header>
-     <a onclick="window.history.go(-3); return false;"><img style="display:inline-block; width:10px; height:20px; margin-right: 10px;" src="https://www.pngkit.com/png/full/155-1554499_kudos-back-white-icon-png.png"></a>
+     <a onclick="window.history.go(-9); return false;"><img style="display:inline-block; width:10px; height:20px; margin-right: 10px;" src="https://www.pngkit.com/png/full/155-1554499_kudos-back-white-icon-png.png"></a>
     <h4 style="color:white; display:inline-block;">지켜봐요, 예방의 숲</h4>
 </header>
   </head>
-  <body>
-
-<div class="site-header">
-  <iframe id="yt-player" src="https://www.youtube.com/embed/KnN-rZTDafM?autoplay=1&modestbranding=1&controls=0&showinfo=0&rel=0&enablejsapi=1&version=3&loop=0&playerapiid=ytplayer&allowfullscreen=true&wmode=transparent&iv_load_policy=3&html5=1&disablekb=true&mute=0&start=45" frameborder="0"></iframe>
-  <div class="video-overlay"></div>
-  <div class="content">
-<br><br>
-    <h3 style="color:white; width:100%; font-size:30px; text-align: right; padding-right:20px;">잘가요.<br>이제 코로나콕으로<br>돌아가요.</h3><br>
-    엔딩 아직 만들고 있음.
-  </div>
+  <body onclick="javascript:playAudio();">
+<img src="https://opgg-com-image.akamaized.net/attach/images/20200412070007.1107738.gif">
+<br>
+<audio controls="controls" id="myAudio" style="display: none;">
+    <source src="ending_bgm.mp3" type="audio/mp3"/>
+</audio>
+<div class='wrapper'>
+  <div class='name'></div>
+  <div class='name'>아무곳이나 터치하면<br>배경음악이 나옵니다</div>
+  <br>
+  <div class='job'>개발</div>
+  <div class='name'>Ice Cream</div>
+  <br>
+  <div class='job'>콘텐츠 및 이미지 출처</div>
+  <div class='name'>Nintendo Inc.</div>
+  <br>
+  <div class='job'>음악</div>
+  <div class='name'>오프닝 -  모여봐요 동물의 숲 메인 BGM</div>
+  <div class='name'>엔딩 -  나비보벳따우(Inst.)</div>
+  <div class='name'>https://youtu.be/Bd5hGdYiKKg</div>
+  <br>
+  <div class='job'>정보 제공</div>
+  <div class='name'>한국 질병관리본부 홈페이지</div>
+  <div class='name'>남양주시 유튜브 채널</div>
+  <div class='name'>WHO 홈페이지</div>
+  <br>
+  <div class='job'>이제</div>
+  <div class='name'>노래 그만</div>
+  <div class='name'>들으시고</div>
+  <div class='name'>나가세요.</div>
 </div>
 
 
 </body>
 <style>
 
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
 
   header {
   position:fixed;
@@ -58,86 +79,58 @@ html,body {
   margin:0;
 }
 
-.site-header {
-  overflow: hidden;
-  position: relative;
-  height:100%;
+
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  width: 100%;
+  font-family: 'Open Sans Condensed', sans-serif;
+  text-align: center;
+  color: #fff;
+  animation: 60s credits linear infinite;
 }
-.video-overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  background: #000;
-  width:55%;
+.job {
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+.name {
+  margin-bottom: 50px;
+  font-size: 25px;
+}
+
+@keyframes credits {
+    0% { top:  100%; }
+  100% { top: -100%; }
+}
+
+img {
+  width:100%;
 
 }
-.site-header .content {
-  position: relative;
-  z-index: 100;
-  text-align: center;
-  padding: 50px 0;
-  color: #fff;
-  font-size: 48px;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  text-transform: uppercase;
+
+@media ( min-width: 1024px ) {
+  .wrapper {
+    margin-left:15%;
+
+  }
+
+  img {
+  height:100%;
+  width:50%;
+}
 }
 </style>
 
 <script>
-  $(window).on('resize load', function() {
-  $('.site-header iframe').each(function() {
-    var self = $(this);
-    var container = self.parent();
-
-   self.css({
-      width: container.width() + "px",
-      height: container.width() * (9/16) + 'px',
-      position: 'absolute',
-      marginTop: -container.width() * (9/32) + 'px',
-      top: '50%'
-    });
-  });
+  $(document).ready(function() {
+  var a = document.getElementById("myAudio");
+a.play();
 });
 
 
-// Load the IFrame Player API code asynchronously.
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/player_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-var player;
-  function onYouTubePlayerAPIReady() {
-    player = new YT.Player('yt-player', {
-      autoplay : 1,
-      videoId: 'KnN-rZTDafM&',
-      playerVars : {
-        'autoplay' : 1,
-        'rel' : 0,
-        'showinfo' : 0,
-        'showsearch' : 0,
-        'controls' : 0,
-        'loop' : 1,
-        'enablejsapi' : 1
-      },
-      events: {
-        "onReady": onPlayerReady,
-        //"onStateChange": onPlayerStateChange
-      }
-  });
-}
-
-function onPlayerReady(event) {
-  event.target.mute();
-  event.target.playVideo();
-}
-
-function onPlayerStateChange(event) {        
-  var id = 'KnN-rZTDafM&';
-
-    if(event.data === YT.PlayerState.ENDED){
-        player.loadVideoById(id);
-    }
-}
-</script>
+function playAudio() {
+  var a = document.getElementById("myAudio");
+    a.play();
+  }
+  </script>

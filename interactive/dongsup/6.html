@@ -26,6 +26,9 @@
 </header>
   </head>
   <body>
+    <audio controls="controls" id="myAudio" style="display: none;">
+    <source src="animalese3.wav" type="audio/wav"/>
+</audio>
     <div id="app">
   <dialogue1>
     <span slot="character">여울</span>
@@ -34,7 +37,7 @@
 </div>
 
 <script type="text/x-template" id="dialogue1">
-  <div class="dialogue">    
+  <div class="dialogue" onClick="javascript:playAudio();">    
     <div class="dialogue-blobs">
       <div class="dialogue-blob-top"></div>
       <div class="dialogue-blob-bottom"></div>
@@ -703,6 +706,17 @@ const app = new Vue({
 
     function ThirdChoose() {
     alert('틀렸어요. 다시 한 번 생각해보세요.');
+  }
+
+  $(document).ready(function() {
+  var a = document.getElementById("myAudio");
+a.play();
+});
+
+
+function playAudio() {
+  var a = document.getElementById("myAudio");
+    a.play();
   }
 
   </script>
