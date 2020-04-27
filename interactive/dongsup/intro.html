@@ -199,7 +199,6 @@ x.play();
 
 function playAudio() {
   y.innerHTML = '로딩중입니다...';
-  if (x.paused){
     x.play();
         setTimeout(function() {
 fadeAudio();
@@ -212,10 +211,6 @@ $("#intro").hide();
 location.href='1.html'
 fadeAudio();
 }, 15000);
-  } 
- else {
-    x.pause();
- }
 }
 
 function fadeAudio()
