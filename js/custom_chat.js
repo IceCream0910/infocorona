@@ -60,12 +60,18 @@ function sendBtn() {
       $('#UserCaptchaCode').focus().select();
     }
     else { 
-    	UploadCnt++;
+    	if(input.val().indexOf("오늘의 PICK뉴스") != -1 || input.val().indexOf("씨발") != -1 || input.val().indexOf("ㅆㅂ") != -1 || input.val().indexOf("존나") != -1 || input.val().indexOf("ㅈㄴ") != -1 || input.val().indexOf("새끼") != -1 || input.val().indexOf("오늘의 PICK 뉴스") != -1 || input.val().indexOf("오늘의PICK 뉴스") != -1 || input.val().indexOf("오늘의PICK뉴스") != -1 || input.val().indexOf("ERROR") != -1 || input.val().indexOf("넘으면 이벤트") != -1) { //특정 게시물 차단
+    		alert('입력 금지 단어가 포함되어 있습니다. 오류라고 생각되는 경우 개발자에게 문의해주세요.');
+    		$('#UserCaptchaCode').val('').attr('place-holder','Enter Captcha - Case Sensitive');
+      CreateCaptcha();
+
+    	} else { //업로드
+    		UploadCnt++;
       $('#UserCaptchaCode').val('').attr('place-holder','Enter Captcha - Case Sensitive');
       CreateCaptcha();
       $('#WrongCaptchaError').fadeOut(100);
       $('#SuccessMessage').fadeIn(500).css('display','block').delay(5000).fadeOut(250);
-      var curUsername = user.join();
+      var curUsername = ip();
 	if (input.val().length > 0) {
 		var getTxt = input.val();
 		messages.push({
@@ -74,6 +80,8 @@ function sendBtn() {
 		});
 		input.val('');
 	}
+    	}
+    	
     }
   }  
 	
