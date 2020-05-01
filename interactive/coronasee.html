@@ -1,0 +1,519 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="https://livecorona.co.kr/data/koreaRegionalData.js"></script>
+    <script type="text/JavaScript" src="http://code.jquery.com/jquery-1.7.min.js"></script>
+    <link href="../css/theme.css" rel="stylesheet" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:700|Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.min.css" rel="stylesheet">
+<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+
+
+    <title>코로나콕 인터랙티브 컨텐츠 - 코로나씨</title>
+
+
+  <header>
+     <a href="javascript:history.back();"><img style="display:inline-block; width:10px; height:20px; margin-right: 10px;" src="https://www.pngkit.com/png/full/155-1554499_kudos-back-white-icon-png.png"></a>
+    <h4 style="color:white; display:inline-block;">CovidSee</h4>
+</header>
+</head>
+  
+<body>
+  <div id="particle"></div>
+  <div id="overlay">
+    <p><i class="fas fa-map-marker"></i> <span id="currentRegion">대한민국</span></p>
+    <h4 style="color:white; font-size:17px; margin-bottom: -3px;">누적 확진자</h4>
+    <h1 style="font-size:45px; color:white;" id="Confirmed">00</h1>
+  </div>
+    <!-- Camera -->
+    <main id="camera">
+        <!-- Camera sensor -->
+        <canvas id="camera--sensor"></canvas>
+        <!-- Camera view -->
+        <video id="camera--view" autoplay playsinline></video>
+        <!-- Camera output -->
+        <img src="//:0" alt="" id="camera--output">
+        <!-- Camera trigger -->
+        <button id="camera--trigger"></button>
+    </main>
+    <div id="container">
+<a class="btn" href="#open-modal" onclick="javascript:$('.modal-window').show();">지역 설정하기</a>
+        </div>
+
+<div id="open-modal" class="modal-window">
+    <div class="container" data-behaviour="search-on-list">
+      <h1>지역 설정</h1>
+  <input type="text" class="input-query" data-search-on-list="search" placeholder="검색"/>
+  <span class="counter" data-search-on-list="counter"></span>
+  <div class="list-wrap">
+  <ul class="list" data-search-on-list="list">
+    <li class="list-item" data-search-on-list="list-item">
+      <a href="javascript:none();" class="list-item-link">선택 안함<span class="item-list-subtext">전국</span></a>
+    </li>
+    <li class="list-item" data-search-on-list="list-item">
+      <a href="javascript:seoul();" class="list-item-link">서울 </a>
+    </li>
+    <li class="list-item" data-search-on-list="list-item">
+      <a href="javascript:busan();" class="list-item-link">부산</a>
+    </li>
+    <li class="list-item" data-search-on-list="list-item">
+      <a href="javascript:daegu();" class="list-item-link">대구 </a>
+    </li>
+    <li class="list-item" data-search-on-list="list-item">
+      <a href="javascript:incheon();" class="list-item-link">인천 </a>
+    </li>
+    <li class="list-item" data-search-on-list="list-item">
+      <a href="javascript:gwangju();" class="list-item-link">광주 </a>
+    </li>
+    <li class="list-item" data-search-on-list="list-item">
+      <a href="javascript:daejeon();" class="list-item-link">대전 </a>
+    </li>
+    <li class="list-item" data-search-on-list="list-item">
+      <a href="javascript:ulsan();" class="list-item-link">울산</a>
+    </li>
+    <li class="list-item" data-search-on-list="list-item">
+      <a href="javascript:sejong();" class="list-item-link">세종 </a>
+    </li>
+    <li class="list-item" data-search-on-list="list-item">
+      <a href="javascript:ggi();" class="list-item-link">경기 </a>
+    </li>
+    <li class="list-item" data-search-on-list="list-item">
+      <a href="javascript:gangwon();" class="list-item-link">강원 </a>
+    </li>
+       <li class="list-item" data-search-on-list="list-item">
+      <a href="javascript:cb();" class="list-item-link">충북 </a>
+    </li>
+       <li class="list-item" data-search-on-list="list-item">
+      <a href="javascript:cn();" class="list-item-link">충남 </a>
+    </li>
+       <li class="list-item" data-search-on-list="list-item">
+      <a href="javascript:jb();" class="list-item-link">전북 </a>
+    </li>
+       <li class="list-item" data-search-on-list="list-item">
+      <a href="javascript:jn();"class="list-item-link">전남 </a>
+    </li>
+           <li class="list-item" data-search-on-list="list-item">
+      <a href="javascript:gb();" class="list-item-link">경북</a>
+    </li>
+           <li class="list-item" data-search-on-list="list-item">
+      <a href="javascript:gn();" class="list-item-link">경남</a>
+    </li>
+           <li class="list-item" data-search-on-list="list-item">
+      <a href="javascript:jeju();" class="list-item-link">제주</a>
+    </li>
+           <li class="list-item" data-search-on-list="list-item">
+      <a href="javascript:airport();" class="list-item-link">공항<span class="item-list-subtext">검역</span></a>
+    </li>
+     <li class="list-item" data-search-on-list="list-item">
+      <a href="#" class="list-item-link"></a>
+    </li>
+     <li class="list-item" data-search-on-list="list-item">
+      <a href="#" class="list-item-link"></a>
+    </li>
+  </ul>
+  </div>
+</div>
+
+    <a href="#" title="닫기" class="modal-close">닫기</div>
+    </div>
+</div>
+          
+</body>
+
+
+</html>
+<style>
+
+header {
+  position:fixed;
+   background: linear-gradient(#000, rgba(0,0,0,0.0));
+  color: #fff;
+  padding:0px 20px;
+  height:100px;
+  width:100%;
+  z-index: 9999999;
+  padding-top: 30px;
+}
+
+#overlay {
+  position:fixed;
+  z-index: 999999;
+  color:white;
+  top:40%;
+  width:100%;
+  text-align:center;
+
+}
+
+p {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 15px;
+  color:#ffb7b2;
+}
+
+#particle {
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  z-index:99999; 
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+#camera, #camera--view, #camera--sensor, #camera--output{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+#camera--view, #camera--sensor, #camera--output{
+    transform: scaleX(-1);
+    filter: FlipH;
+}
+#camera--trigger{
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    border: #ff6961 solid 5px;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    position: fixed;
+    bottom: 30px;
+    left:38%;
+    right:38%;
+    display: none;
+}
+.taken{
+    height: 100px!important;
+    width: 100px!important;
+    transition: all 0.5s ease-in;
+    border: solid 3px white;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+#container {
+  width:100%;
+  z-index: 99999;
+  background-color: #fff;
+  border-radius: 20px 20px 0 0;
+  position:fixed;
+  bottom:0;
+  padding: 15px 15px;
+  }
+
+  .modal-window {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.25);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999999999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.modal-window:target {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-window > div {
+  width: 90%;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 2em;
+  background: #ffffff;
+}
+.modal-window header {
+  font-weight: bold;
+}
+.modal-window h1 {
+  font-size: 150%;
+  margin: 0 0 15px;
+}
+
+
+body {
+  background: #f8f9fa;
+  font-family: sans-serif;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 300px;
+  height: 300px;
+  background: #f2f3f6;
+  padding: 1em;
+  border: 1px solid #d4d7e1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 5px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.input-query {
+  width: 100%;
+  padding: 0.5em;
+  border: 1px solid #d4d7e1;
+  border-radius: 3px;
+  font-size: 1em;
+}
+.input-query:focus ~ .counter {
+  opacity: 0.1;
+  transition: opacity 1s ease-in;
+}
+
+.list-wrap {
+  margin-top: 0.4em;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.list {
+  max-height: 220px;
+}
+
+.list-item {
+  font-size: 0.9em;
+  padding: 0.5em 0.8em;
+  border-bottom: 1px solid #d4d7e1;
+  border-top: 1px solid white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  max-width: 100%;
+}
+.list-item:first-child {
+  border-top: none;
+}
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.list-item-link {
+  color: #444;
+  text-decoration: none;
+}
+
+.item-list-subtext {
+  font-size: 85%;
+  color: grey;
+}
+.item-list-subtext:before {
+  content: ' (';
+}
+.item-list-subtext:after {
+  content: ')';
+}
+
+.list-item--disable {
+  text-align: center;
+  border-bottom: none;
+  animation: shake 0.6s;
+  color: #9da1b1;
+}
+
+.counter {
+  position: absolute;
+  bottom: -15px;
+  right: 10px;
+  z-index: 0;
+  font-size: 3.5em;
+  color: black;
+  transform: translateY(0);
+  opacity: 0;
+}
+
+</style>
+
+<script>
+
+  console.log(koreaRegionalData);
+  console.log(koreaRegionalData[0].확진자수);
+  document.getElementById('Confirmed').innerHTML = koreaRegionalData[0].확진자수;
+
+
+// Set constraints for the video stream
+var constraints = { video: { facingMode: "environment" }, audio: false };
+// Define constants
+const cameraView = document.querySelector("#camera--view"),
+    cameraOutput = document.querySelector("#camera--output"),
+    cameraSensor = document.querySelector("#camera--sensor"),
+    cameraTrigger = document.querySelector("#camera--trigger")
+// Access the device camera and stream to cameraView
+function cameraStart() {
+    navigator.mediaDevices
+        .getUserMedia(constraints)
+        .then(function(stream) {
+        track = stream.getTracks()[0];
+        cameraView.srcObject = stream;
+    })
+    .catch(function(error) {
+        console.error("Oops. Something is broken.", error);
+    });
+}
+// Take a picture when cameraTrigger is tapped
+cameraTrigger.onclick = function() {
+    cameraSensor.width = cameraView.videoWidth;
+    cameraSensor.height = cameraView.videoHeight;
+    cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
+    cameraOutput.src = cameraSensor.toDataURL("image/webp");
+    cameraOutput.classList.add("taken");
+};
+// Start the video stream when the window loads
+window.addEventListener("load", cameraStart, false);
+  </script>
+
+  <script>
+    var value = 150;
+    var options = {"particles":{"number":{"value":200,"density":{"enable":true,"value_area":555.4033491425909}},"color":{"value":"#d92121"},"shape":{"type":"circle","stroke":{"width":0.5,"color":"#d92121"},"polygon":{"nb_sides":3},"image":{"src":"img/github.svg","width":70,"height":100}},"opacity":{"value":1,"random":true,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":2,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.3,"sync":false}},"line_linked":{"enable":false,"distance":150,"color":"#d92121","opacity":0.4,"width":1},"move":{"enable":true,"speed":1.5782952832645452,"direction":"none","random":true,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":false,"mode":"repulse"},"onclick":{"enable":true,"mode":"repulse"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":false};
+particlesJS("particle", options);
+
+  </script>
+
+  <script>
+    function none() {
+      document.getElementById('Confirmed').innerHTML = koreaRegionalData[0].확진자수;
+            document.getElementById('currentRegion').innerHTML = '대한민국';
+            $('.modal-window').hide();
+    }
+
+    function seoul() {
+      document.getElementById('Confirmed').innerHTML = koreaRegionalData[1].확진자수;
+            document.getElementById('currentRegion').innerHTML = '서울특별시';
+            $('.modal-window').hide();
+    }
+
+    function busan() {
+      document.getElementById('Confirmed').innerHTML = koreaRegionalData[2].확진자수;
+            document.getElementById('currentRegion').innerHTML = '부산광역시';
+            $('.modal-window').hide();
+    }
+
+    function daegu() {
+      document.getElementById('Confirmed').innerHTML = koreaRegionalData[3].확진자수;
+            document.getElementById('currentRegion').innerHTML = '대구광역시';
+            $('.modal-window').hide();
+    }
+
+    function incheon() {
+      document.getElementById('Confirmed').innerHTML = koreaRegionalData[4].확진자수;
+            document.getElementById('currentRegion').innerHTML = '인천광역시';
+            $('.modal-window').hide();
+    }
+
+    function gwangju() {
+      document.getElementById('Confirmed').innerHTML = koreaRegionalData[5].확진자수;
+            document.getElementById('currentRegion').innerHTML = '광주광역시';
+            $('.modal-window').hide();
+    }
+
+    function daegeon() {
+      document.getElementById('Confirmed').innerHTML = koreaRegionalData[6].확진자수;
+            document.getElementById('currentRegion').innerHTML = '대전광역시';
+            $('.modal-window').hide();
+    }
+
+    function ulsan() {
+      document.getElementById('Confirmed').innerHTML = koreaRegionalData[7].확진자수;
+            document.getElementById('currentRegion').innerHTML = '울산광역시';
+            $('.modal-window').hide();
+    }
+
+    function sejong() {
+      document.getElementById('Confirmed').innerHTML = koreaRegionalData[8].확진자수;
+            document.getElementById('currentRegion').innerHTML = '세종특별자치시';
+            $('.modal-window').hide();
+    }
+
+    function ggi() {
+      document.getElementById('Confirmed').innerHTML = koreaRegionalData[9].확진자수;
+            document.getElementById('currentRegion').innerHTML = '경기도';
+            $('.modal-window').hide();
+    }
+
+    function gangwon() {
+      document.getElementById('Confirmed').innerHTML = koreaRegionalData[10].확진자수;
+            document.getElementById('currentRegion').innerHTML = '강원도';
+            $('.modal-window').hide();
+    }
+
+    function cb() {
+      document.getElementById('Confirmed').innerHTML = koreaRegionalData[11].확진자수;
+            document.getElementById('currentRegion').innerHTML = '충청북도';
+            $('.modal-window').hide();
+    }
+
+    function cn() {
+      document.getElementById('Confirmed').innerHTML = koreaRegionalData[12].확진자수;
+            document.getElementById('currentRegion').innerHTML = '충청남도';
+            $('.modal-window').hide();
+    }
+
+    function jb() {
+      document.getElementById('Confirmed').innerHTML = koreaRegionalData[13].확진자수;
+            document.getElementById('currentRegion').innerHTML = '전라북도';
+            $('.modal-window').hide();
+    }
+
+    function jn() {
+      document.getElementById('Confirmed').innerHTML = koreaRegionalData[14].확진자수;
+            document.getElementById('currentRegion').innerHTML = '전라남도';
+            $('.modal-window').hide();
+    }
+
+    function gb() {
+      document.getElementById('Confirmed').innerHTML = koreaRegionalData[15].확진자수;
+            document.getElementById('currentRegion').innerHTML = '경상북도';
+            $('.modal-window').hide();
+    }
+
+    function gn() {
+      document.getElementById('Confirmed').innerHTML = koreaRegionalData[16].확진자수;
+            document.getElementById('currentRegion').innerHTML = '경상남도';
+            $('.modal-window').hide();
+    }
+
+    function jeju() {
+      document.getElementById('Confirmed').innerHTML = koreaRegionalData[17].확진자수;
+            document.getElementById('currentRegion').innerHTML = '제주특별자치도';
+            $('.modal-window').hide();
+    }
+
+    function airport() {
+      document.getElementById('Confirmed').innerHTML = koreaRegionalData[18].확진자수;
+            document.getElementById('currentRegion').innerHTML = '공항';
+            $('.modal-window').hide();
+    }
+  </script>
