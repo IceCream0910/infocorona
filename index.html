@@ -76,7 +76,11 @@
                             <h1 style="font-size:22px;" id="suggestText">여기에 <br>메시지 표시
                             </h1><br>
 
-                            <h6 class="pb-4 display-5" style="color:#a9a9a9;" id="whenUpdate">정보 가져오는 중...</h6>
+                            <h6 class="pb-4 display-5" style="color:#a9a9a9;" id="whenUpdate"><div class="animated">
+        <div class="parent"></div>
+        <div class="padding"></div>
+        <div class="title"></div>정보 가져오는 중...</h6>
+
                             
                             <div id="player-container">
                             <div id="play-pause" class="play"><span style="margin-left:40px; font-size: 15px;">보이스 브리핑 <span style="color:#a9a9a9; font-size:10px;">with</span> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Naver_Clova_Logotype.svg/1200px-Naver_Clova_Logotype.svg.png" width="30px" height="30px"></span></div>
@@ -1120,4 +1124,29 @@ R0 수치가 2라고 가정하면, 감염자 1명이 다른 사람 2명 이상�
             -ms-user-select: none;
         }
 
+.animated {
+  background-color: #a9a9a9;
+  background: -webkit-gradient(linear, left top, right top, color-stop(5%, #f3f3f3), color-stop(20%, #eee), color-stop(35%, #f3f3f3));
+  background: linear-gradient(to right, #f3f3f3 25%, #eee 20%, #f3f3f3 75%);
+  -webkit-animation: placeholderShimmer 2s linear 0s infinite normal forwards;
+          animation: placeholderShimmer 2s linear 0s infinite normal forwards;
+}
+
+@-webkit-keyframes placeholderShimmer {
+  0% {
+    background-position: -500px 0;
+  }
+  100% {
+    background-position: 500px 0;
+  }
+}
+
+@keyframes placeholderShimmer {
+  0% {
+    background-position: -500px 0;
+  }
+  100% {
+    background-position: 500px 0;
+  }
+}
 </style>
