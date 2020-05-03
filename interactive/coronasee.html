@@ -530,4 +530,18 @@ particlesJS("particle", options);
 console.log(150);
     }
     */
+
+
+
+    function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+
+if (isMobile()) {
+  //모바일
+} else {
+  //데스크톱
+     alert('이 콘텐츠는 모바일 환경에 최적화되어 있습니다. 더 나은 경험을 위해서는 모바일에서 접속해주시기 바랍니다.');
+}
   </script>
