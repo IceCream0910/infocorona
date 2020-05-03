@@ -45,7 +45,7 @@
 <a class="btn" href="#open-modal" onclick="javascript:$('.modal-window').show();">지역 설정하기</a>
         </div>
 
-<div id="open-modal" class="modal-window">
+<div id="open-modal" class="modal-window" onclick="javascript:$('.modal-window').hide();">
     <div class="container" data-behaviour="search-on-list">
       <h1>지역 설정</h1>
   <span class="counter" data-search-on-list="counter"></span>
@@ -215,7 +215,7 @@ html, body{
 
   .modal-window {
   position: fixed;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(0, 0, 0, 0.55);
   top: 0;
   right: 0;
   bottom: 0;
@@ -393,9 +393,10 @@ window.addEventListener("load", $('.modal-window').show(), false);
   </script>
 
   <script>
-    var value = 150;
-    var options = {"particles":{"number":{"value":200,"density":{"enable":true,"value_area":555.4033491425909}},"color":{"value":"#d92121"},"shape":{"type":"circle","stroke":{"width":0.5,"color":"#d92121"},"polygon":{"nb_sides":3},"image":{"src":"img/github.svg","width":70,"height":100}},"opacity":{"value":1,"random":true,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":5,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.3,"sync":false}},"line_linked":{"enable":false,"distance":150,"color":"#d92121","opacity":0.4,"width":5},"move":{"enable":true,"speed":1.5782952832645452,"direction":"none","random":true,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":false,"mode":"repulse"},"onclick":{"enable":true,"mode":"repulse"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":false};
+      var value = 180;
+    var options = {"particles":{"number":{"value":value,"density":{"enable":true,"value_area":555.4033491425909}},"color":{"value":"#d92121"},"shape":{"type":"circle","stroke":{"width":0.5,"color":"#d92121"},"polygon":{"nb_sides":3},"image":{"src":"img/github.svg","width":70,"height":100}},"opacity":{"value":1,"random":true,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":5,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.3,"sync":false}},"line_linked":{"enable":false,"distance":150,"color":"#d92121","opacity":0.4,"width":5},"move":{"enable":true,"speed":1.5782952832645452,"direction":"none","random":true,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":false,"mode":"repulse"},"onclick":{"enable":true,"mode":"repulse"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":false};
 particlesJS("particle", options);
+    
 
   </script>
 
@@ -513,4 +514,20 @@ particlesJS("particle", options);
             document.getElementById('currentRegion').innerHTML = '공항';
             $('.modal-window').hide();
     }
+
+/*
+    if(document.getElementById('Confirmed').innerHTML < 100) {
+      value = 70;
+      reParticle();
+      console.log(70);
+    } else if(document.getElementById('Confirmed').innerHTML >= 500) {
+      value = 200;
+      reParticle();
+      console.log(200);
+    } else if(document.getElementById('Confirmed').innerHTML >= 100) {
+      value = 150;
+      reParticle();
+console.log(150);
+    }
+    */
   </script>
