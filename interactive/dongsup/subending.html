@@ -21,13 +21,13 @@
   <title>코로나콕 인터랙티브 컨텐츠 - 지켜봐요, 예방의숲</title>
 
   <header>
-     <a onclick="window.history.go(-2); return false;"><img style="display:inline-block; width:10px; height:20px; margin-right: 10px;" src="https://www.pngkit.com/png/full/155-1554499_kudos-back-white-icon-png.png"></a>
+     <a onclick="window.history.go(-8); return false;"><img style="display:inline-block; width:10px; height:20px; margin-right: 10px;" src="https://www.pngkit.com/png/full/155-1554499_kudos-back-white-icon-png.png"></a>
     <h4 style="color:white; display:inline-block;">지켜봐요, 예방의 숲</h4>
 </header>
   </head>
-  <body onload="javascript:launch_toast()">
+  <body>
     <audio controls="controls" id="myAudio" style="display: none;">
-    <source src="animalese.wav" type="audio/wav"/>
+    <source src="animalese2.wav" type="audio/wav"/>
 </audio>
     <div id="app">
   <dialogue1>
@@ -138,7 +138,7 @@
 
 
 
-<div id="toast"><div id="desc">뒤로가기는 위의 화살표를 눌러 해주세요.</div></div>
+
 
 
 
@@ -159,7 +159,7 @@
 
 body {
   background: #000;
-  margin:0;
+      background:url('https://i.kym-cdn.com/photos/images/original/000/733/514/555.gif') no-repeat center center/cover;
 }
 
 section {
@@ -192,106 +192,6 @@ body {
 
 body {
   background-color: black;
-  background:url('https://66.media.tumblr.com/2459bf941cb8740e9714280c4d1b0be2/d0066a933e12bb1c-92/s500x750/98ee5a1b1e7d63f850ef365bd2e8be7cabd3b8d5.gifv') no-repeat center center/cover;
-}
-
-#toast {
-    visibility: hidden;
-    max-width: 50px;
-    height: 50px;
-    /*margin-left: -125px;*/
-    margin: auto;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    border-radius: 2px;
-
-
-    position: fixed;
-    z-index: 1;
-    left: 0;right:0;
-    bottom: 30px;
-    font-size: 17px;
-    white-space: nowrap;
-}
-#toast #img{
-  width: 50px;
-  height: 50px;
-    
-    float: left;
-    
-    padding-top: 16px;
-    padding-bottom: 16px;
-    
-    box-sizing: border-box;
-
-    
-    background-color: #111;
-    color: #fff;
-}
-#toast #desc{
-
-    
-    color: #fff;
-   
-    padding: 16px;
-    
-    overflow: hidden;
-  white-space: nowrap;
-}
-
-#toast.show {
-    visibility: visible;
-    -webkit-animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;
-    animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
-}
-
-@-webkit-keyframes fadein {
-    from {bottom: 0; opacity: 0;} 
-    to {bottom: 30px; opacity: 1;}
-}
-
-@keyframes fadein {
-    from {bottom: 0; opacity: 0;}
-    to {bottom: 30px; opacity: 1;}
-}
-
-@-webkit-keyframes expand {
-    from {min-width: 50px} 
-    to {min-width: 350px}
-}
-
-@keyframes expand {
-    from {min-width: 50px}
-    to {min-width: 350px}
-}
-@-webkit-keyframes stay {
-    from {min-width: 350px} 
-    to {min-width: 350px}
-}
-
-@keyframes stay {
-    from {min-width: 350px}
-    to {min-width: 350px}
-}
-@-webkit-keyframes shrink {
-    from {min-width: 350px;} 
-    to {min-width: 50px;}
-}
-
-@keyframes shrink {
-    from {min-width: 350px;} 
-    to {min-width: 50px;}
-}
-
-@-webkit-keyframes fadeout {
-    from {bottom: 30px; opacity: 1;} 
-    to {bottom: 60px; opacity: 0;}
-}
-
-@keyframes fadeout {
-    from {bottom: 30px; opacity: 1;}
-    to {bottom: 60px; opacity: 0;}
 }
 
 #app {
@@ -393,7 +293,7 @@ body {
   width: 100%;
   padding: 2em 1em 2em 1.5em;
   font-family: "Hind", sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   line-height: 1.5em;
   color: #807256;
 }
@@ -543,14 +443,8 @@ Vue.component("dialogue-text1", {
 
   },
   created() {
-    let TypeneedText = '안녕하세요. 요즘 코로나19 때문에 많이 답답하시죠?';
+    let TypeneedText = '준비한 퀴즈는 여기까지예요. 나중에 더 많은 퀴즈를 추가할테니 또 놀러오세요!';
     this.text = TypeneedText;
-
-    setInterval(function() {
-    let TypeneedText = '22222222222';
-    this.text = TypeneedText;
-}, 6000);
-    
   },
   mounted() {
     const speed = 25;
@@ -574,14 +468,9 @@ const app = new Vue({
   el: "#app",
   mounted() {
     setInterval(function() {
-    location.href='2.html'
+    location.href='ending.html'
 }, 5000);
   } });
-
-
-
-
-
 </script>
 <script>
   $(document).ready(function() {
@@ -594,10 +483,4 @@ function playAudio() {
   var a = document.getElementById("myAudio");
     a.play();
   }
-
-function launch_toast() {
-    var x = document.getElementById("toast")
-    x.className = "show";
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
-}
-</script>
+  </script>

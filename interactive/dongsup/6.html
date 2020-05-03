@@ -82,9 +82,8 @@
 
 <div class="dialog">
   <ul>
-    <li><a href="javascript:firstChoose();">상관없이 모두</a></li>
-    <li><a href="javascript:SecondChoose();">거리두기 모범 실천</a></li>
-    <li><a href="javascript:ThirdChoose();">유증상자</a></li>
+    <li><a href="javascript:firstChoose();">효과가 거의 없다.</a></li>
+    <li><a href="javascript:SecondChoose();">효과가 있다.</a></li>
   </ul>
 </div>
 
@@ -646,7 +645,7 @@ Vue.component("dialogue-text1", {
 
   },
   created() {
-    let TypeneedText = '다음 문제입니다. 코로나19로 확진되었을 때 국가 및 지자체에서 치료 비용을 부담하는 경우로 올바른 것을 골라보세요.';
+    let TypeneedText = '구충제 이버멕틴은 코로나19 치료제로 효과가 입증되어 치료제로 사용되고 있을까요?';
     this.text = TypeneedText;
   },
   mounted() {
@@ -687,15 +686,11 @@ const app = new Vue({
 });
 
   function firstChoose() {
-    alert('정답이예요. 감염병의 예방 및 관리에 관한 법률에 의해 치료 비용은 국가 및 지자체에서 부담합니다.');
+    alert('정답이예요. 아직까지 이버멕틴이 코로나19를 치료하는 효과가 있다는 사실이 명확하게 밝혀지지 않았어요.');
     location.href='7.html';
   }
 
     function SecondChoose() {
-    alert('틀렸어요. 다시 한 번 생각해보세요.');
-  }
-
-    function ThirdChoose() {
     alert('틀렸어요. 다시 한 번 생각해보세요.');
   }
 

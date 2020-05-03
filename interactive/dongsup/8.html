@@ -21,7 +21,7 @@
   <title>코로나콕 인터랙티브 컨텐츠 - 지켜봐요, 예방의숲</title>
 
   <header>
-     <a onclick="window.history.go(-8); return false;"><img style="display:inline-block; width:10px; height:20px; margin-right: 10px;" src="https://www.pngkit.com/png/full/155-1554499_kudos-back-white-icon-png.png"></a>
+     <a onclick="window.history.go(-9); return false;"><img style="display:inline-block; width:10px; height:20px; margin-right: 10px;" src="https://www.pngkit.com/png/full/155-1554499_kudos-back-white-icon-png.png"></a>
     <h4 style="color:white; display:inline-block;">지켜봐요, 예방의 숲</h4>
 </header>
   </head>
@@ -82,9 +82,9 @@
 
 <div class="dialog">
   <ul>
-    <li><a href="javascript:firstChoose();">전문가도 추천</a></li>
-    <li><a href="javascript:SecondChoose();">효과가 있다.</a></li>
-    <li><a href="javascript:ThirdChoose();">효과가 없다.</a></li>
+    <li><a href="javascript:firstChoose();">효과적이다.</a></li>
+    <li><a href="javascript:SecondChoose();">사실이 아니다.</a></li>
+    <li><a href="javascript:ThirdChoose();">어린이에게 효과적이다.</a></li>
   </ul>
 </div>
 
@@ -646,7 +646,7 @@ Vue.component("dialogue-text1", {
 
   },
   created() {
-    let TypeneedText = '다음 문제! 소독제를 대기 중에 분사하는 것은 코로나19 방역에 효과가 있을까요?';
+    let TypeneedText = '소금으로 코로나19 바이러스를 예방/치료 할 수 있을까요?';
     this.text = TypeneedText;
   },
   mounted() {
@@ -687,17 +687,16 @@ const app = new Vue({
 });
 
   function firstChoose() {
-    alert('틀렸어요. 다시 한 번 생각해보세요.');
-    
+     alert('틀렸어요. 다시 한 번 생각해보세요.');
   }
 
     function SecondChoose() {
-    alert('틀렸어요. 다시 한 번 생각해보세요.');
+    alert('정답입니다. 특정 염분 농도에서 바이러스나 세균이 증식하지 않는다는 근거는 없습니다.');
+    location.href="subending.html"
   }
 
     function ThirdChoose() {
-    alert('정답입니다. 코로나 바이러스는 대기 중에 장시간 머물러 있기 어렵습니다. 때문에 대기 중 소독제 분사는 방역에 별 효과가 없습니다.');
-    location.href='8.html';
+    alert('틀렸어요. 다시 한 번 생각해보세요.');
   }
 
   $(document).ready(function() {
