@@ -48,73 +48,68 @@
 <div id="open-modal" class="modal-window">
     <div class="container" data-behaviour="search-on-list">
       <h1>지역 설정</h1>
-  <input type="text" class="input-query" data-search-on-list="search" placeholder="검색"/>
   <span class="counter" data-search-on-list="counter"></span>
   <div class="list-wrap">
   <ul class="list" data-search-on-list="list">
-    <li class="list-item" data-search-on-list="list-item">
+    <li class="list-item" data-search-on-list="list-item modal-close">
       <a href="javascript:none();" class="list-item-link">선택 안함<span class="item-list-subtext">전국</span></a>
     </li>
-    <li class="list-item" data-search-on-list="list-item">
+    <li class="list-item" data-search-on-list="list-item modal-close">
       <a href="javascript:seoul();" class="list-item-link">서울 </a>
     </li>
-    <li class="list-item" data-search-on-list="list-item">
+    <li class="list-item" data-search-on-list="list-item modal-close">
       <a href="javascript:busan();" class="list-item-link">부산</a>
     </li>
-    <li class="list-item" data-search-on-list="list-item">
+    <li class="list-item" data-search-on-list="list-item modal-close">
       <a href="javascript:daegu();" class="list-item-link">대구 </a>
     </li>
-    <li class="list-item" data-search-on-list="list-item">
+    <li class="list-item" data-search-on-list="list-item modal-close">
       <a href="javascript:incheon();" class="list-item-link">인천 </a>
     </li>
-    <li class="list-item" data-search-on-list="list-item">
+    <li class="list-item" data-search-on-list="list-item modal-close">
       <a href="javascript:gwangju();" class="list-item-link">광주 </a>
     </li>
-    <li class="list-item" data-search-on-list="list-item">
+    <li class="list-item" data-search-on-list="list-item modal-close">
       <a href="javascript:daejeon();" class="list-item-link">대전 </a>
     </li>
-    <li class="list-item" data-search-on-list="list-item">
+    <li class="list-item" data-search-on-list="list-item modal-close">
       <a href="javascript:ulsan();" class="list-item-link">울산</a>
     </li>
-    <li class="list-item" data-search-on-list="list-item">
+    <li class="list-item" data-search-on-list="list-item modal-close">
       <a href="javascript:sejong();" class="list-item-link">세종 </a>
     </li>
-    <li class="list-item" data-search-on-list="list-item">
+    <li class="list-item" data-search-on-list="list-item modal-close">
       <a href="javascript:ggi();" class="list-item-link">경기 </a>
     </li>
-    <li class="list-item" data-search-on-list="list-item">
+    <li class="list-item" data-search-on-list="list-item modal-close">
       <a href="javascript:gangwon();" class="list-item-link">강원 </a>
     </li>
-       <li class="list-item" data-search-on-list="list-item">
+       <li class="list-item" data-search-on-list="list-item modal-close">
       <a href="javascript:cb();" class="list-item-link">충북 </a>
     </li>
-       <li class="list-item" data-search-on-list="list-item">
+       <li class="list-item" data-search-on-list="list-item modal-close">
       <a href="javascript:cn();" class="list-item-link">충남 </a>
     </li>
-       <li class="list-item" data-search-on-list="list-item">
+       <li class="list-item" data-search-on-list="list-item modal-close">
       <a href="javascript:jb();" class="list-item-link">전북 </a>
     </li>
-       <li class="list-item" data-search-on-list="list-item">
+       <li class="list-item" data-search-on-list="list-item modal-close">
       <a href="javascript:jn();"class="list-item-link">전남 </a>
     </li>
-           <li class="list-item" data-search-on-list="list-item">
+           <li class="list-item" data-search-on-list="list-item modal-close">
       <a href="javascript:gb();" class="list-item-link">경북</a>
     </li>
-           <li class="list-item" data-search-on-list="list-item">
+           <li class="list-item" data-search-on-list="list-item modal-close">
       <a href="javascript:gn();" class="list-item-link">경남</a>
     </li>
-           <li class="list-item" data-search-on-list="list-item">
+           <li class="list-item" data-search-on-list="list-item modal-close">
       <a href="javascript:jeju();" class="list-item-link">제주</a>
     </li>
-           <li class="list-item" data-search-on-list="list-item">
+           <li class="list-item" data-search-on-list="list-item modal-close">
       <a href="javascript:airport();" class="list-item-link">공항<span class="item-list-subtext">검역</span></a>
     </li>
-     <li class="list-item" data-search-on-list="list-item">
-      <a href="#" class="list-item-link"></a>
-    </li>
-     <li class="list-item" data-search-on-list="list-item">
-      <a href="#" class="list-item-link"></a>
-    </li>
+    <li style="margin-bottom: 20px"></li>
+     
   </ul>
   </div>
 </div>
@@ -179,7 +174,8 @@ html, body{
     object-fit: cover;
 }
 #camera--view, #camera--sensor, #camera--output{
-    transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+   transform: scaleX(-1)
     filter: FlipH;
 }
 #camera--trigger{
