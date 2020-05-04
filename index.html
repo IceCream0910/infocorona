@@ -33,7 +33,7 @@
     <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
 
     <!-- Vendor CSS-->
-    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">4
     <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
     <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
     <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
@@ -41,6 +41,8 @@
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
         <script src="https://cdn.plrjs.com/player/rfayfi545seai/b2ya8wao32em.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.0/d3.min.js" type="text/javascript"></script>
+        <script src="https://cdn.jsdelivr.net/npm/luxon@1.22.0/build/global/luxon.min.js" type="text/javascript"></script>
 
 
 
@@ -177,8 +179,7 @@ function chageLangSelect(){
                         <div class="col-md-6 col-lg-3">
                             <div class="statistic__item statistic__item--black" style="border-radius: 10px;">
                                 <h2 class="number" id="death">로딩중</h2>
-                                <span class="desc" id="deathPM" style="display:none">사망자</span>
-                                <span class="desc">사망자 (+0)</span>
+                                <span class="desc" id="deathPM">사망자</span>
                                 <div class="icon">
                                     <i class="zmdi zmdi-accounts-outline"></i>
                                 </div>
@@ -236,6 +237,13 @@ function chageLangSelect(){
                                     <span>어제 증가치보다</span>
                                     <span class="big">7명</span>
                                     <span>더 많아요.<br><span style="color:#a9a9a9; font-size:13px;"></span></span>
+
+<div class="container">
+   <span style="margin-left:-15px;" class="big">오늘 신규 확진자는<Br><Br></span>
+  <svg id="chart" viewBox="0 0 500 150" style="margin-left:-35px;"></svg>
+</div>
+
+
                                 </div>
                             </div>
                             <!-- END CHART-->
@@ -1148,5 +1156,69 @@ R0 수치가 2라고 가정하면, 감염자 1명이 다른 사람 2명 이상�
   100% {
     background-position: 500px 0;
   }
+
+svg {
+  width: 100%;
+  max-width: 400px;
 }
+
 </style>
+
+<script>
+    console.clear();
+
+const drawChart = async () => {
+  
+  const data = [
+    { status: "해외유입", tally: 7 },
+    { status: "지역감염", tally: 1 }
+  ];
+
+  const viewBox = d3.select("#chart").attr("viewBox").split(" ");
+  const width = viewBox[2];
+  const height = viewBox[3];
+  const margin = { top: 70, right: 30, bottom: 0, left: 30 };
+  const chart = d3.select("#chart").append("g").attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+  const x = d3.scaleLinear()
+    .range([0, width - margin.left - margin.right])
+    .domain([0, data.reduce((acc, cur) => acc += cur.tally, 0)]);
+  
+  const color = d3.scaleOrdinal()
+    .range(["#FF7F00", "#24A221", "#D8241F"])
+    .domain(data.map(d => d.status));
+
+  const value = chart.selectAll(".value")
+    .data(data)
+    .join("g")
+    .attr("class", "value")
+    .attr("transform", (d, i) => {
+      const previousData = data.slice(0, i);
+      const previousTotal = previousData.reduce((acc, cur) => acc += +cur.tally, 0);
+      const offset = x(previousTotal);
+      return `translate(${offset}, 0)`;
+    })
+  
+  value.append("rect")
+    .attr("width", d => x(d.tally))
+    .attr("height", height - margin.top - margin.left)
+    .attr("fill", d => color(d.status));
+  
+  value.append("text")
+    .attr("x", d => x(d.tally) / 2)
+    .attr("y", -40)
+    .attr("text-anchor", "middle")
+    .attr("font-size", 22)
+    .text(d => d.status)
+  
+  value.append("text")
+    .attr("x", d => x(d.tally) / 2)
+    .attr("y", -10)
+    .attr("text-anchor", "middle")
+    .attr("font-size", 22)
+    .text(d => d.tally.toLocaleString())
+};
+
+drawChart();
+
+</script>
