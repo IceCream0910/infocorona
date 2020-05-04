@@ -397,7 +397,7 @@ $(window).scroll(function() {
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['4.27', '4.28', '4.29', '4.30', '5.1', '5.2'],
+          labels: ['4.28', '4.29', '4.30', '5.1', '5.2', '5.3'],
           datasets: [
             {
               label: '검사 중',    
