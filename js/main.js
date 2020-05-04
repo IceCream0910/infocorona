@@ -75,7 +75,7 @@ $(window).scroll(function() {
           datasets: [
             {
               label: "신규 확진자",
-              data: [10, 10, 10, 14, 9, 4, 9, 6, 13. 8],
+              data: [10, 10, 10, 14, 9, 4, 9, 6, 13, 8],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
