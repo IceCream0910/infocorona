@@ -1,5 +1,4 @@
-
-    $(document).ready(function(){        
+   $(document).ready(function(){        
         
         //우클릭 방지
         /*
