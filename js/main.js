@@ -471,7 +471,6 @@ $(window).scroll(function() {
     console.log(error);
   }
 
-
 //여기까지 사용하는 차트
 
 
