@@ -191,6 +191,14 @@ function chageLangSelect(){
 
 <br>
 
+<div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
+<span class="badge badge-pill badge-success">업데이트 내역</span>오늘 오전 10시경부터 서버 문제로 인해 업데이트 사항이 반영되지 않는 오류가 발생했습니다. 불편을 드려 죄송합니다.
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+
+
 <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
 <span class="badge badge-pill badge-danger">공지</span>
 <button type="button" data-toggle="modal" style="color:black; text-align: left;" data-target="#smallmodal4">최근 신규 확진자가 감소함에 따라 사회적 거리두기가 느슨해지고 있습니다. 방심은 절대 금물!! 끝까지 힘내주세요 💪</button>
@@ -1170,8 +1178,8 @@ svg {
 const drawChart = async () => {
   
   const data = [
-    { status: "해외유입", tally: 2 },
-    { status: "지역감염", tally: 1 }
+    { status: "해외유입", tally: 3 },
+    { status: "지역감염", tally: 0 }
   ];
 
   const viewBox = d3.select("#chart").attr("viewBox").split(" ");
