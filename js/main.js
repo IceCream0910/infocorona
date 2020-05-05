@@ -388,8 +388,8 @@ $(window).scroll(function() {
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [8307, 8634, 8685, 8496, 8588, 8176, 8858] //검사중
-    var data4 = [10761, 10765, 10774, 10780, 10793, 10801, 10804] //누적 확진
+    var data3 = [8634, 8685, 8496, 8588, 8176, 8858] //검사중
+    var data4 = [10765, 10774, 10780, 10793, 10801, 10804] //누적 확진
 
     var ctx = document.getElementById("recent-rep2-chart");
     if (ctx) {
