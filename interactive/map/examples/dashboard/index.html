@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>코로나콕 인터랙티브 콘텐츠 - 지도로 보는 전세계 현황</title>
+    
+    <!-- amCharts includes -->
+    <script src="../../deps/amcharts4/core.js"></script>
+    <script src="../../deps/amcharts4/charts.js"></script>
+    <script src="../../deps/amcharts4/maps.js"></script>
+    
+    <script src="../../deps/amcharts4/themes/dark.js"></script>
+    <script src="../../deps/amcharts4/themes/animated.js"></script>
+
+    <script src="../../deps/amcharts4-geodata/worldLow.js"></script>
+    <script src="../../deps/amcharts4-geodata/data/countries2.js"></script>
+
+    <!-- DataTables includes -->
+    <script src="../../deps/jquery/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" media="all" href="../../deps/datatables/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" media="all" href="../../deps/datatables/css/select.dataTables.min.css" />
+    <script src="../../deps/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../../deps/datatables/js/dataTables.select.min.js"></script>
+
+    <!-- Data  -->
+    <script src="../../data/js/world_timeline.js"></script>
+    <script src="../../data/js/total_timeline.js"></script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" media="all" href="dark.css" />
+
+    <!-- Main app -->
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <div class="flexbox">
+
+      <div id="chartdiv"></div>
+      
+    </div>
+  </body>
+</html>
+<style>
+  .backBtn {
+    display: fixed;
+    top:10px;
+    left:10px;
+    height:10%;
+    margin-left: 20px;
+    margin-top: 20px;
+    border-radius: 50%;
+    backround-color:#000
+  }
+</style>
