@@ -237,7 +237,7 @@ function chageLangSelect(){
                                 </div>
                                 <div class="statistic-chart-1-note">
                                     <span>어제 증가치보다</span>
-                                    <span class="big">6명</span>
+                                    <span class="big">16명</span>
                                     <span>더 많아요.<br><span style="color:#a9a9a9; font-size:13px;"></span></span>
 
 <div class="container">
@@ -345,8 +345,8 @@ function chageLangSelect(){
                                         <tbody>
                                             <tr onClick="javascript:window.open('http://www.seoul.go.kr/coronaV/coronaStatus.do');">
                                                 <td>서울</td>
-                                                <td>649</td>
-                                                <td>536</td>
+                                                <td>663</td>
+                                                <td>541</td>
                                                 <td>2</td>
                                             </tr>
                                             <tr onClick="javascript:window.open('http://www.busan.go.kr/corona19/index');">
@@ -357,20 +357,20 @@ function chageLangSelect(){
                                             </tr>
                                             <tr onClick="javascript:window.open('http://www.daegu.go.kr/');">
                                                 <td>대구</td>
-                                                <td>6,859</td>
-                                                <td>6,306</td>
+                                                <td>6,861</td>
+                                                <td>6,318</td>
                                                 <td>178</td>
                                             </tr>
                                             <tr onClick="javascript:window.open('https://www.incheon.go.kr/corona19/IC010001');">
                                                 <td>인천</td>
-                                                <td>98</td>
-                                                <td>78</td>
+                                                <td>101</td>
+                                                <td>80</td>
                                                 <td>0</td>
                                             </tr>
                                             <tr onClick="javascript:window.open('https://www.gwangju.go.kr/');">
                                                 <td>광주</td>
                                                 <td>30</td>
-                                                <td>29</td>
+                                                <td>30</td>
                                                 <td>0</td>
                                             </tr>
                                             <tr onClick="javascript:window.open('https://www.daejeon.go.kr/corona19/index.do');">
@@ -393,8 +393,8 @@ function chageLangSelect(){
                                             </tr>
                                             <tr onClick="javascript:window.open('https://www.gg.go.kr/bbs/boardView.do?bsIdx=464&bIdx=2296956&menuId=1535');">
                                                 <td>경기</td>
-                                                <td>688</td>
-                                                <td>548</td>
+                                                <td>694</td>
+                                                <td>556</td>
                                                 <td>16</td>
                                             </tr>
                                             <tr onClick="javascript:window.open('http://www.provin.gangwon.kr/covid-19.html');">
@@ -405,8 +405,8 @@ function chageLangSelect(){
                                             </tr>
                                             <tr onClick="javascript:window.open('http://www.chungbuk.go.kr/www/covid-19/index.html');">
                                                 <td>충북</td>
-                                                <td>47</td>
-                                                <td>41</td>
+                                                <td>49</td>
+                                                <td>42</td>
                                                 <td>0</td>
                                             </tr>
                                             <tr onClick="javascript:window.open('http://www.chungnam.go.kr/coronaStatus.do');">
@@ -430,25 +430,25 @@ function chageLangSelect(){
                                             <tr onClick="javascript:window.open('http://www.gb.go.kr/Main/open_contents/section/wel/page.do?mnu_uid=5760&LARGE_CODE=360&MEDIUM_CODE=10&SMALL_CODE=50&SMALL_CODE2=60mnu_order=2');">
                                                 <td>경북</td>
                                                 <td>1,366</td>
-                                                <td>1,215</td>
+                                                <td>1,220</td>
                                                 <td>53</td>
                                             </tr>
                                             <tr onClick="javascript:window.open('http://www.gyeongnam.go.kr/corona.html');">
                                                 <td>경남</td>
                                                 <td>117</td>
-                                                <td>105</td>
+                                                <td>108</td>
                                                 <td>0</td>
                                             </tr>
                                             <tr onClick="javascript:window.open('https://jeju.go.kr/covid19.jsp');">
                                                 <td>제주</td>
-                                                <td>13</td>
+                                                <td>14</td>
                                                 <td>13</td>
                                                 <td>0</td>
                                             </tr>
                                             <tr>
                                                 <td>검역</td>
-                                                <td>470</td>
-                                                <td>249</td>
+                                                <td>476</td>
+                                                <td>256</td>
                                                 <td>0</td>
                                             </tr>
                                         </tbody>
@@ -797,12 +797,12 @@ R0 수치가 2라고 가정하면, 감염자 1명이 다른 사람 2명 이상�
                 // 여기를 바꿔주세요
                 // 최근 6일까지의 수치만 입력해야 합니다.
                 let recentKoreaData = [
-                    { d: '2020-05-03', i: 10801, t: 252, w: 1016128-81620},
                     { d: '2020-05-04', i: 10804, t: 254, w: 1016128-81620},
                     { d: '2020-05-05', i: 10806, t: 255, w: 1016128-81620},
                     { d: '2020-05-06', i: 10810, t: 256, w: 1016128-81620},
                     { d: '2020-05-07', i: 10822, t: 256, w: 1016128-81620},
                     { d: '2020-05-08', i: 10840, t: 256, w: 1016128-81620},
+                    { d: '2020-05-09', i: 10874, t: 256, w: 1016128-81620},
 
 
                 ];
@@ -1171,8 +1171,8 @@ svg {
 const drawChart = async () => {
   
   const data = [
-    { status: "해외유입", tally: 1 },
-    { status: "지역감염", tally: 17 }
+    { status: "해외유입", tally: 8 },
+    { status: "지역감염", tally: 26 }
   ];
 
   const viewBox = d3.select("#chart").attr("viewBox").split(" ");
