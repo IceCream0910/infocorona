@@ -1,26 +1,14 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
+<html lang="en">
 
+<head>
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="코로나19 국내 발생현황 및 관련정보를 한눈에 알아보세요!">
-    <meta name="author" content="Ice Cream">
+    <meta name="author" content="Justcode">
     <meta name="keywords" content="코로나19">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-159921858-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-159921858-1');
-</script>
-
-
-    <!-- Title Page-->
-    <title></title>
 
 
     <!-- Fontfaces CSS-->
@@ -40,10 +28,6 @@
     <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
-        <script src="https://cdn.plrjs.com/player/rfayfi545seai/b2ya8wao32em.js" type="text/javascript"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.0/d3.min.js" type="text/javascript"></script>
-        <script src="https://cdn.jsdelivr.net/npm/luxon@1.22.0/build/global/luxon.min.js" type="text/javascript"></script>
-
 
 
     <!-- Main CSS-->
@@ -59,10 +43,6 @@
  if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push(arguments)};v3.on=function(e,fn){if(!v3._l[e])v3._l[e]=[];v3._l[e].push(fn)};var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://app.chaport.com/javascripts/insert.js';var ss=d.getElementsByTagName('script')[0];ss.parentNode.insertBefore(s,ss)})(window, document);
  </script>
 
- <audio id="track">
-  <source src="voice.mp3" type="audio/mpeg" />
-</audio>
-
 </head>
 <a href="#Rtop" id="return-to-top"><i class="fas fa-arrow-up"></i></a>
 <body class="animsition">
@@ -75,50 +55,13 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12" style="margin-top:30px; margin-left:10px;">
-                            <h1 style="font-size:22px;" id="suggestText">여기에 <br>메시지 표시
+                            <h1 style="font-size:22px;">다양한 재미있는<br>콘텐츠를 확인해보세요.
                             </h1><br>
-
-                            <h6 class="pb-4 display-5" style="color:#a9a9a9;" id="whenUpdate"><div class="animated">
-        <div class="parent"></div>
-        <div class="padding"></div>
-        <div class="title"></div>정보 가져오는 중...</h6>
-
-                            
-                            <div id="player-container">
-                            <div id="play-pause" class="play"><span style="margin-left:40px; font-size: 15px;">보이스 브리핑 <span style="color:#a9a9a9; font-size:10px;">with</span> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Naver_Clova_Logotype.svg/1200px-Naver_Clova_Logotype.svg.png" width="30px" height="30px"></span></div>
-
-                                <div class="rs-select2--dark rs-select2--sm" style="padding-top:10px;">
-                                                <select class="js-select2 au-select-primary" id="id-lang" name="language" onchange="chageLangSelect()">
-                                                    <option selected="selected" value="ko">Language : 한국어</option>
-                                                    <option value="en">Language : English</option>
-                                                </select>
-                                                <div class="dropDownSelect2"></div>
-                                            </div>
-
-                            </div>
-
-                            <script>
-function chageLangSelect(){
-    var langSelect = document.getElementById("id-lang");
-     
-    var selectValue = langSelect.options[langSelect.selectedIndex].value;
-    switch(selectValue) {
-        case "ko":
-        break;
-
-        case "en":
-        location.href="index_en.html"
-        break;
-    }
-}
-</script>
-
-
                             <hr class="line-seprate">
                             <br>
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                             <li class="nav-item">
-                                                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="index.html" role="tab" aria-controls="pills-home"
+                                                <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="index.html" role="tab" aria-controls="pills-home"
                                                  aria-selected="true">현황</a>
                                             </li>
                                             <li class="nav-item">
@@ -126,7 +69,7 @@ function chageLangSelect(){
                                                  aria-selected="false">정보</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="interactive.html" role="tab" aria-controls="pills-contact"
+                                                <a class="nav-link active" id="pills-contact-tab" data-toggle="pill" href="interactive.html" role="tab" aria-controls="pills-contact"
                                                  aria-selected="false">인터랙티브</a>
                                             </li>
                                             <li class="nav-item">
@@ -140,924 +83,71 @@ function chageLangSelect(){
                 </div>
             </section>
             <!-- END WELCOME-->
-
-            <!-- STATISTIC-->
-
-            <section class="statistic statistic2">
-
-
-                 
-            
-                <div class="container">
-
-                    <div class="row" >
-                        <div class="col-md-12" >
-                            <h3 style="margin-left:10px; font-size: 20px;">국내 현황</h3><br>
-                        </div>
-                    </div>
-
-                    <div class="row" id="korea">
-                        <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--red" style="border-radius: 10px;">
-                                <h2 class="number" id="confirmed">로딩중</h2>
-                                <span class="desc" id="confirmedPM">확진자</span><br>
-                                <span class="desc" id="cureNow"></span>
-                                <div class="icon">
-                                    <i class="zmdi zmdi-account-o"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--green" style="border-radius: 10px;">
-                                <h2 class="number" id="cure">로딩중</h2>
-                                <span class="desc" id="curePM">격리해제</span>
-                                <div class="icon">
-                                    <i class="zmdi zmdi-check-all"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--black" style="border-radius: 10px;">
-                                <h2 class="number" id="death">로딩중</h2>
-                                <span class="desc" id="deathPM">사망자</span>
-                                <div class="icon">
-                                    <i class="zmdi zmdi-accounts-outline"></i>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-<a href="#globalStatics">전세계 현황 보기 ></a><br>
-<!--
-<button type="button" data-toggle="modal" data-target="#smallmodal3" style="margin-bottom:20px; color:#d92121;">국내 현황 예측 ></button>
--->
 <br>
 
+<div class='card' onclick="javascript:location.href='interactive/map.html'">
+        <div class='content'>
+          <div class='cover' style='background-image:url(https://i.imgur.com/rfUE2gV.jpg)'>
+            <span class='category'>현황</span>
+            <h2 class='title' style="color:white;">지도로 보는 전세계 현황</h2>
+            <span class='tips'>지도와 그래프로 전세계 현황을 살펴보세요!</span>
+          </div>
+        </div>
+      </div>
 
-<div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
-<span class="badge badge-pill badge-danger">안내</span>
-<button type="button" data-toggle="modal" style="color:black; text-align: left;" data-target="#smallmodal4">현재 이태원 유흥시설을 중심으로 신규 확진자가 다수 발생하고 있습니다. 관련자께서는 보건당국의 역학조사에 적극 협조하여 주시기 바랍니다.</button>
-<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-</div>
+<div class='card' style="color:black;" onclick="javascript:location.href='interactive/dongsup/intro.html'">
+        <div class='content'>
+          <div class='cover' style='background-image:url(https://wallpaperaccess.com/full/1236351.jpg)'>
+            <span class='category' style="color:black;">퀴즈</span>
+            <h2 class='title' style="color:black;">지켜봐요, 예방의 숲</h2>
+            <span class='tips' style="color:black;">여울&너굴이와 함께하는 재미있는 코로나 퀴즈! 당신은 몇 개나 맞출 수 있을까요?</span>
+          </div>
+        </div>
+      </div>
 
-<div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
-<span class="badge badge-pill badge-success">업데이트 내역</span>
-<button type="button" data-toggle="modal" style="color:black;" data-target="#smallmodal2">최근 업데이트 사항</button>
-<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-</div>
+      
+<div class='card' onclick="javascript:window.open('https://coronacoc.github.io/coronasee/','_blank');">
+        <div class='content'>
+          <div class='cover' style='background-image:url(https://i.imgur.com/gcq8CkU.jpg)'>
+            <span class='category'>AR</span>
+            <h2 class='title' style="color:white;">코로나씨 : CoronaSee</h2>
+            <span class='tips'>증강현실을 이용해 선택한 지역의 확진자 현황을 보여줍니다.</span>
+          </div>
+        </div>
+      </div>
 
-   <br>  
 
-                    </div>
-                </div>
+<div class='card' onclick="javascript:location.href='interactive/shooting.html'">
+        <div class='content'>
+          <div class='cover' style='background-image:url(https://i.imgur.com/hU6Rv7a.jpg)'>
+            <span class='category'>게임</span>
+            <h2 class='title' style="color:white;">코로나 슈팅 게임</h2>
+            <span class='tips'>당신에게 다가오는 코로나 바이러스를 제거하세요. 가끔 백신과 면역력 보충제가 나오지만 영원히 안전할 수는 없을 겁니다.</span>
+          </div>
+        </div>
+      </div>
 
-                
-            </section>
-            <!-- END STATISTIC-->
+<div class='card' onclick="javascript:location.href='interactive/simulation.html'">
+        <div class='content'>
+          <div class='cover' style='background-image:url(https://i.imgur.com/Q0q2OFd.jpg)'>
+            <span class='category'>시뮬레이션</span>
+            <h2 class='title' style="color:white;">사회적 거리두기 : 시뮬레이션</h2>
+            <span class='tips'>사회적 거리두기 정도에 따른 감염 확산 상황을 시뮬레이션해보세요.</span>
+          </div>
+        </div>
+      </div>
 
-            <!-- STATISTIC CHART-->
-            <section class="statistic-chart" >
-                <div class="container" >
-                    <div class="row" >
-                        <div class="col-md-12" >
-                            <h3 style="margin-left:10px;">통계</h3><br>
-                        </div>
-                    </div>
+
+      
+
+
                     
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4">
-                            <!-- CHART-->
-                            <div class="statistic-chart-1" style="border-radius: 10px;">
-                                <div class="chart-wrap">
-                                    <h3>신규 <h3 style="color:#a9a9a9;">확진자 추이<br></h3></h3>
-                                    <canvas id="widgetChart5"></canvas>
-                                </div>
-                                <div class="statistic-chart-1-note">
-                                    <span>어제 증가치보다</span>
-                                    <span class="big">8명</span>
-                                    <span>더 적어요.<br><span style="color:#a9a9a9; font-size:13px;"></span></span>
-
-<div class="container">
-   <span style="margin-left:-15px;" class="big">신규 환자 해외 유입 현황<Br><Br></span>
-  <svg id="chart" viewBox="0 0 500 150" style="margin-left:-35px;"></svg>
-</div>
-
-
-                                </div>
-                            </div>
-                            <!-- END CHART-->
-                        </div>
-
-                        <div class="col-lg-6">
-                                <div class="au-card m-b-30">
-                                    <div class="au-card-inner">
-                                        <h3>국내 일별 현황</h3><br>
-                                        <canvas id="barChart"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-
-                             <div class="col-lg-6">
-                                <div class="au-card m-b-30">
-                                    <div class="recent-report__chart">
-                                        <h3>국내 <h3 style="color:#a9a9a9;">검사 현황<br><br>
-                                            <h5>확진율 : 1.7%</h5><br></h3></h3>
-                                        <canvas id="recent-rep2-chart"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 col-lg-4">
-                            <!-- CHART PERCENT-->
-                            <div class="chart-percent-2" style="border-radius: 10px;">
-                                <div class="chart-wrap">
-                                    <h3>국가별 <h3 style="color:#a9a9a9;">해외 유입 현황<span style="font-size:14px;">(추정)</span></h3></h3><br>
-                                    <canvas id="doughutChart_abroad"></canvas>
-                                        <table></table>
-                                    </div>
-                                </div>
-                            </div>
-
-                            
-
-
-
-                        </div>
-
-
-
-                        <div class="row">
-
-                            <div class="col-md-6 col-lg-4">
-                            <!-- CHART PERCENT-->
-                            <div class="chart-percent-2" style="border-radius: 10px;">
-                                <div class="chart-wrap">
-                                    <h3>연령별 <h3 style="color:#a9a9a9;">사망자 현황</h3></h3><br>
-                                    <canvas id="singelBarChart"></canvas>
-                                        <table></table>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- END CHART PERCENT-->
-
-                            <div class="col-md-6 col-lg-4">
-                            <!-- CHART PERCENT-->
-                            <div class="chart-percent-2" style="border-radius: 10px;">
-                                <div class="chart-wrap">
-                                    <h3>연령별 <h3 style="color:#a9a9a9;">확진자 현황</h3></h3><br>
-                                    <canvas id="singelBarChart_2"></canvas>
-                                        <table></table>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- END CHART PERCENT-->
-
-                            <div class="col-md-6 col-lg-4">
-                            <!-- CHART PERCENT-->
-                            <div class="chart-percent-2" style="border-radius: 10px;">
-                                <div class="chart-wrap">
-                                    <h3>성별 <h3 style="color:#a9a9a9;">확진자 현황</h3></h3><br>
-                                    <canvas id="doughutChart_sex"></canvas>
-                                        <table></table>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        
-                        
-                            <div class="col-lg-9">
-                                <h3>지역별 <span style="color:#a0a0a0;">현황<span style="font-size:15px;"> (명)<br><span style="font-size:15px;">좌우로 드래그할 수 있어요.</span></span></span></h3><br>
-
-                                <div class="table-responsive table--no-card m-b-40" style="margin-left:-15px; width:111%;">
-                                    <table class="table table-borderless table-striped table-earning" style="width:111%;">
-                                        <thead>
-                                            <tr>
-                                                <th>지역</th>
-                                                <th>누적 확진자</th>
-                                                <th>격리해제자</th>
-                                                <th>사망자</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr onClick="javascript:window.open('http://www.seoul.go.kr/coronaV/coronaStatus.do');">
-                                                <td>서울</td>
-                                                <td>695</td>
-                                                <td>554</td>
-                                                <td>2</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('http://www.busan.go.kr/corona19/index');">
-                                                <td>부산</td>
-                                                <td>141</td>
-                                                <td>125</td>
-                                                <td>3</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('http://www.daegu.go.kr/');">
-                                                <td>대구</td>
-                                                <td>6,862</td>
-                                                <td>6,331</td>
-                                                <td>179</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('https://www.incheon.go.kr/corona19/IC010001');">
-                                                <td>인천</td>
-                                                <td>105</td>
-                                                <td>82</td>
-                                                <td>0</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('https://www.gwangju.go.kr/');">
-                                                <td>광주</td>
-                                                <td>30</td>
-                                                <td>30</td>
-                                                <td>0</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('https://www.daejeon.go.kr/corona19/index.do');">
-                                                <td>대전</td>
-                                                <td>43</td>
-                                                <td>38</td>
-                                                <td>1</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('http://www.ulsan.go.kr/corona.jsp');">
-                                                <td>울산</td>
-                                                <td>44</td>
-                                                <td>40</td>
-                                                <td>1</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('https://www.sejong.go.kr/life/sub05_0704.do');">
-                                                <td>세종</td>
-                                                <td>47</td>
-                                                <td>45</td>
-                                                <td>0</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('https://www.gg.go.kr/bbs/boardView.do?bsIdx=464&bIdx=2296956&menuId=1535');">
-                                                <td>경기</td>
-                                                <td>706</td>
-                                                <td>559</td>
-                                                <td>16</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('http://www.provin.gangwon.kr/covid-19.html');">
-                                                <td>강원</td>
-                                                <td>54</td>
-                                                <td>41</td>
-                                                <td>2</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('http://www.chungbuk.go.kr/www/covid-19/index.html');">
-                                                <td>충북</td>
-                                                <td>54</td>
-                                                <td>42</td>
-                                                <td>0</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('http://www.chungnam.go.kr/coronaStatus.do');">
-                                                <td>충남</td>
-                                                <td>143</td>
-                                                <td>136</td>
-                                                <td>0</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('http://www.jeonbuk.go.kr/board/list.jeonbuk?boardId=BBS_0000105&menuCd=DOM_000000105010004000&contentsSid=1189&cpath=');">
-                                                <td>전북</td>
-                                                <td>19</td>
-                                                <td>14</td>
-                                                <td>0</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('https://www.jeonnam.go.kr/coronaMainPage.do');">
-                                                <td>전남</td>
-                                                <td>16</td>
-                                                <td>12</td>
-                                                <td>0</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('http://www.gb.go.kr/Main/open_contents/section/wel/page.do?mnu_uid=5760&LARGE_CODE=360&MEDIUM_CODE=10&SMALL_CODE=50&SMALL_CODE2=60mnu_order=2');">
-                                                <td>경북</td>
-                                                <td>1,367</td>
-                                                <td>1,230</td>
-                                                <td>53</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('http://www.gyeongnam.go.kr/corona.html');">
-                                                <td>경남</td>
-                                                <td>118</td>
-                                                <td>112</td>
-                                                <td>0</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('https://jeju.go.kr/covid19.jsp');">
-                                                <td>제주</td>
-                                                <td>14</td>
-                                                <td>12</td>
-                                                <td>0</td>
-                                            </tr>
-                                            <tr>
-                                                <td>검역</td>
-                                                <td>480</td>
-                                                <td>267</td>
-                                                <td>0</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    </table>
-                                </div>
-                            </div>
-                </div>
-
-                        <!-- STATISTIC-->
-
-            <section class="statistic statistic2" id="globalStatics">
-                <div class="container">
-                    <h3 style="margin-left:5px;">전세계 현황</h3><br>
-                    <div class="row" id="global">
-                        <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--red" style="border-radius: 10px;">
-                                <h2 class="number" id="globeConfirmed">로딩중</h2>
-                                <span class="desc">확진자</span>
-                                <div class="icon">
-                                    <i class="zmdi zmdi-account-o"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--black" style="border-radius: 10px;">
-                                <h2 class="number" id="globeDeath">로딩중</h2>
-                                <span class="desc">사망자</span>
-                                <div class="icon">
-                                    <i class="zmdi zmdi-accounts-outline"></i>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        </div>
-
- <a href="interactive/map.html" style=" text-align:right; margin-top:-25px; margin-bottom: 25px;"><br>지도로 보는 전세계 현황 ></a>
-                       
-                        <!-- TASK PROGRESS-->
-                                    <h4 style="margin-bottom: 10px;">치사율</h4>
-                                        <div class="progress mb-2" style="height:30px;">
-                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 26%" aria-valuenow="6.881%" aria-valuemin="0" aria-valuemax="100">6.881%</div>
-                                        </div><br>
-
-                                        <h4 style="margin-bottom: 10px;">재생산지수(R0) <button type="button" data-toggle="modal" data-target="#smallmodal"><img style="width:25px; height:25px;" src="https://img.pngio.com/help-icon-transparent-background-83167-free-icons-library-help-icon-png-2000_2000.jpg"></button></h4>
-                                        <div class="progress mb-2" style="height:30px;">
-                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 19%" aria-valuenow="3.68" aria-valuemin="0" aria-valuemax="100">3.68</div>
-                                        </div><br>
-
-                                         <h4 style="margin-bottom: 10px;">완치율</h4>
-                                        <div class="progress mb-2" style="height:30px;">
-                                            <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="34.483%" aria-valuemin="0" aria-valuemax="100">34.483%</div>
-                                        </div><br>
-
-                                <div class="col-md-6 col-lg-4"> <!-- CHART--> 
-                                    <div class="statistic-chart-1" style="border-radius: 10px; margin-left:-15px; margin-right:-15px;"> 
-                                        <div class="chart-wrap" style=" margin:-20px;"> <h3 style="background-color:#fff; margin-left:15px;">
-                                            TOP15<h3 style="color:#a9a9a9; margin-left:15px;">발생국 현황<br></h3></h3> 
-                                            <div id="tableByCountry" style="margin-top:30px; overflow:scroll;"></div> 
-                                        </div> 
-                                        <a href="http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=14&ncvContSeq=&contSeq=&board_id=&gubun=" target="_blank" style=" text-align:right; margin-left:-15px;"><br>더보기 ></a>
-                                        <br><Br> 
-                                    </div> 
-                                    <!-- END CHART-->
-                                     </div>
-
-                    </div>
-                </div>
-            </section>
-
-            <!-- 업데이트 내역--->
-<div class="modal fade" id="smallmodal2" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
-<div class="modal-dialog modal-sm" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<h5 class="modal-title" id="smallmodalLabel">최근 업데이트 사항</h5>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-</div>
-<div class="modal-body"><p style="font-size:13px;">
-
-    <h4>05-12 업데이트</h4>
-    1. 지도로 보는 전세계 현황 개선(인터랙티브)<br><br>
-
-    <h4>05-10 업데이트</h4>
-    1. 지도로 보는 전세계 현황 추가(인터랙티브)<br>
-    2. 국내 현황 예측 기능 일시 중단<br>
-    3. 이태원 유흥시설 방문자께서는 방역당국에 자진 신고해주시기 바랍니다.<br><br>
-
-    <h4>05-05 업데이트</h4>
-    1. 신규 확진자 해외유입 비율 추가<br><br>
-    
-    * 일일 현황 업데이트는 업데이트 내역에 포함되지 않습니다.
-
-</p>
-</p>
-</div>
-<div class="modal-footer">
-<button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
-</div>
-</div>
-</div>
-</div>
-            <!-- END STATISTIC-->
-<!--
-            <section id="frontier">
-                      <h3 style="text-align: left; width:90%; margin-top:40px; margin-left:25px;">재난문자 <span style="font-size:15px;" class="myRegion">위치 찾는 중...<button type="button" data-toggle="modal" data-target="#smallmodal2"><img style="width:25px; height:25px;" src="https://img.pngio.com/help-icon-transparent-background-83167-free-icons-library-help-icon-png-2000_2000.jpg"></button></a></h3><br>
-                      <div class="article" style="border-color: red; width:90%; margin-left:15px; margin-right:15px;">
-        <a href="http://www.safekorea.go.kr/idsiSFK/neo/main_m/dis/disasterDataList.html" id="infotainer" target="_blank">
-          <h2 class="itemName" id="cbs_ct1">[내용]</h2>
-
-          <h4 class="itemAuthorName" id="cbs_from1" style="margin-bottom:15px;">[발송처]</h4>
-        </a>
-      </div>
-
-      <div class="article" style="border-color: red; width:90%; margin-left:15px; margin-right:15px;">
-        <a href="http://www.safekorea.go.kr/idsiSFK/neo/main_m/dis/disasterDataList.html" id="infotainer" target="_blank">
-          <h2 class="itemName" id="cbs_ct2">[내용]</h2>
-
-          <h4 class="itemAuthorName" id="cbs_from2" style="margin-bottom:15px;">[발송처]</h4>
-        </a>
-      </div>
-  <a href="http://www.safekorea.go.kr/idsiSFK/neo/main_m/dis/disasterDataList.html" target="_blank" style=" text-align:right; margin-left:20px;">더보기 ></a><br><Br>
-
- -->
-
-
-            </section>
-
-                <div id="frontier" ng-app="myApp">
-
-
-  <div ng-controller="mainCtrl" style="margin-right:15px; margin-left:15px; padding-top:20px;">
-   
-    <div class="flexCont">
-      <h3 style="text-align: left; width:100%; margin-bottom:20px; margin-left:10px;">최신뉴스</h3><br>
-
-      <div class="article" ng-repeat="item in articles">
-         
-        
-        <a href="{{item.url}}" id="infotainer" target="_blank">
-          <h2 class="itemName">{{item.title}}</h2>
-
-          <h4 class="itemAuthorName">{{item.author}}</h4>
-          <p class="itemDesc">{{item.description}}</p>
-        </a>
-        <!--         infotainer end -->
-      </div>
-      <!--     end ng-repeat div -->
-    </div>
-    <!--     end flexCont -->
-  </div>
-  <!-- end main controller div -->
-  <a href="https://search.naver.com/search.naver?where=news&sm=tab_jum&query=%EC%BD%94%EB%A1%9C%EB%82%9819" target="_blank" style=" text-align:right; margin-left:20px;">더 많은 뉴스 보기 ></a>
-  
-</div>
-<!-- end frontier div -->
-</div>
-            </section>
-            <!-- END STATISTIC CHART-->
-
-                
-
-            
-
-            <!-- COPYRIGHT-->
-            <section class="p-t-60 p-b-20">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="copyright">
-                                <p>Copyright © 2020 All rights reserved. <br>정보 제공 : <a href="http://ncov.mohw.go.kr" target="_blank">중앙재난안전대책본부</a>.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- END COPYRIGHT-->
         </div>
+    </div>    
 
-    </div>
-
-
-
-
-    <div class="modal fade" id="smallmodal" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
-<div class="modal-dialog modal-sm" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<h5 class="modal-title" id="smallmodalLabel">용어설명 - 재생산지수(R0)</h5>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-</div>
-<div class="modal-body">
-<p style="font-size:15px;">
-재생산지수란 전염성이 사람 간 전파되는 정도를 수치로 나타낸 것으로 쉽게 말하면 감염병의 전파성을 나타내는 지수이다.<br>
-R0 수치가 2라고 가정하면, 감염자 1명이 다른 사람 2명 이상에게 전파가 가능하다는 의미이다.<br>
-</p>
-</div>
-<div class="modal-footer">
-<button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
-</div>
-</div>
-</div>
-</div>
-
-
-
-    <div class="modal fade" id="smallmodal4" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
-<div class="modal-dialog modal-sm" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<h5 class="modal-title" id="smallmodalLabel">이태원 유흥시설 방문자는 자진신고 해주세요.</h5>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-</div>
-<div class="modal-body">
-<img src="https://i.imgur.com/mSFiOZT.png" width="100%"><br>
-    <iframe width="100%" height="172" src="https://www.youtube.com/embed/UQtcXl0PMcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="border-radius:10px;" allowfullscreen></iframe>
-
- 
-</div>
-<div class="modal-footer">
-<button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
-</div>
-</div>
-</div>
-</div>
-
-
-<div class="modal fade" id="smallmodal3" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
-<div class="modal-dialog modal-sm" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<h5 class="modal-title" id="smallmodalLabel">국내 현황 예측 결과</h5>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-</div>
-<div class="modal-body">
-
-
-
-<!DOCTYPE html>
-<head>
-
-    <!--    <script async="" src="./index_files/analytics.js"></script>-->
-
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.27/moment-timezone-with-data-1970-2030.min.js"></script>-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.27/moment-timezone-with-data.min.js"></script>
-
-
-
-<!--    <script src="./index_files/Chart.min.js"></script>-->
-    <script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
-
-
-<!--    <script src="./index_files/utils.js"></script>-->
-    <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
-    <style>
-
-        canvas {
-            -moz-user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-        }
-
-    </style>
-<style type="text/css">/* Chart.js */
-@keyframes chartjs-render-animation {
-    from {
-        opacity: .99
-    }
-    to {
-        opacity: 1
-    }
-}
-
-.chartjs-render-monitor {
-    animation: chartjs-render-animation 1ms
-}
-
-.chartjs-size-monitor, .chartjs-size-monitor-expand, .chartjs-size-monitor-shrink {
-    position: absolute;
-    direction: ltr;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    overflow: hidden;
-    pointer-events: none;
-    visibility: hidden;
-    z-index: -1
-}
-
-.chartjs-size-monitor-expand > div {
-    position: absolute;
-    width: 1000000px;
-    height: 1000000px;
-    left: 0;
-    top: 0
-}
-
-.chartjs-size-monitor-shrink > div {
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    left: 0;
-    top: 0
-}</style>
-</head>
-
-<body>
-
-    <div style="align-content: center; text-align: left; display: flex; justify-content: left;">
-        <div style="width: 100%">
-            <br>
-            <div style=" width: auto; font-size: xx-large; font-weight: bold; margin: 10px;">
-                <h4 style="margin-top:-20px;">내일 누적 확진자 예측</h4>
-                <span id="infectedPrediction">계산중...</span><span>명</span>
-                <span style="font-size:15px;" id="infectedPrePM">계산중...</span>
-                <h4 style="margin-top:20px;">내일 누적 사망자 예측</h4>
-                <span id="deathPrediction">계산중...</span><span>명</span>
-                <span style="font-size:15px;" id="deathPrePM">계산중...</span>
-                <p style="font-size:13px; color:#d92121; margin-top:20px;">
-위 수치는 지금까지의 발생 동향을 기반으로 계산된 단순 추정치입니다.<br>단순 참고용으로만 사용하여 주시고, 해당 자료를 신뢰하지 마시기 바랍니다.
-</p> 
-                <span id="infectedCount" style="display: none;">Predicted infected count calculating...</span>
-            </div>
-            <button id="toggleScale" style="display: none;"><b>∡ Logaritmic / Linear Scale Toggle</b></button><br>
-            
-            <b style="display:none;" id="iDailyGrowthPercent" style="color: darkorange">로딩중... </b>
-            <div style="display: none;">
-            
-                <select id="locationSelect" style="width: 150px"></select>
-                <button id="clearDatasets" style="border-radius: 0"><b>Clear</b></button>
-                <button id="toggleScalePerCountry"><b>∡ Log Scale Toggle</b></button>
-            </span>
-
-            <script src="https://www.coronaviruschart.com/jquery-3.3.1.slim.min.js"></script>
-            <script src="https://www.coronaviruschart.com/jquery.csv.min.js"></script>
-
-            <script>
-                // 여기를 바꿔주세요
-                // 최근 6일까지의 수치만 입력해야 합니다.
-                let recentKoreaData = [
-                    { d: '2020-05-06', i: 10810, t: 256, w: 1016128-81620},
-                    { d: '2020-05-07', i: 10822, t: 256, w: 1016128-81620},
-                    { d: '2020-05-08', i: 10840, t: 256, w: 1016128-81620},
-                    { d: '2020-05-09', i: 10874, t: 256, w: 1016128-81620},
-                    { d: '2020-05-10', i: 10909, t: 256, w: 1016128-81620},
-                    { d: '2020-05-11', i: 10936, t: 258, w: 1016128-81620},
-                                                                            
-
-
-                ];
-
-
-                let sourceDataLength = recentKoreaData.length;
-
-                let ahead = 3;
-                let [data, infectedNow, iDailyGrowthPercent] = predict(recentKoreaData, ahead);
-                updateIC();
-                document.getElementById('iDailyGrowthPercent').innerText = Math.floor(iDailyGrowthPercent).toString() + '%';
-
-                function infectedNowToString(infectedNow) {
-                    let s = infectedNow.toString();
-                    // if (!s.includes('.')) {
-                    //     s = s + '.0';
-                    // }
-                    return s;
-                }
-
-                function updateIC() {
-                    [data, infectedNow, iDailyGrowthPercent] = predict(recentKoreaData, 0);
-                    document.getElementById('infectedCount').innerText = infectedNowToString(infectedNow).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
-                }
-
-                
-
-                setInterval(updateIC, 500);
-
-                var color = Chart.helpers.color;
-
-                function pointColors(normalColor) {
-                    let bcs = [];
-                    for (let i = 0; i < sourceDataLength + ahead; i++) {
-                        if (i < sourceDataLength) {
-                            bcs.push(normalColor);
-                        } else {
-                            bcs.push(color(window.chartColors.blue).alpha(1).rgbString());
-                        }
-                    }
-                    return bcs;
-                }
-
-                let bcs = pointColors(color(window.chartColors.yellow).alpha(1).rgbString());
-                let tbcs = pointColors(color(window.chartColors.red).alpha(1).rgbString());
-                let wbcs = pointColors(color(window.chartColors.purple).alpha(1).rgbString());
-
-                document.getElementById('infectedPrediction').innerText = data.map(d => d.i)[6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                document.getElementById('deathPrediction').innerText = data.map(d => d.t)[6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
-                document.getElementById('infectedPrePM').innerText = "(+ "+(data.map(d => d.i)[6]-data.map(d => d.i)[5])+")";
-                document.getElementById('deathPrePM').innerText = "(+ "+(data.map(d => d.t)[6]-data.map(d => d.t)[5])+")";
-
-
-                var type = 'linear';
-
-                var timeFormat = 'YYYY-MM-DD';
-
-                var colorNames = Object.keys(window.chartColors);
-                function addCountryDataset(locationName) {
-                    var colorName = colorNames[configPerCountry.data.datasets.length % colorNames.length];
-                    var newColor = window.chartColors[colorName];
-                    // TODO add predictionOne
-                    // var data = window.perCountry[locationName];
-                    // let dateStrings = configPerCountry.data.dateStrings;
-                    // var [predData, predDateStrings, now, dailyGrowth] = predictOne(data, dateStrings, 3);
-                    // TODO colorization:
-                    // let bcs = pointColors(color(window.chartColors.yellow).alpha(1).rgbString());
-
-                    var newDataset = {
-                        label: locationName,
-                        borderColor: newColor,
-                        backgroundColor: color(newColor).alpha(0.5).rgbString(),
-                        fill: false,
-                        data: window.perCountry[locationName]
-                    };
-                    configPerCountry.data.datasets.push(newDataset);
-                    window.myLinePerCountry.update();
-
-                }
-                document.getElementById('locationSelect').addEventListener('change', function() {
-                    var sel = document.getElementById('locationSelect');
-                    let option = sel.options[sel.selectedIndex];
-                    var locationName = option.value;
-                    addCountryDataset(locationName);
-                });
-
-                document.getElementById('clearDatasets').addEventListener('click', function() {
-                   configPerCountry.data.datasets = [];
-                    window.myLinePerCountry.update();
-                });
-
-                window.onload = function() {
-                    var ctx = document.getElementById('canvas').getContext('2d');
-                    window.myLine = new Chart(ctx, config);
-
-                    csvParsedPromise.then(r => {
-                        var ctxPerCountry = document.getElementById('canvasPerCountry').getContext('2d');
-                        window.myLinePerCountry = new Chart(ctxPerCountry, configPerCountry);
-
-                        addCountryDataset('US');
-                        addCountryDataset('Italy');
-                        addCountryDataset('China');
-                    });
-
-                };
-
-                function findLineByLeastSquares(values_x, values_y) {
-                    var x_sum = 0;
-                    var y_sum = 0;
-                    var xy_sum = 0;
-                    var xx_sum = 0;
-                    var count = 0;
-
-                    /*
-                     * The above is just for quick access, makes the program faster
-                     */
-                    var x = 0;
-                    var y = 0;
-                    var values_length = values_x.length;
-
-                    if (values_length !== values_y.length) {
-                        throw new Error('The parameters values_x and values_y need to have same size!');
-                    }
-
-                    /*
-                     * Above and below cover edge cases
-                     */
-                    if (values_length === 0) {
-                        return [ [], [] ];
-                    }
-
-                    /*
-                     * Calculate the sum for each of the parts necessary.
-                     * FIT ONLY last 5!
-                     */
-                    for (let i = values_length - 5; i< values_length; i++) {
-                        x = values_x[i];
-                        y = values_y[i];
-                        x_sum+= x;
-                        y_sum+= y;
-                        xx_sum += x*x;
-                        xy_sum += x*y;
-                        count++;
-                    }
-
-                    /*
-                     * Calculate m and b for the line equation:
-                     * y = x * m + b
-                     */
-                    var m = (count*xy_sum - x_sum*y_sum) / (count*xx_sum - x_sum*x_sum);
-                    var b = (y_sum/count) - (m*x_sum)/count;
-
-
-                    return [m, b]
-                }
-
-                function predictOne(arr, dateStrings, ahead) {
-                    let dayIndexes = [...Array(arr.length).keys()];
-                    let [m, b] = findLineByLeastSquares(dayIndexes, arr);
-                    let latestDateString = dateStrings[dateStrings.length - 1];
-                    let seconds = moment().diff(moment(latestDateString).add(1, 'days')) / 1000;
-                    let now = Math.floor(Math.exp((arr.length - 1 + seconds / (60*60*24)) * m + b));
-                    let previous_date = undefined;
-                    for (let i = 0; i < arr.length + ahead; i++) {
-                        let y = Math.floor(Math.exp(i * m + b));
-                        let datum = arr[i];
-                        if (!datum) {
-                            let v = y;
-                            let d = moment(previous_date).add(1,'days').format('YYYY-MM-DD');
-                            arr.push(v);
-                            dateStrings.push(d);
-                        }
-                        previous_date = dateStrings[i]
-                    }
-                    let dailyGrowthPercent = (Math.exp(m) - 1) * 100;
-                    return [arr, dateStrings, now, dailyGrowthPercent];
-
-                }
-
-                function predict(data, ahead) {
-
-                    let log_infecteds = data.map(d=>Math.log(d.i));
-                    let log_toll = data.map(d=>Math.log(d.t));
-                    let log_world = data.map(d=>Math.log(d.w));
-                    let days = [...Array(data.length).keys()];
-
-                    let [m, b] = findLineByLeastSquares(days, log_infecteds);
-                    let [mt, bt] = findLineByLeastSquares(days, log_toll);
-                    let [mw, bw] = findLineByLeastSquares(days, log_world);
-
-                    let latest = data[log_infecteds.length - 1];
-                    let seconds = moment().diff(moment(latest.d).add(1, 'days')) / 1000;
-                    let infectedNow = Math.floor(Math.exp((log_infecteds.length - 1 + seconds / (60*60*24)) * m + b));
-                    let worldNow = Math.floor(Math.exp((log_world.length - 1 + seconds / (60*60*24)) * mw + bw));
-
-                    // predict next 3 values
-                    // let previous_date = data[log_infecteds.length - 1].d;
-                    let previous_date = undefined;
-                    for (let i = 0; i < log_infecteds.length + ahead; i++) {
-                        let y = Math.floor(Math.exp(i * m + b));
-                        let yt = Math.floor(Math.exp(i * mt + bt));
-                        let yw = Math.floor(Math.exp(i * mw + bw));
-                        let datum = data[i];
-                        if (!datum) {
-                            datum = {};
-                            datum.i = y;
-                            datum.t = yt;
-                            datum.w = yw;
-                            datum.d = moment(previous_date).add(1,'days').format('YYYY-MM-DD');
-                            data.push(datum);
-                        }
-                        datum.im = y;
-                        datum.tm = yt;
-                        datum.wm = yw;
-                        previous_date = datum.d
-                    }
-                    let iDailyGrowthPercent = (Math.exp(m) - 1) * 100;
-                    return [data, infectedNow, iDailyGrowthPercent];
-                }
-
-
-            </script>
-
-
-            <br>
-
-        </div>
-    </div>
-
-</body>
-</html>
-
-
-
-
-</div>
-<div class="modal-footer">
-<button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
-</div>
-</div>
-</div>
-</div>
 
 
     <!-- Vue JS-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.3.4/vue-resource.js"></script>
     <!-- Jquery JS-->
@@ -1065,7 +155,7 @@ R0 수치가 2라고 가정하면, 감염자 1명이 다른 사람 2명 이상�
     <!-- Bootstrap JS-->
     <script src="vendor/bootstrap-4.1/popper.min.js"></script>
     <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <!-- Vendor JS-->
+    <!-- Vendor JS       -->
     <script src="vendor/slick/slick.min.js">
     </script>
     <script src="vendor/wow/wow.min.js"></script>
@@ -1083,149 +173,333 @@ R0 수치가 2라고 가정하면, 감염자 1명이 다른 사람 2명 이상�
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="js/custom_mask.js"></script>
 
 </body>
-
 </html>
 <!-- end document-->
 
-    <style type="text/css">/* Chart.js */
-@keyframes chartjs-render-animation {
-    from {
-        opacity: .99
-    }
-    to {
-        opacity: 1
-    }
+<style>
+  .card {
+  position: relative;
+  height: 200px;
+  width: 90%;
+  margin-left:20px;
+  margin-right:20px;
+  border-radius: 20px;
 }
-
-.chartjs-render-monitor {
-    animation: chartjs-render-animation 1ms
-}
-
-.chartjs-size-monitor, .chartjs-size-monitor-expand, .chartjs-size-monitor-shrink {
+.card + .card {
+    margin-top: 40px;
+  }
+.card .content {
     position: absolute;
-    direction: ltr;
     left: 0;
     top: 0;
-    right: 0;
     bottom: 0;
+    right: 0;
     overflow: hidden;
-    pointer-events: none;
-    visibility: hidden;
-    z-index: -1
-}
-
-.chartjs-size-monitor-expand > div {
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+.card .article {
+    padding: 15px;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+    -webkit-transform: translateY(-20%);
+            transform: translateY(-20%);
+    opacity: 0;
+  }
+.card .cover {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    padding: 15px;
+    background-size: cover;
+    color: #fff;
+    border-radius: 15px;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    z-index: 100;
+  }
+.card .cover .category {
+      color: rgba(255, 255, 255, .7);
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+.card .cover .title {
+      margin: 0;
+      font-size: 28px;
+    }
+.card .cover .tips {
+      position: absolute;
+      font-size: 15px;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      color: rgba(255, 255, 255, .7);
+    }
+.card .close {
     position: absolute;
-    width: 1000000px;
-    height: 1000000px;
-    left: 0;
-    top: 0
+    right: 15px;
+    top: 15px;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    border: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    line-height: 1;
+    background: rgba(255, 255, 255, .8);
+    color: rgba(0, 0, 0, .8);
+    text-align: center;
+    cursor: pointer;
+    opacity: 0;
+    -webkit-transition: all .4s ease-in-out,
+      background .3s linear, color .3s linear;
+    transition: all .4s ease-in-out,
+      background .3s linear, color .3s linear;
+  }
+.card .close.reverse {
+      background: rgba(0, 0, 0, .8);
+      color: rgba(255, 255, 255, .8);
+    }
+.card.open .close {
+      z-index: 600;
+      opacity: 1;
+    }
+.card.open .content {
+      z-index: 500;
+      left: -15px;
+      right: -15px;
+      height: 612px;
+      overflow: hidden;
+      overflow-y: auto;
+      background: rgba(255, 255, 255, 1);
+    }
+.card.open .cover {
+      border-radius: 0;
+    }
+.card.open .article {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+    }
+
+.rocketImg {
+    width:40%;
 }
 
-.chartjs-size-monitor-shrink > div {
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    left: 0;
-    top: 0
+@media ( min-width: 1024px ) {
+  .rocketImg {
+    width:10%;
+    margin-right: 10px;
 }
 
-        canvas {
-            -moz-user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-        }
-
-.animated {
-  background-color: #a9a9a9;
-  background: -webkit-gradient(linear, left top, right top, color-stop(5%, #f3f3f3), color-stop(20%, #eee), color-stop(35%, #f3f3f3));
-  background: linear-gradient(to right, #f3f3f3 25%, #eee 20%, #f3f3f3 75%);
-  -webkit-animation: placeholderShimmer 2s linear 0s infinite normal forwards;
-          animation: placeholderShimmer 2s linear 0s infinite normal forwards;
+  .card {
+  position: relative;
+  height: 200px;
+  width:70%;
+  margin-left:220px;
+  margin-right:220px;
+  border-radius: 20px;
+}
 }
 
-@-webkit-keyframes placeholderShimmer {
-  0% {
-    background-position: -500px 0;
-  }
-  100% {
-    background-position: 500px 0;
-  }
-}
-
-@keyframes placeholderShimmer {
-  0% {
-    background-position: -500px 0;
-  }
-  100% {
-    background-position: 500px 0;
-  }
-
-svg {
+.image_backgroundContainer,
+.card-base.card .card_image {
+  max-width: 100%;
+  position: relative;
   width: 100%;
-  max-width: 400px;
 }
+.image_backgroundContainer img {
+  background-color: inherit;
+  background-size: cover;
+  background-image: inherit;
+  background-position: 50% 50%;
+  content: "";
+  display: block;
+  height: 100%;
+  max-width: 100%;
+  object-fit: scale-down;
+  object-position: 200% 200%;
+  overflow: hidden;
+  padding-left: 100%;
+}
+.type .overflow,
+.card-base.card .card_description,
+.card-base.card .card_title {
+  background-color: inherit;
+  /* stylelint-disable property-no-unknown */
+  box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  /* stylelint-enable */
+  color: inherit;
+  display: box;
+  display: -webkit-box;
+  display: -moz-box;
+  margin: 0;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  text-overflow: -o-ellipsis-lastline;
+  text-overflow: ellipsis;
+}
+.cardCollection {
+  align-items: center;
+  align-content: flex-start;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1278px;
+}
+.card-base.card {
+  box-shadow: 0 0 0 1px #e5f6eb;
+  border-radius: 20px;
+  color: #323232;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: column;
+  height: auto;
+  max-width: calc(100% - 36px);
+  position: relative;
+  width: 100%;
+}
+.card-base.card .card_image {
+  height: 224px;
+}
+.card-base.card .card_info {
+  background-color: #FFF;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  height: auto;
+  padding: 20px;
+  border-radius: 20px;
+}
+.card-base.card .card_cta {
+  margin-top: auto;
+}
+.card-base.card .card_description,
+.card-base.card .card_title {
+  line-height: 26px;
+  width: 100%;
+}
+.card-base.card .card_description {
+    margin-top:-15px;
+  font-size: 16px;
+  max-height: 78px;
+  -webkit-line-clamp: 3;
+}
+.card-base.card .card_title {
+  font-size: 22px;
+  margin: 12px 0 32px;
+  max-height: 52px;
+  -webkit-line-clamp: 2;
+}
+.link.link-video {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+.link.link-video:after,
+.link.link-video:before {
+  content: '';
+  display: block;
+  position: absolute;
+}
+.link.link-video:after {
+  border-top: 0.9375rem solid transparent;
+  border-bottom: 0.9375rem solid transparent;
+  border-left: 1.5625rem solid #fff;
+  margin: 0 0 0 0.25rem;
+  z-index: 2;
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .link.link-video:after {
+    left: 45.5%;
+    top: 42%;
+  }
+}
+.link.link-video:before {
+  background-color: #1473e6;
+  height: 5rem;
+  width: 5rem;
+  z-index: 1;
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .link.link-video:before {
+    left: 33%;
+    top: 31%;
+  }
+}
+.link.link-video:hover:before {
+  background-color: #0d66d0;
+}
+.link.link-video:active:before {
+  background-color: #0d66d0;
+}
+.link.link-video:focus:before {
+  background-color: #0d66d0;
+}
+/*
+* @textClampOverflowConfig
+* An Array of config strings consisting of:
+- valid selector **(class, id, and other specific selectors must be evaluated ~'(#.+~)String')**
+- the number of lines before the overflow treatment is applied
+- and the line height of the elment being effected
+* {Selector} {Max Number of Lines} {Line Height of Type}...
+* {Selector} {Max Number of Lines} {Line Height of Type}...
+*/
+@-moz-document url-prefix() {
+  .gradientPsuedoElement,
+  .card_description:after,
+  .card_title:after {
+    content: "";
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff);
+    position: absolute;
+    right: 0;
+    text-align: right;
+    width: 36%;
+  }
+  .card_description:after {
+    height: 26px;
+    top: 52px;
+  }
+  .card_title:after {
+    height: 26px;
+    top: 26px;
+  }
+}
+@supports (-ms-ime-align: auto) {
+  .gradientPsuedoElement,
+  .card_description:after,
+  .card_title:after {
+    content: "";
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff);
+    position: absolute;
+    right: 0;
+    text-align: right;
+    width: 36%;
+  }
+  .card_description:after {
+    height: 26px;
+    top: 52px;
+  }
+  .card_title:after {
+    height: 26px;
+    top: 26px;
+  }
+}
+
 
 </style>
-
-<script>
-    console.clear();
-
-const drawChart = async () => {
-  
-  const data = [
-    { status: "해외유입", tally: 5 },
-    { status: "지역감염", tally: 22 }
-  ];
-
-  const viewBox = d3.select("#chart").attr("viewBox").split(" ");
-  const width = viewBox[2];
-  const height = viewBox[3];
-  const margin = { top: 70, right: 30, bottom: 0, left: 30 };
-  const chart = d3.select("#chart").append("g").attr("transform", `translate(${margin.left}, ${margin.top})`);
-
-  const x = d3.scaleLinear()
-    .range([0, width - margin.left - margin.right])
-    .domain([0, data.reduce((acc, cur) => acc += cur.tally, 0)]);
-  
-  const color = d3.scaleOrdinal()
-    .range(["#FF7F00", "#24A221", "#D8241F"])
-    .domain(data.map(d => d.status));
-
-  const value = chart.selectAll(".value")
-    .data(data)
-    .join("g")
-    .attr("class", "value")
-    .attr("transform", (d, i) => {
-      const previousData = data.slice(0, i);
-      const previousTotal = previousData.reduce((acc, cur) => acc += +cur.tally, 0);
-      const offset = x(previousTotal);
-      return `translate(${offset}, 0)`;
-    })
-  
-  value.append("rect")
-    .attr("width", d => x(d.tally))
-    .attr("height", height - margin.top - margin.left)
-    .attr("fill", d => color(d.status));
-  
-  value.append("text")
-    .attr("x", d => x(d.tally) / 2)
-    .attr("y", -40)
-    .attr("text-anchor", "middle")
-    .attr("font-size", 22)
-    .text(d => d.status)
-  
-  value.append("text")
-    .attr("x", d => x(d.tally) / 2)
-    .attr("y", -10)
-    .attr("text-anchor", "middle")
-    .attr("font-size", 22)
-    .text(d => d.tally.toLocaleString())
-};
-
-drawChart();
-
-</script>
