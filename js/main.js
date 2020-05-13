@@ -62,6 +62,52 @@ $(window).scroll(function() {
   // USE STRICT
   "use strict";
 
+
+     try {
+
+    //이태원 클럽 n차 감염
+    var ctx = document.getElementById("doughutChart_club");
+    if (ctx) {
+      ctx.height = 150;
+      var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          datasets: [{
+            data: [76, 43],
+            backgroundColor: [
+              '#FFA500',
+              '#9368B7'
+            ],
+            hoverBackgroundColor: [
+              '#FFA500',
+              '#9368B7'
+            ]
+
+          }],
+          labels: [
+            "클럽 방문자",
+            "접촉자"
+          ]
+        },
+        options: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              fontFamily: 'Poppins'
+            }
+
+          },
+          responsive: true
+        }
+      });
+    }
+
+
+  } catch (error) {
+    console.log(error);
+  }
+
+
     try {
     //일별 신규 확진자
     var ctx = document.getElementById("widgetChart5");
