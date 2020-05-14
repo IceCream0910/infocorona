@@ -73,7 +73,7 @@ $(window).scroll(function() {
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [76, 43],
+            data: [82, 51],
             backgroundColor: [
               '#FFA500',
               '#9368B7'
