@@ -28,6 +28,7 @@
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <script src="https://livecorona.co.kr/data/koreaRegionalData.js"></script>
 
     <!-- Bootstrap CSS-->
     <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
@@ -343,112 +344,114 @@ function chageLangSelect(){
                                         <tbody>
                                             <tr onClick="javascript:window.open('http://www.seoul.go.kr/coronaV/coronaStatus.do');">
                                                 <td>서울</td>
-                                                <td>758</td>
-                                                <td>599</td>
-                                                <td>4</td>
+                                                <td id="seoulCases">-</td>
+                                                <td id="seoulCure">-</td>
+                                                <td id="seoulDeath">-</td>
                                             </tr>
                                             <tr onClick="javascript:window.open('http://www.busan.go.kr/corona19/index');">
                                                 <td>부산</td>
-                                                <td>144</td>
-                                                <td>131</td>
-                                                <td>3</td>
+                                                <td id="busanCases">144</td>
+                                                <td id="busanCure">131</td>
+                                                <td id="busanDeath">3</td>
                                             </tr>
                                             <tr onClick="javascript:window.open('http://www.daegu.go.kr/');">
                                                 <td>대구</td>
-                                                <td>6,872</td>
-                                                <td>6,505</td>
-                                                <td>182</td>
+                                                <td id="daeguCases">6,872</td>
+                                                <td id="daeguCure">6,505</td>
+                                                <td id="daeguDeath">182</td>
                                             </tr>
                                             <tr onClick="javascript:window.open('https://www.incheon.go.kr/corona19/IC010001');">
                                                 <td>인천</td>
-                                                <td>141</td>
-                                                <td>90</td>
-                                                <td>0</td>
+                                                <td id="incheonCases">141</td>
+                                                <td id="incheonCure">90</td>
+                                                <td id="incheonDeath">0</td>
                                             </tr>
                                             <tr onClick="javascript:window.open('https://www.gwangju.go.kr/');">
                                                 <td>광주</td>
-                                                <td>30</td>
-                                                <td>30</td>
-                                                <td>0</td>
+                                                <td id="gwangjuCases">30</td>
+                                                <td id="gwangjuCure">30</td>
+                                                <td id="gwangjuDeath">0</td>
                                             </tr>
                                             <tr onClick="javascript:window.open('https://www.daejeon.go.kr/corona19/index.do');">
                                                 <td>대전</td>
-                                                <td>44</td>
-                                                <td>39</td>
-                                                <td>1</td>
+                                                <td id="daejeonCases">44</td>
+                                                <td id="daegeonCure">39</td>
+                                                <td id="daegeonDeath">1</td>
                                             </tr>
                                             <tr onClick="javascript:window.open('http://www.ulsan.go.kr/corona.jsp');">
                                                 <td>울산</td>
-                                                <td>50</td>
-                                                <td>42</td>
-                                                <td>1</td>
+                                                <td id="ulsanCases">50</td>
+                                                <td id="ulsanCure">42</td>
+                                                <td id="ulsanDeath">1</td>
                                             </tr>
                                             <tr onClick="javascript:window.open('https://www.sejong.go.kr/life/sub05_0704.do');">
                                                 <td>세종</td>
-                                                <td>47</td>
-                                                <td>47</td>
-                                                <td>0</td>
+                                                <td id="sejongCases">47</td>
+                                                <td id="sejongCure">47</td>
+                                                <td id="sejongDeath">0</td>
                                             </tr>
                                             <tr onClick="javascript:window.open('https://www.gg.go.kr/bbs/boardView.do?bsIdx=464&bIdx=2296956&menuId=1535');">
                                                 <td>경기</td>
-                                                <td>741</td>
-                                                <td>633</td>
-                                                <td>17</td>
+                                                <td id="ggCases">741</td>
+                                                <td id="ggCure">633</td>
+                                                <td id="ggDeath">17</td>
                                             </tr>
                                             <tr onClick="javascript:window.open('http://www.provin.gangwon.kr/covid-19.html');">
                                                 <td>강원</td>
-                                                <td>55</td>
-                                                <td>47</td>
-                                                <td>2</td>
+                                                <td id="gangwonCases">55</td>
+                                                <td id="gangwonCure">47</td>
+                                                <td id="gangwonDeath">2</td>
                                             </tr>
                                             <tr onClick="javascript:window.open('http://www.chungbuk.go.kr/www/covid-19/index.html');">
                                                 <td>충북</td>
-                                                <td>59</td>
-                                                <td>44</td>
-                                                <td>0</td>
+                                                <td id="cbCases">59</td>
+                                                <td id="cbCure">44</td>
+                                                <td id="cbDeath">0</td>
                                             </tr>
                                             <tr onClick="javascript:window.open('http://www.chungnam.go.kr/coronaStatus.do');">
                                                 <td>충남</td>
-                                                <td>145</td>
-                                                <td>141</td>
-                                                <td>0</td>
+                                                <td id="cnCases">145</td>
+                                                <td id="cnCure">141</td>
+                                                <td id="cnDeath">0</td>
                                             </tr>
                                             <tr onClick="javascript:window.open('http://www.jeonbuk.go.kr/board/list.jeonbuk?boardId=BBS_0000105&menuCd=DOM_000000105010004000&contentsSid=1189&cpath=');">
                                                 <td>전북</td>
-                                                <td>21</td>
-                                                <td>19</td>
-                                                <td>0</td>
+                                                <td id="jbCases">21</td>
+                                                <td id="jbCure">19</td>
+                                                <td id="jbDeath">0</td>
                                             </tr>
                                             <tr onClick="javascript:window.open('https://www.jeonnam.go.kr/coronaMainPage.do');">
                                                 <td>전남</td>
-                                                <td>18</td>
-                                                <td>16</td>
-                                                <td>0</td>
+                                                <td id="jnCases">18</td>
+                                                <td id="jnCure">16</td>
+                                                <td id="jnDeath">0</td>
                                             </tr>
                                             <tr onClick="javascript:window.open('http://www.gb.go.kr/Main/open_contents/section/wel/page.do?mnu_uid=5760&LARGE_CODE=360&MEDIUM_CODE=10&SMALL_CODE=50&SMALL_CODE2=60mnu_order=2');">
                                                 <td>경북</td>
-                                                <td>1,370</td>
-                                                <td>1,276</td>
-                                                <td>54</td>
+                                                <td id="gbCases">1,370</td>
+                                                <td id="gbCure">1,276</td>
+                                                <td id="gbDeath">54</td>
                                             </tr>
                                             <tr onClick="javascript:window.open('http://www.gyeongnam.go.kr/corona.html');">
                                                 <td>경남</td>
-                                                <td>122</td>
-                                                <td>117</td>
-                                                <td>0</td>
+                                                <td id="gnCases">122</td>
+                                                <td id="gnCure">117</td>
+                                                <td id="gnDeath">0</td>
                                             </tr>
                                             <tr onClick="javascript:window.open('https://jeju.go.kr/covid19.jsp');">
                                                 <td>제주</td>
-                                                <td>14</td>
-                                                <td>13</td>
-                                                <td>0</td>
+                                                <td id="jejuCases">14</td>
+                                                <td id="jejuCure">13</td>
+                                                <td id="jejuDeath">0</td>
                                             </tr>
+                                            <!-- 검역은 자동 업데이트 제외
                                             <tr>
                                                 <td>검역</td>
-                                                <td>511</td>
-                                                <td>373</td>
-                                                <td>0</td>
+                                                <td id="gumCases">511</td>
+                                                <td id="gumCure">373</td>
+                                                <td id="gumDeath">0</td>
                                             </tr>
+                                            -->
                                         </tbody>
                                     </table>
                                     </table>
@@ -531,12 +534,15 @@ function chageLangSelect(){
 </div>
 <div class="modal-body"><p style="font-size:13px;">
 
+     <h4>05-22 업데이트</h4>
+    - 오랜만에 업데이트 소식이 돌아왔습니다!!<br>
+    1. 더 빠르고 정확한 정보를 전달해드리기 위해 기존보다 더 많은 정보가 자동으로 갱신됩니다.<br>
+    2. 더 좋은 서비스를 위해 광고가 뿅 나타날 수 있습니다.<br>
+    - 광고로 불편을 겪는 일은 없도록, 사이트 맨~ 아래에만 표시됩니다.<br><br>
+
     <h4>05-12 업데이트</h4>
     1. 이태원 클럽 관련 확진자 현황 추가(현황)<br><br>
 
-    <h4>05-12 업데이트</h4>
-    1. 지도로 보는 전세계 현황 개선<br><br>
-    
     * 일일 현황 업데이트는 업데이트 내역에 포함되지 않습니다.
 
 </p>
@@ -604,7 +610,10 @@ function chageLangSelect(){
 <!-- end frontier div -->
 </div>
 
-<ins class="kakao_ad_area" style="display:none;" 
+
+<br><Br>
+
+<ins class="kakao_ad_area" style="display:none;" rel="noopener noreferrer"
  data-ad-unit    = "DAN-soko4owaqkx1" 
  data-ad-width   = "320" 
  data-ad-height  = "100"></ins> 
@@ -1254,5 +1263,77 @@ const drawChart = async () => {
 };
 
 drawChart();
+
+</script>
+
+<!-- 지역별 현황 자동 업데이트 -->
+<script>
+    document.getElementById('seoulCases').innerHTML = koreaRegionalData[1].확진자수;
+    document.getElementById('seoulCure').innerHTML = koreaRegionalData[1].격리해제수;
+    document.getElementById('seoulDeath').innerHTML = koreaRegionalData[1].사망자수;
+
+    document.getElementById('busanCases').innerHTML = koreaRegionalData[2].확진자수;
+    document.getElementById('busanCure').innerHTML = koreaRegionalData[2].격리해제수;
+    document.getElementById('busanDeath').innerHTML = koreaRegionalData[2].사망자수;
+
+    document.getElementById('daeguCases').innerHTML = koreaRegionalData[3].확진자수;
+    document.getElementById('daeguCure').innerHTML = koreaRegionalData[3].격리해제수;
+    document.getElementById('daeguDeath').innerHTML = koreaRegionalData[3].사망자수;
+
+    document.getElementById('incheonCases').innerHTML = koreaRegionalData[4].확진자수;
+    document.getElementById('incheonCure').innerHTML = koreaRegionalData[4].격리해제수;
+    document.getElementById('incheonDeath').innerHTML = koreaRegionalData[4].사망자수;
+
+    document.getElementById('gwangjuCases').innerHTML = koreaRegionalData[5].확진자수;
+    document.getElementById('gwangjuCure').innerHTML = koreaRegionalData[5].격리해제수;
+    document.getElementById('gwangjuDeath').innerHTML = koreaRegionalData[5].사망자수;
+
+    document.getElementById('daejeonCases').innerHTML = koreaRegionalData[6].확진자수;
+    document.getElementById('daejeonCure').innerHTML = koreaRegionalData[6].격리해제수;
+    document.getElementById('daejeonDeath').innerHTML = koreaRegionalData[6].사망자수;
+
+    document.getElementById('ulsanCases').innerHTML = koreaRegionalData[7].확진자수;
+    document.getElementById('ulsanCure').innerHTML = koreaRegionalData[7].격리해제수;
+    document.getElementById('ulsanDeath').innerHTML = koreaRegionalData[7].사망자수;
+
+    document.getElementById('sejongCases').innerHTML = koreaRegionalData[8].확진자수;
+    document.getElementById('sejongCure').innerHTML = koreaRegionalData[8].격리해제수;
+    document.getElementById('sejongDeath').innerHTML = koreaRegionalData[8].사망자수;
+
+    document.getElementById('ggCases').innerHTML = koreaRegionalData[9].확진자수;
+     document.getElementById('ggCure').innerHTML = koreaRegionalData[9].격리해제수;
+      document.getElementById('ggDeath').innerHTML = koreaRegionalData[9].사망자수;
+
+    document.getElementById('gangwonCases').innerHTML = koreaRegionalData[10].확진자수;
+    document.getElementById('gangwonCure').innerHTML = koreaRegionalData[10].격리해제수;
+    document.getElementById('gangwonDeath').innerHTML = koreaRegionalData[10].사망자수;
+
+    document.getElementById('cbCases').innerHTML = koreaRegionalData[11].확진자수;
+    document.getElementById('cbCure').innerHTML = koreaRegionalData[11].격리해제수;
+    document.getElementById('cbDeath').innerHTML = koreaRegionalData[11].사망자수;
+
+    document.getElementById('cnCases').innerHTML = koreaRegionalData[12].확진자수;
+    document.getElementById('cnCure').innerHTML = koreaRegionalData[12].격리해제수;
+    document.getElementById('cnDeath').innerHTML = koreaRegionalData[12].사망자수;
+
+    document.getElementById('jbCases').innerHTML = koreaRegionalData[13].확진자수;
+    document.getElementById('jbCure').innerHTML = koreaRegionalData[13].격리해제수;
+    document.getElementById('jbDeath').innerHTML = koreaRegionalData[13].사망자수;
+
+    document.getElementById('jnCases').innerHTML = koreaRegionalData[14].확진자수;
+    document.getElementById('jnCure').innerHTML = koreaRegionalData[14].격리해제수;
+    document.getElementById('jnDeath').innerHTML = koreaRegionalData[14].사망자수;
+
+    document.getElementById('gbCases').innerHTML = koreaRegionalData[15].확진자수;
+    document.getElementById('gbCure').innerHTML = koreaRegionalData[15].격리해제수;
+    document.getElementById('gbDeath').innerHTML = koreaRegionalData[15].확진자수;
+
+    document.getElementById('gnCases').innerHTML = koreaRegionalData[16].확진자수;
+    document.getElementById('gnCure').innerHTML = koreaRegionalData[16].격리해제수;
+    document.getElementById('gnDeath').innerHTML = koreaRegionalData[16].사망자수;
+
+    document.getElementById('jejuCases').innerHTML = koreaRegionalData[17].확진자수;
+    document.getElementById('jejuCure').innerHTML = koreaRegionalData[17].격리해제수;
+    document.getElementById('jejuDeath').innerHTML = koreaRegionalData[17].사망자수;
 
 </script>
