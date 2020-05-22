@@ -613,7 +613,7 @@ function chageLangSelect(){
 
 <br><Br>
 
-<ins class="kakao_ad_area" style="display:none;" target="_blank" rel="noopener noreferrer"
+<ins class="kakao_ad_area" id="ad_area" style="display:none;" target="_blank" rel="noopener noreferrer" style="background-color: red;"
  data-ad-unit    = "DAN-soko4owaqkx1" 
  data-ad-width   = "320" 
  data-ad-height  = "100"></ins> 
@@ -624,6 +624,17 @@ function chageLangSelect(){
             <!-- END STATISTIC CHART-->
 
                 
+                <script>
+                    // 웨일 확장앱에서는 뒤로가기 처리 안돼서 광고 미노출시킴
+var userAgent = window.navigator.userAgent;
+var isSidebar = userAgent.indexOf('Sidebar');
+
+if(isSidebar < 0){
+    //사이드바
+    document.getElementByid("ad_area").sytle.display="none";
+        
+    }
+                </script>
 
             
 
