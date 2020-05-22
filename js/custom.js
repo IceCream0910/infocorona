@@ -10,7 +10,7 @@ angular.module("myApp", ['ngRoute'])
 
 .service('getCoronaNewsArticles', function($http){
    this.getNewsArticles = function(callback){
-  $http.get('http://cors-coronacoc.herokuapp.com/https://newsapi.org/v2/everything?q=코로나19&apiKey=d60ec4ccad4e46678ce633f1b4dfa2b1&pageSize=15&sortBy=publishedAt')
+  $http.get('https://cors-coronacoc.herokuapp.com/https://newsapi.org/v2/everything?q=코로나19&apiKey=d60ec4ccad4e46678ce633f1b4dfa2b1&pageSize=15&sortBy=publishedAt')
      .then(callback);
      
    };
