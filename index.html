@@ -180,8 +180,8 @@ function chageLangSelect(){
                         <div class="col-md-6 col-lg-3">
                             <div class="statistic__item statistic__item--black" style="border-radius: 10px;">
                                 <h2 class="number" id="death">로딩중</h2>
-                                <span class="desc" id="deathPM" style="display:none;">사망자</span>
-                                <span class="desc" style="display: block;">사망자 (+ 0)</span>
+                                <span class="desc" id="deathPM" style="display:block;">사망자</span>
+                                <span class="desc" style="display: none;">사망자 (+ 0)</span>
                                 <div class="icon">
                                     <i class="zmdi zmdi-accounts-outline"></i>
                                 </div>
@@ -203,7 +203,7 @@ function chageLangSelect(){
 -->
 
 <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
-<span class="badge badge-pill badge-danger">공지</span> 학업으로 인해 오전 중 업데이트가 늦어질 수 있습니다. 양해 부탁드립니다.
+<span class="badge badge-pill badge-danger">공지</span> 학업으로 인해 업데이트가 늦어질 수 있습니다. 양해 부탁드립니다.
 </button>
 </div>
 
@@ -241,8 +241,8 @@ function chageLangSelect(){
                                 </div>
                                 <div class="statistic-chart-1-note">
                                     <span>어제 증가치보다</span>
-                                    <span class="big">2명</span>
-                                    <span>더 많아요.<br><span style="color:#a9a9a9; font-size:13px;"></span></span>
+                                    <span class="big">9명</span>
+                                    <span>더 적어요.<br><span style="color:#a9a9a9; font-size:13px;"></span></span>
 
 <div class="container">
    <span style="margin-left:-15px;" class="big">신규 환자 해외 유입 현황<Br><Br></span>
@@ -495,7 +495,7 @@ function chageLangSelect(){
 
  <a href="interactive/map.html" style=" text-align:right; margin-top:-25px; margin-bottom: 25px;"><br>지도로 보는 전세계 현황 ></a>
                        
-                        <!-- TASK PROGRESS-->
+                        <!-- TASK PROGRESS
                                     <h4 style="margin-bottom: 10px;">치사율</h4>
                                         <div class="progress mb-2" style="height:30px;">
                                             <div class="progress-bar bg-danger" role="progressbar" style="width: 26%" aria-valuenow="6.652%" aria-valuemin="0" aria-valuemax="100">6.652%</div>
@@ -509,7 +509,9 @@ function chageLangSelect(){
                                          <h4 style="margin-bottom: 10px;">완치율</h4>
                                         <div class="progress mb-2" style="height:30px;">
                                             <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="38.225%" aria-valuemin="0" aria-valuemax="100">38.225%</div>
-                                        </div><br>
+                                        </div>
+-->
+                    <br>
 
                                 <div class="col-md-6 col-lg-4"> <!-- CHART--> 
                                     <div class="statistic-chart-1" style="border-radius: 10px; margin-left:-15px; margin-right:-15px;"> 
@@ -1234,8 +1236,8 @@ svg {
 const drawChart = async () => {
   
   const data = [
-    { status: "해외유입", tally: 8 },
-    { status: "국내발생", tally: 17 }
+    { status: "해외유입", tally: 3 },
+    { status: "국내발생", tally: 13 }
   ];
 
   const viewBox = d3.select("#chart").attr("viewBox").split(" ");
