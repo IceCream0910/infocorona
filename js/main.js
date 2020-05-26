@@ -440,8 +440,8 @@ $(window).scroll(function() {
               ticks: {
                 beginAtZero: false,
                 maxTicksLimit: 5,
-                stepSize: 2500,
-                max: 23000,
+                stepSize: 3000,
+                max: 25000,
                 fontFamily: "Poppins",
                 fontSize: 12
               },
