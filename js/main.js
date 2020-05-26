@@ -441,7 +441,7 @@ $(window).scroll(function() {
                 beginAtZero: false,
                 maxTicksLimit: 5,
                 stepSize: 2500,
-                max: 22000,
+                max: 23000,
                 fontFamily: "Poppins",
                 fontSize: 12
               },
