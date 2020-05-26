@@ -395,7 +395,7 @@ $(window).scroll(function() {
 
     var ctx = document.getElementById("recent-rep2-chart");
     if (ctx) {
-      ctx.height = 210;
+      ctx.height = 250;
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -441,7 +441,7 @@ $(window).scroll(function() {
                 beginAtZero: false,
                 maxTicksLimit: 5,
                 stepSize: 3000,
-                max: 25000,
+                max: 24000,
                 fontFamily: "Poppins",
                 fontSize: 12
               },
