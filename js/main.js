@@ -73,11 +73,11 @@ $(window).scroll(function() {
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['5.22', '5.23', '5.24', '5.25', '5.26', '5.27', '5.28', '5.29', '5.30', '5.31'],
+          labels: ['5.23', '5.24', '5.25', '5.26', '5.27', '5.28', '5.29', '5.30', '5.31', '6.1'],
           datasets: [
             {
               label: "신규 확진자",
-              data: [23, 25, 16, 19, 40, 79, 58, 39, 27, 35],
+              data: [25, 16, 19, 40, 79, 58, 39, 27, 35, 38],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
@@ -122,7 +122,7 @@ $(window).scroll(function() {
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [19, 225, 475, 8, 536, 1],
+            data: [19, 226, 475, 8, 537, 1],
             backgroundColor: [
               '#FFA500',
               '#FFFF00',
@@ -179,7 +179,7 @@ $(window).scroll(function() {
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [4806, 6697],
+            data: [4829, 6712],
             backgroundColor: [
               '#00b5e9',
               '#fa4251',
@@ -226,7 +226,7 @@ $(window).scroll(function() {
           datasets: [
             {
               label: "사망자수",
-              data: [0, 0, 0, 2, 3, 15, 39, 80, 132],
+              data: [0, 0, 0, 2, 3, 15, 39, 80, 133],
               borderColor: "rgba(0, 0, 0, 0.9)",
               borderWidth: "0",
               backgroundColor: "rgba(0, 0, 0, 0.5)"
@@ -276,7 +276,7 @@ $(window).scroll(function() {
           datasets: [
             {
               label: "확진자 수",
-              data: [158, 657, 3178, 1296, 1527, 2052, 1410, 727, 498],
+              data: [158, 659, 3183, 1299, 1529, 2061, 1421, 732, 499],
               borderColor: "rgba(255, 40, 0, 1)",
               borderWidth: "0",
               backgroundColor: "rgba(255, 40, 0, 0.8)"
@@ -322,11 +322,11 @@ $(window).scroll(function() {
         type: 'bar',
         defaultFontFamily: 'Poppins',
         data: {
-          labels: ['5.26', '5.27', '5.28', '5.29', '5.30', '5.31'],
+          labels: ['5.27', '5.28', '5.29', '5.30', '5.31', '6.1'],
           datasets: [
             {
               label: "확진",
-              data: [40, 79, 58, 39, 27, 35],
+              data: [79, 58, 39, 27, 35, 38],
               borderColor: "rgba(250, 66, 81, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(250, 66, 81,0.5)",
@@ -334,7 +334,7 @@ $(window).scroll(function() {
             },
             {
               label: "완치",
-              data: [49, 20, 45, 23, 35, 17],
+              data: [20, 45, 23, 35, 17, 24],
               borderColor: "rgba(0,173,95, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,173,95, 0.5)",
@@ -342,7 +342,7 @@ $(window).scroll(function() {
             },
             {
               label: "사망",
-              data: [0, 0, 0, 0, 1, 1],
+              data: [0, 0, 0, 1, 1, 1],
               borderColor: "rgba(0,0,0, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,0,0, 0.5)",
@@ -390,8 +390,8 @@ $(window).scroll(function() {
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [21061, 22370, 24557, 26298, 23294, 24058] //검사중
-    var data4 = [11265, 11344, 11402, 11441, 11468, 11503] //누적 확진
+    var data3 = [21061, 22370, 24557, 26298, 23294, 24058, 28922] //검사중
+    var data4 = [11265, 11344, 11402, 11441, 11468, 11503, 11541] //누적 확진
 
     var ctx = document.getElementById("recent-rep2-chart");
     if (ctx) {
@@ -399,7 +399,7 @@ $(window).scroll(function() {
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['5.26', '5.27', '5.28', '5.29', '5.30', '5.31'],
+          labels: ['5.27', '5.28', '5.29', '5.30', '5.31', '6.1'],
           datasets: [
             {
               label: '검사 중',    
@@ -440,8 +440,8 @@ $(window).scroll(function() {
               ticks: {
                 beginAtZero: false,
                 maxTicksLimit: 5,
-                stepSize: 3000,
-                max: 27000,
+                stepSize: 5000,
+                max: 29000,
                 fontFamily: "Poppins",
                 fontSize: 12
               },
