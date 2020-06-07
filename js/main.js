@@ -122,7 +122,7 @@ $(window).scroll(function() {
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [19, 239, 476, 8, 549 1],
+            data: [19, 239, 476, 8, 549, 1],
             backgroundColor: [
               '#FFA500',
               '#FFFF00',
