@@ -399,7 +399,7 @@ $(window).scroll(function() {
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['6.1', '6.2', '6.3', '6.4', '6.5' , '6.6'],
+          labels: ['6.1', '6.2', '6.3', '6.4', '6.5', '6.6'],
           datasets: [
             {
               label: '검사 중',    
