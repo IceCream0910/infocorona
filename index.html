@@ -112,26 +112,24 @@ function CreateVoice() {
     document.getElementById("ttsBtn").innerHTML = '<img src="https://smartsupport.lenovo.com/esv4/images/loading.gif" width="20px" height="20px" style="margin-right: 10px;">보이스 브리핑 <span style="color:#a9a9a9; font-size:10px;">with</span> <img src="http://prosody-tts.com/img/custom/logo.png" width="20px" height="20px"></span>';
 
         var confirmed = document.getElementById("confirmed").innerHTML;
+        var whenupdate = document.getElementById("whenUpdate").innerHTML;
         var confirmedPM = document.getElementById("confirmedPM").innerHTML.replace("확진자", "").replace("(+ ", "").replace(")", "").replace(/\s/gi, "");
         var cure = document.getElementById("cure").innerHTML;
         var curePM = document.getElementById("curePM").innerHTML.replace("격리해제자", "").replace("(+ ", "").replace(")", "").replace(/\s/gi, "");
         var death = document.getElementById("death").innerHTML;
         var deathPM = document.getElementById("deathPM").innerHTML.replace("사망자", "").replace("(+ ", "").replace(")", "").replace(/\s/gi, "");
         var deathPMtf = document.getElementById("deathPM").style.display;
+        console.log(whenupdate);
 
         //여기에 스페셜 텍스트 추가
         var specialText = "최근 수도권 지역을 중심으로 집단 감염사례가 발생하고 있습니다. 마스크 착용 등 개인 위생수칙을 지속적으로 준수하여 주시기 바랍니다.";
 
-        let today = new Date();
-        let month = today.getMonth() + 1;  // 월
-        let date = today.getDate();  // 날짜
-
         //텍스트 생성
         if(deathPMtf == "block") {
-    var helperConts = month.toString() + '월 '+date.toString()+'일 0시 기준, 국내 코로나일구 누적 확진자는 전일 0시 대비' + confirmedPM.toString() + '명 증가해 총 ' + confirmed.toString() + '이고, 격리해제자는 '+ curePM.toString() + '명 증가해 총 '+ cure.toString() + '입니다. 사망자는 '+deathPM.toString() + '명 추가되어 총 '+death.toString()+' 입니다. ' + specialText;
+    var helperConts = whenupdate.substring(1, 2) + '월 '+whenupdate.substring(2, 5)+'일 0시 기준, 국내 코로나일구 누적 확진자는 전일 0시 대비' + confirmedPM.toString() + '명 증가해 총 ' + confirmed.toString() + '이고, 격리해제자는 '+ curePM.toString() + '명 증가해 총 '+ cure.toString() + '입니다. 사망자는 '+deathPM.toString() + '명 추가되어 총 '+death.toString()+' 입니다. ' + specialText;
 
 } else {
-    var helperConts = month.toString() + '월 '+date.toString()+'일 0시 기준 국내 코로나일구 누적 확진자는 전일 0시 대비' + confirmedPM.toString() + '명 증가해 총 ' + confirmed.toString() + '이고, 격리해제자는 '+ curePM.toString() + '명 증가해 총 '+ cure.toString() + '입니다. 사망자는 추가로 발생하지 않아 총 '+ death.toString() + "입니다. " + specialText;
+    var helperConts = whenupdate.substring(1, 2) + '월 '+whenupdate.substring(2, 5)+'일 0시 기준 국내 코로나일구 누적 확진자는 전일 0시 대비' + confirmedPM.toString() + '명 증가해 총 ' + confirmed.toString() + '이고, 격리해제자는 '+ curePM.toString() + '명 증가해 총 '+ cure.toString() + '입니다. 사망자는 추가로 발생하지 않아 총 '+ death.toString() + "입니다. " + specialText;
 }
 
 
