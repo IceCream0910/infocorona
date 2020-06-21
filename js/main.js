@@ -73,11 +73,11 @@ $(window).scroll(function() {
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['6.10', '6.11', '6.12', '6.13', '6.14', '6.15', '6.16', '6.17', '6.18', '6.19'],
+          labels: ['6.11', '6.12', '6.13', '6.14', '6.15', '6.16', '6.17', '6.18', '6.19', '6.20'],
           datasets: [
             {
               label: "신규 확진자",
-              data: [45, 56, 49, 34, 37, 34, 43, 59, 49, 67],
+              data: [56, 49, 34, 37, 34, 43, 59, 49, 67, 48],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
@@ -122,7 +122,7 @@ $(window).scroll(function() {
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [19, 330, 484, 15, 578, 1],
+            data: [19, 334, 485, 15, 581, 1],
             backgroundColor: [
               '#FFA500',
               '#FFFF00',
@@ -179,7 +179,7 @@ $(window).scroll(function() {
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [5245, 7128],
+            data: [5270, 7151],
             backgroundColor: [
               '#00b5e9',
               '#fa4251',
@@ -276,7 +276,7 @@ $(window).scroll(function() {
           datasets: [
             {
               label: "확진자 수",
-              data: [177, 690, 3294, 1406, 1618, 2222, 1598, 823, 545],
+              data: [177, 691, 3299, 1416, 1623, 2230, 1608, 829, 548],
               borderColor: "rgba(255, 40, 0, 1)",
               borderWidth: "0",
               backgroundColor: "rgba(255, 40, 0, 0.8)"
@@ -322,11 +322,11 @@ $(window).scroll(function() {
         type: 'bar',
         defaultFontFamily: 'Poppins',
         data: {
-          labels: ['6.14', '6.15', '6.16', '6.17', '6.18', '6.19'],
+          labels: ['6.15', '6.16', '6.17', '6.18', '6.19', '6.20'],
           datasets: [
             {
               label: "확진",
-              data: [37, 34, 43, 59, 49, 67],
+              data: [34, 43, 59, 49, 67, 48],
               borderColor: "rgba(250, 66, 81, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(250, 66, 81,0.5)",
@@ -334,7 +334,7 @@ $(window).scroll(function() {
             },
             {
               label: "완치",
-              data: [12, 30, 14, 26, 35, 21],
+              data: [30, 14, 26, 35, 21, 12],
               borderColor: "rgba(0,173,95, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,173,95, 0.5)",
@@ -342,7 +342,7 @@ $(window).scroll(function() {
             },
             {
               label: "사망",
-              data: [0, 1, 1, 1, 0, 0],
+              data: [1, 1, 1, 0, 0, 0],
               borderColor: "rgba(0,0,0, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,0,0, 0.5)",
@@ -390,8 +390,8 @@ $(window).scroll(function() {
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [20793, 22632, 21489, 21714, 21190, 21470] //검사중
-    var data4 = [12121, 12155, 12198, 12257, 12306, 12373] //누적 확진
+    var data3 = [22632, 21489, 21714, 21190, 21470, 20071] //검사중
+    var data4 = [12155, 12198, 12257, 12306, 12373, 12421] //누적 확진
 
     var ctx = document.getElementById("recent-rep2-chart");
     if (ctx) {
@@ -399,7 +399,7 @@ $(window).scroll(function() {
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['6.14', '6.15', '6.16', '6.17', '6.18', '6.19'],
+          labels: ['6.15', '6.16', '6.17', '6.18', '6.19', '6.20'],
           datasets: [
             {
               label: '검사 중',    
