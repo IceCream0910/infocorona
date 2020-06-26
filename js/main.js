@@ -322,7 +322,7 @@ $(window).scroll(function() {
         type: 'bar',
         defaultFontFamily: 'Poppins',
         data: {
-          labels: ['6.20', '6.21', '6.22', '6.23', '6.24'. '6.25'],
+          labels: ['6.20', '6.21', '6.22', '6.23', '6.24', '6.25'],
           datasets: [
             {
               label: "확진",
