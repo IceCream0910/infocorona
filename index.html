@@ -322,8 +322,8 @@ function chageLangSelect(){
                                 </div>
                                 <div class="statistic-chart-1-note">
                                     <span>어제 증가치보다</span>
-                                    <span class="big">11명</span>
-                                    <span>더 많아요.<br><span style="color:#a9a9a9; font-size:13px;"></span></span>
+                                    <span class="big">20명</span>
+                                    <span>더 적어요.<br><span style="color:#a9a9a9; font-size:13px;"></span></span>
 
 <div class="container">
    <span style="margin-left:-15px;" class="big">신규 환자 해외 유입 현황<Br><Br></span>
@@ -349,13 +349,13 @@ function chageLangSelect(){
                                 <div class="au-card m-b-30">
                                     <div class="recent-report__chart">
                                         <h3>국내 <h3 style="color:#a9a9a9;">검사 현황<br><br>
-                                            <h5>확진율 : 1.1%</h5><br></h3></h3>
+                                            <h5>누적확진율 : 9.4%</h5><br></h3></h3>
                                         <canvas id="recent-rep2-chart"></canvas>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-md-6 col-lg-4">
+                            <div class="col-md-6 col-lg-4" >
                             <!-- CHART PERCENT-->
                             <div class="chart-percent-2" style="border-radius: 10px;">
                                 <div class="chart-wrap">
@@ -1317,8 +1317,8 @@ svg {
 const drawChart = async () => {
   
   const data = [
-    { status: "해외유입", tally: 22 },
-    { status: "지역발생", tally: 40 }
+    { status: "해외유입", tally: 12 },
+    { status: "지역발생", tally: 30 }
   ];
 
   const viewBox = d3.select("#chart").attr("viewBox").split(" ");
