@@ -76,22 +76,11 @@
                 <div class="container">
                     <div class="row">
 
-
-
-                        <div class="rs-select2--dark rs-select2--sm" style="padding-top:10px; width:100px; position: absolute; top:20px; right:20px; z-index: 9999999;">
-                                                <select class="js-select2 au-select-primary" id="id-lang" name="language" onchange="chageLangSelect()">
-                                                    <option selected="selected" value="ko">Korean</option>
-                                                    <option value="en">English</option>
-                                                </select>
-                                                <div class="dropDownSelect2"></div>
-                                            </div>
-
-
                         <div class="col-md-12" style="margin-top:30px; margin-left:10px;">
                             <h1 style="font-size:22px;" id="suggestText">여기에 <br>메시지 표시
                             </h1><br>
 
-                            <h6 class="pb-4 display-5" style="color:#a9a9a9;" id="whenUpdate"><div class="animated">
+                            <h6 class="pb-4 display-5" style="color:#a9a9a9; margin-bottom:-20px;" id="whenUpdate"><div class="animated">
         <div class="parent"></div>
         <div class="padding"></div>
         <div class="title"></div>정보 가져오는 중...</h6>
@@ -121,7 +110,7 @@ function CreateVoice() {
         if(confirmed.toString() != "로딩중") {
             document.getElementById("ttsBtn").innerHTML = '<img src="https://smartsupport.lenovo.com/esv4/images/loading.gif" width="20px" height="20px" style="margin-right: 10px;">보이스 브리핑 <span style="color:#a9a9a9; font-size:10px;">with</span> <img src="http://prosody-tts.com/img/custom/logo.png" width="20px" height="20px"></span>';
             //여기에 스페셜 텍스트 추가
-        var specialText = "최근 수도권 지역을 중심으로 집단 감염사례가 발생하고 있습니다. 마스크 착용 등 개인 위생수칙을 지속적으로 준수하여 주시기 바랍니다.";
+        var specialText = "";
 
         //텍스트 생성
         if(deathPMtf == "block") {
@@ -284,8 +273,8 @@ function chageLangSelect(){
                 
 
 <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
-<span class="badge badge-pill badge-success">업데이트</span>
-<button type="button" data-toggle="modal" style="color:black;" data-target="#smallmodal2"> 최근 업데이트 사항</button>
+<span class="badge badge-pill badge-success">공지</span>
+<button type="button" onclick="window.open('http://coronacoc-notice.kro.kr/');"> 이제 공지사항은 여기서 확인하세요!</button>
 </button>
 </div>
 
@@ -539,6 +528,20 @@ function chageLangSelect(){
                                 </div>
                             </div>
                 </div>
+
+
+<h3 style="margin-left:25px; margin-bottom:20px;">질병관리본부<span style="color:#a0a0a0;"> 채널</h3>
+
+
+
+
+                 <div class="col-md-4" style="border-radius:20px;">
+      <div id="embeded-timeline" style="border-radius:20px;">
+        <a class="twitter-timeline" href="https://twitter.com/KoreaCDC" data-widget-id="729472065531580417"></a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </div>
+    </div>
+                
 
                         <!-- STATISTIC-->
 
@@ -1365,6 +1368,11 @@ drawChart();
 
 <!-- 지역별 현황 자동 업데이트 -->
 <script>
+    document.getElementById('confirmed').innerHTML = koreaRegionalData[0].확진자수.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"명";
+    document.getElementById('cure').innerHTML = koreaRegionalData[0].격리해제수.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"명";
+    document.getElementById('death').innerHTML = koreaRegionalData[0].사망자수.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"명";
+    document.getElementById('whenUpdate').innerHTML = koreaRegionalData[18].업데이트날짜+" 집계 기준";
+
     document.getElementById('seoulCases').innerHTML = koreaRegionalData[1].확진자수;
     document.getElementById('seoulCure').innerHTML = koreaRegionalData[1].격리해제수;
     document.getElementById('seoulDeath').innerHTML = koreaRegionalData[1].사망자수;
