@@ -77,13 +77,10 @@
                     <div class="row">
 
                         <div class="col-md-12" style="margin-top:30px; margin-left:10px;">
-                            <h1 style="font-size:22px;" id="suggestText">여기에 <br>메시지 표시
+                            <h1 style="font-size:22px; font-family:CookieRunOTF-Bold;" id="suggestText">여기에 <br>메시지 표시
                             </h1><br>
 
-                            <h6 class="pb-4 display-5" style="color:#a9a9a9; margin-bottom:-20px;" id="whenUpdate"><div class="animated">
-        <div class="parent"></div>
-        <div class="padding"></div>
-        <div class="title"></div>정보 가져오는 중...</h6>
+                           
 
                             
                             <button id="ttsBtn" onclick="javascript:CreateVoice();">보이스 브리핑 <span style="color:#a9a9a9; font-size:10px;">with</span> <img src="http://prosody-tts.com/img/custom/logo.png" width="20px" height="20px"></span></button>
@@ -222,13 +219,19 @@ function chageLangSelect(){
 
                     <div class="row" >
                         <div class="col-md-12" >
-                            <h3 style="margin-left:10px; font-size: 20px;">국내 현황</h3><br>
+                            <h3 style="margin-left:10px; font-size: 20px; display:inline-block;">국내 현황<h6 class="pb-4 display-5" style="margin-left:10px;color:#a9a9a9; display:inline-block;" id="whenUpdate"><div class="animated">
+        <div class="parent"></div>
+        <div class="padding"></div>
+        <div class="title"></div>정보 가져오는 중...</h6></h3>
                         </div>
                     </div>
 
                     <div class="row" id="korea">
                         <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--red" style="border-radius: 10px;">
+                            <div class="statistic__item statistic__item--red" style="border-radius: 20px;
+background: #fa4251;
+box-shadow:  5px 5px 10px #d53845, 
+             -5px -5px 0px #f7f7f7;">
                                 <h2 class="number" id="confirmed">로딩중</h2>
                                 <span class="desc" id="confirmedPM">확진자</span><br>
                                 <span class="desc" id="cureNow"></span>
@@ -238,7 +241,10 @@ function chageLangSelect(){
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--green" style="border-radius: 10px;">
+                            <div class="statistic__item statistic__item--green" style="border-radius: 20px;
+background: #00ad5f;
+box-shadow:  5px 5px 10px #009351, 
+             -5px -5px 0px #f7f7f7;">
                                 <h2 class="number" id="cure">로딩중</h2>
                                 <span class="desc" id="curePM">격리해제</span>
                                 <div class="icon">
@@ -247,7 +253,10 @@ function chageLangSelect(){
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--black" style="border-radius: 10px;">
+                            <div class="statistic__item statistic__item--black" style="border-radius: 20px;
+background: #0f0f0f;
+box-shadow:  5px 5px 10px #0d0d0d, 
+             -5px -5px 0px #f7f7f7;">
                                 <h2 class="number" id="death">로딩중</h2>
                                 <span class="desc" id="deathPM" style="display:none;">사망자</span>
                                 <span class="desc" style="display: block;">사망자 (+ 0)</span>
@@ -272,9 +281,13 @@ function chageLangSelect(){
 -->
                 
 
-<div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
-<span class="badge badge-pill badge-success">공지</span>
-<button type="button" onclick="window.open('http://coronacoc-notice.kro.kr/');"> 이제 공지사항은 여기서 확인하세요!</button>
+<div class="sufee-alert alert alert-primary" style="border-radius: 15px;
+background: #4272d7;
+border:none;
+box-shadow:  5px 5px 10px #3861b7, 
+             -5px -5px 0px #f7f7f7;">
+<span class="badge badge-pill badge-primary">공지</span>
+<button type="button" onclick="window.open('http://coronacoc-notice.kro.kr/');" style="color:white;"> 이제 공지사항은 여기서 확인하세요!</button>
 </button>
 </div>
 
@@ -299,7 +312,8 @@ function chageLangSelect(){
                     <div class="row">
                         <div class="col-md-6 col-lg-4">
                             <!-- CHART-->
-                            <div class="statistic-chart-1" style="border-radius: 10px;">
+                            <div class="statistic-chart-1" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
+             -5px -5px 0px #e5e5e5;">
                                 <div class="chart-wrap">
                                     <h3>신규 <h3 style="color:#a9a9a9;">확진자 추이<br></h3></h3>
                                     <canvas id="widgetChart5"></canvas>
@@ -321,7 +335,8 @@ function chageLangSelect(){
                         </div>
 
                         <div class="col-lg-6">
-                                <div class="au-card m-b-30">
+                                <div class="au-card m-b-30" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
+             -5px -5px 0px #e5e5e5;">
                                     <div class="au-card-inner">
                                         <h3>국내 일별 현황</h3><br>
                                         <canvas id="barChart"></canvas>
@@ -330,7 +345,8 @@ function chageLangSelect(){
                             </div>
 
                              <div class="col-lg-6">
-                                <div class="au-card m-b-30">
+                                <div class="au-card m-b-30" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
+             -5px -5px 0px #e5e5e5;">
                                     <div class="recent-report__chart">
                                         <h3>국내 <h3 style="color:#a9a9a9;">검사 현황<br><br>
                                             <h5>누적확진율 : 9.4%</h5><br></h3></h3>
@@ -341,7 +357,8 @@ function chageLangSelect(){
 
                             <div class="col-md-6 col-lg-4" style="display:none;">
                             <!-- CHART PERCENT-->
-                            <div class="chart-percent-2" style="border-radius: 10px;">
+                            <div class="chart-percent-2" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
+             -5px -5px 0px #e5e5e5;">
                                 <div class="chart-wrap">
                                     <h3>국가별 <h3 style="color:#a9a9a9;">해외 유입 현황<span style="font-size:14px;">(추정)</span></h3></h3><br>
                                     <canvas id="doughutChart_abroad"></canvas>
@@ -362,7 +379,8 @@ function chageLangSelect(){
 
                             <div class="col-md-6 col-lg-4">
                             <!-- CHART PERCENT-->
-                            <div class="chart-percent-2" style="border-radius: 10px;">
+                            <div class="chart-percent-2" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
+             -5px -5px 0px #e5e5e5;">
                                 <div class="chart-wrap">
                                     <h3>연령별 <h3 style="color:#a9a9a9;">사망자 현황</h3></h3><br>
                                     <canvas id="singelBarChart"></canvas>
@@ -374,7 +392,8 @@ function chageLangSelect(){
 
                             <div class="col-md-6 col-lg-4">
                             <!-- CHART PERCENT-->
-                            <div class="chart-percent-2" style="border-radius: 10px;">
+                            <div class="chart-percent-2"style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
+             -5px -5px 0px #e5e5e5;">
                                 <div class="chart-wrap">
                                     <h3>연령별 <h3 style="color:#a9a9a9;">확진자 현황</h3></h3><br>
                                     <canvas id="singelBarChart_2"></canvas>
@@ -386,7 +405,8 @@ function chageLangSelect(){
 
                             <div class="col-md-6 col-lg-4">
                             <!-- CHART PERCENT-->
-                            <div class="chart-percent-2" style="border-radius: 10px;">
+                            <div class="chart-percent-2" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
+             -5px -5px 0px #e5e5e5;">
                                 <div class="chart-wrap">
                                     <h3>성별 <h3 style="color:#a9a9a9;">확진자 현황</h3></h3><br>
                                     <canvas id="doughutChart_sex"></canvas>
@@ -398,11 +418,12 @@ function chageLangSelect(){
                         </div>
                         
                         
-                            <div class="col-lg-9">
+                            <div class="col-lg-9" >
                                 <h3>지역별 <span style="color:#a0a0a0;">현황<span style="font-size:15px;"> (명)<br><span style="font-size:15px;">좌우로 드래그할 수 있어요.</span></span></span></h3><br>
 
-                                <div class="table-responsive table--no-card m-b-40" style="margin-left:-15px; width:111%;">
-                                    <table class="table table-borderless table-striped table-earning" style="width:111%;">
+                                <div class="table-responsive table--no-card m-b-40" style="margin-left:-15px; width:110%; border-radius: 20px; box-shadow: 5px 5px 10px #c3c3c3, 
+             -5px -5px 0px #e5e5e5;">
+                                    <table class="table table-borderless table-striped table-earning" style="width:110%;">
                                         <thead>
                                             <tr>
                                                 <th>지역</th>
@@ -535,8 +556,9 @@ function chageLangSelect(){
 
 
 
-                 <div class="col-md-4" style="border-radius:20px;">
-      <div id="embeded-timeline" style="border-radius:20px;">
+                 <div class="col-md-4">
+      <div id="embeded-timeline" style="border-radius: 20px; box-shadow: 5px 5px 10px #c3c3c3, 
+             -5px -5px 0px #e5e5e5;">
         <a class="twitter-timeline" href="https://twitter.com/KoreaCDC" data-widget-id="729472065531580417"></a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       </div>
@@ -550,7 +572,10 @@ function chageLangSelect(){
                     <h3 style="margin-left:5px;">전세계 현황</h3><br>
                     <div class="row" id="global">
                         <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--red" style="border-radius: 10px;">
+                            <div class="statistic__item statistic__item--red" style="border-radius: 20px;
+background: #fa4251;
+box-shadow:  5px 5px 10px #d53845, 
+             -5px -5px 0px #e5e5e5;">
                                 <h2 class="number" id="globeConfirmed">로딩중</h2>
                                 <span class="desc">확진자</span>
                                 <div class="icon">
@@ -559,7 +584,10 @@ function chageLangSelect(){
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--black" style="border-radius: 10px;">
+                            <div class="statistic__item statistic__item--black"style="border-radius: 20px;
+background: #0f0f0f;
+box-shadow:  5px 5px 10px #0d0d0d, 
+             -5px -5px 0px #e5e5e5;">
                                 <h2 class="number" id="globeDeath">로딩중</h2>
                                 <span class="desc">사망자</span>
                                 <div class="icon">
@@ -593,7 +621,8 @@ function chageLangSelect(){
                     <br>
 
                                 <div class="col-md-6 col-lg-4"> <!-- CHART--> 
-                                    <div class="statistic-chart-1" style="border-radius: 10px; margin-left:-15px; margin-right:-15px;"> 
+                                    <div class="statistic-chart-1" style="margin-left:-15px; margin-right:-15px; border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
+             -5px -5px 0px #e5e5e5;"> 
                                         <div class="chart-wrap" style=" margin:-20px;"> <h3 style="background-color:#fff; margin-left:15px;">
                                             TOP15<h3 style="color:#a9a9a9; margin-left:15px;">발생국 현황<br></h3></h3> 
                                             <div id="tableByCountry" style="margin-top:30px; overflow:scroll;"></div> 
@@ -1371,7 +1400,7 @@ drawChart();
     document.getElementById('confirmed').innerHTML = koreaRegionalData[0].확진자수.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"명";
     document.getElementById('cure').innerHTML = koreaRegionalData[0].격리해제수.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"명";
     document.getElementById('death').innerHTML = koreaRegionalData[0].사망자수.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"명";
-    document.getElementById('whenUpdate').innerHTML = koreaRegionalData[18].업데이트날짜+" 집계 기준";
+    document.getElementById('whenUpdate').innerHTML = koreaRegionalData[18].업데이트날짜+" 기준";
 
     document.getElementById('seoulCases').innerHTML = koreaRegionalData[1].확진자수;
     document.getElementById('seoulCure').innerHTML = koreaRegionalData[1].격리해제수;
