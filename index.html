@@ -249,8 +249,8 @@ function chageLangSelect(){
                         <div class="col-md-6 col-lg-3">
                             <div class="statistic__item statistic__item--black" style="border-radius: 10px;">
                                 <h2 class="number" id="death">로딩중</h2>
-                                <span class="desc" id="deathPM" style="display:block;">사망자</span>
-                                <span class="desc" style="display: none;">사망자 (+ 0)</span>
+                                <span class="desc" id="deathPM" style="display:none;">사망자</span>
+                                <span class="desc" style="display: block;">사망자 (+ 0)</span>
                                 <div class="icon">
                                     <i class="zmdi zmdi-accounts-outline"></i>
                                 </div>
@@ -306,7 +306,7 @@ function chageLangSelect(){
                                 </div>
                                 <div class="statistic-chart-1-note">
                                     <span>어제 증가치보다</span>
-                                    <span class="big">5명</span>
+                                    <span class="big">10명</span>
                                     <span>적어요.<br><span style="color:#a9a9a9; font-size:13px;"></span></span>
 
 <div class="container">
@@ -1313,8 +1313,8 @@ svg {
 const drawChart = async () => {
   
   const data = [
-    { status: "해외유입", tally: 23 },
-    { status: "지역발생", tally: 22 }
+    { status: "해외유입", tally: 15 },
+    { status: "지역발생", tally: 20 }
   ];
 
   const viewBox = d3.select("#chart").attr("viewBox").split(" ");
