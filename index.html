@@ -1398,7 +1398,8 @@ drawChart();
 <!-- 지역별 현황 자동 업데이트 -->
 <script>
     document.getElementById('confirmed').innerHTML = koreaRegionalData[0].확진자수.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"명";
-    document.getElementById('cure').innerHTML = koreaRegionalData[0].격리해제수.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"명";
+   document.getElementById('cure').innerHTML = "12,282";
+ //document.getElementById('cure').innerHTML = koreaRegionalData[0].격리해제수.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"명";
     document.getElementById('death').innerHTML = koreaRegionalData[0].사망자수.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"명";
     document.getElementById('whenUpdate').innerHTML = koreaRegionalData[18].업데이트날짜+" 기준";
 
