@@ -246,7 +246,7 @@ background: #00ad5f;
 box-shadow:  5px 5px 10px #009351, 
              -5px -5px 0px #f7f7f7;">
                                 <h2 class="number" id="cure">로딩중</h2>
-                                <span class="desc" id="curePM">격리해</span>
+                                <span class="desc" id="curePM">격리해제자</span>
                                 <div class="icon">
                                     <i class="zmdi zmdi-check-all"></i>
                                 </div>
@@ -321,12 +321,10 @@ box-shadow:  5px 5px 10px #3861b7,
                                 <div class="statistic-chart-1-note">
                                     <span>어제 증가치보다</span>
                                     <span class="big">1명</span>
-                                    <span>많아요.<br><span style="color:#a9a9a9; font-size:13px;"></span></span>
+                                    <span>적어요.<br><span style="color:#a9a9a9; font-size:13px;"></span></span>
+                                    <br>
+                                    <h3 style="color:#a9a9a9; font-size:15px;">신규 환자 중<h3 style="color:#4272d7; font-size:20px;" id="localConfirmed"></h3></h3>
 
-<div class="container">
-   <span style="margin-left:-15px;" class="big">신규 환자 해외 유입 현황<Br><Br></span>
-  <svg id="chart" viewBox="0 0 500 150" style="margin-left:-35px;"></svg>
-</div>
 
 
                                 </div>
@@ -377,6 +375,8 @@ box-shadow:  5px 5px 10px #3861b7,
 
                         <div class="row">
 
+
+
                             <div class="col-md-6 col-lg-4">
                             <!-- CHART PERCENT-->
                             <div class="chart-percent-2" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
@@ -411,6 +411,18 @@ box-shadow:  5px 5px 10px #3861b7,
                                     <h3>성별 <h3 style="color:#a9a9a9;">확진자 현황</h3></h3><br>
                                     <canvas id="doughutChart_sex"></canvas>
                                         <table></table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4">
+                            <!-- CHART PERCENT-->
+                            <div class="chart-percent-2" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
+             -5px -5px 0px #e5e5e5;">
+                                <div class="chart-wrap">
+                                    <h3>해외유입 <h3 style="color:#a9a9a9;">환자 현황</h3></h3><br>
+                                    
+                                    <div id="localTable"></div>
                                     </div>
                                 </div>
                             </div>
@@ -558,7 +570,7 @@ box-shadow:  5px 5px 10px #3861b7,
 
                  <div class="col-md-4">
       <div id="embeded-timeline" style="border-radius: 20px; box-shadow: 5px 5px 10px #c3c3c3, 
-             -5px -5px 0px #e5e5e5;">
+             -5px -5px 0px #e5e5e5; overflow:hidden;">
         <a class="twitter-timeline" href="https://twitter.com/KoreaCDC" data-widget-id="729472065531580417"></a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       </div>
@@ -1335,65 +1347,6 @@ svg {
 }
 
 </style>
-
-<script>
-    console.clear();
-
-const drawChart = async () => {
-  
-  const data = [
-    { status: "해외유입", tally: 39 },
-    { status: "지역발생", tally: 21 }
-  ];
-
-  const viewBox = d3.select("#chart").attr("viewBox").split(" ");
-  const width = viewBox[2];
-  const height = viewBox[3];
-  const margin = { top: 70, right: 30, bottom: 0, left: 30 };
-  const chart = d3.select("#chart").append("g").attr("transform", `translate(${margin.left}, ${margin.top})`);
-
-  const x = d3.scaleLinear()
-    .range([0, width - margin.left - margin.right])
-    .domain([0, data.reduce((acc, cur) => acc += cur.tally, 0)]);
-  
-  const color = d3.scaleOrdinal()
-    .range(["#FF7F00", "#24A221", "#D8241F"])
-    .domain(data.map(d => d.status));
-
-  const value = chart.selectAll(".value")
-    .data(data)
-    .join("g")
-    .attr("class", "value")
-    .attr("transform", (d, i) => {
-      const previousData = data.slice(0, i);
-      const previousTotal = previousData.reduce((acc, cur) => acc += +cur.tally, 0);
-      const offset = x(previousTotal);
-      return `translate(${offset}, 0)`;
-    })
-  
-  value.append("rect")
-    .attr("width", d => x(d.tally))
-    .attr("height", height - margin.top - margin.left)
-    .attr("fill", d => color(d.status));
-  
-  value.append("text")
-    .attr("x", d => x(d.tally) / 2)
-    .attr("y", -40)
-    .attr("text-anchor", "middle")
-    .attr("font-size", 22)
-    .text(d => d.status)
-  
-  value.append("text")
-    .attr("x", d => x(d.tally) / 2)
-    .attr("y", -10)
-    .attr("text-anchor", "middle")
-    .attr("font-size", 22)
-    .text(d => d.tally.toLocaleString())
-};
-
-drawChart();
-
-</script>
 
 <!-- 지역별 현황 자동 업데이트 -->
 <script>
