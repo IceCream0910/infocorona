@@ -59,24 +59,27 @@
                             </h1><br>
                             <hr class="line-seprate">
                             <br>
-                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="index.html" role="tab" aria-controls="pills-home"
-                                                 aria-selected="true">현황</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="info.html" role="tab" aria-controls="pills-profile"
-                                                 aria-selected="false">정보</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link active" id="pills-contact-tab" data-toggle="pill" href="interactive.html" role="tab" aria-controls="pills-contact"
-                                                 aria-selected="false">인터랙티브</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="chat.html" role="tab" aria-controls="pills-contact"
-                                                 aria-selected="false">게시판</a>
-                                            </li>
-                                        </ul>
+
+                            <div class="segmented-control">
+      
+      <input type="radio" name="radio2" value="3" id="tab-1" onclick="javascript:location.href='index.html';"/>
+      <label for="tab-1" class= "segmented-control__1">
+        <p>현황</p></label>
+      
+      <input type="radio" name="radio2" value="4" id="tab-2" onclick="javascript:location.href='info.html';"/>
+      <label for="tab-2" class= "segmented-control__2">
+        <p>정보</p></label>
+      
+      <input type="radio" name="radio2" value="5" id="tab-3" onclick="javascript:location.href='interactive.html';" checked/>
+      <label for="tab-3" class= "segmented-control__3">
+        <p>인터랙티브</p></label>
+
+        <input type="radio" name="radio2" value="6" id="tab-4" onclick="javascript:location.href='chat.html';"/>
+      <label for="tab-4" class= "segmented-control__4">
+        <p>게시판</p></label>
+      
+      <div class="segmented-control__color"></div>
+    </div>
                         
                         </div>
                     </div>
@@ -85,7 +88,8 @@
             <!-- END WELCOME-->
 <br>
 
-<div class='card' onclick="javascript:location.href='interactive/map.html'">
+<div class='card' onclick="javascript:location.href='interactive/map.html'" style="border-radius: 20px; border:none; box-shadow:  5px 5px 10px #222327, 
+             -5px -5px 0px #f7f7f7;">
         <div class='content'>
           <div class='cover' style='background-image:url(https://i.imgur.com/rfUE2gV.jpg)'>
             <span class='category'>현황</span>
@@ -95,7 +99,9 @@
         </div>
       </div>
 
-<div class='card' style="color:black;" onclick="javascript:location.href='interactive/dongsup/intro.html'">
+<div class='card' style="color:black; border-radius: 20px; border:none;
+box-shadow:  5px 5px 10px #1eb37c, 
+             -5px -5px 0px #f7f7f7;" onclick="javascript:location.href='interactive/dongsup/intro.html'">
         <div class='content'>
           <div class='cover' style='background-image:url(https://wallpaperaccess.com/full/1236351.jpg)'>
             <span class='category' style="color:black;">퀴즈</span>
@@ -106,7 +112,8 @@
       </div>
 
       
-<div class='card' onclick="javascript:window.open('https://coronacoc.github.io/coronasee/','_blank');">
+<div class='card' onclick="javascript:window.open('https://coronacoc.github.io/coronasee/','_blank');" style="border-radius: 20px; border:none; box-shadow:  5px 5px 10px #0f0f0f, 
+             -5px -5px 0px #f7f7f7;">
         <div class='content'>
           <div class='cover' style='background-image:url(https://i.imgur.com/gcq8CkU.jpg)'>
             <span class='category'>AR</span>
@@ -117,7 +124,8 @@
       </div>
 
 
-<div class='card' onclick="javascript:location.href='interactive/shooting.html'">
+<div class='card' onclick="javascript:location.href='interactive/shooting.html'" style="border-radius: 20px; border:none; box-shadow:  5px 5px 10px #180000, 
+             -5px -5px 0px #f7f7f7;">
         <div class='content'>
           <div class='cover' style='background-image:url(https://i.imgur.com/hU6Rv7a.jpg)'>
             <span class='category'>게임</span>
@@ -127,7 +135,8 @@
         </div>
       </div>
 
-<div class='card' onclick="javascript:location.href='interactive/simulation.html'">
+<div class='card' onclick="javascript:location.href='interactive/simulation.html'" style="border-radius: 20px; border:none; box-shadow:  5px 5px 10px #0f0f0f, 
+             -5px -5px 0px #f7f7f7;">
         <div class='content'>
           <div class='cover' style='background-image:url(https://i.imgur.com/Q0q2OFd.jpg)'>
             <span class='category'>시뮬레이션</span>
