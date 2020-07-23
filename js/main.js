@@ -390,81 +390,47 @@ $(window).scroll(function() {
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [22923, 21953, 21302, 23864, 21751, 21418] //검사중
-    var data4 = [13711, 13745, 13771, 13816, 13879, 13938] //누적 확진
+    var data3 = [9187, 5095, 4894, 12197, 9681, 8783] //검사
 
     var ctx = document.getElementById("recent-rep2-chart");
     if (ctx) {
       ctx.height = 250;
       var myChart = new Chart(ctx, {
-        type: 'line',
+        type: 'bar',
         data: {
-          labels: ['7.17', '7.18', '7.19', '7.20', '7.21', '7.22'],
+          labels: ["7.17", "7.18", "7.19", "7.20", "7.21", "7.22"],
           datasets: [
             {
-              label: '검사 중',    
-              borderColor: bd_brandService2,
-              pointHoverBackgroundColor: '#fff',
-              borderWidth: 0,
-              data: data3
-
-            },
-            {
-              label: '누적 확진',
-              borderColor: bd_brandProduct2,
-              pointHoverBackgroundColor: '#fff',
-              borderWidth: 0,
-              data: data4
-
+              label: "일 검사자수",
+              data: data3,
+              borderColor: "#556ee6",
+              borderWidth: "0",
+              backgroundColor: "#778beb"
             }
           ]
         },
         options: {
-          maintainAspectRatio: true,
           legend: {
-            display: false
+            position: 'center',
+            labels: {
+              fontFamily: 'Poppins'
+            }
+
           },
-          responsive: true,
           scales: {
             xAxes: [{
-              gridLines: {
-                drawOnChartArea: true,
-                color: '#f2f2f2'
-              },
               ticks: {
-                fontFamily: "Poppins",
-                fontSize: 12
+                fontFamily: "Poppins"
+
               }
             }],
             yAxes: [{
               ticks: {
-                beginAtZero: false,
-                maxTicksLimit: 5,
-                stepSize: 7000,
-                max: 30000,
-                fontFamily: "Poppins",
-                fontSize: 12
-              },
-              gridLines: {
-                display: true,
-                color: '#f2f2f2'
-
+                beginAtZero: true,
+                fontFamily: "Poppins"
               }
             }]
-          },
-          elements: {
-            point: {
-              radius: 0,
-              hitRadius: 10,
-              hoverRadius: 4,
-              hoverBorderWidth: 3
-            },
-            line: {
-              tension: 0
-            }
           }
-
-
         }
       });
     }
