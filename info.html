@@ -69,24 +69,28 @@
 
                             <hr class="line-seprate">
                             <br>
-                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="index.html" role="tab" aria-controls="pills-home"
-                                                 aria-selected="true">현황</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link active" id="pills-profile-tab" data-toggle="pill" href="info.html" role="tab" aria-controls="pills-profile"
-                                                 aria-selected="false">정보</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="interactive.html" role="tab" aria-controls="pills-contact"
-                                                 aria-selected="false">인터랙티브</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="chat.html" role="tab" aria-controls="pills-contact"
-                                                 aria-selected="false">게시판</a>
-                                            </li>
-                                        </ul>
+                            
+                            <div class="segmented-control">
+      
+      <input type="radio" name="radio2" value="3" id="tab-1" onclick="javascript:location.href='index.html';"/>
+      <label for="tab-1" class= "segmented-control__1">
+        <p>현황</p></label>
+      
+      <input type="radio" name="radio2" value="4" id="tab-2" onclick="javascript:location.href='info.html';" checked/>
+      <label for="tab-2" class= "segmented-control__2">
+        <p>정보</p></label>
+      
+      <input type="radio" name="radio2" value="5" id="tab-3" onclick="javascript:location.href='interactive.html';"/>
+      <label for="tab-3" class= "segmented-control__3">
+        <p>인터랙티브</p></label>
+
+        <input type="radio" name="radio2" value="6" id="tab-4" onclick="javascript:location.href='chat.html';"/>
+      <label for="tab-4" class= "segmented-control__4">
+        <p>게시판</p></label>
+      
+      <div class="segmented-control__color"></div>
+    </div>
+
                         
                         </div>
                     </div>
@@ -96,7 +100,8 @@
 
 
             <main class="nk-pages" style="margin:10px; background-color:transparent;">
-            <section class="section section-l bg-white section-about" id="about" style="border-radius: 20px;">
+            <section class="section section-l bg-white section-about" id="about" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
+             -5px -5px 0px #f7f7f7;">
                 <div class="container" >
                     <div class="section-content">
                         <div class="row g-gs justify-content-between">
@@ -124,11 +129,16 @@
                                 </div><!-- .wgs -->
                             </div><!-- .col -->
                         </div><!-- .row -->
+                        <br>
                     </div><!-- .section-content -->
+
                 </div><!-- .container -->
+
             </section><!-- .section -->
+            <br><br>
             
-            <section class="section section-l bg-light section-spread" id="spread">
+            <section class="section section-l bg-light section-spread" id="spread" style="border-radius:20px; box-shadow:  5px 5px 10px #d0d3d8, 
+             -5px -5px 0px #f7f7f7;">
                 <div class="container">
                     <div class="section-head text-center wide-md">
                         <h5 class="subtitle">어떻게 전파되나요?</h5>
@@ -138,18 +148,20 @@
                     <div class="section-content">
                         <div class="row g-gs justify-content-center">
                             <div class="col-sm-10 col-md-8 col-lg-4">
-                                <div class="box">
+                                <div class="box" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
+             -5px -5px 0px #f7f7f7;">
                                     <div class="box-gfx">
                                         <img src="http://demo.themenio.com/kovid19/images/gfx/spread-a.png" alt="">
                                     </div>
-                                    <div class="box-content">
+                                    <div class="box-content" >
                                         <h4 class="title">감염자와의 접촉으로 인한 사람 간 감염 </h4>
                                         <p>코로나19는 주로 사람 간에 전파되는 것으로 보입니다. 특히 서로 밀접한 관계에 있는 사람들 사이에서 감염이 잘 일어날 수 있습니다.</p>
                                     </div>
                                 </div><!-- .box -->
                             </div><!-- .col -->
                             <div class="col-sm-10 col-md-8 col-lg-4">
-                                <div class="box">
+                                <div class="box" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
+             -5px -5px 0px #f7f7f7;">
                                     <div class="box-gfx">
                                         <img src="http://demo.themenio.com/kovid19/images/gfx/spread-b.png" alt="">
                                     </div>
@@ -160,7 +172,8 @@
                                 </div><!-- .box -->
                             </div><!-- .col -->
                             <div class="col-sm-10 col-md-8 col-lg-4">
-                                <div class="box">
+                                <div class="box" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
+             -5px -5px 0px #f7f7f7;">
                                     <div class="box-gfx">
                                         <img src="http://demo.themenio.com/kovid19/images/gfx/spread-c.png" alt="">
                                     </div>
@@ -177,8 +190,10 @@
                     </div><!-- .section-content -->
                 </div><!-- .container -->
             </section><!-- .section -->
+            <Br>
 
-            <section class="section section-l bg-white section-symptom" id="symptoms" style="border-radius: 20px;">
+            <section class="section section-l bg-white section-symptom" id="symptoms" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
+             -5px -5px 0px #f7f7f7;">
                 <div class="container">
                     <div class="section-head text-center wide-lg">
                         <h5 class="subtitle">증상이 무엇인가요?</h5>
@@ -249,8 +264,10 @@
                     </div><!-- .section-content -->
                 </div><!-- .container -->
             </section><!-- .section -->
+<br>
 
-            <section class="section section-l bg-light section-advice pb-0 ov-h" id="prevention">
+            <section class="section section-l bg-light section-advice pb-0 ov-h" id="prevention" style="border-radius:20px; box-shadow:  5px 5px 10px #d0d3d8, 
+             -5px -5px 0px #f7f7f7;">
                 <div class="container">
                     <div class="section-head text-center wide-lg">
                         <h5 class="subtitle">예방수칙이 무엇인가요?</h5>
@@ -405,7 +422,8 @@
                 </div><!-- .container -->
             </section><!-- .section -->
 
-            <section class="section section-l bg-accent-light tc-light section-treatment has-overlay" id="treatment" style="border-radius: 20px; margin-left:-10px; margin-right:-10px;">
+            <section class="section section-l bg-accent-light tc-light section-treatment has-overlay" id="treatment" style="border-radius: 20px; box-shadow:  5px 5px 10px #21579f, 
+             -5px -5px 0px #f7f7f7;">
                 <div class="overlay shape shape-b" ></div><!-- Overlay Shape -->
                 <div class="container">
                     <div class="section-content">
@@ -436,6 +454,7 @@
                     </div><!-- .section-content -->
                 </div><!-- .container -->
             </section><!-- .section -->
+            <br>
             
             <section class="section section-l bg-light section-protect" id="protect">
                 <div class="container">
@@ -520,7 +539,8 @@
                         <div class="row g-gs justify-content-center" >
                             <div class="col-sm-10 col-md-8 col-lg-4">
                                 <div class="box2 bg-accent-dark" style="margin-bottom:-30px;">
-                                    <div class="box5 bg-accent-dark" onclick="javascript:window.open('https://coronamap.site', '_blank');">
+                                    <div class="box5 bg-accent-dark" onclick="javascript:window.open('https://coronamap.site', '_blank');" style="border-radius:20px; box-shadow:  5px 5px 10px #d0d3d8, 
+             -5px -5px 0px #f7f7f7;">
                                         <h2 class="title">코로나맵</h2>
                                         <p style="color:white; margin-top:15px;">국내 확진자의 최근 방문장소와 지역별 현황 등을 시각화하여 표시해줍니다.</p>
                                     </div>
@@ -528,7 +548,8 @@
                             </div><!-- .col -->
                             <div class="col-sm-10 col-md-8 col-lg-4">
                                 <div class="box2 bg-danger" style="margin-bottom:-30px;">
-                                    <div class="box5 bg-danger" onclick="javascript:window.open('https://mask-nearby.com', '_blank');">
+                                    <div class="box5 bg-danger" onclick="javascript:window.open('https://mask-nearby.com', '_blank');" style="border-radius:20px; box-shadow:  5px 5px 10px #d0d3d8, 
+             -5px -5px 0px #f7f7f7;">
                                         <h2 class="title">마스크 알리미</h2>
                                         <p style="color:white; margin-top:15px;">주변 공적 마스크 판매처의 재고 현황을 지도에 보여줍니다.</p>
                                     </div>
@@ -536,7 +557,8 @@
                             </div><!-- .col -->
                             <div class="col-sm-10 col-md-8 col-lg-4">
                                 <div class="box2 bg-accent" style="margin-bottom:-30px;">
-                                    <div class="box5 bg-accent" onclick="javascript:window.open('http://ncov.mohw.go.kr', '_blank');">
+                                    <div class="box5 bg-accent" onclick="javascript:window.open('http://ncov.mohw.go.kr', '_blank');" style="border-radius:20px; box-shadow:  5px 5px 10px #d0d3d8, 
+             -5px -5px 0px #f7f7f7;">
                                         <h2 class="title">코로나19 공식 페이지</h2>
                                         <p style="color:white; margin-top:15px;">질병관리본부에서 운영하는 코로나19 공식 페이지입니다.</p>
                                     </div>
