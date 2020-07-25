@@ -262,8 +262,7 @@ background: #0f0f0f;
 box-shadow:  5px 5px 10px #0d0d0d, 
              -5px -5px 0px #f7f7f7;">
                                 <h2 class="number" id="death">로딩중</h2>
-                                <span class="desc" id="deathPM" style="display:none;">사망자</span>
-                                <span class="desc" style="display: block;">사망자 (+ 0)</span>
+                                <span class="desc" id="deathPM">사망자</span>
                                 <div class="icon">
                                     <i class="zmdi zmdi-accounts-outline"></i>
                                 </div>
@@ -308,7 +307,7 @@ box-shadow:  5px 5px 10px #3861b7,
                 <div class="container" >
                     <div class="row" >
                         <div class="col-md-12" >
-                            <h3 style="margin-left:10px;">통계</h3><br>
+                            <h3 style="margin-left:10px; display:inline-block;">통계<h6 style="margin-left:10px;color:#a9a9a9; display:inline-block;">7.25 0시 기준</h6></h3><br><br>
                         </div>
                     </div>
                     
@@ -863,376 +862,6 @@ R0 수치가 2라고 가정하면, 감염자 1명이 다른 사람 2명 이상�
 
 
 
-<div class="modal fade" id="smallmodal3" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
-<div class="modal-dialog modal-sm" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<h5 class="modal-title" id="smallmodalLabel">국내 현황 예측 결과</h5>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-</div>
-<div class="modal-body">
-
-
-
-<!DOCTYPE html>
-<head>
-
-    <!--    <script async="" src="./index_files/analytics.js"></script>-->
-
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.27/moment-timezone-with-data-1970-2030.min.js"></script>-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.27/moment-timezone-with-data.min.js"></script>
-
-
-
-<!--    <script src="./index_files/Chart.min.js"></script>-->
-    <script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
-
-
-<!--    <script src="./index_files/utils.js"></script>-->
-    <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
-    <style>
-
-        canvas {
-            -moz-user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-        }
-
-    </style>
-<style type="text/css">/* Chart.js */
-@keyframes chartjs-render-animation {
-    from {
-        opacity: .99
-    }
-    to {
-        opacity: 1
-    }
-}
-
-.chartjs-render-monitor {
-    animation: chartjs-render-animation 1ms
-}
-
-.chartjs-size-monitor, .chartjs-size-monitor-expand, .chartjs-size-monitor-shrink {
-    position: absolute;
-    direction: ltr;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    overflow: hidden;
-    pointer-events: none;
-    visibility: hidden;
-    z-index: -1
-}
-
-.chartjs-size-monitor-expand > div {
-    position: absolute;
-    width: 1000000px;
-    height: 1000000px;
-    left: 0;
-    top: 0
-}
-
-.chartjs-size-monitor-shrink > div {
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    left: 0;
-    top: 0
-}</style>
-</head>
-
-<body>
-
-    <div style="align-content: center; text-align: left; display: flex; justify-content: left;">
-        <div style="width: 100%">
-            <br>
-            <div style=" width: auto; font-size: xx-large; font-weight: bold; margin: 10px;">
-                <h4 style="margin-top:-20px;">내일 누적 확진자 예측</h4>
-                <span id="infectedPrediction">계산중...</span><span>명</span>
-                <span style="font-size:15px;" id="infectedPrePM">계산중...</span>
-                <h4 style="margin-top:20px;">내일 누적 사망자 예측</h4>
-                <span id="deathPrediction">계산중...</span><span>명</span>
-                <span style="font-size:15px;" id="deathPrePM">계산중...</span>
-                <p style="font-size:13px; color:#d92121; margin-top:20px;">
-위 수치는 지금까지의 발생 동향을 기반으로 계산된 단순 추정치입니다.<br>단순 참고용으로만 사용하여 주시고, 해당 자료를 신뢰하지 마시기 바랍니다.
-</p> 
-                <span id="infectedCount" style="display: none;">Predicted infected count calculating...</span>
-            </div>
-            <button id="toggleScale" style="display: none;"><b>∡ Logaritmic / Linear Scale Toggle</b></button><br>
-            
-            <b style="display:none;" id="iDailyGrowthPercent" style="color: darkorange">로딩중... </b>
-            <div style="display: none;">
-            
-                <select id="locationSelect" style="width: 150px"></select>
-                <button id="clearDatasets" style="border-radius: 0"><b>Clear</b></button>
-                <button id="toggleScalePerCountry"><b>∡ Log Scale Toggle</b></button>
-            </span>
-
-            <script src="https://www.coronaviruschart.com/jquery-3.3.1.slim.min.js"></script>
-            <script src="https://www.coronaviruschart.com/jquery.csv.min.js"></script>
-
-            <script>
-                // 여기를 바꿔주세요
-                // 최근 6일까지의 수치만 입력해야 합니다.
-                let recentKoreaData = [
-                    { d: '2020-05-16', i: 11050, t: 262, w: 1016128-81620},
-                    { d: '2020-05-17', i: 11065, t: 263, w: 1016128-81620},
-                    { d: '2020-05-18', i: 11078, t: 263, w: 1016128-81620},
-                    { d: '2020-05-19', i: 11110, t: 263, w: 1016128-81620},
-                    { d: '2020-05-20', i: 11122, t: 264, w: 1016128-81620},
-                    { d: '2020-05-21', i: 11142, t: 264, w: 1016128-81620},
-                                                                            
-
-
-                ];
-
-
-                let sourceDataLength = recentKoreaData.length;
-
-                let ahead = 3;
-                let [data, infectedNow, iDailyGrowthPercent] = predict(recentKoreaData, ahead);
-                updateIC();
-                document.getElementById('iDailyGrowthPercent').innerText = Math.floor(iDailyGrowthPercent).toString() + '%';
-
-                function infectedNowToString(infectedNow) {
-                    let s = infectedNow.toString();
-                    // if (!s.includes('.')) {
-                    //     s = s + '.0';
-                    // }
-                    return s;
-                }
-
-                function updateIC() {
-                    [data, infectedNow, iDailyGrowthPercent] = predict(recentKoreaData, 0);
-                    document.getElementById('infectedCount').innerText = infectedNowToString(infectedNow).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
-                }
-
-                
-
-                setInterval(updateIC, 500);
-
-                var color = Chart.helpers.color;
-
-                function pointColors(normalColor) {
-                    let bcs = [];
-                    for (let i = 0; i < sourceDataLength + ahead; i++) {
-                        if (i < sourceDataLength) {
-                            bcs.push(normalColor);
-                        } else {
-                            bcs.push(color(window.chartColors.blue).alpha(1).rgbString());
-                        }
-                    }
-                    return bcs;
-                }
-
-                let bcs = pointColors(color(window.chartColors.yellow).alpha(1).rgbString());
-                let tbcs = pointColors(color(window.chartColors.red).alpha(1).rgbString());
-                let wbcs = pointColors(color(window.chartColors.purple).alpha(1).rgbString());
-
-                document.getElementById('infectedPrediction').innerText = data.map(d => d.i)[6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                document.getElementById('deathPrediction').innerText = data.map(d => d.t)[6].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
-                document.getElementById('infectedPrePM').innerText = "(+ "+(data.map(d => d.i)[6]-data.map(d => d.i)[5])+")";
-                document.getElementById('deathPrePM').innerText = "(+ "+(data.map(d => d.t)[6]-data.map(d => d.t)[5])+")";
-
-
-                var type = 'linear';
-
-                var timeFormat = 'YYYY-MM-DD';
-
-                var colorNames = Object.keys(window.chartColors);
-                function addCountryDataset(locationName) {
-                    var colorName = colorNames[configPerCountry.data.datasets.length % colorNames.length];
-                    var newColor = window.chartColors[colorName];
-                    // TODO add predictionOne
-                    // var data = window.perCountry[locationName];
-                    // let dateStrings = configPerCountry.data.dateStrings;
-                    // var [predData, predDateStrings, now, dailyGrowth] = predictOne(data, dateStrings, 3);
-                    // TODO colorization:
-                    // let bcs = pointColors(color(window.chartColors.yellow).alpha(1).rgbString());
-
-                    var newDataset = {
-                        label: locationName,
-                        borderColor: newColor,
-                        backgroundColor: color(newColor).alpha(0.5).rgbString(),
-                        fill: false,
-                        data: window.perCountry[locationName]
-                    };
-                    configPerCountry.data.datasets.push(newDataset);
-                    window.myLinePerCountry.update();
-
-                }
-                document.getElementById('locationSelect').addEventListener('change', function() {
-                    var sel = document.getElementById('locationSelect');
-                    let option = sel.options[sel.selectedIndex];
-                    var locationName = option.value;
-                    addCountryDataset(locationName);
-                });
-
-                document.getElementById('clearDatasets').addEventListener('click', function() {
-                   configPerCountry.data.datasets = [];
-                    window.myLinePerCountry.update();
-                });
-
-                window.onload = function() {
-                    var ctx = document.getElementById('canvas').getContext('2d');
-                    window.myLine = new Chart(ctx, config);
-
-                    csvParsedPromise.then(r => {
-                        var ctxPerCountry = document.getElementById('canvasPerCountry').getContext('2d');
-                        window.myLinePerCountry = new Chart(ctxPerCountry, configPerCountry);
-
-                        addCountryDataset('US');
-                        addCountryDataset('Italy');
-                        addCountryDataset('China');
-                    });
-
-                };
-
-                function findLineByLeastSquares(values_x, values_y) {
-                    var x_sum = 0;
-                    var y_sum = 0;
-                    var xy_sum = 0;
-                    var xx_sum = 0;
-                    var count = 0;
-
-                    /*
-                     * The above is just for quick access, makes the program faster
-                     */
-                    var x = 0;
-                    var y = 0;
-                    var values_length = values_x.length;
-
-                    if (values_length !== values_y.length) {
-                        throw new Error('The parameters values_x and values_y need to have same size!');
-                    }
-
-                    /*
-                     * Above and below cover edge cases
-                     */
-                    if (values_length === 0) {
-                        return [ [], [] ];
-                    }
-
-                    /*
-                     * Calculate the sum for each of the parts necessary.
-                     * FIT ONLY last 5!
-                     */
-                    for (let i = values_length - 5; i< values_length; i++) {
-                        x = values_x[i];
-                        y = values_y[i];
-                        x_sum+= x;
-                        y_sum+= y;
-                        xx_sum += x*x;
-                        xy_sum += x*y;
-                        count++;
-                    }
-
-                    /*
-                     * Calculate m and b for the line equation:
-                     * y = x * m + b
-                     */
-                    var m = (count*xy_sum - x_sum*y_sum) / (count*xx_sum - x_sum*x_sum);
-                    var b = (y_sum/count) - (m*x_sum)/count;
-
-
-                    return [m, b]
-                }
-
-                function predictOne(arr, dateStrings, ahead) {
-                    let dayIndexes = [...Array(arr.length).keys()];
-                    let [m, b] = findLineByLeastSquares(dayIndexes, arr);
-                    let latestDateString = dateStrings[dateStrings.length - 1];
-                    let seconds = moment().diff(moment(latestDateString).add(1, 'days')) / 1000;
-                    let now = Math.floor(Math.exp((arr.length - 1 + seconds / (60*60*24)) * m + b));
-                    let previous_date = undefined;
-                    for (let i = 0; i < arr.length + ahead; i++) {
-                        let y = Math.floor(Math.exp(i * m + b));
-                        let datum = arr[i];
-                        if (!datum) {
-                            let v = y;
-                            let d = moment(previous_date).add(1,'days').format('YYYY-MM-DD');
-                            arr.push(v);
-                            dateStrings.push(d);
-                        }
-                        previous_date = dateStrings[i]
-                    }
-                    let dailyGrowthPercent = (Math.exp(m) - 1) * 100;
-                    return [arr, dateStrings, now, dailyGrowthPercent];
-
-                }
-
-                function predict(data, ahead) {
-
-                    let log_infecteds = data.map(d=>Math.log(d.i));
-                    let log_toll = data.map(d=>Math.log(d.t));
-                    let log_world = data.map(d=>Math.log(d.w));
-                    let days = [...Array(data.length).keys()];
-
-                    let [m, b] = findLineByLeastSquares(days, log_infecteds);
-                    let [mt, bt] = findLineByLeastSquares(days, log_toll);
-                    let [mw, bw] = findLineByLeastSquares(days, log_world);
-
-                    let latest = data[log_infecteds.length - 1];
-                    let seconds = moment().diff(moment(latest.d).add(1, 'days')) / 1000;
-                    let infectedNow = Math.floor(Math.exp((log_infecteds.length - 1 + seconds / (60*60*24)) * m + b));
-                    let worldNow = Math.floor(Math.exp((log_world.length - 1 + seconds / (60*60*24)) * mw + bw));
-
-                    // predict next 3 values
-                    // let previous_date = data[log_infecteds.length - 1].d;
-                    let previous_date = undefined;
-                    for (let i = 0; i < log_infecteds.length + ahead; i++) {
-                        let y = Math.floor(Math.exp(i * m + b));
-                        let yt = Math.floor(Math.exp(i * mt + bt));
-                        let yw = Math.floor(Math.exp(i * mw + bw));
-                        let datum = data[i];
-                        if (!datum) {
-                            datum = {};
-                            datum.i = y;
-                            datum.t = yt;
-                            datum.w = yw;
-                            datum.d = moment(previous_date).add(1,'days').format('YYYY-MM-DD');
-                            data.push(datum);
-                        }
-                        datum.im = y;
-                        datum.tm = yt;
-                        datum.wm = yw;
-                        previous_date = datum.d
-                    }
-                    let iDailyGrowthPercent = (Math.exp(m) - 1) * 100;
-                    return [data, infectedNow, iDailyGrowthPercent];
-                }
-
-
-            </script>
-
-
-            <br>
-
-        </div>
-    </div>
-
-</body>
-</html>
-
-
-
-
-</div>
-<div class="modal-footer">
-<button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
-</div>
-</div>
-</div>
-</div>
-
 
 
     <!-- Vue JS-->
@@ -1351,13 +980,22 @@ svg {
 
 </style>
 
-<!-- 지역별 현황 자동 업데이트 -->
+<!-- 자동 업데이트 -->
 <script>
+
+
+
+
+
+
+
+
+/*
     document.getElementById('confirmed').innerHTML = koreaRegionalData[0].확진자수.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"명";
  document.getElementById('cure').innerHTML = koreaRegionalData[0].격리해제수.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"명";
     document.getElementById('death').innerHTML = koreaRegionalData[0].사망자수.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"명";
     document.getElementById('whenUpdate').innerHTML = koreaRegionalData[18].업데이트날짜+" 기준";
-
+*/
     document.getElementById('seoulCases').innerHTML = koreaRegionalData[1].확진자수;
     document.getElementById('seoulCure').innerHTML = koreaRegionalData[1].격리해제수;
     document.getElementById('seoulDeath').innerHTML = koreaRegionalData[1].사망자수;
