@@ -75,30 +75,6 @@ controlBtn.addEventListener("click", playPause), track.addEventListener("ended",
         response: null
     }),
     methods: {
-        runScraper: function() {
-            this.scraperRunning = !0, this.url.includes("http"), this.url = "https://cors-coronacoc.herokuapp.com/http://m.news.naver.com/covid19/index.nhn", this.$http.get(this.url).then(e => {
-                this.scraperRunning = !1, document.createElement("div").innerHTML = e.body;
-                var r = e.body,
-                    a = r.indexOf("확진환자</em>"),
-                    n = r.substr(a, 78).replace("확진환자</em>", "").replace(/(\s*)/g, "").replace(/\"/gi, "").replace("spanclass=info_count", "").replace("<", "").replace(">", "").replace("S", "");
-                var t = r.indexOf("격리해제</em>"),
-                    c = r.substr(t, 78).replace("격리해제</em>", "").replace(/(\s*)/g, "").replace(/\"/gi, "").replace("spanclass=info_count", "").replace("<", "").replace(">", "");
-                var s = r.indexOf("사망자</em>"),
-                    l = r.substr(s, 78).replace("사망자</em>", "").replace(/(\s*)/g, "").replace(/\"/gi, "").replace("spanclass=info_count", "").replace("<", "").replace("/a", "").replace(">", "");
-                var p = r.indexOf("topStateLayer"),
-                    o = r.substr(p, 83).replace("topStateLayer", "").replace(/\"/gi, "").replace("spanclass=info_count", "").replace("<", "").replace("/button>", "").replace(">", "").replace("onclick=nclk").replace("undefined", "").replace("(event");
-                var i = r.indexOf("info_variation"),
-                    u = r.substr(i, 94).replace("info_variation", "").replace(/\"/gi, "").replace("<spanclass=", "").replace("<", "").replace("/button>", "").replace(">", "").replace(" ", "").replace("S", "").replace("s", "");
-                document.getElementById("confirmedPM").innerHTML = "확진자 (+ " + u + ")";
-                var d = r.indexOf("item_clear") + 160,
-                    h = r.substr(d, 94).replace("info_variation", "").replace(/\"/gi, "").replace("<spanclass=", "").replace("<", "").replace("/button>", "").replace(">", "").replace("o_variation", "").replace("sp", "").replace(/[a-z]/gi, "").replace(" ", "");
-                document.getElementById("curePM").innerHTML = "격리해제자 (+ " + h + ")";
-                document.getElementById("cureNow").innerHTML = "격리중 : " + ((document.getElementById("confirmed").innerHTML.replace("명", "").replace(",", "")) - (document.getElementById("cure").innerHTML.replace("명", "").replace(",", "")) - (document.getElementById("death").innerHTML.replace("명", "").replace(",", ""))).toString() + "명";
-                var m = r.indexOf("item_death") + 160,
-                    b = r.substr(m, 93).replace("info_variation", "").replace(/\"/gi, "").replace("<spanclass=", "").replace("<", "").replace("/button>", "").replace(">", "").replace("o_variation", "").replace("sp", "").replace(/[a-z]/gi, "").replace(" ", "").trim();
-                document.getElementById("deathPM").innerHTML = "사망자 (+ " + b + ")"
-            })
-        },
         runScraperGlobe: function() {
             this.scraperRunning = !0, this.url.includes("http"), this.url = "https://cors-coronacoc.herokuapp.com/http://www.worldometers.info/coronavirus/", this.$http.get(this.url).then(e => {
                 this.scraperRunning = !1, document.createElement("div").innerHTML = e.body;
@@ -115,7 +91,7 @@ controlBtn.addEventListener("click", playPause), track.addEventListener("ended",
                 this.scraperRunning = !1, document.createElement("div").innerHTML = e.body;
                 var r = e.body,
                     a = r.indexOf("table-responsive"),
-                    n = r.substr(a + 19, 6e3).replace("Country", "국가").replace("Cases", "확진자").replace("Deaths", "사망자").replace("Region", "대륙").replace("United States", "미국").replace("Italy", "이탈리아").replace("Spain", "스페인").replace("China", "중국").replace("Germany", "독일").replace("France", "프랑스").replace("Iran", "이란").replace("United Kingdom", "영국").replace("Switzerland", "스위스").replace("Turkey", "터키").replace("Belgium", "벨기에").replace("Netherlands", "네덜란드").replace("Austria", "호주").replace("South Korea", "대한민국").replace("Canada", "캐나다").replace("Portugal", "포르투갈").replace("Brazil", "브라질").replace("Russia", "러시아").replace("India", "인도").replace("Peru", "페루").replace("Saudi Arabia", "사우디아라비아").replace("Chile", "칠레");
+                    n = r.substr(a + 19, 6e3).replace("Country", "국가").replace("Cases", "확진자").replace("Deaths", "사망자").replace("Region", "대륙").replace("United States", "미국").replace("Italy", "이탈리아").replace("Spain", "스페인").replace("China", "중국").replace("Germany", "독일").replace("France", "프랑스").replace("Iran", "이란").replace("United Kingdom", "영국").replace("Switzerland", "스위스").replace("Turkey", "터키").replace("Belgium", "벨기에").replace("Netherlands", "네덜란드").replace("Austria", "호주").replace("South Korea", "대한민국").replace("Canada", "캐나다").replace("Portugal", "포르투갈").replace("Brazil", "브라질").replace("Russia", "러시아").replace("India", "인도").replace("Peru", "페루").replace("Saudi Arabia", "사우디아라비아").replace("Chile", "칠레").replace("South Africa", "남아프리카공화국").replace("Mexico", "멕시코").replace("Pakistan", "파키스탄").replace("Colombia", "콜롬비아");
                 document.getElementById("tableByCountry").innerHTML = n.substr(0, 5400)
             })
         },
@@ -126,13 +102,50 @@ controlBtn.addEventListener("click", playPause), track.addEventListener("ended",
             this.scraperRunning = !0, this.url.includes("http"), this.url = "https://cors-coronacoc.herokuapp.com/http://ncov.mohw.go.kr/bdBoardList_Real.do", this.$http.get(this.url).then(e => {
                 this.scraperRunning = !1,
                 console.log(e.body);
+
+                var UpdateData = (n = e.body).indexOf('<h5 class="s_title_in3">누적 확진자 현황 <span class="t_date">');
+                var updateDisplayed = n.substr(UpdateData, 90).replace(/(\s*)/g, "").replace(/\"/gi, "").replace('<h5class=s_title_in3>누적확진자현황<spanclass=t_date>', '').replace("</span></h5>", "").replace("<", "").replace("(", "").replace("기준)", "");
+                document.getElementById('whenUpdate').innerHTML = updateDisplayed+" 기준";
+                
+
+
+                var confirmedData = (n = e.body).indexOf('<strong class="ca_top">확진환자</strong>');
+                var confimredDisplayed = n.substr(confirmedData, 212).replace(/(\s*)/g, "").replace(/\"/gi, "").replace('<strongclass=ca_top>확진환자</strong><ulclass=ca_body><li><dl><dtclass=ca_subtit>누적</dt><ddclass=ca_value>', '').replace("</dd></dl>", "")+"명";
+                document.getElementById('confirmed').innerHTML = confimredDisplayed;
+
+                var confirmedchangeData = n.substr(confirmedData).indexOf('<dt class="ca_subtit">전일대비</dt>');
+                var confimredchangeDisplayed = "확진자 ("+(n.substr(confirmedData)).substr(confirmedchangeData, 212).replace(/(\s*)/g, "").replace(/\"/gi, "").replace('<dtclass=ca_subtit>전일대비</dt><ddclass=ca_value><ul><li><strongclass=inner_titsum>소계</strong><pclass=inner_value>', '').replace("</p>", "")+")";
+                document.getElementById('confirmedPM').innerHTML = confimredchangeDisplayed;
+
+
+                var cureData = (n = e.body).indexOf('<strong class="ca_top">격리해제</strong>');
+                var cureDisplayed = n.substr(cureData, 212).replace(/(\s*)/g, "").replace(/\"/gi, "").replace('<strongclass=ca_top>격리해제</strong><ulclass=ca_body><li><dl><dtclass=ca_subtit>누적</dt><ddclass=ca_value>', '').replace("</dd></dl>", "")+"명";
+                document.getElementById('cure').innerHTML = cureDisplayed;
+
+
+                var curechangeData = n.substr(cureData).indexOf('<dt class="ca_subtit">전일대비</dt>');
+                var curechangeDisplayed = "격리해제자 ("+(n.substr(cureData)).substr(curechangeData, 150).replace(/(\s*)/g, "").replace(/\"/gi, "").replace('<dtclass=ca_subtit>전일대비</dt><ddclass=ca_value><spanclass=txt_ntc>', '').replace("</span></dd></dl>", "")+")";
+                document.getElementById('curePM').innerHTML = curechangeDisplayed;
+                console.clear();
+                console.log(curechangeDisplayed);
+
+
+                var deathData = (n = e.body).indexOf('<strong class="ca_top">사망</strong>');
+                var deathDisplayed = n.substr(deathData, 212).replace(/(\s*)/g, "").replace(/\"/gi, "").replace('<strongclass=ca_top>사망</strong><ulclass=ca_body><li><dl><dtclass=ca_subtit>누적</dt><ddclass=ca_value>', '').replace("</dd></dl>", "")+"명";
+                document.getElementById('death').innerHTML = deathDisplayed;
+
+                var deathchangeData = n.substr(deathData).indexOf('<dt class="ca_subtit">전일대비</dt>');
+                var deathchangeDisplayed = "사망자 ("+(n.substr(deathData)).substr(deathchangeData, 150).replace(/(\s*)/g, "").replace(/\"/gi, "").replace('<dtclass=ca_subtit>전일대비</dt><ddclass=ca_value><spanclass=txt_ntc>', '').replace("</span></dd></dl>", "")+")";
+                document.getElementById('deathPM').innerHTML = deathchangeDisplayed;
+                
+
+
                 var r = (n = e.body).indexOf('<strong class="inner_tit">해외유입');
                 var a = n.substr(r, 123).replace(/(\s*)/g, "").replace(/\"/gi, "").replace("<strongclass=inner_tit>해외유입</strong><pclass=", "").replace("inner_value>", "").replace("</p></li><li>", "");
                 
                 var m = (n = e.body).indexOf('<strong class="inner_tit">국내발생');
                 var b  = n.substr(m, 123).replace(/(\s*)/g, "").replace(/\"/gi, "").replace("<strongclass=inner_tit>국내발생</strong><pclass=", "").replace("inner_value>", "").replace("</p></li></ul>", "");
          
-                console.clear();
                document.getElementById("localConfirmed").innerHTML = "해외유입 "+ a + "명<br>국내발생 "+b+"명";
 
                var o = e.body,
@@ -147,9 +160,13 @@ controlBtn.addEventListener("click", playPause), track.addEventListener("ended",
         },
     },
     beforeMount() {
-        this.runScraper(), this.runScraperGlobe(), this.runScraperTableByCountry(), this.detailData()
+        this.runScraperGlobe(), this.runScraperTableByCountry(), this.detailData()
     }
 });
+
+
+
+
 angular.module("myApp", ['ngRoute'])
 
     .controller('mainCtrl', function($scope, getCoronaNewsArticles) {
@@ -159,9 +176,10 @@ angular.module("myApp", ['ngRoute'])
         });
     })
 
+
     .service('getCoronaNewsArticles', function($http) {
         this.getNewsArticles = function(callback) {
-            $http.get('https://cors-coronacoc.herokuapp.com/https://newsapi.org/v2/everything?q=코로나19&apiKey=d60ec4ccad4e46678ce633f1b4dfa2b1&pageSize=15&sortBy=publishedAt')
+            $http.get('http://cors-coronacoc.herokuapp.com/http://newsapi.org/v2/everything?q=코로나19&apiKey=d60ec4ccad4e46678ce633f1b4dfa2b1&pageSize=15&sortBy=publishedAt')
                 .then(callback);
 
         };
