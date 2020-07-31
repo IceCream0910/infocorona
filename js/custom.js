@@ -1,65 +1,26 @@
 window.onload = function() {
-    var e = new Array("모두를 위한 거리두기에<br>동참해주세요.", "증상 발생 시,<br>1339로 전화하세요!", "올바른 손씻기는<br>비누로 30초 이상!", "예방 수칙 준수로<br>이겨낼 수 있습니다.", "기침할 땐,<br>옷소매로 가리고 해주세요.", "모든 의료진분들을<br>응원합니다!", "거리는 멀어져도,<br>마음은 가까이!", "외출할 때는<br>마스크 착용 필수!");
-    document.getElementById("suggestText").innerHTML = randomItem(e), $.getJSON("https://www.ipinfo.io/json", function(e) {
-        var r = "전국";
-        switch (e.region) {
-            case "Gyeonggi-do":
-                r = "경기";
-                break;
-            case "Seoul":
-                r = "서울";
-                break;
-            case "Busan":
-                r = "부산";
-                break;
-            case "Daegu":
-                r = "대구";
-                break;
-            case "Incheon":
-                r = "인천";
-                break;
-            case "Gwangju":
-                r = "광주";
-                break;
-            case "Daejeon":
-                r = "대전";
-                break;
-            case "Ulsan":
-                r = "울산";
-                break;
-            case "Sejong":
-                r = "세종시";
-                break;
-            case "Gangwon-do":
-                r = "강원";
-                break;
-            case "Chungbuk-do":
-                r = "충청북도";
-                break;
-            case "Chungnam-do":
-                r = "충청남도";
-                break;
-            case "Jeollabuk-do":
-                r = "전라북도";
-                break;
-            case "Jeollanam-do":
-                r = "전라남도";
-                break;
-            case "Gyeongbuk-do":
-                r = "경상북도";
-                break;
-            case "Gyeongnam-do":
-                r = "경상남도"
-        }
-        $(".myRegion").html(r)
-    })
+    var e = new Array("모두를 위한 거리두기에<br>동참해주세요.", "증상 발생 시,<br>1339로 전화하세요!", "올바른 손씻기는<br>비누로 30초 이상!", "예방 수칙 준수로<br>이겨낼 수 있습니다.", "기침할 땐,<br>옷소매로 가리고 해주세요.", "모든 의료진분들을<br>응원합니다!", "거리는 멀어져도,<br>마음은 가까이!", "외출할 때는<br>마스크 착용 필수!"); 
+    document.getElementById("suggestText").innerHTML=randomItem(e);
 };
-var audioFile = new Audio("voice.mp3");
+
 
 function randomItem(e) {
     return e[Math.floor(Math.random() * e.length)]
 }
-var track = document.getElementById("track"),
+var ttsurl = "정보 없음.";
+
+function getTTS() {
+    var ttsdata1 = document.getElementById("confirmed").innerHTML;
+        var ttsdata2 = document.getElementById("confirmedPM").innerHTML.replace("확진자", "").replace("(+", "").replace(")", "").replace(/\s/gi, "");
+        var ttsdata3 = document.getElementById("cure").innerHTML;
+        var ttsdata4 = document.getElementById("curePM").innerHTML.replace("격리해제자", "").replace("(+", "").replace(")", "").replace(/\s/gi, "");
+        var ttsdata5 = document.getElementById("death").innerHTML;
+        var ttsdata6 = document.getElementById("deathPM").innerHTML.replace("사망자", "").replace("(+", "").replace(")", "").replace(/\s/gi, "");
+ttsurl = '국내 코로나일구 누적 확진자는 전일 0시 대비' + ttsdata2.toString() + '명 증가해 총 ' + ttsdata1.toString() + '이고, 격리해제자는 '+ ttsdata4.toString() + '명 증가해 총 '+ ttsdata3.toString() + '입니다. 사망자는 '+ttsdata6.toString() + '명 추가되어 총 '+ttsdata5.toString()+' 입니다. '
+document.getElementById("track").src="https://aiapis.herokuapp.com/api/tts?&language=ko&speed=1&query="+ttsurl;
+}
+
+var track = document.getElementById("track");
     controlBtn = document.getElementById("play-pause");
 
 function playPause() {
