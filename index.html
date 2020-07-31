@@ -60,8 +60,7 @@
  if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push(arguments)};v3.on=function(e,fn){if(!v3._l[e])v3._l[e]=[];v3._l[e].push(fn)};var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://app.chaport.com/javascripts/insert.js';var ss=d.getElementsByTagName('script')[0];ss.parentNode.insertBefore(s,ss)})(window, document);
  </script>
 
- <audio id="track">
-  <source src="voice.mp3" type="audio/mpeg" />
+ <audio id="track" type="audio/mpeg" src="https://aiapis.herokuapp.com/api/tts?query=오류가 발생했어요. 다시 시도해주세요.&language=ko&speed=1">
 </audio>
 
 </head>
@@ -82,104 +81,12 @@
 
                            
 
-                            
-                            <button id="ttsBtn" onclick="javascript:CreateVoice();">보이스 브리핑 <span style="color:#a9a9a9; font-size:10px;">with</span> <img src="http://prosody-tts.com/img/custom/logo.png" width="20px" height="20px"></span></button>
-
                             <div id="player-container">
-                            <div id="play-pause" style="display: none;" class="play"><span style="margin-left:40px; font-size: 15px;">보이스 브리핑 <span style="color:#a9a9a9; font-size:10px;">with</span> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Naver_Clova_Logotype.svg/1200px-Naver_Clova_Logotype.svg.png" width="30px" height="30px"></span></div>
+                            <div id="play-pause" class="play" onclick="getTTS();"><span style="margin-left:40px; font-size: 15px;">보이스 브리핑 <span style="color:#a9a9a9; font-size:10px;"></span></div>
                                 
 
                             </div>
 
-                            <script>
-function CreateVoice() {
-
-        var confirmed = document.getElementById("confirmed").innerHTML;
-        var whenupdate = document.getElementById("whenUpdate").innerHTML;
-        var confirmedPM = document.getElementById("confirmedPM").innerHTML.replace("확진자", "").replace("(+ ", "").replace(")", "").replace(/\s/gi, "");
-        var cure = document.getElementById("cure").innerHTML;
-        var curePM = document.getElementById("curePM").innerHTML.replace("격리해제자", "").replace("(+ ", "").replace(")", "").replace(/\s/gi, "");
-        var death = document.getElementById("death").innerHTML;
-        var deathPM = document.getElementById("deathPM").innerHTML.replace("사망자", "").replace("(+ ", "").replace(")", "").replace(/\s/gi, "");
-        var deathPMtf = document.getElementById("deathPM").style.display;
-        console.log(whenupdate);
-
-        if(confirmed.toString() != "로딩중") {
-            document.getElementById("ttsBtn").innerHTML = '<img src="https://smartsupport.lenovo.com/esv4/images/loading.gif" width="20px" height="20px" style="margin-right: 10px;">보이스 브리핑 <span style="color:#a9a9a9; font-size:10px;">with</span> <img src="http://prosody-tts.com/img/custom/logo.png" width="20px" height="20px"></span>';
-            //여기에 스페셜 텍스트 추가
-        var specialText = "";
-
-        //텍스트 생성
-        if(deathPMtf == "block") {
-    var helperConts = whenupdate.substring(1, 2) + '월 '+whenupdate.substring(2, 5)+'일 0시 기준. 국내 코로나일구 누적 확진자는 전일 0시 대비' + confirmedPM.toString() + '명 증가해 총 ' + confirmed.toString() + '이고, 격리해제자는 '+ curePM.toString() + '명 증가해 총 '+ cure.toString() + '입니다. 사망자는 '+deathPM.toString() + '명 추가되어 총 '+death.toString()+' 입니다. ' + specialText;
-
-} else {
-    var helperConts = whenupdate.substring(1, 2) + '월 '+whenupdate.substring(2, 5)+'일 0시 기준. 국내 코로나일구 누적 확진자는 전일 0시 대비' + confirmedPM.toString() + '명 증가해 총 ' + confirmed.toString() + '이고, 격리해제자는 '+ curePM.toString() + '명 증가해 총 '+ cure.toString() + '입니다. 사망자는 추가로 발생하지 않아 총 '+ death.toString() + "입니다. " + specialText;
-}
-
-
-        const xhr = new XMLHttpRequest();
-        const contents = helperConts;
-        const data = {
-        text: contents,
-        actor: 'Byeong-chan_H'
-    }
-    xhr.open('POST', 'https://api.prosody-tts.com/api/ttsapi/voice-generation/', true);
-    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-    xhr.responseType = 'json'
-    xhr.addEventListener('load', function () {
-     GenerateVoice(xhr.response.data.signature);
-    });
-    xhr.send(JSON.stringify(data));
-
-        } else {
-            alert("현황 로딩이 끝나면 보이스 브리핑을 사용하실 수 있습니다.")
-        }
-
-        
-
-    
-}
-
-
-function GenerateVoice(signature) {
-    const xhr = new XMLHttpRequest();
-    var audio = new Audio();
-    if (audio.paused && audio.currentTime > 0 && !audio.ended) {
-         audio.play();
-     } else {
-         audio.pause();
-     }
-    let url = null;
-    xhr.open('GET', 'https://api.prosody-tts.com/api/ttsapi/voice-generation/' + signature + '/generate/', true);
-    xhr.responseType = 'blob'
-    xhr.addEventListener('load', function() {
-        url = URL.createObjectURL(xhr.response);
-        audio.src = url;
-        audio.play();
-        document.getElementById("ttsBtn").innerHTML = '보이스 브리핑 <span style="color:#a9a9a9; font-size:10px;">with</span> <img src="http://prosody-tts.com/img/custom/logo.png" width="20px" height="20px"></span>';
-    });
-    xhr.send();
-    audio.addEventListenr('ended', function () {
-        URL.revokeObjectURL(url);
-    }, false);
-}
-
-
-function chageLangSelect(){
-    var langSelect = document.getElementById("id-lang");
-     
-    var selectValue = langSelect.options[langSelect.selectedIndex].value;
-    switch(selectValue) {
-        case "ko":
-        break;
-
-        case "en":
-        location.href="index_en.html"
-        break;
-    }
-}
-</script>
 
                             <br>
 
