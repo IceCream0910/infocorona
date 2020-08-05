@@ -390,7 +390,7 @@ $(window).scroll(function() {
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [8908, 7581, 8034, 4416, 3511, 10023] //검사
+    var data3 = [7581, 8034, 4416, 3511, 10023, 8407] //검사
 
     var ctx = document.getElementById("recent-rep2-chart");
     if (ctx) {
@@ -398,7 +398,7 @@ $(window).scroll(function() {
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ["7.29", "7.30", "7.31", "8.1", "8.2", "8.3"],
+          labels: ["7.30", "7.31", "8.1", "8.2", "8.3", "8.4"],
           datasets: [
             {
               label: "일 검사자수",
