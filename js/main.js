@@ -73,11 +73,11 @@ $(window).scroll(function() {
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['7.26', '7.27', '7.28', '7.29', '7.30', '7.31', '8.1', '8.2', '8.3', '8.4'],
+          labels: ['7.27', '7.28', '7.29', '7.30', '7.31', '8.1', '8.2', '8.3', '8.4', '8.5'],
           datasets: [
             {
               label: "신규 확진자",
-              data: [25, 28, 48, 18, 36, 31, 30, 23, 34, 33],
+              data: [28, 48, 18, 36, 31, 30, 23, 34, 33, 43],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
@@ -179,7 +179,7 @@ $(window).scroll(function() {
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [6568, 7888],
+            data: [6602, 7897],
             backgroundColor: [
               '#00b5e9',
               '#fa4251',
@@ -276,7 +276,7 @@ $(window).scroll(function() {
           datasets: [
             {
               label: "확진자 수",
-              data: [256, 793, 3641, 1841, 1956, 2546, 1871, 951, 601],
+              data: [256, 797, 3654, 1844, 1959, 2554, 1880, 954, 601],
               borderColor: "rgba(255, 40, 0, 1)",
               borderWidth: "0",
               backgroundColor: "rgba(255, 40, 0, 0.8)"
@@ -322,11 +322,11 @@ $(window).scroll(function() {
         type: 'bar',
         defaultFontFamily: 'Poppins',
         data: {
-          labels: ['7.30', '7.31', '8.1', '8.2', '8.3', '8.4'],
+          labels: ['7.31', '8.1', '8.2', '8.3', '8.4', '8.5'],
           datasets: [
             {
               label: "확진",
-              data: [36, 31, 30, 23, 34, 33],
+              data: [31, 30, 23, 34, 33, 43],
               borderColor: "rgba(250, 66, 81, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(250, 66, 81,0.5)",
@@ -334,7 +334,7 @@ $(window).scroll(function() {
             },
             {
               label: "완치",
-              data: [51, 50, 26, 21, 72, 54],
+              data: [50, 26, 21, 72, 54, 95],
               borderColor: "rgba(0,173,95, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,173,95, 0.5)",
@@ -342,7 +342,7 @@ $(window).scroll(function() {
             },
             {
               label: "사망",
-              data: [1, 0, 0, 0, 0, 1],
+              data: [0, 0, 0, 0, 1, 0],
               borderColor: "rgba(0,0,0, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,0,0, 0.5)",
