@@ -3,8 +3,6 @@ window.onload = function() {
     document.getElementById("suggestText").innerHTML=randomItem(e);
 };
 
-specialText
-
 
 function randomItem(e) {
     return e[Math.floor(Math.random() * e.length)]
