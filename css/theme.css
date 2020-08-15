@@ -8,16 +8,9 @@
  	margin-bottom:20px;
  }
 
- .tabbar {
-    display:block;
-    -webkit-user-select:none;
-    -webkit-touch-callout:none;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-           overflow-y: visible !important;
-}
 
 #iframe_main {
-	height:90vh;
+	height:950vh;
 }
 
 @media ( min-width: 1024px ) {
@@ -164,16 +157,17 @@ width: 3.8rem;
   --text: #E4ECFA;
   --circle: #E4ECFA;
   --background: #171C28;
-  --shadow: rgba(18, 22, 33, .1);
-  position: fixed;
+    position: fixed;
   bottom: 0;
+  z-index: 999999;
+  width: 100%;
+  max-width: 100%;
+
   border-radius: 12px 12px 0 0;
   background: var(--background);
-  width: 100%;
   height: 64px;
-  padding: 0 12px;
-  box-shadow: 0 8px 16px var(--shadow);
   z-index:999999999;
+
 }
 .tabbar > div {
   display: -webkit-box;
