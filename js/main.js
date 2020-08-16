@@ -1,4 +1,13 @@
-   $(document).ready(function(){        
+   
+
+   $(document).ready(function(){       
+
+   string = "서울·경기 지역";
+        array = string.split("");
+frameLooper();
+string2 = "2단계";
+        array2 = string2.split(""); 
+        frameLooper2();
         
         //우클릭 방지
         /*
