@@ -63,11 +63,11 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['8.5', '8.6', '8.7', '8.8', '8.9', '8.10', '8.11', '8.12', '8.13', '8.14'],
+          labels: ['8.6', '8.7', '8.8', '8.9', '8.10', '8.11', '8.12', '8.13', '8.14', '8.15'],
           datasets: [
             {
               label: "신규 확진자",
-              data: [43, 20, 43, 36, 28, 34, 54, 56, 103, 166],
+              data: [20, 43, 36, 28, 34, 54, 56, 103, 166, 279],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
@@ -169,7 +169,7 @@
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [6875, 8164],
+            data: [6977, 8341],
             backgroundColor: [
               '#00b5e9',
               '#fa4251',
@@ -266,7 +266,7 @@
           datasets: [
             {
               label: "확진자 수",
-              data: [272, 836, 3742, 1922, 2035, 2660, 1977, 983, 612],
+              data: [275, 859, 3781, 1950, 2070, 2718, 2033, 1014, 618],
               borderColor: "rgba(255, 40, 0, 1)",
               borderWidth: "0",
               backgroundColor: "rgba(255, 40, 0, 0.8)"
@@ -312,11 +312,11 @@
         type: 'bar',
         defaultFontFamily: 'Poppins',
         data: {
-          labels: ['8.9', '8.10', '8.11', '8.12', '8.13', '8.14'],
+          labels: ['8.10', '8.11', '8.12', '8.13', '8.14', '8.15'],
           datasets: [
             {
               label: "확진",
-              data: [28, 34, 54, 56, 103, 166],
+              data: [34, 54, 56, 103, 166, 297],
               borderColor: "rgba(250, 66, 81, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(250, 66, 81,0.5)",
@@ -324,7 +324,7 @@
             },
             {
               label: "완치",
-              data: [16, 71, 57, 31, 46, 38],
+              data: [71, 57, 31, 46, 38, 9],
               borderColor: "rgba(0,173,95, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,173,95, 0.5)",
