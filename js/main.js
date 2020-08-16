@@ -316,7 +316,7 @@
           datasets: [
             {
               label: "확진",
-              data: [34, 54, 56, 103, 166, 297],
+              data: [34, 54, 56, 103, 166, 279],
               borderColor: "rgba(250, 66, 81, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(250, 66, 81,0.5)",
