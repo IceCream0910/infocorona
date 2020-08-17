@@ -2,10 +2,10 @@
 
    $(document).ready(function(){       
 
-   string = "서울·경기 지역";
+   string = "이외 지역";
         array = string.split("");
 frameLooper();
-string2 = "2단계";
+string2 = "1단계";
         array2 = string2.split(""); 
         frameLooper2();
         
