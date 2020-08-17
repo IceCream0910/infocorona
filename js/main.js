@@ -72,11 +72,11 @@ string2 = "2단계";
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['8.6', '8.7', '8.8', '8.9', '8.10', '8.11', '8.12', '8.13', '8.14', '8.15'],
+          labels: ['8.7', '8.8', '8.9', '8.10', '8.11', '8.12', '8.13', '8.14', '8.15', '8.16'],
           datasets: [
             {
               label: "신규 확진자",
-              data: [20, 43, 36, 28, 34, 54, 56, 103, 166, 279],
+              data: [43, 36, 28, 34, 54, 56, 103, 166, 279, 197],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
@@ -178,7 +178,7 @@ string2 = "2단계";
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [6977, 8341],
+            data: [7052, 8463],
             backgroundColor: [
               '#00b5e9',
               '#fa4251',
@@ -275,7 +275,7 @@ string2 = "2단계";
           datasets: [
             {
               label: "확진자 수",
-              data: [275, 859, 3781, 1950, 2070, 2718, 2033, 1014, 618],
+              data: [280, 872, 3803, 1977, 2093, 2756, 2081, 1028, 625],
               borderColor: "rgba(255, 40, 0, 1)",
               borderWidth: "0",
               backgroundColor: "rgba(255, 40, 0, 0.8)"
@@ -321,11 +321,11 @@ string2 = "2단계";
         type: 'bar',
         defaultFontFamily: 'Poppins',
         data: {
-          labels: ['8.10', '8.11', '8.12', '8.13', '8.14', '8.15'],
+          labels: ['8.11', '8.12', '8.13', '8.14', '8.15', '8.16'],
           datasets: [
             {
               label: "확진",
-              data: [34, 54, 56, 103, 166, 279],
+              data: [54, 56, 103, 166, 279, 197],
               borderColor: "rgba(250, 66, 81, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(250, 66, 81,0.5)",
@@ -333,7 +333,7 @@ string2 = "2단계";
             },
             {
               label: "완치",
-              data: [71, 57, 31, 46, 38, 9],
+              data: [57, 31, 46, 38, 9, 7],
               borderColor: "rgba(0,173,95, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,173,95, 0.5)",
