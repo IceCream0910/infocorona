@@ -53,7 +53,7 @@
 
      
 
- <audio id="track" type="audio/mpeg" src="https://aiapis.herokuapp.com/api/tts?query=오류가 발생했어요. 다시 시도해주세요.&language=ko&speed=1">
+ <audio id="track" onended="document.getElementById('play-pause').style.color = '#a9a9a9';document.getElementById('play-pause').style.border = 'solid 1.5px #a9a9a9';" type="audio/mpeg" src="https://aiapis.herokuapp.com/api/tts?query=오류가 발생했어요. 다시 시도해주세요.&language=ko&speed=1">
 </audio>
 
 </head>
@@ -176,7 +176,7 @@ frameLooper2();
         <div class="padding"></div>
         <div class="title"></div>정보 가져오는 중...</h6>
         <div id="player-container" style="display:inline-block;">
-                            <div id="play-pause" class="play" onclick="getTTS();" style="width:35px; height:35px; border:1.5px solid #a9a9a9; border-radius:50%; display:flex; -webkit-justify-content: center; justify-content: center; -webkit-align-items: center; align-items: center; "><i class="fa fa-volume-up"></i></div>
+                            <div id="play-pause" class="play" onclick="getTTS();" style="width:35px; height:35px; border:1.5px solid #a9a9a9; border-radius:50%; display:flex; -webkit-justify-content: center; justify-content: center; -webkit-align-items: center; align-items: center; color:#a9a9a9;"><i class="fa fa-volume-up"></i></div>
                             </div>
     </h3>
                         </div>
@@ -234,7 +234,7 @@ border:none;
 box-shadow:  5px 5px 10px #3861b7, 
              -5px -5px 0px #f7f7f7;">
 <span class="badge badge-pill badge-primary">공지사항</span>
-<button type="button" onclick="window.open('http://coronacoc-notice.kro.kr/');" style="color:white;">코로나콕이 새로운 옷을 입었습니다.</button>
+<button type="button" onclick="window.open('http://coronacoc-notice.kro.kr/');" style="color:white;">20-08-18 업데이트 내역</button>
 </button>
 </div>
 
@@ -375,7 +375,7 @@ box-shadow:  5px 5px 10px #3861b7,
                          <style>
                             /* 표 레이아웃 수정*/
                             table {border-collapse:collapse; border-spacing:0;}
-                            
+
     table.midsize th {padding:4px 1px; font-size:12px; line-height:1.1em; word-break:break-all; border:solid 1px #a9a9a9;}
     table.midsize td { font-size:12px; line-height:1.1em; border:solid 1px #a9a9a9;}
                          </style>
