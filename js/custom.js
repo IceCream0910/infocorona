@@ -1,5 +1,5 @@
 window.onload = function() {
-    var e = new Array("모두를 위한 거리두기에<br>동참해주세요.", "증상 발생 시,<br>1339로 전화하세요!", "올바른 손씻기는<br>비누로 30초 이상!", "예방 수칙 준수로<br>이겨낼 수 있습니다.", "기침할 땐,<br>옷소매로 가리고 해주세요.", "모든 의료진분들을<br>응원합니다!", "거리는 멀어져도,<br>마음은 가까이!", "외출할 때는<br>마스크 착용 필수!", "한순간의 방심이<br>재확산의 시작이 됩니다.", "나 하나쯤이야 라는 생각이<br>모두의 안전을 위협합니다", "진정한 인싸라면<br>클럽말고 집으로", "밀집된 사람들 속에<br>방심한 너와나 거리", "야, 다음에 놀자.", "집콕운동,<br>모두를 위한 스포츠", "우리의 일상은 잠시 멈춤<br>서로의 마음은 계속 끈끈", "집회, 모임, 종교행사는<br>잠시 자제해주세요.", "모두 만나요.<br>온라인에서."); 
+    var e = new Array("모두를 위한 거리두기에<br>동참해주세요.", "증상 발생 시,<br>1339로 전화하세요!", "올바른 손씻기는<br>비누로 30초 이상!", "예방 수칙 준수로<br>이겨낼 수 있습니다.", "기침할 땐,<br>옷소매로 가리고 해주세요.", "모든 의료진분들을<br>응원합니다!", "거리는 멀어져도,<br>마음은 가까이!", "외출할 때는<br>마스크 착용 필수!", "한순간의 방심이<br>재확산의 시작이 됩니다.", "나 하나쯤이야 라는 생각이<br>모두의 안전을 위협합니다", "진정한 인싸라면<br>클럽말고 집으로", "밀집된 사람들 속에<br>방심한 너와나 거리", "야, 다음에 놀자.", "집콕운동,<br>모두를 위한 스포츠", "우리의 일상은 잠시 멈춤<br>서로의 마음은 계속 끈끈", "집회, 모임, 종교행사는<br>잠시 자제해주세요.", "모두 만나요.<br>온라인에서.", "지난 여름 바닷가가 그립지만<br>올해는 집콕 어때요?"); 
     document.getElementById("suggestText").innerHTML=randomItem(e);
 };
 
@@ -32,7 +32,7 @@ controlBtn.addEventListener("click", playPause), track.addEventListener("ended",
     el: "#scraper",
     data: () => ({
         scraperRunning: !1,
-        url: "m.news.naver.com/covid19/index.nhn",
+        url: "",
         response: null
     }),
     methods: {
@@ -57,12 +57,26 @@ controlBtn.addEventListener("click", playPause), track.addEventListener("ended",
             })
         },
 
+        paths: function() {
+            this.scraperRunning = !0, this.url.includes("http"), this.url = "https://cors-anywhere.herokuapp.com/http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=12", this.$http.get(this.url).then(e => {
+                this.scraperRunning = !1, document.createElement("div").innerHTML = e.body;
+                var pathsData = e.body,
+                    pathsData1 = pathsData.indexOf('확진환자의 이동경로 등 정보 공개 안내(3판)'), //c
+                    pathsData2 = pathsData.indexOf('추가 정보는 공식 브리핑 및 지자체별'), //f
+                    pathsString = pathsData.substr(pathsData1 + 0, pathsData2-pathsData1).replace("확진환자의 이동경로 등 정보 공개 안내(3판)('20.6.30.)", "").replace("에 따라  확진자가 마지막 접촉자와 접촉한 날로부터 14일 경과 시, 이동경로에 대한 부분은 공개되지 않음을 알려드립니다.", "")
+                    .replace('"', '').replace("※ 집단발생 관련 반복대량 노출장소 현황", "").replace('<br class="p_dp_n t_dp_n" />', '');
+                document.getElementById("patientsPaths").innerHTML = pathsString;
+
+                console.clear();
+
+            })
+        },
+
 
 
         detailData: function() {
             this.scraperRunning = !0, this.url.includes("http"), this.url = "https://cors-anywhere.herokuapp.com/http://ncov.mohw.go.kr/bdBoardList_Real.do", this.$http.get(this.url).then(e => {
-                this.scraperRunning = !1,
-                console.log(e.body);
+                this.scraperRunning = !1;
 
                 var UpdateData = (n = e.body).indexOf('<h5 class="s_title_in3">누적 확진자 현황 <span class="t_date">');
                 var updateDisplayed = n.substr(UpdateData, 90).replace(/(\s*)/g, "").replace(/\"/gi, "").replace('<h5class=s_title_in3>누적확진자현황<spanclass=t_date>', '').replace("</span></h5>", "").replace("<", "").replace("(", "").replace("기준)", "");
@@ -87,8 +101,6 @@ controlBtn.addEventListener("click", playPause), track.addEventListener("ended",
                 var curechangeData = n.substr(cureData).indexOf('<dt class="ca_subtit">전일대비</dt>');
                 var curechangeDisplayed = "격리해제자 ("+(n.substr(cureData)).substr(curechangeData, 150).replace(/(\s*)/g, "").replace(/\"/gi, "").replace('<dtclass=ca_subtit>전일대비</dt><ddclass=ca_value><spanclass=txt_ntc>', '').replace("</span></dd></dl>", "")+")";
                 document.getElementById('curePM').innerHTML = curechangeDisplayed;
-                console.clear();
-                console.log(curechangeDisplayed);
 
 
                 var deathData = (n = e.body).indexOf('<strong class="ca_top">사망</strong>');
@@ -121,7 +133,7 @@ controlBtn.addEventListener("click", playPause), track.addEventListener("ended",
         },
     },
     beforeMount() {
-        this.runScraperGlobe(), this.runScraperTableByCountry(), this.detailData()
+        this.runScraperGlobe(), this.runScraperTableByCountry(), this.detailData(), this.paths()
     }
 });
 
