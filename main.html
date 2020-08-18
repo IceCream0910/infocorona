@@ -119,13 +119,13 @@ function frameLooper2 () {
 setInterval(function() {
 document.getElementById("text").innerHTML = "";
 document.getElementById("text2").innerHTML = "";
-       if(string == "서울·경기·부산") {
+       if(string == "서울·경기·인천·부산") {
         string = "이외 지역";
         array = string.split("");
         string2 = "1단계";
         array2 = string2.split("");
             } else {
-        string = "서울·경기·부산";
+        string = "서울·경기·인천·부산";
         array = string.split("");
         string2 = "2단계";
         array2 = string2.split("");
@@ -227,6 +227,15 @@ box-shadow:  5px 5px 10px #0d0d0d,
 -->
 <br>
            
+    <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show" style="border-radius: 15px;
+background: #f8d7da;
+border:none;
+box-shadow:  5px 5px 10px #d3b7b9, 
+             -5px -5px 0px #f7f7f7;">
+<span class="badge badge-pill badge-danger">브리핑</span>
+<button type="button" style="color:black;">19일 0시부터 서울·경기·인천 지역에 강화된 사회적 거리두기를 시행합니다.</button>
+</button>
+</div>
 
 <div class="sufee-alert alert alert-primary" style="border-radius: 15px;
 background: #4272d7;
