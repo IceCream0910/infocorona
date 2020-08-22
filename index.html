@@ -19,21 +19,7 @@
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <script src="vendor/jquery-3.2.1.min.js"></script>
 
-    <script type="text/javascript">
- (function(w,d,v3){
- w.chaportConfig = {
- appId : '5e440199d9d3b143e8105db2'
- };
 
- if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push(arguments)};v3.on=function(e,fn){if(!v3._l[e])v3._l[e]=[];v3._l[e].push(fn)};var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://app.chaport.com/javascripts/insert.js';var ss=d.getElementsByTagName('script')[0];ss.parentNode.insertBefore(s,ss)})(window, document);
-
- window.chaportConfig = {
-  appId: '5e440199d9d3b143e8105db2',
-  appearance: {
-    position: ['right', 0, 60]
-  }
-}
- </script>
 
 </head>
 <body>
@@ -96,7 +82,50 @@
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
-    <script src="js/custom_chat.js"></script>
+
+    <!-- Channel Plugin Scripts -->
+<script>
+  (function() {
+    var w = window;
+    if (w.ChannelIO) {
+      return (window.console.error || window.console.log || function(){})('ChannelIO script included twice.');
+    }
+    var d = window.document;
+    var ch = function() {
+      ch.c(arguments);
+    };
+    ch.q = [];
+    ch.c = function(args) {
+      ch.q.push(args);
+    };
+    w.ChannelIO = ch;
+    function l() {
+      if (w.ChannelIOInitialized) {
+        return;
+      }
+      w.ChannelIOInitialized = true;
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+      s.charset = 'UTF-8';
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+    }
+    if (document.readyState === 'complete') {
+      l();
+    } else if (window.attachEvent) {
+      window.attachEvent('onload', l);
+    } else {
+      window.addEventListener('DOMContentLoaded', l, false);
+      window.addEventListener('load', l, false);
+    }
+  })();
+  ChannelIO('boot', {
+    "pluginKey": "beb36d32-60ab-4b35-b9b0-62cd05b9d24d"
+  });
+</script>
+<!-- End Channel Plugin -->
 </body>
 </html>
 <!-- end document-->
