@@ -72,11 +72,11 @@ string2 = "1단계";
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['8.12', '8.13', '8.14', '8.15', '8.16', '8.17', '8.18', '8.19', '8.20', '8.21'],
+          labels: ['8.13', '8.14', '8.15', '8.16', '8.17', '8.18', '8.19', '8.20', '8.21', '8.22'],
           datasets: [
             {
               label: "신규 확진자",
-              data: [56, 103, 166, 279, 197, 246, 297, 288, 324, 332],
+              data: [103, 166, 279, 197, 246, 297, 288, 324, 332, 397],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
@@ -178,7 +178,7 @@ string2 = "1단계";
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [7677, 9325],
+            data: [7834, 9565],
             backgroundColor: [
               '#00b5e9',
               '#fa4251',
@@ -275,7 +275,7 @@ string2 = "1단계";
           datasets: [
             {
               label: "확진자 수",
-              data: [328, 980, 3976, 2151, 2281, 3057, 2398, 1177, 654],
+              data: [344, 1015, 4010, 2191, 2343, 3139, 2485, 1204, 668],
               borderColor: "rgba(255, 40, 0, 1)",
               borderWidth: "0",
               backgroundColor: "rgba(255, 40, 0, 0.8)"
@@ -321,11 +321,11 @@ string2 = "1단계";
         type: 'bar',
         defaultFontFamily: 'Poppins',
         data: {
-          labels: ['8.16', '8.17', '8.18', '8.19', '8.20', '8.21'],
+          labels: ['8.17', '8.18', '8.19', '8.20', '8.21', '8.22'],
           datasets: [
             {
               label: "확진",
-              data: [197, 246, 297, 288, 324, 332],
+              data: [246, 297, 288, 324, 332, 397],
               borderColor: "rgba(250, 66, 81, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(250, 66, 81,0.5)",
@@ -333,7 +333,7 @@ string2 = "1단계";
             },
             {
               label: "완치",
-              data: [7, 17, 72, 57, 57, 49],
+              data: [17, 72, 57, 57, 49, 31],
               borderColor: "rgba(0,173,95, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,173,95, 0.5)",
@@ -341,7 +341,7 @@ string2 = "1단계";
             },
             {
               label: "사망",
-              data: [0, 1, 0, 1, 2, 0],
+              data: [1, 0, 1, 2, 0, 0],
               borderColor: "rgba(0,0,0, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,0,0, 0.5)",
