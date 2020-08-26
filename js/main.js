@@ -389,7 +389,7 @@ string2 = "1단계";
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [19019, 20040, 21677, 15386, 13236, 21415] //검사
+    var data3 = [20040, 21677, 15386, 13236, 21415, 23669] //검사
 
     var ctx = document.getElementById("recent-rep2-chart");
     if (ctx) {
@@ -397,7 +397,7 @@ string2 = "1단계";
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ["8.19", "8.20", "8.21", "8.22", "8.23", "8.24"],
+          labels: ["8.20", "8.21", "8.22", "8.23", "8.24", "8.25"],
           datasets: [
             {
               label: "일 검사자수",
