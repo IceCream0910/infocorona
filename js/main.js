@@ -72,11 +72,11 @@ string2 = "1단계";
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['8.16', '8.17', '8.18', '8.19', '8.20', '8.21', '8.22', '8.23', '8.24', '8.25'],
+          labels: ['8.17', '8.18', '8.19', '8.20', '8.21', '8.22', '8.23', '8.24', '8.25', '8.26'],
           datasets: [
             {
               label: "신규 확진자",
-              data: [197, 246, 297, 288, 324, 332, 397, 266, 280, 320],
+              data: [246, 297, 288, 324, 332, 397, 266, 280, 320, 441],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
@@ -178,7 +178,7 @@ string2 = "1단계";
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [8234, 10031],
+            data: [8441, 10265],
             backgroundColor: [
               '#00b5e9',
               '#fa4251',
@@ -225,7 +225,7 @@ string2 = "1단계";
           datasets: [
             {
               label: "사망자수",
-              data: [0, 0, 0, 2, 4, 16, 41, 93, 156],
+              data: [0, 0, 0, 2, 4, 16, 41, 94, 156],
               borderColor: "rgba(0, 0, 0, 0.9)",
               borderWidth: "0",
               backgroundColor: "rgba(0, 0, 0, 0.5)"
@@ -275,7 +275,7 @@ string2 = "1단계";
           datasets: [
             {
               label: "확진자 수",
-              data: [381, 1060, 4118, 2303, 2457, 3300, 2644, 1292, 710],
+              data: [390, 1087, 4170, 2353, 2527, 3408, 2709, 1333, 729],
               borderColor: "rgba(255, 40, 0, 1)",
               borderWidth: "0",
               backgroundColor: "rgba(255, 40, 0, 0.8)"
@@ -321,11 +321,11 @@ string2 = "1단계";
         type: 'bar',
         defaultFontFamily: 'Poppins',
         data: {
-          labels: ['8.20', '8.21', '8.22', '8.23', '8.24', '8.25'],
+          labels: ['8.21', '8.22', '8.23', '8.24', '8.25', '8.26'],
           datasets: [
             {
               label: "확진",
-              data: [324, 332, 397, 266, 280, 320],
+              data: [332, 397, 266, 280, 320, 441],
               borderColor: "rgba(250, 66, 81, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(250, 66, 81,0.5)",
@@ -333,7 +333,7 @@ string2 = "1단계";
             },
             {
               label: "완치",
-              data: [57, 49, 31, 19, 67, 82],
+              data: [49, 31, 19, 67, 82, 93],
               borderColor: "rgba(0,173,95, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,173,95, 0.5)",
@@ -341,7 +341,7 @@ string2 = "1단계";
             },
             {
               label: "사망",
-              data: [2, 0, 0, 0, 1, 2],
+              data: [0, 0, 0, 1, 2, 1],
               borderColor: "rgba(0,0,0, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,0,0, 0.5)",
@@ -389,7 +389,7 @@ string2 = "1단계";
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [20040, 21677, 15386, 13236, 21415, 23669] //검사
+    var data3 = [21677, 15386, 13236, 21415, 23669, 20073] //검사
 
     var ctx = document.getElementById("recent-rep2-chart");
     if (ctx) {
@@ -397,7 +397,7 @@ string2 = "1단계";
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ["8.20", "8.21", "8.22", "8.23", "8.24", "8.25"],
+          labels: ["8.21", "8.22", "8.23", "8.24", "8.25", "8.26"],
           datasets: [
             {
               label: "일 검사자수",
