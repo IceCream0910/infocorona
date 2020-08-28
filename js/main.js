@@ -5,7 +5,7 @@
    string = "이외 지역";
         array = string.split("");
 frameLooper();
-string2 = "1단계";
+string2 = "2단계";
         array2 = string2.split(""); 
         frameLooper2();
         
