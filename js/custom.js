@@ -84,7 +84,7 @@ controlBtn.addEventListener("click", playPause), track.addEventListener("ended",
 
                 var UpdateData = (n = e.body).indexOf('<h5 class="s_title_in3">누적 확진자 현황 <span class="t_date">');
                 var updateDisplayed = n.substr(UpdateData, 90).replace(/(\s*)/g, "").replace(/\"/gi, "").replace('<h5class=s_title_in3>누적확진자현황<spanclass=t_date>', '').replace("</span></h5>", "").replace("<", "").replace("(", "").replace("기준)", "");
-                document.getElementById('whenUpdate').innerHTML = updateDisplayed+" 기준";
+                document.getElementById('whenUpdate').innerHTML = updateDisplayed.replace('d', '')+" 기준";
                 
 
 
