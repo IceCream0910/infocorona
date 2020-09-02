@@ -270,7 +270,7 @@ box-shadow:  5px 5px 10px #3861b7,
 
     <!-- Button trigger modal -->
 
-<!-- Modal -->
+<!--
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document" style="border-radius:20px;">
     <div class="modal-content">
@@ -295,7 +295,8 @@ box-shadow:  5px 5px 10px #3861b7,
     <button id="rtModalBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="width:100%; text-align:left; border-radius:10px;">
   상세 
 </button><br><br>
-    <span style="color:#a9a9a9; font-size:13px;">괄호 안 숫자는 전일 동시간 대비 증감수</span><br>
+-->
+    <span style="color:#a9a9a9; font-size:13px;">현재 실시간 집계 서버에 문제가 생겨 해당 기능을 잠시 중단합니다. 빠르게 대응하겠습니다.</span><br>
     <span style="color:#a9a9a9; font-size:12px; line-height:0.2em;">09시~23시 집계. 재난문자 및 지자체 발표를 기반으로 합니다. 검역 확진 사례는 미포함됩니다. 실제 상황과 오차가 발생할 수 있습니다.</span>
 
 </span>
@@ -1084,7 +1085,7 @@ svg {
     document.getElementById('jejuCure').innerHTML = koreaRegionalData[17].격리해제수;
     document.getElementById('jejuDeath').innerHTML = koreaRegionalData[17].사망자수;
 
-    rtTodayGet();
+    //rtTodayGet();
 
 
 function rtTodayGet() {
