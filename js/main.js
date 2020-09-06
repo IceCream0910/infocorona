@@ -178,7 +178,7 @@ string2 = "2단계";
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [9535, 11475],
+            data: [9614, 11563],
             backgroundColor: [
               '#00b5e9',
               '#fa4251',
@@ -225,7 +225,7 @@ string2 = "2단계";
           datasets: [
             {
               label: "사망자수",
-              data: [0, 0, 0, 2, 4, 16, 42, 100, 169],
+              data: [0, 0, 0, 2, 4, 16, 42, 101, 169],
               borderColor: "rgba(0, 0, 0, 0.9)",
               borderWidth: "0",
               backgroundColor: "rgba(0, 0, 0, 0.5)"
@@ -275,7 +275,7 @@ string2 = "2단계";
           datasets: [
             {
               label: "확진자 수",
-              data: [485, 1194, 4441, 2604, 2816, 3845, 3178, 1596, 851],
+              data: [493, 1197, 4460, 2619, 2841, 3880, 3217, 1612, 858],
               borderColor: "rgba(255, 40, 0, 1)",
               borderWidth: "0",
               backgroundColor: "rgba(255, 40, 0, 0.8)"
@@ -389,7 +389,7 @@ string2 = "2단계";
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [13519, 21391, 21215, 20257, 18354, 18139] //검사
+    var data3 = [21391, 21215, 20257, 18354, 18139, 8890] //검사
 
     var ctx = document.getElementById("recent-rep2-chart");
     if (ctx) {
@@ -397,7 +397,7 @@ string2 = "2단계";
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ["8.30", "8.31", "9.1", "9.2", "9.3", "9.5"],
+          labels: ["8.31", "9.1", "9.2", "9.3", "9.4", "9.5"],
           datasets: [
             {
               label: "일 검사자수",
