@@ -178,7 +178,7 @@ string2 = "2단계";
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [9614, 11563],
+            data: [9680, 11616],
             backgroundColor: [
               '#00b5e9',
               '#fa4251',
@@ -225,7 +225,7 @@ string2 = "2단계";
           datasets: [
             {
               label: "사망자수",
-              data: [0, 0, 0, 2, 4, 16, 42, 101, 169],
+              data: [0, 0, 0, 2, 4, 16, 42, 102, 170],
               borderColor: "rgba(0, 0, 0, 0.9)",
               borderWidth: "0",
               backgroundColor: "rgba(0, 0, 0, 0.5)"
@@ -275,7 +275,7 @@ string2 = "2단계";
           datasets: [
             {
               label: "확진자 수",
-              data: [493, 1197, 4460, 2619, 2841, 3880, 3217, 1612, 858],
+              data: [496, 1202, 4473, 2636, 2857, 3902, 3238, 1632, 860],
               borderColor: "rgba(255, 40, 0, 1)",
               borderWidth: "0",
               backgroundColor: "rgba(255, 40, 0, 0.8)"
