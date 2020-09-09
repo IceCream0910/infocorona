@@ -72,11 +72,11 @@ string2 = "2단계";
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['8.29', '8.30', '8.31', '9.1', '9.2', '9.3', '9.4', '9.5', '9.6', '9.7'],
+          labels: ['8.30', '8.31', '9.1', '9.2', '9.3', '9.4', '9.5', '9.6', '9.7', '9.8'],
           datasets: [
             {
               label: "신규 확진자",
-              data: [299, 248, 235, 267, 195, 198, 168, 167, 119, 136],
+              data: [248, 235, 267, 195, 198, 168, 167, 119, 136, 156],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
@@ -321,11 +321,11 @@ string2 = "2단계";
         type: 'bar',
         defaultFontFamily: 'Poppins',
         data: {
-          labels: ['9.2', '9.3', '9.4', '9.5', '9.6', '9.7'],
+          labels: ['9.3', '9.4', '9.5', '9.6', '9.7', '9.8'],
           datasets: [
             {
               label: "확진",
-              data: [195, 198, 168, 167, 119, 136],
+              data: [198, 168, 167, 119, 136, 156],
               borderColor: "rgba(250, 66, 81, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(250, 66, 81,0.5)",
@@ -333,7 +333,7 @@ string2 = "2단계";
             },
             {
               label: "완치",
-              data: [173, 254, 226, 137, 151, 339],
+              data: [254, 226, 137, 151, 339, 387],
               borderColor: "rgba(0,173,95, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,173,95, 0.5)",
@@ -341,7 +341,7 @@ string2 = "2단계";
             },
             {
               label: "사망",
-              data: [3, 2, 2, 1, 2, 5],
+              data: [2, 2, 1, 2, 5, 3],
               borderColor: "rgba(0,0,0, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,0,0, 0.5)",
