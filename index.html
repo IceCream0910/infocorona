@@ -50,11 +50,35 @@
 </nav>
 <!-- -->
 
-    <iframe id="iframe_main" name="address" src="main.html" style="border:none; width:100vw; z-index: 1;" wmode="Opaque" frameborder="0" allowfullscreen onload="scroll(0,0);"></iframe>
-
+ <iframe id="iframe_main" name="address" src="main.html" style="border:none; width:100vw; z-index: 1;" wmode="Opaque" frameborder="0" allowfullscreen onload="scroll(0,0);"></iframe>
+ <div id="loadingMessage"><img src="https://cdn.lowgif.com/medium/b89db598dfcfb29b-loading-bar-animated-gif-transparent-background-5.gif" style="height:100px; margin-top:40vh;"></div>
     <!-- Main JS-->
     <script src="js/main.js"></script>
 
+<script>
+  $('#iframe_main').ready(function () {
+    $('#loadingMessage').css('display', 'block');
+    setTimeout(function() {
+      $('#loadingMessage').fadeOut();
+    }, 2000);
+});
+</script>
+
+<style>
+#loadingMessage {
+    width: 100vw;
+    height: 100vh;
+    position:fixed;
+    background:#fff;
+    z-index: 9999999;
+    top: 0px;
+    left: 0px;
+text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
 
 <script>
   (function() {
