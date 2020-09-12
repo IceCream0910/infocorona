@@ -72,11 +72,11 @@ string2 = "2단계";
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['9.1', '9.2', '9.3', '9.4', '9.5', '9.6', '9.7', '9.8', '9.9', '9.10'],
+          labels: ['9.2', '9.3', '9.4', '9.5', '9.6', '9.7', '9.8', '9.9', '9.10', '9.11'],
           datasets: [
             {
               label: "신규 확진자",
-              data: [267, 195, 198, 168, 167, 119, 136, 156, 155, 176],
+              data: [195, 198, 168, 167, 119, 136, 156, 155, 176, 136],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
@@ -321,11 +321,11 @@ string2 = "2단계";
         type: 'bar',
         defaultFontFamily: 'Poppins',
         data: {
-          labels: ['9.5', '9.6', '9.7', '9.8', '9.9', '9.10'],
+          labels: ['9.6', '9.7', '9.8', '9.9', '9.10', '9.11'],
           datasets: [
             {
               label: "확진",
-              data: [167, 119, 136, 156, 155, 176],
+              data: [119, 136, 156, 155, 176, 136],
               borderColor: "rgba(250, 66, 81, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(250, 66, 81,0.5)",
@@ -333,7 +333,7 @@ string2 = "2단계";
             },
             {
               label: "완치",
-              data: [137, 151, 339, 387, 337, 256],
+              data: [151, 339, 387, 337, 256, 413],
               borderColor: "rgba(0,173,95, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,173,95, 0.5)",
@@ -341,7 +341,7 @@ string2 = "2단계";
             },
             {
               label: "사망",
-              data: [1, 2, 5, 3, 2, 4],
+              data: [2, 5, 3, 2, 4, 5],
               borderColor: "rgba(0,0,0, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,0,0, 0.5)",
@@ -389,7 +389,7 @@ string2 = "2단계";
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [8890, 5362, 14781, 16156, 17357, 19620] //검사
+    var data3 = [5362, 14781, 16156, 17357, 19620, 16246] //검사
 
     var ctx = document.getElementById("recent-rep2-chart");
     if (ctx) {
@@ -397,7 +397,7 @@ string2 = "2단계";
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ["9.5", "9.6", "9.7", "9.8", "9.9", "9.10"],
+          labels: ["9.6", "9.7", "9.8", "9.9", "9.10", "9.11"],
           datasets: [
             {
               label: "일 검사자수",
