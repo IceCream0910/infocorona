@@ -1,13 +1,6 @@
    
 
    $(document).ready(function(){       
-
-   string = "이외 지역";
-        array = string.split("");
-frameLooper();
-string2 = "2단계";
-        array2 = string2.split(""); 
-        frameLooper2();
         
         //우클릭 방지
         /*
@@ -401,6 +394,63 @@ string2 = "2단계";
           datasets: [
             {
               label: "일 검사자수",
+              data: data3,
+              borderColor: "#556ee6",
+              borderWidth: "0",
+              backgroundColor: "#778beb"
+            }
+          ]
+        },
+        options: {
+          legend: {
+            position: 'center',
+            labels: {
+              fontFamily: 'Poppins'
+            }
+
+          },
+          scales: {
+            xAxes: [{
+              ticks: {
+                fontFamily: "Poppins"
+
+              }
+            }],
+            yAxes: [{
+              ticks: {
+                beginAtZero: true,
+                fontFamily: "Poppins"
+              }
+            }]
+          }
+        }
+      });
+    }
+
+  } catch (error) {
+    console.log(error);
+  }
+
+  try {
+
+    // 검사대비 확진율
+    const bd_brandProduct2 = 'rgba(0,181,233,0.9)'
+    const bd_brandService2 = 'rgba(255,0,0,0.9)'
+    const brandProduct2 = 'rgba(0,181,233,0.2)'
+    const brandService2 = 'rgba(0,173,95,0.2)'
+
+    var data3 = [0.89, 0.90, 0.84, 1.54, 1.41, 0.78] //  (확진수)/(검사수)*100
+
+    var ctx = document.getElementById("tests-percent-chart");
+    if (ctx) {
+      ctx.height = 250;
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ["9.9", "9.10", "9.11", "9.12", "9.13", "9.14"],
+          datasets: [
+            {
+              label: "검사 대비 확진율",
               data: data3,
               borderColor: "#556ee6",
               borderWidth: "0",
