@@ -94,7 +94,6 @@ controlBtn.addEventListener("click", playPause), track.addEventListener("ended",
 
                 var confirmedchangeData = n.substr(confirmedData).indexOf('<dt class="ca_subtit">전일대비</dt>');
                 var confimredchangeDisplayed = "확진자 ("+(n.substr(confirmedData)).substr(confirmedchangeData, 212).replace(/(\s*)/g, "").replace(/\"/gi, "").replace('<dtclass=ca_subtit>전일대비</dt><ddclass=ca_value><ul><li><strongclass=inner_titsum>소계</strong><pclass=inner_value>', '').replace("</p>", "")+")";
-                document.getElementById('confirmedPM').innerHTML = confimredchangeDisplayed;
 
 
                 var cureData = (n = e.body).indexOf('<strong class="ca_top">격리해제</strong>');
@@ -114,6 +113,8 @@ controlBtn.addEventListener("click", playPause), track.addEventListener("ended",
                 var deathchangeData = n.substr(deathData).indexOf('<dt class="ca_subtit">전일대비</dt>');
                 var deathchangeDisplayed = "사망자 ("+(n.substr(deathData)).substr(deathchangeData, 150).replace(/(\s*)/g, "").replace(/\"/gi, "").replace('<dtclass=ca_subtit>전일대비</dt><ddclass=ca_value><spanclass=txt_ntc>', '').replace("</span></dd></dl>", "")+")";
                 document.getElementById('deathPM').innerHTML = deathchangeDisplayed;
+                var currentCure = parseInt(confimredDisplayed.replace(",", "").replace("명", ""))-parseInt(cureDisplayed.replace(",", "").replace("명", ""))-parseInt(deathDisplayed.replace(",", "").replace("명", ""));
+                document.getElementById('confirmedPM').innerHTML = confimredchangeDisplayed+"<br>치료중 : "+currentCure+"명";
                 
 
 
