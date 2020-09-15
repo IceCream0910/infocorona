@@ -87,7 +87,7 @@
                              <h1 style="font-size:22px; margin-left:10px; font-family:GyeonggiBatang;" id="suggestText">여기에 <br>메시지 표시
                             </h1><br>
 
-                            <h6 class="pb-4 display-5" style="margin-top:-20px;margin-left:10px;color:#a9a9a9;"><div id="text"></div>사회적 거리두기 <span id="text2" style="border-radius:20px; background:#ff6961; color:white; padding:2px 8px;"></span></h6>
+                            <h6 class="pb-4 display-5" style="margin-top:-20px;margin-left:10px;color:#a9a9a9;"><div id="text" style="display:inline-block; margin-bottom:5px; ">전국 사회적 거리두기</div><span id="text2" style="display:inline-block; border-radius:20px; margin-left:5px;background:#ff6961; color:white; padding:2px 8px;">2단계</span></h6>
 
                             <script>
 
@@ -120,20 +120,20 @@ function frameLooper2 () {
 setInterval(function() {
 document.getElementById("text").innerHTML = "";
 document.getElementById("text2").innerHTML = "";
-       if(string == "수도권도") {
-        string = "전국";
+       if(string == "감염병 위기경보") {
+        string = "전국 사회적 거리두기";
         array = string.split("");
         string2 = "2단계";
         array2 = string2.split("");
             } else {
-        string = "수도권도";
+        string = "감염병 위기경보";
         array = string.split("");
-        string2 = "2단계 완화";
+        string2 = "심각";
         array2 = string2.split("");
     }
 frameLooper();
 frameLooper2();
-    },5000);
+    },7000);
 
                             </script>
 
@@ -374,9 +374,20 @@ box-shadow:  5px 5px 10px #3861b7,
                                 <div class="au-card m-b-30" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
              -5px -5px 0px #e5e5e5;">
                                     <div class="recent-report__chart">
-                                        <h3>국내 <h3 style="color:#a9a9a9;">검사 현황<br><br>
+                                        <h3>국내 <h3 style="color:#a9a9a9;">검사 현황<br>
+                                            <br><div class="wrapper">
+    <div class="taeb-switch left text-center">
+      <div class="taeb active" taeb-direction="left" onclick="$('#recent-rep2-chart').show();$('#tests-percent').hide();">검사수</div><!--
+  --><div class="taeb" taeb-direction="right" onclick="$('#recent-rep2-chart').hide();$('#tests-percent').show();">확진율</div>
+    </div>
+  </div>
                                             <br></h3></h3>
                                         <canvas id="recent-rep2-chart"></canvas>
+                                        <div id="tests-percent" style="display:none;">
+                                            <canvas id="tests-percent-chart"></canvas>
+                                            <h3 style="color:#a9a9a9; font-size:15px;">(확진율) = (확진자수)/(검사자수)*100</h3>
+                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -408,22 +419,16 @@ box-shadow:  5px 5px 10px #3861b7,
                             <div class="chart-percent-2" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
              -5px -5px 0px #e5e5e5;">
                                 <div class="chart-wrap">
-                                    <h3>연령별 <h3 style="color:#a9a9a9;">사망자 현황</h3></h3><br>
-                                    <canvas id="singelBarChart"></canvas>
-                                        <table></table>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- END CHART PERCENT-->
-
-                            <div class="col-md-6 col-lg-4">
-                            <!-- CHART PERCENT-->
-                            <div class="chart-percent-2"style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
-             -5px -5px 0px #e5e5e5;">
-                                <div class="chart-wrap">
-                                    <h3>연령별 <h3 style="color:#a9a9a9;">확진자 현황</h3></h3><br>
+                                    <h3>연령별 <h3 style="color:#a9a9a9;">현황</h3></h3><br>
+                                    <div class="wrapper">
+    <div class="taeb-switch2 left text-center">
+      <div class="taeb active" taeb-direction="left" onclick="$('#singelBarChart_2').show();$('#singelBarChart').hide();">확진자</div><!--
+  --><div class="taeb" taeb-direction="right" onclick="$('#singelBarChart_2').hide();$('#singelBarChart').show();">사망자</div>
+    </div>
+  </div><br>
                                     <canvas id="singelBarChart_2"></canvas>
-                                        <table></table>
+                                    <canvas id="singelBarChart" style="display:none;"></canvas>
+
                                     </div>
                                 </div>
                             </div>
@@ -610,19 +615,6 @@ box-shadow:  5px 5px 10px #3861b7,
                 </div>
 
 
-<h3 style="margin-left:25px; margin-bottom:20px;">질병관리본부<span style="color:#a0a0a0;"> 채널</h3>
-
-
-
-
-                 <div class="col-md-4">
-      <div id="embeded-timeline" style="border-radius: 20px; box-shadow: 5px 5px 10px #c3c3c3, 
-             -5px -5px 0px #e5e5e5; overflow:hidden;">
-        <a class="twitter-timeline" href="https://twitter.com/KoreaCDC" data-widget-id="729472065531580417"></a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-      </div>
-    </div>
-                
 
                         <!-- STATISTIC-->
 
@@ -1125,6 +1117,33 @@ function rtTodayGet() {
     });
 }
 
+$(function() {
+  var taeb = $(".taeb-switch");
+  taeb.find(".taeb").on("click", function() {
+    var $this = $(this);
+
+    if ($this.hasClass("active")) return;
+
+    var direction = $this.attr("taeb-direction");
+
+    taeb.removeClass("left right").addClass(direction);
+    taeb.find(".taeb.active").removeClass("active");
+    $this.addClass("active");
+  });
+
+  var taeb2 = $(".taeb-switch2");
+  taeb2.find(".taeb").on("click", function() {
+    var $this = $(this);
+
+    if ($this.hasClass("active")) return;
+
+    var direction = $this.attr("taeb-direction");
+
+    taeb2.removeClass("left right").addClass(direction);
+    taeb2.find(".taeb.active").removeClass("active");
+    $this.addClass("active");
+  });
+});
 
 
     
