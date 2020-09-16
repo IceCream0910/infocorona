@@ -382,7 +382,7 @@
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [17357, 19620, 16246, 7813, 7732, 13576] //검사
+    var data3 = [19620, 16246, 7813, 7732, 13576, 14254] //검사
 
     var ctx = document.getElementById("recent-rep2-chart");
     if (ctx) {
@@ -390,7 +390,7 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ["9.9", "9.10", "9.11", "9.12", "9.13", "9.14"],
+          labels: ["9.10", "9.11", "9.12", "9.13", "9.14", "9.15"],
           datasets: [
             {
               label: "일 검사자수",
@@ -439,7 +439,7 @@
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [0.89, 0.90, 0.84, 1.54, 1.41, 0.78] //  (확진수)/(검사수)*100
+    var data3 = [0.90, 0.84, 1.54, 1.41, 0.78, 0.79] //  (확진수)/(검사수)*100
 
     var ctx = document.getElementById("tests-percent-chart");
     if (ctx) {
@@ -447,7 +447,7 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ["9.9", "9.10", "9.11", "9.12", "9.13", "9.14"],
+          labels: ["9.10", "9.11", "9.12", "9.13", "9.14", "9.15"],
           datasets: [
             {
               label: "검사 대비 확진율",
