@@ -57,17 +57,36 @@
 <!-- -->
 
  <iframe id="iframe_main" name="address" src="main.html" style="border:none; width:100vw; z-index: 1;" wmode="Opaque" frameborder="0" allowfullscreen onload="scroll(0,0);"></iframe>
- <div id="loadingMessage"><img src="https://cdn.lowgif.com/medium/b89db598dfcfb29b-loading-bar-animated-gif-transparent-background-5.gif" style="height:100px; margin-top:40vh;"></div>
+ <div id="loadingMessage"><img src="https://cdn.lowgif.com/medium/b89db598dfcfb29b-loading-bar-animated-gif-transparent-background-5.gif" style="height:100px; margin-top:40vh;"><br><span id="loadtext">로딩중...</span></div>
     <!-- Main JS-->
     <script src="js/main.js"></script>
 
 <script>
-  $('#iframe_main').ready(function () {
-    $('#loadingMessage').css('display', 'block');
-    setTimeout(function() {
-      $('#loadingMessage').fadeOut();
-    }, 2000);
+var loadBoolean = false;
+$('#loadingMessage').css('display', 'block');
+
+  document.querySelector("iframe").addEventListener( "load", function(e) {
+
+    loadBoolean = true;
+
 });
+
+var nutime = 0;
+  var timer = setInterval(function(){
+    nutime += 1;
+       if(loadBoolean == true) {
+        $('#loadingMessage').fadeOut();
+        clearInterval(timer);
+       } else if(nutime >= 4) {
+        document.getElementById("loadtext").innerHTML = '정보를 가져오고 있어요.' ;
+       } else if(nutime >= 8) {
+        document.getElementById("loadtext").innerHTML = '오래 걸리면 새로고침 해보세요.' ;
+       }
+    }, 1000)
+
+
+  
+
 </script>
 
 <style>
