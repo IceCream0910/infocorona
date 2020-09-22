@@ -314,7 +314,7 @@
         type: 'bar',
         defaultFontFamily: 'Poppins',
         data: {
-          labels: ['9.16', '9.17', '9.18', '9.19', '9.20', 9.21'],
+          labels: ['9.16', '9.17', '9.18', '9.19', '9.20', '9.21'],
           datasets: [
             {
               label: "확진",
