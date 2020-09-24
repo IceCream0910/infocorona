@@ -77,12 +77,15 @@ var nutime = 0;
        if(loadBoolean == true) {
         $('#loadingMessage').fadeOut();
         clearInterval(timer);
-       } else if(nutime >= 4) {
+       } else if(nutime >= 4 && nutime < 8) {
         document.getElementById("loadtext").innerHTML = '정보를 가져오고 있어요.' ;
-       } else if(nutime >= 8) {
-        document.getElementById("loadtext").innerHTML = '오래 걸리면 새로고침 해보세요.' ;
+       } else if(nutime >= 8 && nutime < 13) {
+        document.getElementById("loadtext").innerHTML = '로딩이 조금 오래 걸리네요.' ;
+       } else if(nutime >= 13) {
+           document.getElementById("loadtext").innerHTML = '너무 오래 걸리면 새로고침 해보세요.' ;
        }
-    }, 1000)
+      
+    }, 500)
 
 
   
