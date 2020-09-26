@@ -11,28 +11,68 @@ var ttsurl = "정보 없음.";
 
 function getTTS() {
     var ttsdata1 = document.getElementById("confirmed").innerHTML;
-        var ttsdata2 = document.getElementById("confirmedPM").innerHTML.replace("확진자", "").replace("(+", "").replace(")", "").replace(/\s/gi, "");
+        var ttsdata2 = document.getElementById("confirmedPM").innerHTML.substring(0, 12).replace("확진자", "").replace("<br", "").replace("치료중", "").replace(":", "").replace("(+", "").replace(")", "").replace(/\s/gi, "");
         var ttsdata3 = document.getElementById("cure").innerHTML;
         var ttsdata4 = document.getElementById("curePM").innerHTML.replace("격리해제자", "").replace("(+", "").replace(")", "").replace(/\s/gi, "");
         var ttsdata5 = document.getElementById("death").innerHTML;
         var ttsdata6 = document.getElementById("deathPM").innerHTML.replace("사망자", "").replace("(+", "").replace(")", "").replace(/\s/gi, "");
         var ttsdata7 = document.getElementById("localConfirmed").innerHTML.replace("해외유입", "해외유입 사례는").replace('<br>', "이고, ").replace("국내발생", "국내발생 환자는")+"입니다.";
-
-ttsurl = '국내 코로나일구 누적 확진자는 전일 0시 대비' + ttsdata2.toString() + '명 증가해 총 ' + ttsdata1.toString() + '이고, 격리해제자는 '+ ttsdata4.toString() + '명 증가해 총 '+ ttsdata3.toString() + '입니다. 사망자는 '+ttsdata6.toString() + '명 추가되어 총 '+ttsdata5.toString()+' 입니다. 신규 환자 중 '+ttsdata7;
-document.getElementById("track").src="https://google-translate-proxy.herokuapp.com/api/tts?query="+ttsurl+"&language=ko&speed=1";
+        var ttsdata_special = "이번 추석명절에는 이동을 자제하고 방역수칙을 잘 지켜주시기 바랍니다."
+if(ttsdata1 == "로딩중") {
+ttsurl = "아직 현황을 로딩중입니다";
+CreateVoice(ttsurl);
 document.getElementById("play-pause").style.color = "#556ee6";
 document.getElementById("play-pause").style.border = "solid 1.5px #556ee6";
+document.getElementById("ttsBtn").className= "fa fa-circle-o-notch"; 
+} else {
+   ttsurl = '국내 코로나일구 누적 확진자는 전일 0시 대비 ' + ttsdata2.toString() + '명 증가해 총 ' + ttsdata1.toString() + '이고, 격리해제자는 '+ ttsdata4.toString() + '명 증가해 총 '+ ttsdata3.toString() + '입니다. 사망자는 '+ttsdata6.toString() + '명 추가되어 총 '+ttsdata5.toString()+' 입니다. 신규 환자 중 '+ttsdata7+" "+ttsdata_special;
+CreateVoice(ttsurl);
+document.getElementById("play-pause").style.color = "#556ee6";
+document.getElementById("play-pause").style.border = "solid 1.5px #556ee6";
+document.getElementById("ttsBtn").className= "fa fa-circle-o-notch"; 
 }
 
-var track = document.getElementById("track");
-    controlBtn = document.getElementById("play-pause");
-
-function playPause() {
-    track.paused ? (track.play(), controlBtn.className = "pause") : (track.pause(), controlBtn.className = "play")
 }
-controlBtn.addEventListener("click", playPause), track.addEventListener("ended", function() {
-    controlBtn.className = "play"
-}), new Vue({
+
+function CreateVoice(text) {
+    const xhr = new XMLHttpRequest();
+    const contents = text
+    const data = {
+        text: contents,
+        actor: 'Yu-jeong'
+    }
+    xhr.open('POST', 'https://api.prosody-tts.com/api/ttsapi/voice-generation/', true);
+    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+    xhr.responseType = 'json'
+    xhr.addEventListener('load', function () {
+     GenerateVoice(xhr.response.data.signature);
+    });
+    xhr.send(JSON.stringify(data));
+
+}
+
+
+function GenerateVoice(signature) {
+    const xhr = new XMLHttpRequest();
+    const audio = new Audio();
+    let url = null;
+    xhr.open('GET', 'https://api.prosody-tts.com/api/ttsapi/voice-generation/' + signature + '/generate/', true);
+    xhr.responseType = 'blob'
+    xhr.addEventListener('load', function() {
+        url = URL.createObjectURL(xhr.response);
+        audio.src = url;
+        audio.play();
+        document.getElementById("play-pause").style.color = "#a9a9a9";
+document.getElementById("play-pause").style.border = "solid 1.5px #a9a9a9";
+document.getElementById("ttsBtn").className= "fa fa-volume-up";
+    });
+    xhr.send();
+    audio.addEventListener('ended', function () {
+        URL.revokeObjectURL(url);
+    }, false);
+}
+
+new Vue({
     el: "#scraper",
     data: () => ({
         scraperRunning: !1,
