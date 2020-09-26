@@ -54,9 +54,6 @@
 
      
 
- <audio id="track" onended="document.getElementById('play-pause').style.color = '#a9a9a9';document.getElementById('play-pause').style.border = 'solid 1.5px #a9a9a9';" type="audio/mpeg" src="https://aiapis.herokuapp.com/api/tts?query=오류가 발생했어요. 다시 시도해주세요.&language=ko&speed=1">
-</audio>
-
 </head>
 
 <body class="animsition" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
@@ -177,7 +174,7 @@ frameLooper2();
         <div class="padding"></div>
         <div class="title"></div>정보 가져오는 중...</h6>
         <div id="player-container" style="display:inline-block;">
-                            <div id="play-pause" class="play" onclick="getTTS();" style="width:35px; height:35px; border:1.5px solid #a9a9a9; border-radius:50%; display:flex; -webkit-justify-content: center; justify-content: center; -webkit-align-items: center; align-items: center; color:#a9a9a9;"><i class="fa fa-volume-up"></i></div>
+                            <div id="play-pause" class="play" onclick="getTTS();" style="width:35px; height:35px; border:1.5px solid #a9a9a9; border-radius:50%; display:flex; -webkit-justify-content: center; justify-content: center; -webkit-align-items: center; align-items: center; color:#a9a9a9;"><i id="ttsBtn" class="fa fa-volume-up"></i></div>
                             </div>
     </h3>
                         </div>
