@@ -65,11 +65,11 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['9.17', '9.18', '9.19', '9.20', '9.21', '9.22', '9.23', '9.24', '9.25', '9.26'],
+          labels: ['9.18', '9.19', '9.20', '9.21', '9.22', '9.23', '9.24', '9.25', '9.26', '9.27'],
           datasets: [
             {
               label: "신규 확진자",
-              data: [126, 110, 82, 70, 61, 110, 125, 114, 61, 95],
+              data: [110, 82, 70, 61, 110, 125, 114, 61, 95, 50],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
@@ -314,11 +314,11 @@
         type: 'bar',
         defaultFontFamily: 'Poppins',
         data: {
-          labels: ['9.21', '9.22', '9.23', '9.24', '9.25', '9.26'],
+          labels: ['9.22', '9.23', '9.24', '9.25', '9.26', '9.27'],
           datasets: [
             {
               label: "확진",
-              data: [61, 110, 125, 114, 61, 95],
+              data: [110, 125, 114, 61, 95, 50],
               borderColor: "rgba(250, 66, 81, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(250, 66, 81,0.5)",
@@ -326,7 +326,7 @@
             },
             {
               label: "완치",
-              data: [193, 209, 182, 146, 189, 82],
+              data: [209, 182, 146, 189, 82, 44],
               borderColor: "rgba(0,173,95, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,173,95, 0.5)",
@@ -334,7 +334,7 @@
             },
             {
               label: "사망",
-              data: [3, 0, 5, 2, 4, 2],
+              data: [0, 5, 2, 4, 2, 5],
               borderColor: "rgba(0,0,0, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,0,0, 0.5)",
