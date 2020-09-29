@@ -82,7 +82,7 @@ new Vue({
     }),
     methods: {
         runScraperGlobe: function() {
-            this.scraperRunning = !0, this.url.includes("http"), this.url = "https://cors-anywhere.herokuapp.com/http://www.worldometers.info/coronavirus/", this.$http.get(this.url).then(e => {
+            this.scraperRunning = !0, this.url.includes("http"), this.url = "https://cors-coronacoc.herokuapp.com/http://www.worldometers.info/coronavirus/", this.$http.get(this.url).then(e => {
                 this.scraperRunning = !1, document.createElement("div").innerHTML = e.body;
                 var r = (n = e.body).indexOf("<h1>Coronavirus Cases:</h1>"),
                     a = n.substr(r, 123).replace("<h1>Coronavirus Cases:</h1>", "").replace(/(\s*)/g, "").replace(/\"/gi, "").replace("divclass=maincounter-number", "").replace("<", "").replace(">", "");
@@ -93,7 +93,7 @@ new Vue({
             })
         },
         runScraperTableByCountry: function() {
-            this.scraperRunning = !0, this.url.includes("http"), this.url = "https://cors-anywhere.herokuapp.com/https://www.worldometers.info/coronavirus/countries-where-coronavirus-has-spread/", this.$http.get(this.url).then(e => {
+            this.scraperRunning = !0, this.url.includes("http"), this.url = "https://cors-coronacoc.herokuapp.com/https://www.worldometers.info/coronavirus/countries-where-coronavirus-has-spread/", this.$http.get(this.url).then(e => {
                 this.scraperRunning = !1, document.createElement("div").innerHTML = e.body;
                 var r = e.body,
                     a = r.indexOf("table-responsive"),
@@ -103,7 +103,7 @@ new Vue({
         },
 
         paths: function() {
-            this.scraperRunning = !0, this.url.includes("http"), this.url = "https://cors-anywhere.herokuapp.com/http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=12", this.$http.get(this.url).then(e => {
+            this.scraperRunning = !0, this.url.includes("http"), this.url = "https://cors-coronacoc.herokuapp.com/http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=12", this.$http.get(this.url).then(e => {
                 this.scraperRunning = !1, document.createElement("div").innerHTML = e.body;
                 var pathsData = e.body,
                     pathsData1 = pathsData.indexOf('확진환자의 이동경로 등 정보 공개 안내(3판)'), //c
@@ -120,7 +120,7 @@ new Vue({
 
 
         detailData: function() {
-            this.scraperRunning = !0, this.url.includes("http"), this.url = "https://cors-anywhere.herokuapp.com/http://ncov.mohw.go.kr/bdBoardList_Real.do", this.$http.get(this.url).then(e => {
+            this.scraperRunning = !0, this.url.includes("http"), this.url = "https://cors-coronacoc.herokuapp.com/http://ncov.mohw.go.kr/bdBoardList_Real.do", this.$http.get(this.url).then(e => {
                 this.scraperRunning = !1;
 
                 var UpdateData = (n = e.body).indexOf('<h5 class="s_title_in3">누적 확진자 현황 <span class="t_date">');
@@ -198,7 +198,7 @@ angular.module("myApp", ['ngRoute'])
 
     .service('getCoronaNewsArticles', function($http) {
         this.getNewsArticles = function(callback) {
-            $http.get('https://cors-anywhere.herokuapp.com/http://newsapi.org/v2/everything?q=코로나19&apiKey=d60ec4ccad4e46678ce633f1b4dfa2b1&pageSize=15&sortBy=publishedAt')
+            $http.get('https://cors-coronacoc.herokuapp.com/http://newsapi.org/v2/everything?q=코로나19&apiKey=d60ec4ccad4e46678ce633f1b4dfa2b1&pageSize=15&sortBy=publishedAt')
                 .then(callback);
 
         };
