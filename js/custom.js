@@ -18,7 +18,7 @@ function getTTS() {
         var ttsdata5 = document.getElementById("death").innerHTML;
         var ttsdata6 = document.getElementById("deathPM").innerHTML.replace("사망자", "").replace("(+", "").replace(")", "").replace(/\s/gi, "");
         var ttsdata7 = document.getElementById("localConfirmed").innerHTML.replace("해외유입", "해외유입 사례는").replace('<br>', "이고, ").replace("국내발생", "국내발생 환자는")+"입니다.";
-        var ttsdata_special = "이번 추석명절에는 이동을 자제하고 방역수칙을 잘 지켜주시기 바랍니다."
+        var ttsdata_special = ". 이번 추석명절에는 이동을 자제하고 방역수칙을 잘 지켜주시기 바랍니다."
 if(ttsdata1 == "로딩중") {
 ttsurl = "아직 현황을 로딩중입니다";
 CreateVoice(ttsurl);
@@ -73,6 +73,9 @@ document.getElementById("ttsBtn").className= "fa fa-volume-up";
     }, false);
 }
 
+    var e = new Array("http://cors-coronacoc.herokuapp.com/", "http://cors-coronacoc-v2.herokuapp.com/", "http://cors-coronacoc-v3.herokuapp.com/");
+    var proxyServer = randomItem(e);
+
 new Vue({
     el: "#scraper",
     data: () => ({
@@ -82,7 +85,7 @@ new Vue({
     }),
     methods: {
         runScraperGlobe: function() {
-            this.scraperRunning = !0, this.url.includes("http"), this.url = "https://cors-coronacoc.herokuapp.com/http://www.worldometers.info/coronavirus/", this.$http.get(this.url).then(e => {
+            this.scraperRunning = !0, this.url.includes("http"), this.url = proxyServer+"http://www.worldometers.info/coronavirus/", this.$http.get(this.url).then(e => {
                 this.scraperRunning = !1, document.createElement("div").innerHTML = e.body;
                 var r = (n = e.body).indexOf("<h1>Coronavirus Cases:</h1>"),
                     a = n.substr(r, 123).replace("<h1>Coronavirus Cases:</h1>", "").replace(/(\s*)/g, "").replace(/\"/gi, "").replace("divclass=maincounter-number", "").replace("<", "").replace(">", "");
@@ -93,7 +96,7 @@ new Vue({
             })
         },
         runScraperTableByCountry: function() {
-            this.scraperRunning = !0, this.url.includes("http"), this.url = "https://cors-coronacoc.herokuapp.com/https://www.worldometers.info/coronavirus/countries-where-coronavirus-has-spread/", this.$http.get(this.url).then(e => {
+            this.scraperRunning = !0, this.url.includes("http"), this.url = proxyServer+"https://www.worldometers.info/coronavirus/countries-where-coronavirus-has-spread/", this.$http.get(this.url).then(e => {
                 this.scraperRunning = !1, document.createElement("div").innerHTML = e.body;
                 var r = e.body,
                     a = r.indexOf("table-responsive"),
@@ -103,7 +106,7 @@ new Vue({
         },
 
         paths: function() {
-            this.scraperRunning = !0, this.url.includes("http"), this.url = "https://cors-coronacoc.herokuapp.com/http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=12", this.$http.get(this.url).then(e => {
+            this.scraperRunning = !0, this.url.includes("http"), this.url =  proxyServer+"http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=12", this.$http.get(this.url).then(e => {
                 this.scraperRunning = !1, document.createElement("div").innerHTML = e.body;
                 var pathsData = e.body,
                     pathsData1 = pathsData.indexOf('확진환자의 이동경로 등 정보 공개 안내(3판)'), //c
@@ -120,7 +123,7 @@ new Vue({
 
 
         detailData: function() {
-            this.scraperRunning = !0, this.url.includes("http"), this.url = "https://cors-coronacoc.herokuapp.com/http://ncov.mohw.go.kr/bdBoardList_Real.do", this.$http.get(this.url).then(e => {
+            this.scraperRunning = !0, this.url.includes("http"), this.url =  proxyServer+"http://ncov.mohw.go.kr/bdBoardList_Real.do", this.$http.get(this.url).then(e => {
                 this.scraperRunning = !1;
 
                 var UpdateData = (n = e.body).indexOf('<h5 class="s_title_in3">누적 확진자 현황 <span class="t_date">');
@@ -182,25 +185,4 @@ new Vue({
         this.runScraperGlobe(), this.runScraperTableByCountry(), this.detailData(), this.paths()
     }
 });
-
-
-
-
-angular.module("myApp", ['ngRoute'])
-
-    .controller('mainCtrl', function($scope, getCoronaNewsArticles) {
-
-        getCoronaNewsArticles.getNewsArticles(function(response) {
-            $scope.articles = response.data.articles;
-        });
-    })
-
-
-    .service('getCoronaNewsArticles', function($http) {
-        this.getNewsArticles = function(callback) {
-            $http.get('https://cors-coronacoc.herokuapp.com/http://newsapi.org/v2/everything?q=코로나19&apiKey=d60ec4ccad4e46678ce633f1b4dfa2b1&pageSize=15&sortBy=publishedAt')
-                .then(callback);
-
-        };
-    })
 
