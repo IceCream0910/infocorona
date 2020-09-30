@@ -670,7 +670,7 @@ box-shadow:  5px 5px 10px #0d0d0d,
 -->
                     <br>
 
-                                <div class="col-md-6 col-lg-4"> <!-- CHART--> 
+                                <div class="col-md-6 col-lg-4" style="margin-bottom:-900px;"> <!-- CHART--> 
                                     <div class="statistic-chart-1" style="margin-left:-15px; margin-right:-15px; border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
              -5px -5px 0px #e5e5e5;"> 
                                         <div class="chart-wrap" style=" margin:-20px;"> <h3 style="background-color:#fff; margin-left:15px;">
@@ -678,47 +678,24 @@ box-shadow:  5px 5px 10px #0d0d0d,
                                             <div id="tableByCountry" style="margin-top:30px; overflow:scroll;"></div> 
                                         </div> 
                                         <a href="http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=14&ncvContSeq=&contSeq=&board_id=&gubun=" target="_blank" style=" text-align:right; margin-left:-15px;"><br>더보기 ></a>
-                                        <br><Br> 
+                                        <br><Br>
+                                         <div class="copyright">
+                                <p>Copyright © 2020 All rights reserved. <br>정보 제공 : <a href="http://ncov.mohw.go.kr" target="_blank">중앙방역대책본부</a>.</p>
+                            </div> 
                                     </div> 
                                     <!-- END CHART-->
                                      </div>
 
+                                    
+                            <br><br>
+
                     </div>
                 </div>
-            </section>
 
-            <!-- 업데이트 내역--->
-<div class="modal fade" id="smallmodal2" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
-<div class="modal-dialog modal-sm" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<h5 class="modal-title" id="smallmodalLabel">최근 업데이트 사항</h5>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-</div>
-<div class="modal-body"><p style="font-size:13px;">
-    <h4>06-10 업데이트</h4>
-    1. 보이스 브리핑 목소리 개선<br><br>
 
-    <h4>06-09 업데이트</h4>
-    1. 보이스 브리핑이 돌아왔습니다!<br>
-    - 이제 TTS 음성합성 기술을 이용해 현황을 목소리로 읽어줍니다.<br><br>
+                    
+            <!-- END COPYRIGHT-->
 
-    <h4>06-04 업데이트</h4>
-    1. UI 개선<br><br>
-
-    * 일일 현황 업데이트는 업데이트 내역에 포함되지 않습니다.
-
-</p>
-</p>
-</div>
-<div class="modal-footer">
-<button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
-</div>
-</div>
-</div>
-</div>
             <!-- END STATISTIC-->
 <!--
             <section id="frontier">
@@ -745,6 +722,7 @@ box-shadow:  5px 5px 10px #0d0d0d,
 
             </section>
 
+<!--
                 <div id="frontier" ng-app="myApp">
 
 
@@ -762,37 +740,17 @@ box-shadow:  5px 5px 10px #0d0d0d,
           <h4 class="itemAuthorName">{{item.author}}</h4>
           <p class="itemDesc">{{item.description}}</p>
         </a>
-        <!--         infotainer end -->
       </div>
-      <!--     end ng-repeat div -->
     </div>
-    <!--     end flexCont -->
   </div>
-  <!-- end main controller div -->
   <a href="https://search.naver.com/search.naver?where=news&sm=tab_jum&query=%EC%BD%94%EB%A1%9C%EB%82%9819" target="_blank" style=" text-align:right; margin-left:20px;">더 많은 뉴스 보기 ></a>
   
 </div>
-<!-- end frontier div -->
 </div>
-
-
-<br><Br>
-
-            
+-->
 
             <!-- COPYRIGHT-->
-            <section class="p-t-60 p-b-20">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="copyright">
-                                <p>Copyright © 2020 All rights reserved. <br>정보 제공 : <a href="http://ncov.mohw.go.kr" target="_blank">중앙방역대책본부</a>.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- END COPYRIGHT-->
+            
         </div>
 
     </div>
@@ -874,9 +832,11 @@ R0 수치가 2라고 가정하면, 감염자 1명이 다른 사람 2명 이상�
 
 
 
-    <!-- Vue JS-->
+    <!-- Vue JS
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+-->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.3.4/vue-resource.js"></script>
     <!-- Jquery JS-->
