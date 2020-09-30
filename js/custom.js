@@ -73,7 +73,7 @@ document.getElementById("ttsBtn").className= "fa fa-volume-up";
     }, false);
 }
 
-    var e = new Array("http://cors-coronacoc.herokuapp.com/", "http://cors-coronacoc-v2.herokuapp.com/", "http://cors-coronacoc-v3.herokuapp.com/");
+    var e = new Array("https://cors-coronacoc.herokuapp.com/", "https://cors-coronacoc-v2.herokuapp.com/", "https://cors-coronacoc-v3.herokuapp.com/");
     var proxyServer = randomItem(e);
 
 new Vue({
