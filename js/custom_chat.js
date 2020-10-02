@@ -75,7 +75,7 @@ function sendBtnSpring() {
 }
 
 
-messages.limitToLast(500).on("child_added", function(snap) {
+messages.limitToLast(1000).on("child_added", function(snap) {
 	if($.sanitize(snap.val().user) == 'admin') {
 		wrap.prepend('<li><div style="background-color:#fa4251; border-radius:10px; width:50px; font-size:14px; padding: 2px 4px; margin-bottom:5px;"><span style="color:white;">개발자</div></span> ' + $.sanitize(snap.val().message) + '</li>');
 	} else {
@@ -170,3 +170,66 @@ var timer = setInterval(function(){
        }
        
     }, 1000)
+
+
+$('#right-button').click(function() {
+  event.preventDefault();
+  var current = $('#online-performance').scrollLeft();
+  if(current < 1364) {
+  	$('#online-performance').animate({
+    scrollLeft: "+=200px"
+  }, "slow");
+  }
+});
+
+ $('#left-button').click(function() {
+  event.preventDefault();
+  var current = $('#online-performance').scrollLeft();
+  if(current >= 0) {
+  	$('#online-performance').animate({
+    scrollLeft: "-=200px"
+  }, "slow");
+  }
+});
+
+
+// 온라인 공연/전시 크롤링
+
+var e = new Array("https://cors-coronacoc.herokuapp.com/", "https://cors-coronacoc-v2.herokuapp.com/", "https://cors-coronacoc-v3.herokuapp.com/");
+    var proxyServer = randomItem(e);
+function randomItem(e) {
+    return e[Math.floor(Math.random() * e.length)]
+}
+
+new Vue({
+    el: "#scraper",
+    data: () => ({
+        scraperRunning: !1,
+        url: "",
+        response: null
+    }),
+    methods: {
+        runScraper: function() {
+            this.scraperRunning = !0, this.url.includes("http"), this.url = "https://cors-anywhere.herokuapp.com/"+"https://www.culture.go.kr/homes/showList.do?sSdate=&sEdate=&genre=&gubun=&searchKeyword=", this.$http.get(this.url).then(e => {
+                this.scraperRunning = !1;
+                for(var i=0; i<10; i++) {
+                	var title = e.body.showList[i].title
+                	var img = 'https://www.culture.go.kr/'+e.body.showList[i].img_file;
+                	var href= 'https://www.culture.go.kr/homes/showView.do?seq='+e.body.showList[i].seq;
+                	console.log(title);
+                	$('#online-performance').append('<div class="grid__item" style="display:inline-block;" onclick="window.open(\''+href+'\');"><div class="card"><img class="card__img" src="'+img+'" alt="Snowy Mountains"><div class="card__content"><h1 class="card__header">'+title+'</h1> </div></div></div>');
+
+                }
+                
+                /*
+                var r = (n = e.body).indexOf("<h1>Coronavirus Cases:</h1>"),
+                    a = n.substr(r, 123).replace("<h1>Coronavirus Cases:</h1>", "").replace(/(\s*)/g, "").replace(/\"/gi, "").replace("divclass=maincounter-number", "").replace("<", "").replace(">", "");
+                document.getElementById("globeConfirmed").innerHTML = a + "<span>명</span>";
+                */
+            })
+        },
+    },
+    beforeMount() {
+        this.runScraper()
+    }
+});
