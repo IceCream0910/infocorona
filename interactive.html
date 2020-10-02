@@ -37,7 +37,7 @@
 
 
 </head>
-<body class="animsition" oncontextmenu="return false" ondragstart="return false" onselectstart="return false" style="margin-right:-15px;">
+<body class="animsition" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
     <div class="page-wrapper">
         <!-- PAGE CONTENT-->
         <div class="page-content--bgf7">
@@ -80,15 +80,12 @@
                 <div class="container" >
                     
                     <div class="row">
-                        <div class="col-md-6 col-lg-4">
-                            <br>
+                        <div class="col-md-6 col-lg-4" >
                                 <div class="chart-wrap" style="margin:10px;">
-                                    <h3>코로나19 극복을 위한<h3 style="color:#a9a9a9; margin-bottom: 30px;">우리 마음을 보여주세요</h3></h3>
-                                     <button class="decrease" style="display:inline-block; margin-right:10px;">
-                        <img src="https://vectorified.com/images/heart-icon-14.png" style="margin-top:0px; width:60px; height:60px;"> 
-                        </button>
-<h3 class="counter" id="counter" style="display:inline-block;">로딩중</h3><span>개의 마음이 모였어요</span>
-                                </div>
+                                    <span style="font-size:25px;"><strong style="color:#556ee6;">모두</strong>를 위한<h3 style="color:#a9a9a9; margin-bottom: 30px;">우리의 <strong style="color:#556ee6;">마음</strong></h3></span>
+
+                                
+</div>
 
 
                 <section class="statistic statistic2">
@@ -99,33 +96,58 @@
                 <textarea name="content" class="message" type="text" id="re_content" placeholder="응원 메시지를 남겨주세요"></textarea>
                 <button onClick="javascript:sendBtn();" id="rep_bt" class="re_bt"><i class="fas fa-paper-plane"></i></button>
             </div>
+            <button class="decrease" style="display:inline-block; margin-right:10px; width:40px; height:40px; margin-top:10px;">
+                        <img src="https://vectorified.com/images/heart-icon-14.png" style="margin-top:0px; width:40px; height:40px;"> 
+                        </button>
+<h4 class="counter" id="counter" style="display:inline-block; color:#fa4251;">로딩중</h4><span>개의 마음이 모였어요</span>
                         </div>
                         </div><br>
 
-<div class="wrapper-chat" style="height:300px;">
+<div class="wrapper-chat" style="height:150px;">
 
 
 </div>
 </div>
-</section>
+</section> 
 <style>
   /* Scrollbar Styling */
 ::-webkit-scrollbar {
-    width: 5px;
-}
- 
-::-webkit-scrollbar-track {
-    background-color: #ebebeb;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    background: #6d6d6d; 
+   display:none;
 }
   </style>
+
+ 
+<br><br>
+<div style="background:#23345f; padding:20px;">
+<img src="https://i.imgur.com/aoO1Id3.jpg" style="border:none;"></img>
+<br>
+<span style="font-size:25px; color:#f0f0f0;">집콕을 위한<br>코로나콕의 PICK</span>
+<br>
+<br>
+
+<a href="https://www.culture.go.kr/homes/showList.do?sSdate=&sEdate=&genre=&gubun=&searchKeyword=" target="_blank"><span style="font-size:18px; color:white;  padding-bottom:10px;">랜선으로 즐기는 공연/전시 <i class="fa fa-angle-right"></i></span></a>
+<div class="grid" id="online-performance" style="overflow-x:scroll; white-space:nowrap; margin-left:-10px;">
+
+</div>
+
+<button id="left-button" style="background:#fff; border-radius:50%; text-align:center;width:35px; height:35px;">
+        <i class="fa fa-angle-left"></i>
+      </button>
+
+<button id="right-button" style="background:#fff; border-radius:50%; text-align:center;width:35px; height:35px;">
+        <i class="fa fa-angle-right"></i>
+      </button>
+<br>
+<br>
+
+<span style="font-size:15px; color:white;  padding-bottom:10px;">더 많은 추천을 준비중입니다. </span>
+
+</div>
+
+
+
+
+
 <br><br>
 <div style="margin:20px;">
 <a href="https://donaricano.com/mypage/1453589129_hq87Bg" target="_blank" style="width:100%; text-align:center; background:#e66868; padding:15px; border-radius:20px; color:#fff;">카카오페이로 개발자 응원하기 ></a>
@@ -198,6 +220,7 @@ box-shadow:  5px 5px 10px #1eb37c,
 
 
 
+
     <!-- Vue JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.3.4/vue-resource.js"></script>
@@ -227,7 +250,6 @@ box-shadow:  5px 5px 10px #1eb37c,
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
-    <script src="js/custom_mask.js"></script>
     <script src="js/custom_chat.js"></script>
 
 </body>
@@ -235,6 +257,7 @@ box-shadow:  5px 5px 10px #1eb37c,
 <!-- end document-->
 
 <style>
+
   .card {
   position: relative;
   height: 200px;
@@ -627,9 +650,10 @@ box-shadow:  5px 5px 10px #1eb37c,
   .message {
      height:80px;
      width:75%;
-     background-color: #c5c7c4;
      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
      padding: 10px 20px;
+     border-radius:30px 0 0 30px;
+     border: 1px solid #e74c3c;
 }
 
 .messageSpring {
@@ -654,6 +678,7 @@ background:#fa4251;
 color:white;
 margin-left:0px;
 height:80px;
+border-radius:0 30px 30px 0;
 }
 
 
@@ -797,6 +822,69 @@ height:80px;
   color: #fff;
   transform: translateY(-7px);
 }
+
+
+.grid__item {
+  width:50%;
+  height:200px;
+  margin:10px;
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.grid__item:hover {
+  transform: translateY(-0.5%);
+  box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.2);
+}
+
+.card__img {
+  display: block;
+  width: 100%;
+  height: 40%;
+  object-fit: cover;
+}
+.card__content {
+  padding: 20px;
+  white-space: normal;
+}
+.card__header {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0d0d0d;
+  margin-bottom: 10px;
+}
+.card__text {
+  font-size: 20px;
+  color: #3d3d3d;
+}
+.card__btn {
+  display: block;
+  width: 100%;
+  padding: 20px 10px;
+  font-size: 20px;
+  text-align: center;
+  color: #3363ff;
+  background-color: #e6ecff;
+  border: none;
+  border-radius: 20px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.card__btn span {
+  margin-left: 1rem;
+  transition: 0.2s;
+}
+.card__btn:hover, .card__btn:active {
+  background-color: #dce4ff;
+}
+.card__btn:hover span, .card__btn:active span {
+  margin-left: 1.5rem;
+}
+
 </style>
 
 
@@ -880,4 +968,9 @@ function CheckCaptcha() {
     }
   }  
 }
+
+$(".owl-carousel").owlCarousel({
+    navigation : true
+  });
+
 </script>
