@@ -1,1109 +1,221 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
 
+<head>
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="코로나19 국내 발생현황 및 관련정보를 한눈에 알아보세요!">
     <meta name="author" content="Ice Cream">
     <meta name="keywords" content="코로나19">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-159921858-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-159921858-1');
-</script>
-
 
     <!-- Title Page-->
-    <title></title>
-
 
     <!-- Fontfaces CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
     <link href="css/font-face.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <script src="https://livecorona.co.kr/data/koreaRegionalData.js"></script>
-    <!-- Bootstrap CSS-->
-    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
-    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-
-    <!-- Vendor CSS-->
-    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
-    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
-    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
-    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
-        <script src="https://cdn.plrjs.com/player/rfayfi545seai/b2ya8wao32em.js" type="text/javascript"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.0/d3.min.js" type="text/javascript"></script>
-        <script src="https://cdn.jsdelivr.net/npm/luxon@1.22.0/build/global/luxon.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+    
+    <script
+  src="https://browser.sentry-cdn.com/5.23.0/bundle.tracing.min.js"
+  integrity="sha384-lSZkoLgJeNT+V/zBEZAchPik9VPNr9wvgAY6mwoMK5SO/cMsK/whVXKKdQOL1oiw"
+  crossorigin="anonymous"
+></script>
 
 
-
-    <!-- Main CSS-->
-    <link href="css/theme.css" rel="stylesheet" media="all">
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:700|Noto+Sans+KR&display=swap" rel="stylesheet">
-
-     
 
 </head>
+<body>
 
-<body class="animsition" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+    <nav class="tabbar">
+    <div>
 
-    <div id="#Rtop"></div>
+        <input id="menu-1" type="radio" name="menu" onclick="javascript:document.getElementById('iframe_main').src = 'main.html';" checked>
+        <label for="menu-1">
+            <i class="fa fa-chart-line"></i>
+            <span>현황</span>
+        </label>
 
+        <input id="menu-2" type="radio" name="menu" onclick="javascript:document.getElementById('iframe_main').src = 'info.html';">
+        <label for="menu-2">
+            <i class="fa fa-question-circle"></i>
+            <span>정보</span>
+        </label>
 
-    <div class="page-wrapper">
-        <!-- PAGE CONTENT-->
-        <div class="page-content--bgf7">
-
+        <input id="menu-3" type="radio" name="menu" onclick="javascript:document.getElementById('iframe_main').src = 'interactive.html';">
+        <label for="menu-3">
+            <i class="fa fa-comment"></i>
+            <span>인터랙티브</span>
+        </label>
             
-            
-
-
-
-            <!-- STATISTIC-->
-
-            <section class="statistic statistic2">
-
-
-                 
-            
-                <div class="container">
-                    <div class="row" >
-                        <div class="col-md-12" >
-
-                             <h1 style="font-size:22px; margin-left:10px; font-family:GyeonggiBatang;" id="suggestText">여기에 <br>메시지 표시
-                            </h1><br>
-
-                            <h6 class="pb-4 display-5" style="margin-top:-20px;margin-left:10px;color:#a9a9a9;"><div id="text" style="display:inline-block; margin-bottom:5px; ">전국 사회적 거리두기</div><span id="text2" style="display:inline-block; border-radius:20px; margin-left:5px;background:#ff6961; color:white; padding:2px 8px;">2단계</span></h6>
-
-                            <script>
-
-var string = ""; /* type your text here */
-var array = string.split("");
-var timer;
-
-var string2 = ""; /* type your text here */
-var array2 = string.split("");
-var timer2;
-
-function frameLooper () {
-    if (array.length > 0) {
-        document.getElementById("text").innerHTML += array.shift();
-    } else {
-        clearTimeout(timer);
-            }
-    loopTimer = setTimeout('frameLooper()',70); /* change 70 for speed */
-}
-
-function frameLooper2 () {
-    if (array2.length > 0) {
-        document.getElementById("text2").innerHTML += array2.shift();
-    } else {
-        clearTimeout(timer2);
-            }
-    loopTimer = setTimeout('frameLooper2()',70); /* change 70 for speed */
-}
-
-setInterval(function() {
-document.getElementById("text").innerHTML = "";
-document.getElementById("text2").innerHTML = "";
-       if(string == "감염병 위기경보") {
-        string = "전국 사회적 거리두기";
-        array = string.split("");
-        string2 = "2단계";
-        array2 = string2.split("");
-            } else {
-        string = "감염병 위기경보";
-        array = string.split("");
-        string2 = "심각";
-        array2 = string2.split("");
-    }
-frameLooper();
-frameLooper2();
-    },7000);
-
-                            </script>
-
-                            <section class="welcome p-t-10" id="Rtop" style="margin-left:-15px; margin-top:-50px; margin-bottom:70px;">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-md-12" style="margin-top:30px; margin-left:10px;">
-                           
-
-                            <br>
-
-  <div class="segmented-control">
-      
-      <input type="radio" name="radio2" value="3" id="tab-1" onclick="javascript:location.href='main.html';" checked/>
-      <label for="tab-1" class= "segmented-control__1">
-        <p>현황</p></label>
-      
-      <input type="radio" name="radio2" value="4" id="tab-2" onclick="javascript:location.href='info.html';"/>
-      <label for="tab-2" class= "segmented-control__2">
-        <p>정보</p></label>
-      
-      <input type="radio" name="radio2" value="5" id="tab-3" onclick="javascript:location.href='interactive.html';"/>
-      <label for="tab-3" class= "segmented-control__3">
-        <p>인터랙티브</p></label>
-
         <span></span>
-      
-      <div class="segmented-control__color"></div>
     </div>
+</nav>
+<!-- -->
 
+ <iframe id="iframe_main" name="address" src="main.html" style="border:none; width:100vw; z-index: 1;" wmode="Opaque" frameborder="0" allowfullscreen onload="scroll(0,0);"></iframe>
+ <div id="loadingMessage">
+    <svg class="spinner" viewBox="0 0 50 50"><circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle></svg>
 
-
-                           
-                    </div>
-                </div>
-            </section>
-            <!-- END WELCOME-->
-            <h3 style="margin-left:10px; font-size: 20px; display:inline-block;">국내 현황<h6 class="pb-4 display-5" style="margin-left:10px;color:#a9a9a9; display:inline-block; padding:10px;" id="whenUpdate"><div class="animated">
-        <div class="parent"></div>
-        <div class="padding"></div>
-        <div class="title"></div>정보 가져오는 중...</h6>
-        <div id="player-container" style="display:inline-block;">
-                            <div id="play-pause" class="play" onclick="getTTS();" style="width:35px; height:35px; border:1.5px solid #a9a9a9; border-radius:50%; display:flex; -webkit-justify-content: center; justify-content: center; -webkit-align-items: center; align-items: center; color:#a9a9a9;"><i id="ttsBtn" class="fa fa-volume-up"></i></div>
-                            </div>
-    </h3>
-                        </div>
-                    </div>
-
-                    <div class="row" id="korea">
-                        <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--red" style="border-radius: 20px;
-background: #fa4251;
-box-shadow:  5px 5px 10px #d53845, 
-             -5px -5px 0px #f7f7f7;">
-                                <h2 class="number" id="confirmed">로딩중</h2>
-                                <span class="desc" id="confirmedPM">확진자</span><br>
-                                <span class="desc" id="cureNow"></span>
-                                <div class="icon">
-                                    <i class="zmdi zmdi-account-o"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--green" style="border-radius: 20px;
-background: #00ad5f;
-box-shadow:  5px 5px 10px #009351, 
-             -5px -5px 0px #f7f7f7;">
-                                <h2 class="number" id="cure">로딩중</h2>
-                                <span class="desc" id="curePM">격리해제자</span>
-                                <div class="icon">
-                                    <i class="zmdi zmdi-check-all"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--black" style="border-radius: 20px;
-background: #0f0f0f;
-box-shadow:  5px 5px 10px #0d0d0d, 
-             -5px -5px 0px #f7f7f7;">
-                                <h2 class="number" id="death">로딩중</h2>
-                                <span class="desc" id="deathPM">사망자</span>
-                                <div class="icon">
-                                    <i class="zmdi zmdi-accounts-outline"></i>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                            
-                            
-                             <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show" style="border-radius: 15px;
-background: #f8d7da;
-border:none;
-box-shadow:  5px 5px 10px #d3b7b9, 
-             -5px -5px 0px #f7f7f7;">
-<span class="badge badge-pill badge-danger">안내</span>
-<button type="button" style="color:black; text-align:left;" onclick="window.open('https://www.e-gen.or.kr/egen/holiday_medical.do');">여기를 눌러 연휴기간 운영중인 선별진료소를 확인하세요 ></button>
-</button>
-</div>
-
-<div class="sufee-alert alert alert-primary" style="border-radius: 15px;
-background: #4272d7;
-border:none;
-box-shadow:  5px 5px 10px #3861b7, 
-             -5px -5px 0px #f7f7f7;">
-<span class="badge badge-pill badge-primary" style="display:inline-block;">공지사항</span>
-<button type="button" onclick="window.open('http://coronacoc-notice.kro.kr/');" style="color:white; display:inline-block; text-align:left;">09-30 업데이트 내역</button>
-</button>
-</div>
-
-   <br>  
-
-                    </div>
-                </div>
-
-                
-            </section>
-            <!-- END STATISTIC-->
-
-            <!-- STATISTIC CHART-->
-            <section class="statistic-chart" >
-                <div class="container" >
-                    <div class="row" >
-                        <div class="col-md-12" >
-                            <h3 style="margin-left:10px; display:inline-block;">통계<h6 style="margin-left:10px;color:#a9a9a9; display:inline-block;">10.02. 0시 기준</h6></h3><br><br>
-                        </div>
-                    </div>
-
-                    <!-- CHART-->
-                            <div class="statistic-chart-1" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
-             -5px -5px 0px #e5e5e5;">
-                                <div class="chart-wrap">
-                                    <div id="rtSection">
-    <h4>실시간 확진자<span style="color:#a9a9a9; font-size:15px;"> (비공식)</span> <div id="refreshRT" class="default " style="width:30px; height:30px; color:#556ee6; display:inline-block;" onclick="rtTodayGet();"><i class="fa fa-sync" style="width:30px; height:30px;"></i></div></h4>
-
-    <!-- Button trigger modal -->
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document" style="border-radius:20px;">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">실시간 확진자 발생 현황</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" id="rtUpdates" style="height:300px; overflow-y:scroll; overflow-x:hidden;">
-         
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-transparent" data-dismiss="modal">닫기</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-    <h3><h3 id="rtToday" style="display:inline-block;"></h3><span id="rtPM" style="display:inline-block; margin-left:10px;"></span></h3><br><br>
-    <button id="rtModalBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="width:100%; text-align:left; border-radius:10px;">
-  상세 
-</button><br><br>
-    <span style="color:#a9a9a9; font-size:13px;">괄호 안 숫자는 전일 동시간 대비 증감</span><br>
-    <span style="color:#a9a9a9; font-size:12px; line-height:0.2em;">09시~23시 집계. 재난문자 및 지자체 발표를 기반으로 합니다. 검역 및 대구 지역 확진 사례는 미포함됩니다. 실제 상황과 오차가 발생할 수 있습니다.</span>
-
-</span>
-    
-    
-</div>
-
-
-                                </div>
-                            </div>
-                            <!-- END CHART-->
-
-                            <style>
-                                @keyframes rotating {
-  from {
-    -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  to {
-    -ms-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-#refreshRT.lotation {
-    -webkit-animation: rotating 1.2s linear infinite;
-            -moz-animation: rotating 1.2s linear infinite;
-            -ms-animation: rotating 1.2s linear infinite;
-            -o-animation: rotating 1.2s linear infinite;
-            animation: rotating 1.2s linear infinite;
-}
-
-                            </style>
-
-                    
-                    
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4">
-                            <!-- CHART-->
-                            <div class="statistic-chart-1" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
-             -5px -5px 0px #e5e5e5;">
-                                <div class="chart-wrap">
-                                    <h3>신규 <h3 style="color:#a9a9a9;">확진자 추이<br></h3></h3>
-                                    <canvas id="widgetChart5"></canvas>
-                                </div>
-                                <div class="statistic-chart-1-note">
-                                    <span>어제 증가치보다</span>
-                                    <span class="big">14명</span>
-                                    <span>적어요.<br><span style="color:#a9a9a9; font-size:13px;"></span></span>
-                                    <br>
-                                    <h3 style="color:#a9a9a9; font-size:15px;">신규 환자 중<h3 style="color:#4272d7; font-size:20px;" id="localConfirmed"></h3></h3>
-
-
-
-                                </div>
-                            </div>
-                            <!-- END CHART-->
-                        </div>
-
-                        <div class="col-lg-6">
-                                <div class="au-card m-b-30" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
-             -5px -5px 0px #e5e5e5;">
-                                    <div class="au-card-inner">
-                                        <h3>국내 일별 현황</h3><br>
-                                        <canvas id="barChart"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-
-                             <div class="col-lg-6">
-                                <div class="au-card m-b-30" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
-             -5px -5px 0px #e5e5e5;">
-                                    <div class="recent-report__chart">
-                                        <h3>국내 <h3 style="color:#a9a9a9;">검사 현황<br>
-                                            <br><div class="wrapper">
-    <div class="taeb-switch left text-center">
-      <div class="taeb active" taeb-direction="left" onclick="$('#recent-rep2-chart').show();$('#tests-percent').hide();">검사수</div><!--
-  --><div class="taeb" taeb-direction="right" onclick="$('#recent-rep2-chart').hide();$('#tests-percent').show();">확진율</div>
-    </div>
-  </div>
-                                            <br></h3></h3>
-                                        <canvas id="recent-rep2-chart"></canvas>
-                                        <div id="tests-percent" style="display:none;">
-                                            <canvas id="tests-percent-chart"></canvas>
-                                            <h3 style="color:#a9a9a9; font-size:15px;">(확진율) = (확진자수)/(검사자수)*100</h3>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 col-lg-4" style="display:none;">
-                            <!-- CHART PERCENT-->
-                            <div class="chart-percent-2" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
-             -5px -5px 0px #e5e5e5;">
-                                <div class="chart-wrap">
-                                    <h3>국가별 <h3 style="color:#a9a9a9;">해외 유입 현황<span style="font-size:14px;">(추정)</span></h3></h3><br>
-                                    <canvas id="doughutChart_abroad"></canvas>
-                                        <table></table>
-                                    </div>
-                                </div>
-                            </div>
-
-                            
-
-
-
-                        </div>
-
-
-
-                        <div class="row">
-
-                            <div class="col-md-6 col-lg-4">
-                            <!-- CHART PERCENT-->
-                            <div class="chart-percent-2" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
-             -5px -5px 0px #e5e5e5;">
-                                <div class="chart-wrap">
-                                    <h3>연령별 <h3 style="color:#a9a9a9;">현황</h3></h3><br>
-                                    <div class="wrapper">
-    <div class="taeb-switch2 left text-center">
-      <div class="taeb active" taeb-direction="left" onclick="$('#singelBarChart_2').show();$('#singelBarChart').hide();">확진자</div><!--
-  --><div class="taeb" taeb-direction="right" onclick="$('#singelBarChart_2').hide();$('#singelBarChart').show();">사망자</div>
-    </div>
-  </div><br>
-                                    <canvas id="singelBarChart_2"></canvas>
-                                    <canvas id="singelBarChart" style="display:none;"></canvas>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- END CHART PERCENT-->
-
-                            <div class="col-md-6 col-lg-4">
-                            <!-- CHART PERCENT-->
-                            <div class="chart-percent-2" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
-             -5px -5px 0px #e5e5e5;">
-                                <div class="chart-wrap">
-                                    <h3>성별 <h3 style="color:#a9a9a9;">확진자 현황</h3></h3><br>
-                                    <canvas id="doughutChart_sex"></canvas>
-                                        <table></table>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 col-lg-4">
-                            <!-- CHART PERCENT-->
-                            <div class="chart-percent-2" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
-             -5px -5px 0px #e5e5e5;">
-                                <div class="chart-wrap">
-                                    <h3>확진자 방문 <h3 style="color:#a9a9a9;">다중이용시설</h3></h3><br>
-                                    
-                                    <div id="patientsPaths" style="height:300px; z-index:99999;overflow:scroll;">로딩중입니다..</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                         <style>
-                            /* 표 레이아웃 수정*/
-                            table {border-collapse:collapse; border-spacing:0;}
-
-    table.midsize th {padding:4px 1px; font-size:12px; line-height:1.1em; word-break:break-all; border:solid 1px #a9a9a9;}
-    table.midsize td { font-size:12px; line-height:1.1em; border:solid 1px #a9a9a9;}
-                         </style>
-
-
-                            <div class="col-md-6 col-lg-4">
-                            <!-- CHART PERCENT-->
-                            <div class="chart-percent-2" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
-             -5px -5px 0px #e5e5e5;">
-                                <div class="chart-wrap">
-                                    <h3>해외유입 <h3 style="color:#a9a9a9;">환자 현황</h3></h3><br>
-                                    
-                                    <div id="localTable"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        
-                        
-                            <div class="col-lg-9" >
-                                <h3>지역별 <span style="color:#a0a0a0;">현황<span style="font-size:15px;"> (명)<br><span style="font-size:15px;">좌우로 드래그할 수 있어요.</span></span></span></h3><br>
-
-                                <div class="table-responsive table--no-card m-b-40" style="margin-left:-15px; width:110%; border-radius: 20px; box-shadow: 5px 5px 10px #c3c3c3, 
-             -5px -5px 0px #e5e5e5;">
-                                    <table class="table table-borderless table-striped table-earning" style="width:110%;">
-                                        <thead>
-                                            <tr>
-                                                <th>지역</th>
-                                                <th>누적 확진자</th>
-                                                <th>격리해제자</th>
-                                                <th>사망자</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr onClick="javascript:window.open('http://www.seoul.go.kr/coronaV/coronaStatus.do');">
-                                                <td>서울</td>
-                                                <td id="seoulCases">-</td>
-                                                <td id="seoulCure">-</td>
-                                                <td id="seoulDeath">-</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('http://www.busan.go.kr/corona19/index');">
-                                                <td>부산</td>
-                                                <td id="busanCases">-</td>
-                                                <td id="busanCure">-</td>
-                                                <td id="busanDeath">-</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('http://www.daegu.go.kr/');">
-                                                <td>대구</td>
-                                                <td id="daeguCases">-</td>
-                                                <td id="daeguCure">-</td>
-                                                <td id="daeguDeath">-</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('https://www.incheon.go.kr/corona19/IC010001');">
-                                                <td>인천</td>
-                                                <td id="incheonCases">-</td>
-                                                <td id="incheonCure">-</td>
-                                                <td id="incheonDeath">-</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('https://www.gwangju.go.kr/');">
-                                                <td>광주</td>
-                                                <td id="gwangjuCases">-</td>
-                                                <td id="gwangjuCure">-</td>
-                                                <td id="gwangjuDeath">-</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('https://www.daejeon.go.kr/corona19/index.do');">
-                                                <td>대전</td>
-                                                <td id="daejeonCases">-</td>
-                                                <td id="daejeonCure">-</td>
-                                                <td id="daejeonDeath">-</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('http://www.ulsan.go.kr/corona.jsp');">
-                                                <td>울산</td>
-                                                <td id="ulsanCases">-</td>
-                                                <td id="ulsanCure">-</td>
-                                                <td id="ulsanDeath">-</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('https://www.sejong.go.kr/life/sub05_0704.do');">
-                                                <td>세종</td>
-                                                <td id="sejongCases">-</td>
-                                                <td id="sejongCure">-</td>
-                                                <td id="sejongDeath">-</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('https://www.gg.go.kr/bbs/boardView.do?bsIdx=464&bIdx=2296956&menuId=1535');">
-                                                <td>경기</td>
-                                                <td id="ggCases">-</td>
-                                                <td id="ggCure">-</td>
-                                                <td id="ggDeath">-</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('http://www.provin.gangwon.kr/covid-19.html');">
-                                                <td>강원</td>
-                                                <td id="gangwonCases">-</td>
-                                                <td id="gangwonCure">-</td>
-                                                <td id="gangwonDeath">-</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('http://www.chungbuk.go.kr/www/covid-19/index.html');">
-                                                <td>충북</td>
-                                                <td id="cbCases">-</td>
-                                                <td id="cbCure">-</td>
-                                                <td id="cbDeath">-</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('http://www.chungnam.go.kr/coronaStatus.do');">
-                                                <td>충남</td>
-                                                <td id="cnCases">-</td>
-                                                <td id="cnCure">-</td>
-                                                <td id="cnDeath">-</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('http://www.jeonbuk.go.kr/board/list.jeonbuk?boardId=BBS_0000105&menuCd=DOM_000000105010004000&contentsSid=1189&cpath=');">
-                                                <td>전북</td>
-                                                <td id="jbCases">-</td>
-                                                <td id="jbCure">-</td>
-                                                <td id="jbDeath">-</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('https://www.jeonnam.go.kr/coronaMainPage.do');">
-                                                <td>전남</td>
-                                                <td id="jnCases">-</td>
-                                                <td id="jnCure">-</td>
-                                                <td id="jnDeath">-</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('http://www.gb.go.kr/Main/open_contents/section/wel/page.do?mnu_uid=5760&LARGE_CODE=360&MEDIUM_CODE=10&SMALL_CODE=50&SMALL_CODE2=60mnu_order=2');">
-                                                <td>경북</td>
-                                                <td id="gbCases">-</td>
-                                                <td id="gbCure">-</td>
-                                                <td id="gbDeath">-</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('http://www.gyeongnam.go.kr/corona.html');">
-                                                <td>경남</td>
-                                                <td id="gnCases">-</td>
-                                                <td id="gnCure">-</td>
-                                                <td id="gnDeath">-</td>
-                                            </tr>
-                                            <tr onClick="javascript:window.open('https://jeju.go.kr/covid19.jsp');">
-                                                <td>제주</td>
-                                                <td id="jejuCases">-</td>
-                                                <td id="jejuCure">-</td>
-                                                <td id="jejuDeath">-</td>
-                                            </tr>
-                                            <!-- 검역은 자동 업데이트 제외
-                                            <tr>
-                                                <td>검역</td>
-                                                <td id="gumCases">511</td>
-                                                <td id="gumCure">373</td>
-                                                <td id="gumDeath">0</td>
-                                            </tr>
-                                            -->
-                                        </tbody>
-                                    </table>
-                                    </table>
-                                </div>
-                            </div>
-                </div>
-
-
-
-                        <!-- STATISTIC-->
-
-            <section class="statistic statistic2" id="globalStatics">
-                <div class="container">
-                    <h3 style="margin-left:5px;">전세계 현황</h3><br>
-                    <div class="row" id="global">
-                        <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--red" style="border-radius: 20px;
-background: #fa4251;
-box-shadow:  5px 5px 10px #d53845, 
-             -5px -5px 0px #e5e5e5;">
-                                <h2 class="number" id="globeConfirmed">로딩중</h2>
-                                <span class="desc">확진자</span>
-                                <div class="icon">
-                                    <i class="zmdi zmdi-account-o"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                            <div class="statistic__item statistic__item--black"style="border-radius: 20px;
-background: #0f0f0f;
-box-shadow:  5px 5px 10px #0d0d0d, 
-             -5px -5px 0px #e5e5e5;">
-                                <h2 class="number" id="globeDeath">로딩중</h2>
-                                <span class="desc">사망자</span>
-                                <div class="icon">
-                                    <i class="zmdi zmdi-accounts-outline"></i>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        </div>
-
- <a href="https://app.developer.here.com/coronavirus/" target="_blank" style=" text-align:right; margin-top:-25px; margin-bottom: 25px;"><br>지도로 보는 전세계 현황 ></a>
-                       
-                        <!-- TASK PROGRESS
-                                    <h4 style="margin-bottom: 10px;">치사율</h4>
-                                        <div class="progress mb-2" style="height:30px;">
-                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 26%" aria-valuenow="6.652%" aria-valuemin="0" aria-valuemax="100">6.652%</div>
-                                        </div><br>
-
-                                        <h4 style="margin-bottom: 10px;">재생산지수(R0) <button type="button" data-toggle="modal" data-target="#smallmodal"><img style="width:25px; height:25px;" src="https://img.pngio.com/help-icon-transparent-background-83167-free-icons-library-help-icon-png-2000_2000.jpg"></button></h4>
-                                        <div class="progress mb-2" style="height:30px;">
-                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 19%" aria-valuenow="3.68" aria-valuemin="0" aria-valuemax="100">2.5</div>
-                                        </div><br>
-
-                                         <h4 style="margin-bottom: 10px;">완치율</h4>
-                                        <div class="progress mb-2" style="height:30px;">
-                                            <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="38.225%" aria-valuemin="0" aria-valuemax="100">38.225%</div>
-                                        </div>
--->
-                    <br>
-
-                                <div class="col-md-6 col-lg-4" style="margin-bottom:-900px;"> <!-- CHART--> 
-                                    <div class="statistic-chart-1" style="margin-left:-15px; margin-right:-15px; border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
-             -5px -5px 0px #e5e5e5;"> 
-                                        <div class="chart-wrap" style=" margin:-20px;"> <h3 style="background-color:#fff; margin-left:15px;">
-                                            TOP15<h3 style="color:#a9a9a9; margin-left:15px;">발생국 현황<br></h3></h3> 
-                                            <div id="tableByCountry" style="margin-top:30px; overflow:scroll;"></div> 
-                                        </div> 
-                                        <a href="http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=14&ncvContSeq=&contSeq=&board_id=&gubun=" target="_blank" style=" text-align:right; margin-left:-15px;"><br>더보기 ></a>
-                                        <br><Br>
-                                         <div class="copyright">
-                                <p>Copyright © 2020 All rights reserved. <br>정보 제공 : <a href="http://ncov.mohw.go.kr" target="_blank">중앙방역대책본부</a>.</p>
-                            </div> 
-                                    </div> 
-                                    <!-- END CHART-->
-                                     </div>
-
-                                    
-                            <br><br>
-
-                    </div>
-                </div>
-
-
-                    
-            <!-- END COPYRIGHT-->
-
-            <!-- END STATISTIC-->
-<!--
-            <section id="frontier">
-                      <h3 style="text-align: left; width:90%; margin-top:40px; margin-left:25px;">재난문자 <span style="font-size:15px;" class="myRegion">위치 찾는 중...<button type="button" data-toggle="modal" data-target="#smallmodal2"><img style="width:25px; height:25px;" src="https://img.pngio.com/help-icon-transparent-background-83167-free-icons-library-help-icon-png-2000_2000.jpg"></button></a></h3><br>
-                      <div class="article" style="border-color: red; width:90%; margin-left:15px; margin-right:15px;">
-        <a href="http://www.safekorea.go.kr/idsiSFK/neo/main_m/dis/disasterDataList.html" id="infotainer" target="_blank">
-          <h2 class="itemName" id="cbs_ct1">[내용]</h2>
-
-          <h4 class="itemAuthorName" id="cbs_from1" style="margin-bottom:15px;">[발송처]</h4>
-        </a>
-      </div>
-
-      <div class="article" style="border-color: red; width:90%; margin-left:15px; margin-right:15px;">
-        <a href="http://www.safekorea.go.kr/idsiSFK/neo/main_m/dis/disasterDataList.html" id="infotainer" target="_blank">
-          <h2 class="itemName" id="cbs_ct2">[내용]</h2>
-
-          <h4 class="itemAuthorName" id="cbs_from2" style="margin-bottom:15px;">[발송처]</h4>
-        </a>
-      </div>
-  <a href="http://www.safekorea.go.kr/idsiSFK/neo/main_m/dis/disasterDataList.html" target="_blank" style=" text-align:right; margin-left:20px;">더보기 ></a><br><Br>
-
- -->
-
-
-            </section>
-
-<!--
-                <div id="frontier" ng-app="myApp">
-
-
-  <div ng-controller="mainCtrl" style="margin-right:15px; margin-left:15px; padding-top:20px;">
-   
-    <div class="flexCont">
-      <h3 style="text-align: left; width:100%; margin-bottom:20px; margin-left:10px;">최신뉴스</h3><br>
-
-      <div class="article" ng-repeat="item in articles">
-         
-        
-        <a href="{{item.url}}" id="infotainer" target="_blank">
-          <h2 class="itemName">{{item.title}}</h2>
-
-          <h4 class="itemAuthorName">{{item.author}}</h4>
-          <p class="itemDesc">{{item.description}}</p>
-        </a>
-      </div>
-    </div>
-  </div>
-  <a href="https://search.naver.com/search.naver?where=news&sm=tab_jum&query=%EC%BD%94%EB%A1%9C%EB%82%9819" target="_blank" style=" text-align:right; margin-left:20px;">더 많은 뉴스 보기 ></a>
-  
-</div>
-</div>
--->
-
-            <!-- COPYRIGHT-->
-            
-        </div>
-
-    </div>
-
-
-
-
-    <div class="modal fade" id="smallmodal" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
-<div class="modal-dialog modal-sm" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<h5 class="modal-title" id="smallmodalLabel">용어설명 - 재생산지수(R0)</h5>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-</div>
-<div class="modal-body">
-<p style="font-size:15px;">
-재생산지수란 전염성이 사람 간 전파되는 정도를 수치로 나타낸 것으로 쉽게 말하면 감염병의 전파성을 나타내는 지수이다.<br>
-R0 수치가 2라고 가정하면, 감염자 1명이 다른 사람 2명 이상에게 전파가 가능하다는 의미이다.<br>
-</p>
-</div>
-<div class="modal-footer">
-<button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
-</div>
-</div>
-</div>
-</div>
-
-
-
-    <div class="modal fade" id="smallmodal4" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
-<div class="modal-dialog modal-sm" role="document" >
-<div class="modal-content">
-<div class="modal-body">
-<div class="container">
-
-<h4 style="margin-left:-10px;">이태원 클럽 관련 확진자 현황</h4>
-
-                    <div class="row justify-content-start" style="padding-top:10px;">
-                <div class="col" style="padding-top:10px;">
-<h1 style="color:#d92121">168</h1>
-                </div>
-                <div class="col" style="padding-top:10px;">
-<h1 style="color:#298fca">+2</h1>
-
-                </div>
-                </div>
-                <div class="row justify-content-start" style="padding-top:5px;">
-
-                <div class="col" style="padding-top:-10px;">
-<h5>확진자</h5>
-                </div>
-                <div class="col" style="padding-top:-10px;">
-<h5>당일 증가</h5>
-                </div>
-                </div>
-                 <span style="font-size:12px; margin-top:20px;">통계 업데이트 : 05.17. 12시</span>
-                 <br> <br>
-                            <!-- CHART PERCENT-->
-                                <div class="chart-wrap">
-                                    <canvas id="doughutChart_club"></canvas>
-                                        <table></table>
-                                    </div>
-                                    <span style="font-size:12px; margin-top:20px;">차트 업데이트 : 05.17. 12시</span>
-
-</div>
-</div>
-<div class="modal-footer">
-<button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
-</div>
-</div>
-</div>
-</div>
-
-
-
-
-
-
-
-    <!-- Vue JS
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
--->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.3.4/vue-resource.js"></script>
-    <!-- Jquery JS-->
-    <script src="vendor/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap JS-->
-    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <!-- Vendor JS-->
-    <script src="vendor/slick/slick.min.js">
-    </script>
-    <script src="vendor/wow/wow.min.js"></script>
-    <script src="vendor/animsition/animsition.min.js"></script>
-    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
-    </script>
-    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
-    <script src="vendor/counter-up/jquery.counterup.min.js">
-    </script>
-    <script src="vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="vendor/select2/select2.min.js">
-    </script>
-
+<img src="" style="height:100px; margin-top:50vh;"><br><span id="loadtext">로딩중...</span></div>
     <!-- Main JS-->
     <script src="js/main.js"></script>
-    <script src="js/custom.js"></script>
 
-</body>
+<script>
+var loadBoolean = false;
+$('#loadingMessage').css('display', 'block');
 
-</html>
-<!-- end document-->
+  document.querySelector("iframe").addEventListener( "load", function(e) {
 
-    <style type="text/css">/* Chart.js */
-@keyframes chartjs-render-animation {
-    from {
-        opacity: .99
-    }
-    to {
-        opacity: 1
-    }
+    loadBoolean = true;
+
+});
+
+var nutime = 0;
+  var timer = setInterval(function(){
+    nutime += 1;
+       if(loadBoolean == true) {
+        $('#loadingMessage').fadeOut();
+        clearInterval(timer);
+       } else if(nutime >= 4 && nutime < 9) {
+        document.getElementById("loadtext").innerHTML = '정보를 가져오고 있어요.' ;
+       } else if(nutime >= 9 && nutime < 15) {
+        document.getElementById("loadtext").innerHTML = '로딩이 조금 오래 걸리네요.' ;
+       } else if(nutime >= 15) {
+           document.getElementById("loadtext").innerHTML = '너무 오래 걸리면 새로고침 해보세요.' ;
+       }
+      
+    }, 500)
+
+
+  
+
+</script>
+
+<style>
+#loadingMessage {
+    width: 100vw;
+    height: 100vh;
+    position:fixed;
+    background:#fff;
+    z-index: 9999999;
+    top: 0px;
+    left: 0px;
+text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* SVG spinner icon animation */
+.spinner {
+  -webkit-animation: rotate 2s linear infinite;
+          animation: rotate 2s linear infinite;
+  z-index: 2;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+  width: 50px;
+  height: 50px;
+}
+.spinner .path {
+  stroke: #556ee6;
+  stroke-linecap: round;
+  -webkit-animation: dash 1.5s ease-in-out infinite;
+          animation: dash 1.5s ease-in-out infinite;
 }
 
-.chartjs-render-monitor {
-    animation: chartjs-render-animation 1ms
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
-.chartjs-size-monitor, .chartjs-size-monitor-expand, .chartjs-size-monitor-shrink {
-    position: absolute;
-    direction: ltr;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    overflow: hidden;
-    pointer-events: none;
-    visibility: hidden;
-    z-index: -1
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
-
-.chartjs-size-monitor-expand > div {
-    position: absolute;
-    width: 1000000px;
-    height: 1000000px;
-    left: 0;
-    top: 0
-}
-
-.chartjs-size-monitor-shrink > div {
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    left: 0;
-    top: 0
-}
-
-        canvas {
-            -moz-user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-        }
-
-.animated {
-  background-color: #a9a9a9;
-  background: -webkit-gradient(linear, left top, right top, color-stop(5%, #f3f3f3), color-stop(20%, #eee), color-stop(35%, #f3f3f3));
-  background: linear-gradient(to right, #f3f3f3 25%, #eee 20%, #f3f3f3 75%);
-  -webkit-animation: placeholderShimmer 2s linear 0s infinite normal forwards;
-          animation: placeholderShimmer 2s linear 0s infinite normal forwards;
-}
-
-@-webkit-keyframes placeholderShimmer {
+@-webkit-keyframes dash {
   0% {
-    background-position: -500px 0;
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
   }
   100% {
-    background-position: 500px 0;
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
   }
 }
-
-@keyframes placeholderShimmer {
+@keyframes dash {
   0% {
-    background-position: -500px 0;
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
   }
   100% {
-    background-position: 500px 0;
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
   }
-
-svg {
-  width: 100%;
-  max-width: 400px;
 }
 
 </style>
 
-<!-- 자동 업데이트 -->
 <script>
-
-
-
-
-
-
-
-
-/*
-    document.getElementById('confirmed').innerHTML = koreaRegionalData[0].확진자수.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"명";
- document.getElementById('cure').innerHTML = koreaRegionalData[0].격리해제수.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"명";
-    document.getElementById('death').innerHTML = koreaRegionalData[0].사망자수.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"명";
-    document.getElementById('whenUpdate').innerHTML = koreaRegionalData[18].업데이트날짜+" 기준";
-*/
-    document.getElementById('seoulCases').innerHTML = koreaRegionalData[1].확진자수;
-    document.getElementById('seoulCure').innerHTML = koreaRegionalData[1].격리해제수;
-    document.getElementById('seoulDeath').innerHTML = koreaRegionalData[1].사망자수;
-
-    document.getElementById('busanCases').innerHTML = koreaRegionalData[2].확진자수;
-    document.getElementById('busanCure').innerHTML = koreaRegionalData[2].격리해제수;
-    document.getElementById('busanDeath').innerHTML = koreaRegionalData[2].사망자수;
-
-    document.getElementById('daeguCases').innerHTML = koreaRegionalData[3].확진자수;
-    document.getElementById('daeguCure').innerHTML = koreaRegionalData[3].격리해제수;
-    document.getElementById('daeguDeath').innerHTML = koreaRegionalData[3].사망자수;
-
-    document.getElementById('incheonCases').innerHTML = koreaRegionalData[4].확진자수;
-    document.getElementById('incheonCure').innerHTML = koreaRegionalData[4].격리해제수;
-    document.getElementById('incheonDeath').innerHTML = koreaRegionalData[4].사망자수;
-
-    document.getElementById('gwangjuCases').innerHTML = koreaRegionalData[5].확진자수;
-    document.getElementById('gwangjuCure').innerHTML = koreaRegionalData[5].격리해제수;
-    document.getElementById('gwangjuDeath').innerHTML = koreaRegionalData[5].사망자수;
-
-    document.getElementById('daejeonCases').innerHTML = koreaRegionalData[6].확진자수;
-    document.getElementById('daejeonCure').innerHTML = koreaRegionalData[6].격리해제수;
-    document.getElementById('daejeonDeath').innerHTML = koreaRegionalData[6].사망자수;
-
-    document.getElementById('ulsanCases').innerHTML = koreaRegionalData[7].확진자수;
-    document.getElementById('ulsanCure').innerHTML = koreaRegionalData[7].격리해제수;
-    document.getElementById('ulsanDeath').innerHTML = koreaRegionalData[7].사망자수;
-
-    document.getElementById('sejongCases').innerHTML = koreaRegionalData[8].확진자수;
-    document.getElementById('sejongCure').innerHTML = koreaRegionalData[8].격리해제수;
-    document.getElementById('sejongDeath').innerHTML = koreaRegionalData[8].사망자수;
-
-    document.getElementById('ggCases').innerHTML = koreaRegionalData[9].확진자수;
-     document.getElementById('ggCure').innerHTML = koreaRegionalData[9].격리해제수;
-      document.getElementById('ggDeath').innerHTML = koreaRegionalData[9].사망자수;
-
-    document.getElementById('gangwonCases').innerHTML = koreaRegionalData[10].확진자수;
-    document.getElementById('gangwonCure').innerHTML = koreaRegionalData[10].격리해제수;
-    document.getElementById('gangwonDeath').innerHTML = koreaRegionalData[10].사망자수;
-
-    document.getElementById('cbCases').innerHTML = koreaRegionalData[11].확진자수;
-    document.getElementById('cbCure').innerHTML = koreaRegionalData[11].격리해제수;
-    document.getElementById('cbDeath').innerHTML = koreaRegionalData[11].사망자수;
-
-    document.getElementById('cnCases').innerHTML = koreaRegionalData[12].확진자수;
-    document.getElementById('cnCure').innerHTML = koreaRegionalData[12].격리해제수;
-    document.getElementById('cnDeath').innerHTML = koreaRegionalData[12].사망자수;
-
-    document.getElementById('jbCases').innerHTML = koreaRegionalData[13].확진자수;
-    document.getElementById('jbCure').innerHTML = koreaRegionalData[13].격리해제수;
-    document.getElementById('jbDeath').innerHTML = koreaRegionalData[13].사망자수;
-
-    document.getElementById('jnCases').innerHTML = koreaRegionalData[14].확진자수;
-    document.getElementById('jnCure').innerHTML = koreaRegionalData[14].격리해제수;
-    document.getElementById('jnDeath').innerHTML = koreaRegionalData[14].사망자수;
-
-    document.getElementById('gbCases').innerHTML = koreaRegionalData[15].확진자수;
-    document.getElementById('gbCure').innerHTML = koreaRegionalData[15].격리해제수;
-    document.getElementById('gbDeath').innerHTML = koreaRegionalData[15].사망자수;
-
-    document.getElementById('gnCases').innerHTML = koreaRegionalData[16].확진자수;
-    document.getElementById('gnCure').innerHTML = koreaRegionalData[16].격리해제수;
-    document.getElementById('gnDeath').innerHTML = koreaRegionalData[16].사망자수;
-
-    document.getElementById('jejuCases').innerHTML = koreaRegionalData[17].확진자수;
-    document.getElementById('jejuCure').innerHTML = koreaRegionalData[17].격리해제수;
-    document.getElementById('jejuDeath').innerHTML = koreaRegionalData[17].사망자수;
-
-    rtTodayGet();
-
-
-function rtTodayGet() {
-    $('#refreshRT').addClass('lotation');
-// &nbsp;3초 후 함수가 실행됨
-    
-    //숫자가져오기
-    $.ajax({
-      type: "GET",
-      url: "https://api.corona-live.com//stats.json", // Using myjson.com to store the JSON
-      success: function(result) {
-        document.getElementById('rtToday').innerHTML = result.overview.current[0]+"명";
-         document.getElementById('rtPM').innerHTML = "("+result.overview.current[1]+")";
-
-         setTimeout(function() {
-  $('#refreshRT').removeClass('lotation');
-}, 1000);
-        
+  (function() {
+    var w = window;
+    if (w.ChannelIO) {
+      return (window.console.error || window.console.log || function(){})('ChannelIO script included twice.');
+    }
+    var d = window.document;
+    var ch = function() {
+      ch.c(arguments);
+    };
+    ch.q = [];
+    ch.c = function(args) {
+      ch.q.push(args);
+    };
+    w.ChannelIO = ch;
+    function l() {
+      if (w.ChannelIOInitialized) {
+        return;
       }
-    });
-
-    //상세내용
-    $.ajax({
-      type: "GET",
-      url: "https://api.corona-live.com//updates.json", // Using myjson.com to store the JSON
-      success: function(result) {
-        var length =  result.length;
-        document.getElementById('rtModalBtn').innerHTML = result[length-1].cases+"명 추가 확진 >";
-
-        
-        for(var i=0; i<result.length; i++) {
-            $('#rtUpdates').prepend('<div id="pattern"><h5>'+result[i].datetime+'<span style="color:red; margin-left:10px;">'+result[i].cases+'명 발생</span></h5><span style="font-size:15px;">'+result[i].src+'</span><hr></div>');
-        }
-
-        
-
-        
-      }
-    });
-}
-
-$(function() {
-  var taeb = $(".taeb-switch");
-  taeb.find(".taeb").on("click", function() {
-    var $this = $(this);
-
-    if ($this.hasClass("active")) return;
-
-    var direction = $this.attr("taeb-direction");
-
-    taeb.removeClass("left right").addClass(direction);
-    taeb.find(".taeb.active").removeClass("active");
-    $this.addClass("active");
+      w.ChannelIOInitialized = true;
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+      s.charset = 'UTF-8';
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+    }
+    if (document.readyState === 'complete') {
+      l();
+    } else if (window.attachEvent) {
+      window.attachEvent('onload', l);
+    } else {
+      window.addEventListener('DOMContentLoaded', l, false);
+      window.addEventListener('load', l, false);
+    }
+  })();
+  ChannelIO('boot', {
+    "pluginKey": "beb36d32-60ab-4b35-b9b0-62cd05b9d24d"
   });
-
-  var taeb2 = $(".taeb-switch2");
-  taeb2.find(".taeb").on("click", function() {
-    var $this = $(this);
-
-    if ($this.hasClass("active")) return;
-
-    var direction = $this.attr("taeb-direction");
-
-    taeb2.removeClass("left right").addClass(direction);
-    taeb2.find(".taeb.active").removeClass("active");
-    $this.addClass("active");
-  });
-});
-
-
-    
-
 </script>
+<!-- End Channel Plugin -->
+    <!-- Channel Plugin Scripts -->
+
+</body>
+</html>
+<!-- end document-->
