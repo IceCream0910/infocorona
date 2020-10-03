@@ -94,9 +94,9 @@
 
             <div style="margin-top:0px; ">
                 <textarea name="content" class="message" type="text" id="re_content" placeholder="응원 메시지를 남겨주세요"></textarea>
-                <button onClick="javascript:sendBtn();" id="rep_bt" class="re_bt"><i class="fas fa-paper-plane"></i></button>
+                <button onClick="javascript:sendBtn();" id="rep_bt" class="re_bt ripple-effect"><i class="fas fa-paper-plane"></i></button>
             </div>
-            <button class="decrease" style="display:inline-block; margin-right:10px; width:40px; height:40px; margin-top:10px;">
+            <button class="decrease ripple-effect" style="display:inline-block; margin-right:10px; width:40px; height:40px; margin-top:10px;">
                         <img src="https://vectorified.com/images/heart-icon-14.png" style="margin-top:0px; width:40px; height:40px;"> 
                         </button>
 <h4 class="counter" id="counter" style="display:inline-block; color:#fa4251;">로딩중</h4><span>개의 마음이 모였어요</span>
@@ -122,23 +122,58 @@
 <img src="https://i.imgur.com/aoO1Id3.jpg" style="border:none;"></img>
 <br>
 <span style="font-size:25px; color:#f0f0f0;">집콕을 위한<br>코로나콕의 PICK</span>
+<span class="ripple-effect" style="color:white; position:fixed; right:20px;" onclick="window.open('https://www.culture.go.kr/');">with <img src="https://i.imgur.com/TeY6TtB.png" style="height:30px;"/></span>
+
 <br>
 <br>
 
-<a href="https://www.culture.go.kr/homes/showList.do?sSdate=&sEdate=&genre=&gubun=&searchKeyword=" target="_blank"><span style="font-size:18px; color:white;  padding-bottom:10px;">랜선으로 즐기는 공연/전시 <i class="fa fa-angle-right"></i></span></a>
+<a class="ripple-effect" href="https://www.culture.go.kr/homes/showList.do?sSdate=&sEdate=&genre=&gubun=&searchKeyword=" target="_blank"><span style="font-size:18px; color:white;  padding-bottom:10px; display:inline-block;">랜선으로 즐기는 공연/전시 <i class="fa fa-angle-right"></i></span></a>
+
+
 <div class="grid" id="online-performance" style="overflow-x:scroll; white-space:nowrap; margin-left:-10px;">
 
 </div>
 
-<button id="left-button" style="background:#fff; border-radius:50%; text-align:center;width:35px; height:35px;">
+<button id="left-button" class="ripple-effect" style="background:#fff; border-radius:50%; text-align:center;width:35px; height:35px; margin-right:5px;">
         <i class="fa fa-angle-left"></i>
       </button>
 
-<button id="right-button" style="background:#fff; border-radius:50%; text-align:center;width:35px; height:35px;">
+<button id="right-button" class="ripple-effect" style="background:#fff; border-radius:50%; text-align:center;width:35px; height:35px;">
         <i class="fa fa-angle-right"></i>
       </button>
+
+
 <br>
 <br>
+
+<a class="ripple-effect" href="https://www.culture.go.kr/homes/eduList.do" target="_blank"><span style="font-size:18px; color:white;  padding-bottom:10px; display:inline-block;">새로운 걸 배워보는 건 어때요 <i class="fa fa-angle-right"></i></span></a>
+<div class="grid" id="online-edu" style="overflow-x:scroll; white-space:nowrap; margin-left:-10px;">
+
+</div>
+<button id="left-button-edu" class="ripple-effect" style="background:#fff; border-radius:50%; text-align:center;width:35px; height:35px; margin-right:5px;">
+        <i class="fa fa-angle-left"></i>
+      </button>
+
+<button id="right-button-edu" class="ripple-effect" style="background:#fff; border-radius:50%; text-align:center;width:35px; height:35px;">
+        <i class="fa fa-angle-right"></i>
+      </button>
+
+<br>
+<br>
+
+<a class="ripple-effect" href="https://www.culture.go.kr/homes/bookList.do" target="_blank"><span style="font-size:18px; color:white;  padding-bottom:10px; display:inline-block;">답답한 마음을 달래줄 집콕 운동, 함께해요 <i class="fa fa-angle-right"></i></span></a>
+<div class="grid" id="online-book" style="overflow-x:scroll; white-space:nowrap; margin-left:-10px;">
+
+</div>
+<button id="left-button-book" class="ripple-effect" style="background:#fff; border-radius:50%; text-align:center;width:35px; height:35px; margin-right:5px;">
+        <i class="fa fa-angle-left"></i>
+      </button>
+
+<button id="right-button-book" class="ripple-effect" style="background:#fff; border-radius:50%; text-align:center;width:35px; height:35px;">
+        <i class="fa fa-angle-right"></i>
+      </button>
+
+<br><br>
 
 <span style="font-size:15px; color:white;  padding-bottom:10px;">더 많은 추천을 준비중입니다. </span>
 
@@ -150,9 +185,9 @@
 
 <br><br>
 <div style="margin:20px;">
-<a href="https://donaricano.com/mypage/1453589129_hq87Bg" target="_blank" style="width:100%; text-align:center; background:#e66868; padding:15px; border-radius:20px; color:#fff;">카카오페이로 개발자 응원하기 ></a>
+<a class="ripple-effect" href="https://donaricano.com/mypage/1453589129_hq87Bg" target="_blank" style="width:100%; text-align:center; background:#e66868; padding:15px; border-radius:20px; color:#fff;">카카오페이로 개발자 응원하기 ></a>
 <br><br>
-<div class='card' onclick="javascript:window.open('https://app.developer.here.com/coronavirus/','_blank');" style="border-radius: 20px; border:none; box-shadow:  5px 5px 10px #222327, 
+<div class='card ripple-effect' onclick="javascript:window.open('https://app.developer.here.com/coronavirus/','_blank');" style="border-radius: 20px; border:none; box-shadow:  5px 5px 10px #222327, 
              -5px -5px 0px #f7f7f7;">
         <div class='content'>
           <div class='cover' style='background-image:url(https://i.imgur.com/rfUE2gV.jpg)'>
@@ -163,7 +198,7 @@
         </div>
       </div>
 
-<div class='card' style="color:black; border-radius: 20px; border:none;
+<div class='card ripple-effect' style="color:black; border-radius: 20px; border:none;
 box-shadow:  5px 5px 10px #1eb37c, 
              -5px -5px 0px #f7f7f7;" onclick="javascript:window.open('https://coronacoc.github.io/dongsup/intro.html','_blank');">
         <div class='content'>
@@ -176,7 +211,7 @@ box-shadow:  5px 5px 10px #1eb37c,
       </div>
 
       
-<div class='card' onclick="javascript:window.open('https://coronacoc.github.io/coronasee/','_blank');" style="border-radius: 20px; border:none; box-shadow:  5px 5px 10px #0f0f0f, 
+<div class='card ripple-effect' onclick="javascript:window.open('https://coronacoc.github.io/coronasee/','_blank');" style="border-radius: 20px; border:none; box-shadow:  5px 5px 10px #0f0f0f, 
              -5px -5px 0px #f7f7f7;">
         <div class='content'>
           <div class='cover' style='background-image:url(https://i.imgur.com/gcq8CkU.jpg)'>
@@ -188,7 +223,7 @@ box-shadow:  5px 5px 10px #1eb37c,
       </div>
 
 
-<div class='card' onclick="javascript:window.open('https://coronacoc.github.io/shooting/','_blank');" style="border-radius: 20px; border:none; box-shadow:  5px 5px 10px #180000, 
+<div class='card ripple-effect' onclick="javascript:window.open('https://coronacoc.github.io/shooting/','_blank');" style="border-radius: 20px; border:none; box-shadow:  5px 5px 10px #180000, 
              -5px -5px 0px #f7f7f7;">
         <div class='content'>
           <div class='cover' style='background-image:url(https://i.imgur.com/hU6Rv7a.jpg)'>
@@ -199,7 +234,7 @@ box-shadow:  5px 5px 10px #1eb37c,
         </div>
       </div>
 
-<div class='card' onclick="javascript:window.open('https://coronacoc.github.io/simulation/','_blank');" style="border-radius: 20px; border:none; box-shadow:  5px 5px 10px #0f0f0f, 
+<div class='card ripple-effect' onclick="javascript:window.open('https://coronacoc.github.io/simulation/','_blank');" style="border-radius: 20px; border:none; box-shadow:  5px 5px 10px #0f0f0f, 
              -5px -5px 0px #f7f7f7;">
         <div class='content'>
           <div class='cover' style='background-image:url(https://i.imgur.com/Q0q2OFd.jpg)'>
