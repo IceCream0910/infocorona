@@ -174,7 +174,7 @@ frameLooper2();
         <div class="padding"></div>
         <div class="title"></div>정보 가져오는 중...</h6>
         <div id="player-container" style="display:inline-block;">
-                            <div id="play-pause" class="play" onclick="getTTS();" style="width:35px; height:35px; border:1.5px solid #a9a9a9; border-radius:50%; display:flex; -webkit-justify-content: center; justify-content: center; -webkit-align-items: center; align-items: center; color:#a9a9a9;"><i id="ttsBtn" class="fa fa-volume-up"></i></div>
+                            <div id="play-pause" class="play ripple-effect" onclick="getTTS();" style="width:35px; height:35px; border:1.5px solid #a9a9a9; border-radius:50%; display:flex; -webkit-justify-content: center; justify-content: center; -webkit-align-items: center; align-items: center; color:#a9a9a9;"><i id="ttsBtn" class="fa fa-volume-up"></i></div>
                             </div>
     </h3>
                         </div>
@@ -227,7 +227,7 @@ border:none;
 box-shadow:  5px 5px 10px #d3b7b9, 
              -5px -5px 0px #f7f7f7;">
 <span class="badge badge-pill badge-danger">안내</span>
-<button type="button" style="color:black; text-align:left;" onclick="window.open('https://www.e-gen.or.kr/egen/holiday_medical.do');">여기를 눌러 연휴기간 운영중인 선별진료소를 확인하세요 ></button>
+<button type="button" class="ripple-effect" style="color:black; text-align:left;" onclick="window.open('https://www.e-gen.or.kr/egen/holiday_medical.do');">여기를 눌러 연휴기간 운영중인 선별진료소를 확인하세요 ></button>
 </button>
 </div>
 
@@ -264,7 +264,7 @@ box-shadow:  5px 5px 10px #3861b7,
              -5px -5px 0px #e5e5e5;">
                                 <div class="chart-wrap">
                                     <div id="rtSection">
-    <h4>실시간 확진자<span style="color:#a9a9a9; font-size:15px;"> (비공식)</span> <div id="refreshRT" class="default " style="width:30px; height:30px; color:#556ee6; display:inline-block;" onclick="rtTodayGet();"><i class="fa fa-sync" style="width:30px; height:30px;"></i></div></h4>
+    <h4>실시간 확진자<span style="color:#a9a9a9; font-size:15px;"> (비공식)</span> <div class="ripple-effect" style="width:30px; height:30px; color:#556ee6; display:inline-block;" onclick="rtTodayGet();"><i class="fa fa-sync" style="width:30px; height:30px;"></i></div></h4>
 
     <!-- Button trigger modal -->
 
@@ -281,7 +281,7 @@ box-shadow:  5px 5px 10px #3861b7,
          
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-transparent" data-dismiss="modal">닫기</button>
+        <button type="button" class="btn btn-transparent ripple-effect" data-dismiss="modal">닫기</button>
       </div>
     </div>
   </div>
@@ -289,7 +289,7 @@ box-shadow:  5px 5px 10px #3861b7,
 
 
     <h3><h3 id="rtToday" style="display:inline-block;"></h3><span id="rtPM" style="display:inline-block; margin-left:10px;"></span></h3><br><br>
-    <button id="rtModalBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="width:100%; text-align:left; border-radius:10px;">
+    <button id="rtModalBtn" type="button" class="btn btn-primary ripple-effect" data-toggle="modal" data-target="#exampleModal" style="width:100%; text-align:left; border-radius:10px;">
   상세 
 </button><br><br>
     <span style="color:#a9a9a9; font-size:13px;">괄호 안 숫자는 전일 동시간 대비 증감</span><br>
@@ -375,8 +375,8 @@ box-shadow:  5px 5px 10px #3861b7,
                                         <h3>국내 <h3 style="color:#a9a9a9;">검사 현황<br>
                                             <br><div class="wrapper">
     <div class="taeb-switch left text-center">
-      <div class="taeb active" taeb-direction="left" onclick="$('#recent-rep2-chart').show();$('#tests-percent').hide();">검사수</div><!--
-  --><div class="taeb" taeb-direction="right" onclick="$('#recent-rep2-chart').hide();$('#tests-percent').show();">확진율</div>
+      <div class="taeb active ripple-effect" taeb-direction="left" onclick="$('#recent-rep2-chart').show();$('#tests-percent').hide();">검사수</div><!--
+  --><div class="taeb ripple-effect" taeb-direction="right" onclick="$('#recent-rep2-chart').hide();$('#tests-percent').show();">확진율</div>
     </div>
   </div>
                                             <br></h3></h3>
@@ -420,8 +420,8 @@ box-shadow:  5px 5px 10px #3861b7,
                                     <h3>연령별 <h3 style="color:#a9a9a9;">현황</h3></h3><br>
                                     <div class="wrapper">
     <div class="taeb-switch2 left text-center">
-      <div class="taeb active" taeb-direction="left" onclick="$('#singelBarChart_2').show();$('#singelBarChart').hide();">확진자</div><!--
-  --><div class="taeb" taeb-direction="right" onclick="$('#singelBarChart_2').hide();$('#singelBarChart').show();">사망자</div>
+      <div class="taeb active ripple-effect" taeb-direction="left" onclick="$('#singelBarChart_2').show();$('#singelBarChart').hide();">확진자</div><!--
+  --><div class="taeb ripple-effect" taeb-direction="right" onclick="$('#singelBarChart_2').hide();$('#singelBarChart').show();">사망자</div>
     </div>
   </div><br>
                                     <canvas id="singelBarChart_2"></canvas>
@@ -649,7 +649,7 @@ box-shadow:  5px 5px 10px #0d0d0d,
 
                         </div>
 
- <a href="https://app.developer.here.com/coronavirus/" target="_blank" style=" text-align:right; margin-top:-25px; margin-bottom: 25px;"><br>지도로 보는 전세계 현황 ></a>
+ <a class="ripple-effect" href="https://app.developer.here.com/coronavirus/" target="_blank" style=" text-align:right; margin-top:-25px; margin-bottom: 25px;"><br>지도로 보는 전세계 현황 ></a>
                        
                         <!-- TASK PROGRESS
                                     <h4 style="margin-bottom: 10px;">치사율</h4>
@@ -676,10 +676,10 @@ box-shadow:  5px 5px 10px #0d0d0d,
                                             TOP15<h3 style="color:#a9a9a9; margin-left:15px;">발생국 현황<br></h3></h3> 
                                             <div id="tableByCountry" style="margin-top:30px; overflow:scroll;"></div> 
                                         </div> 
-                                        <a href="http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=14&ncvContSeq=&contSeq=&board_id=&gubun=" target="_blank" style=" text-align:right; margin-left:-15px;"><br>더보기 ></a>
+                                        <a class="ripple-effect" href="http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=14&ncvContSeq=&contSeq=&board_id=&gubun=" target="_blank" style=" text-align:right; margin-left:-15px;"><br>더보기 ></a>
                                         <br><Br>
                                          <div class="copyright">
-                                <p>Copyright © 2020 All rights reserved. <br>정보 제공 : <a href="http://ncov.mohw.go.kr" target="_blank">중앙방역대책본부</a>.</p>
+                                <p>Copyright © 2020 All rights reserved. <br>정보 제공 : <a class="ripple-effect" href="http://ncov.mohw.go.kr" target="_blank">중앙방역대책본부</a>.</p>
                             </div> 
                                     </div> 
                                     <!-- END CHART-->
