@@ -368,3 +368,67 @@ width: 3.8rem;
 .taeb-switch2.right:after {
   left: 50%;
 }
+
+.ripple-effect {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  vertical-align: middle;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  z-index: 1;
+}
+.ripple-effect .ripple {
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  pointer-events: none;
+}
+.ripple-effect.ripple-dark .ripple {
+  background: rgba(0, 0, 0, 0.1) !important;
+}
+.ripple-effect.ripple-red .ripple {
+  background: rgba(244, 67, 54, 0.725) !important;
+}
+.ripple-effect.ripple-orange .ripple {
+  background: rgba(255, 152, 0, 0.725) !important;
+}
+.ripple-effect.ripple-yellow .ripple {
+  background: rgba(255, 235, 59, 0.725) !important;
+}
+.ripple-effect.ripple-green .ripple {
+  background: rgba(76, 175, 80, 0.725) !important;
+}
+.ripple-effect.ripple-purple .ripple {
+  background: rgba(156, 39, 176, 0.725) !important;
+}
+.ripple-effect.ripple-teal .ripple {
+  background: rgba(0, 150, 136, 0.725) !important;
+}
+.ripple-effect.ripple-pink .ripple {
+  background: rgba(233, 30, 99, 0.725) !important;
+}
+.ripple-effect .animated {
+  -webkit-animation: ripple 0.6s linear;
+          animation: ripple 0.6s linear;
+}
+@-webkit-keyframes ripple {
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(2.5);
+            transform: scale(2.5);
+  }
+}
+@keyframes ripple {
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(2.5);
+            transform: scale(2.5);
+  }
+}
