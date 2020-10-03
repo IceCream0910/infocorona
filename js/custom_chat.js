@@ -192,6 +192,45 @@ $('#right-button').click(function() {
   }
 });
 
+ $('#right-button-edu').click(function() {
+  event.preventDefault();
+  var current = $('#online-edu').scrollLeft();
+  if(current < 1364) {
+    $('#online-edu').animate({
+    scrollLeft: "+=200px"
+  }, "slow");
+  }
+});
+
+ $('#left-button-edu').click(function() {
+  event.preventDefault();
+  var current = $('#online-edu').scrollLeft();
+  if(current >= 0) {
+    $('#online-edu').animate({
+    scrollLeft: "-=200px"
+  }, "slow");
+  }
+});
+
+ $('#right-button-book').click(function() {
+  event.preventDefault();
+  var current = $('#online-book').scrollLeft();
+  if(current < 1364) {
+    $('#online-book').animate({
+    scrollLeft: "+=200px"
+  }, "slow");
+  }
+});
+
+ $('#left-button-book').click(function() {
+  event.preventDefault();
+  var current = $('#online-book').scrollLeft();
+  if(current >= 0) {
+    $('#online-book').animate({
+    scrollLeft: "-=200px"
+  }, "slow");
+  }
+});
 
 // 온라인 공연/전시 크롤링
 
@@ -212,12 +251,12 @@ new Vue({
         runScraper: function() {
             this.scraperRunning = !0, this.url.includes("http"), this.url = "https://cors-anywhere.herokuapp.com/"+"https://www.culture.go.kr/homes/showList.do?sSdate=&sEdate=&genre=&gubun=&searchKeyword=", this.$http.get(this.url).then(e => {
                 this.scraperRunning = !1;
-                for(var i=0; i<10; i++) {
+                for(var i=0; i<e.body.showListCnt; i++) {
                 	var title = e.body.showList[i].title
                 	var img = 'https://www.culture.go.kr/'+e.body.showList[i].img_file;
                 	var href= 'https://www.culture.go.kr/homes/showView.do?seq='+e.body.showList[i].seq;
-                	console.log(title);
-                	$('#online-performance').append('<div class="grid__item" style="display:inline-block;" onclick="window.open(\''+href+'\');"><div class="card"><img class="card__img" src="'+img+'" alt="Snowy Mountains"><div class="card__content"><h1 class="card__header">'+title+'</h1> </div></div></div>');
+                	//console.log(e.body.showListCnt);
+                	$('#online-performance').append('<div class="grid__item ripple-effect" style="display:inline-block;" onclick="window.open(\''+href+'\');"><div class="card"><img class="card__img" src="'+img+'" alt="Snowy Mountains"><div class="card__content"><h1 class="card__header">'+title+'</h1> </div></div></div>');
 
                 }
                 
@@ -228,8 +267,39 @@ new Vue({
                 */
             })
         },
+        runScraper2: function() {
+            this.scraperRunning = !0, this.url.includes("http"), this.url = "https://cors-anywhere.herokuapp.com/"+"https://www.culture.go.kr/homes/eduList.do", this.$http.get(this.url).then(e => {
+                this.scraperRunning = !1;
+                for(var i=0; i<e.body.eduListCnt; i++) {
+                  var title = e.body.eduList[i].title
+                  var img = 'https://www.culture.go.kr/'+e.body.eduList[i].img_file;
+                  var href= 'https://www.culture.go.kr/homes/eduView.do?seq='+e.body.eduList[i].seq;
+                  console.log(e.body.eduList[i].seq);
+                  $('#online-edu').append('<div class="grid__item ripple-effect" style="display:inline-block;" onclick="window.open(\''+href+'\');"><div class="card"><img class="card__img" src="'+img+'" alt="Snowy Mountains"><div class="card__content"><h1 class="card__header">'+title+'</h1> </div></div></div>');
+
+                }
+                
+                /*
+                var r = (n = e.body).indexOf("<h1>Coronavirus Cases:</h1>"),
+                    a = n.substr(r, 123).replace("<h1>Coronavirus Cases:</h1>", "").replace(/(\s*)/g, "").replace(/\"/gi, "").replace("divclass=maincounter-number", "").replace("<", "").replace(">", "");
+                document.getElementById("globeConfirmed").innerHTML = a + "<span>명</span>";
+                */
+            })
+        },
+        runScraper3: function() {
+            this.scraperRunning = !0, this.url.includes("http"), this.url = "https://cors-anywhere.herokuapp.com/"+"https://www.culture.go.kr/homes/bookList.do", this.$http.get(this.url).then(e => {
+                this.scraperRunning = !1;
+                for(var i=0; i<e.body.bookListCnt; i++) {
+                  var title = e.body.bookList[i].title
+                  var img = 'https://www.culture.go.kr/'+e.body.bookList[i].img_file;
+                  var href= 'https://www.culture.go.kr/homes/bookView.do?seq='+e.body.bookList[i].seq;
+                  $('#online-book').append('<div class="grid__item ripple-effect" style="display:inline-block;" onclick="window.open(\''+href+'\');"><div class="card"><img class="card__img" src="'+img+'" alt="Snowy Mountains"><div class="card__content"><h1 class="card__header">'+title+'</h1> </div></div></div>');
+console.log(e.body);
+                }
+            })
+        },
     },
     beforeMount() {
-        this.runScraper()
+        this.runScraper(), this.runScraper2(), this.runScraper3()
     }
 });
