@@ -18,7 +18,7 @@ function getTTS() {
         var ttsdata5 = document.getElementById("death").innerHTML;
         var ttsdata6 = document.getElementById("deathPM").innerHTML.replace("사망자", "").replace("(+", "").replace(")", "").replace(/\s/gi, "");
         var ttsdata7 = document.getElementById("localConfirmed").innerHTML.replace("해외유입", "해외유입 사례는").replace('<br>', "이고, ").replace("국내발생", "국내발생 환자는")+"입니다.";
-        var ttsdata_special = ". 이번 추석명절에는 이동을 자제하고 방역수칙을 잘 지켜주시기 바랍니다."
+        var ttsdata_special = ""
 if(ttsdata1 == "로딩중") {
 ttsurl = "아직 현황을 로딩중입니다";
 CreateVoice(ttsurl);
