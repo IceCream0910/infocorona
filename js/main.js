@@ -173,7 +173,7 @@
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [11179, 12985],
+            data: [11229, 13010],
             backgroundColor: [
               '#00b5e9',
               '#fa4251',
@@ -270,7 +270,7 @@
           datasets: [
             {
               label: "확진자 수",
-              data: [588, 1324, 4802, 2958, 3230, 4476, 3850, 1944, 992],
+              data: [593, 1332, 4828, 2966, 3232, 4487, 3859, 1948, 994],
               borderColor: "rgba(255, 40, 0, 1)",
               borderWidth: "0",
               backgroundColor: "rgba(255, 40, 0, 0.8)"
