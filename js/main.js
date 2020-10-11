@@ -67,11 +67,11 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['9.30', '10.1', '10.2', '10.3', '10.4', '10.5', '10.6', '10.7', '10.8', '10.9'],
+          labels: ['10.1', '10.2', '10.3', '10.4', '10.5', '10.6', '10.7', '10.8', '10.9', '10.10'],
           datasets: [
             {
               label: "신규 확진자",
-              data: [77, 63, 75, 64, 73, 75, 114, 69, 54, 72],
+              data: [63, 75, 64, 73, 75, 114, 69, 54, 72, 58],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
@@ -316,11 +316,11 @@
         type: 'bar',
         defaultFontFamily: 'Poppins',
         data: {
-          labels: ['10.4', '10.5', '10.6', '10.7', '10.8', '10.9'],
+          labels: ['10.5', '10.6', '10.7', '10.8', '10.9', '10.10'],
           datasets: [
             {
               label: "확진",
-              data: [73, 75, 114, 69, 54, 72],
+              data: [75, 114, 69, 54, 72, 58],
               borderColor: "rgba(250, 66, 81, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(250, 66, 81,0.5)",
@@ -328,7 +328,7 @@
             },
             {
               label: "완치",
-              data: [41, 197, 251, 129, 106, 55],
+              data: [197, 251, 129, 106, 55, 69],
               borderColor: "rgba(0,173,95, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,173,95, 0.5)",
@@ -336,7 +336,7 @@
             },
             {
               label: "사망",
-              data: [1, 0, 3, 2, 1, 2],
+              data: [0, 3, 2, 1, 2, 2],
               borderColor: "rgba(0,0,0, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,0,0, 0.5)",
@@ -384,7 +384,7 @@
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [6033, 13055, 12640, 10771, 11389, 4451] //검사
+    var data3 = [13055, 12640, 10771, 11389, 4451, 5799] //검사
 
     var ctx = document.getElementById("recent-rep2-chart");
     if (ctx) {
@@ -392,7 +392,7 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ["10.4", "10.5", "10.6", "10.7", "10.8", "10.9"],
+          labels: ["10.4", "10.6", "10.7", "10.8", "10.9", "10.10"],
           datasets: [
             {
               label: "일 검사자수",
@@ -441,7 +441,7 @@
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [1.21, 0.57, 0.90, 0.64, 0.47, 1.61] //  (확진수)/(검사수)*100
+    var data3 = [0.57, 0.90, 0.64, 0.47, 1.61, 1.00] //  (확진수)/(검사수)*100
 
     var ctx = document.getElementById("tests-percent-chart");
     if (ctx) {
@@ -449,7 +449,7 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ["10.4", "10.5", "10.6", "10.7", "10.8", "10.9"],
+          labels: ["10.5", "10.6", "10.7", "10.8", "10.9", "10.10"],
           datasets: [
             {
               label: "검사 대비 확진율",
