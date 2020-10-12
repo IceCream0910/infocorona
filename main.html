@@ -266,7 +266,7 @@ box-shadow:  5px 5px 10px #3861b7,
              -5px -5px 0px #e5e5e5;">
                                 <div class="chart-wrap">
                                     <div id="rtSection">
-    <h4>실시간 확진자<span style="color:#a9a9a9; font-size:15px;"> (비공식)</span> <div class="ripple-effect" style="width:30px; height:30px; color:#556ee6; display:inline-block;" onclick="rtTodayGet();"><i class="fa fa-sync" style="width:30px; height:30px;"></i></div></h4>
+    <h4>실시간 확진자<span style="color:#a9a9a9; font-size:15px;"> (비공식)</span> <div id="refreshRT" class="ripple-effect" style="width:30px; height:30px; color:#556ee6; display:inline-block;" onclick="rtTodayGet();"><i class="fa fa-sync" style="width:30px; height:30px;"></i></div></h4>
 
     <!-- Button trigger modal -->
 
@@ -290,12 +290,12 @@ box-shadow:  5px 5px 10px #3861b7,
 </div>
 
 
-    <h3><h3 id="rtToday" style="display:inline-block;"></h3><span id="rtPM" style="display:inline-block; margin-left:10px;"></span></h3><br><br>
-    <button id="rtModalBtn" type="button" class="btn btn-primary ripple-effect" data-toggle="modal" data-target="#exampleModal" style="width:100%; text-align:left; border-radius:10px;">
+    <h3 style="margin-top:5px;"><h3 id="rtToday" style="display:inline-block;"></h3><div id="rtpmBox" style="padding:5px 10px; border-radius:10px; background:rgba(255, 105, 97, 0.3); display:inline-block; margin-left:10px;"><span id="rtPM"></span></div></h3><br>
+    <button id="rtModalBtn" type="button" class="btn btn-primary ripple-effect" data-toggle="modal" data-target="#exampleModal" style="margin-top:15px;width:100%; text-align:left; border-radius:10px;">
   상세 
 </button><br><br>
-    <span style="color:#a9a9a9; font-size:13px;">괄호 안 숫자는 전일 동시간 대비 증감</span><br>
-    <span style="color:#a9a9a9; font-size:12px; line-height:0.2em;">09시~23시 집계. 재난문자 및 지자체 발표를 기반으로 합니다. 검역 및 대구 지역 확진 사례는 미포함됩니다. 실제 상황과 오차가 발생할 수 있습니다.</span>
+    <span style="color:#a9a9a9; font-size:13px;" id="rtDec"></span><br>
+    <span style="color:#a9a9a9; font-size:12px; line-height:0.2em;">재난문자 및 지자체 발표를 기반으로 합니다. 검역 및 대구 지역 확진 사례는 미포함됩니다. 실제 상황과 오차가 발생할 수 있습니다.</span>
 
 </span>
     
@@ -1048,7 +1048,16 @@ function rtTodayGet() {
       url: "https://cors-anywhere.herokuapp.com/https://apiv2.corona-live.com/stats.json", // Using myjson.com to store the JSON
       success: function(result) {
         document.getElementById('rtToday').innerHTML = result.overview.current[0]+"명";
-         document.getElementById('rtPM').innerHTML = "("+result.overview.current[1]+")";
+        var rtpm = String(result.overview.current[1]);
+        if(rtpm.includes("-") != -1) {
+            document.getElementById('rtpmBox').style.backgroundColor = "rgba(119, 158, 203, 0.3)";
+            rtpm = "↓ "+rtpm;
+        } else {
+            document.getElementById('rtpmBox').style.backgroundColor = "rgba(255, 105, 97, 0.3)";
+            rtpm = "↑ "+rtpm;
+        }
+         document.getElementById('rtPM').innerHTML = rtpm;
+         document.getElementById('rtDec').innerHTML = result.casesSummary.totalCases+"명 중 "+result.casesSummary.yesterdayCases+"명은 어제 집계";
 
          setTimeout(function() {
   $('#refreshRT').removeClass('lotation');
