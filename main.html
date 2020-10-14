@@ -1049,7 +1049,7 @@ function rtTodayGet() {
       success: function(result) {
         document.getElementById('rtToday').innerHTML = result.overview.current[0]+"명";
         var rtpm = String(result.overview.current[1]);
-        if(rtpm.includes("-") != -1) {
+        if(rtpm.includes("-")) {
             document.getElementById('rtpmBox').style.backgroundColor = "rgba(119, 158, 203, 0.3)";
             rtpm = "↓ "+rtpm;
         } else {
