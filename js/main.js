@@ -384,7 +384,7 @@
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [4451, 5799, 5127, 13161, 12683, 9296] //검사
+    var data3 = [5799, 5127, 13161, 12683, 9296, 8687] //검사
 
     var ctx = document.getElementById("recent-rep2-chart");
     if (ctx) {
@@ -392,7 +392,7 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ["10.9", "10.10", "10.11", "10.12", "10.13", "10.14"],
+          labels: ["10.10", "10.11", "10.12", "10.13", "10.14", "10.15"],
           datasets: [
             {
               label: "일 검사자수",
@@ -441,7 +441,7 @@
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [1.61, 1.00, 1.89, 0.78, 0.66, 1.18] //  (확진수)/(검사수)*100
+    var data3 = [1.00, 1.89, 0.78, 0.66, 1.18, 0.54] //  (확진수)/(검사수)*100
 
     var ctx = document.getElementById("tests-percent-chart");
     if (ctx) {
