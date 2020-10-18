@@ -173,7 +173,7 @@
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [11662, 13446],
+            data: [11771, 13488],
             backgroundColor: [
               '#00b5e9',
               '#fa4251',
@@ -220,7 +220,7 @@
           datasets: [
             {
               label: "사망자수",
-              data: [0, 0, 0, 2, 4, 21, 47, 145, 224],
+              data: [0, 0, 0, 2, 4, 21, 47, 146, 224],
               borderColor: "rgba(0, 0, 0, 0.9)",
               borderWidth: "0",
               backgroundColor: "rgba(0, 0, 0, 0.5)"
@@ -270,7 +270,7 @@
           datasets: [
             {
               label: "확진자 수",
-              data: [630, 1376, 4967, 3095, 3342, 4615, 4007, 2023, 1053],
+              data: [632, 1380, 4979, 3109, 3355, 4637, 4022, 2031, 1054],
               borderColor: "rgba(255, 40, 0, 1)",
               borderWidth: "0",
               backgroundColor: "rgba(255, 40, 0, 0.8)"
