@@ -173,7 +173,7 @@
         type: 'doughnut',
         data: {
           datasets: [{
-            data: [11783, 13550],
+            data: [11830, 13594],
             backgroundColor: [
               '#00b5e9',
               '#fa4251',
@@ -220,7 +220,7 @@
           datasets: [
             {
               label: "사망자수",
-              data: [0, 0, 0, 2, 4, 21, 49, 146, 225],
+              data: [0, 0, 0, 2, 4, 21, 49, 147, 227],
               borderColor: "rgba(0, 0, 0, 0.9)",
               borderWidth: "0",
               backgroundColor: "rgba(0, 0, 0, 0.5)"
@@ -270,7 +270,7 @@
           datasets: [
             {
               label: "확진자 수",
-              data: [637, 1386, 5003, 3123, 3382, 4659, 4038, 2041, 1064],
+              data: [638, 1390, 5015, 3135, 3400, 4674, 4052, 2046, 1074],
               borderColor: "rgba(255, 40, 0, 1)",
               borderWidth: "0",
               backgroundColor: "rgba(255, 40, 0, 0.8)"
@@ -384,7 +384,7 @@
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [9296, 8687, 9101, 6002, 4697, 12085] //검사
+    var data3 = [8687, 9101, 6002, 4697, 12085, 12180] //검사
 
     var ctx = document.getElementById("recent-rep2-chart");
     if (ctx) {
@@ -392,7 +392,7 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ["10.14", "10.15", "10.16", "10.17", "10.18", "10.19"],
+          labels: ["10.15", "10.16", "10.17", "10.18", "10.19", "10.20"],
           datasets: [
             {
               label: "일 검사자수",
@@ -441,7 +441,7 @@
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [1.18, 0.54, 0.80, 1.51, 1.62, 0.48] //  (확진수)/(검사수)*100
+    var data3 = [0.54, 0.80, 1.51, 1.62, 0.48, 0.75] //  (확진수)/(검사수)*100
 
     var ctx = document.getElementById("tests-percent-chart");
     if (ctx) {
@@ -449,7 +449,7 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ["10.14", "10.15", "10.16", "10.17", "10.18", "10.19"],
+          labels: ["10.15", "10.16", "10.17", "10.18", "10.19", "10.20"],
           datasets: [
             {
               label: "검사 대비 확진율",
