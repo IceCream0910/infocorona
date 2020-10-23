@@ -266,7 +266,14 @@ box-shadow:  5px 5px 10px #3861b7,
              -5px -5px 0px #e5e5e5;">
                                 <div class="chart-wrap">
                                     <div id="rtSection">
-    <h4>실시간 확진자<span style="color:#a9a9a9; font-size:15px;"> (비공식)</span> <div id="refreshRT" class="ripple-effect" style="width:30px; height:30px; color:#556ee6; display:inline-block;" onclick="rtTodayGet();"><i class="fa fa-sync" style="width:30px; height:30px;"></i></div></h4>
+    <h4>실시간 확진자<span style="color:#a9a9a9; font-size:15px;"> (비공식)</span>
+    </h4>
+
+    <div class="reload" onclick="rtTodayGet();">
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.011 20c0-0.002 0-0.003 0-0.005 0-4.421 3.578-8.005 7.991-8.005 2.683 0 5.051 1.329 6.5 3.361l1.26-1.644c-1.834-2.254-4.627-3.696-7.76-3.696 -5.519 0-9.994 4.471-10.001 9.989H8.013l3.018 4.013L13.987 20H12.011zM32 20l-2.969-3.985L26 20h1.992c-0.003 4.419-3.579 8.001-7.99 8.001 -2.716 0-5.111-1.36-6.555-3.435l-1.284 1.644c1.832 2.314 4.66 3.803 7.84 3.803 5.524 0 10.001-4.478 10.001-10.001 0-0.004-0.001-0.008-0.001-0.012H32z"/>
+  </svg>
+</div>
 
     <!-- Button trigger modal -->
 
@@ -291,7 +298,7 @@ box-shadow:  5px 5px 10px #3861b7,
 
 
     <h3 style="margin-top:5px;"><h3 id="rtToday" style="display:inline-block;"></h3><div id="rtpmBox" style="padding:5px 10px; border-radius:10px; background:rgba(255, 105, 97, 0.3); display:inline-block; margin-left:10px;"><span id="rtPM"></span></div></h3><br>
-    <button id="rtModalBtn" type="button" class="btn btn-primary ripple-effect" data-toggle="modal" data-target="#exampleModal" style="margin-top:15px;width:100%; text-align:left; border-radius:10px;">
+    <button id="rtModalBtn" type="button" class="btn btn-primary ripple-effect" onclick="sendChildMessage();" style="margin-top:15px;width:100%; text-align:left; border-radius:10px;">
   상세 
 </button><br><br>
     <span style="color:#a9a9a9; font-size:13px;" id="rtDec"></span><br>
@@ -306,6 +313,52 @@ box-shadow:  5px 5px 10px #3861b7,
                                 </div>
                             </div>
                             <!-- END CHART-->
+
+
+<script type="text/javascript">
+
+
+var btn = document.getElementById( 'rtModalBtn' );
+
+
+btn.addEventListener( 'click', function( e ) {
+    sendMsgToParent( $('#rtUpdates').html() );
+});
+
+// 부모에게 메시지 전달
+function sendMsgToParent( msg ) {
+    window.parent.postMessage( msg, '*' );
+}
+
+
+// Vars
+var reloadButton  = document.querySelector( '.reload' );
+var reloadSvg     = document.querySelector( 'svg' );
+var reloadEnabled = true;
+var rotation      = 0;
+// Events
+reloadButton.addEventListener('click', function() { reloadClick() });
+
+// Functions
+function reloadClick() {
+
+  reloadEnabled = false;
+  rotation -= 180;
+  
+  // Eh, this works.
+  reloadSvg.style.webkitTransform = 'translateZ(0px) rotateZ( ' + rotation + 'deg )';
+  reloadSvg.style.MozTransform  = 'translateZ(0px) rotateZ( ' + rotation + 'deg )';
+  reloadSvg.style.transform  = 'translateZ(0px) rotateZ( ' + rotation + 'deg )';
+  
+}
+
+// Show button.
+setTimeout(function() {
+  reloadButton.classList.add('active');
+}, 1);
+</script>
+
+
 
                             <style>
                                 @keyframes rotating {
