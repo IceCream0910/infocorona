@@ -67,11 +67,11 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['10.13', '10.14', '10.15', '10.16', '10.17', '10.18', '10.19', '10.20', '10.21', '10.22'],
+          labels: ['10.14', '10.15', '10.16', '10.17', '10.18', '10.19', '10.20', '10.21', '10.22', '10.23'],
           datasets: [
             {
               label: "신규 확진자",
-              data: [84, 110, 47, 73, 91, 76, 58, 91, 121, 155],
+              data: [110, 47, 73, 91, 76, 58, 91, 121, 155, 77],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
@@ -316,11 +316,11 @@
         type: 'bar',
         defaultFontFamily: 'Poppins',
         data: {
-          labels: ['10.17', '10.18', '10.19', '10.20', '10.21', '10.22'],
+          labels: ['10.18', '10.19', '10.20', '10.21', '10.22', '10.23'],
           datasets: [
             {
               label: "확진",
-              data: [91, 76, 58, 91, 121, 155],
+              data: [76, 58, 91, 121, 155, 77],
               borderColor: "rgba(250, 66, 81, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(250, 66, 81,0.5)",
@@ -328,7 +328,7 @@
             },
             {
               label: "완치",
-              data: [54, 56, 98, 118, 63, 70],
+              data: [56, 98, 118, 63, 70, 117],
               borderColor: "rgba(0,173,95, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,173,95, 0.5)",
@@ -336,7 +336,7 @@
             },
             {
               label: "사망",
-              data: [1, 0, 3, 3, 3, 2],
+              data: [0, 3, 3, 3, 2, 2],
               borderColor: "rgba(0,0,0, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,0,0, 0.5)",
@@ -384,7 +384,7 @@
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [6002, 4697, 12085, 12180, 11836, 13296] //검사
+    var data3 = [4697, 12085, 12180, 11836, 13296, 12058] //검사
 
     var ctx = document.getElementById("recent-rep2-chart");
     if (ctx) {
@@ -392,7 +392,7 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ["10.17", "10.18", "10.19", "10.20", "10.21", "10.22"],
+          labels: ["10.18", "10.19", "10.20", "10.21", "10.22", "10.23"],
           datasets: [
             {
               label: "일 검사자수",
@@ -441,7 +441,7 @@
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [1.51, 1.62, 0.48, 0.75, 1.02, 1.17] //  (확진수)/(검사수)*100
+    var data3 = [1.62, 0.48, 0.75, 1.02, 1.17, 0.64] //  (확진수)/(검사수)*100
 
     var ctx = document.getElementById("tests-percent-chart");
     if (ctx) {
@@ -449,7 +449,7 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ["10.17", "10.18", "10.19", "10.20", "10.21", "10.22"],
+          labels: ["10.18", "10.19", "10.20", "10.21", "10.22", "10.23"],
           datasets: [
             {
               label: "검사 대비 확진율",
