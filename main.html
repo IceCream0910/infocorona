@@ -239,7 +239,7 @@ border:none;
 box-shadow:  5px 5px 10px #3861b7, 
              -5px -5px 0px #f7f7f7;">
 <span class="badge badge-pill badge-primary" style="display:inline-block;">공지사항</span>
-<button type="button" class="ripple-effect" onclick="window.open('http://coronacoc-notice.kro.kr/');" style="color:white; display:inline-block; text-align:left;">현황 업데이트 일정 안내</button>
+<button type="button" class="ripple-effect" onclick="window.open('http://coronacoc-notice.kro.kr/');" style="color:white; display:inline-block; text-align:left;">10-24 업데이트 내역</button>
 </button>
 </div>
 
@@ -266,7 +266,7 @@ box-shadow:  5px 5px 10px #3861b7,
              -5px -5px 0px #e5e5e5;">
                                 <div class="chart-wrap">
                                     <div id="rtSection">
-    <h4>실시간 확진자<span style="color:#a9a9a9; font-size:15px;"> (비공식)</span>
+    <h4>실시간 확진자<span style="color:#a9a9a9; font-size:15px;"></span>
     </h4>
 
     <div class="reload" onclick="rtTodayGet();">
@@ -499,8 +499,8 @@ setTimeout(function() {
                                 </div>
                             </div>
 
+<!--
                             <div class="col-md-6 col-lg-4">
-                            <!-- CHART PERCENT-->
                             <div class="chart-percent-2" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
              -5px -5px 0px #e5e5e5;">
                                 <div class="chart-wrap">
@@ -510,6 +510,7 @@ setTimeout(function() {
                                     </div>
                                 </div>
                             </div>
+                        -->
 
                          <style>
                             /* 표 레이아웃 수정*/
@@ -1010,8 +1011,220 @@ svg {
 
 
 
+//연령/성별 현황
+    $.ajax({
+      type: "GET",
+      url: "https://cors-anywhere.herokuapp.com/http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19GenAgeCaseInfJson?serviceKey=0Ii2OFEKp3FQwYT0kWzwDNlmKa3JyD2hY4PPXBL3yA5RbBmUD8JSCBGEkGlVzmMIDF%2B2YFli6qA74ybbeSot3Q%3D%3D&ServiceKey=0Ii2OFEKp3FQwYT0kWzwDNlmKa3JyD2hY4PPXBL3yA5RbBmUD8JSCBGEkGlVzmMIDF%2B2YFli6qA74ybbeSot3Q%3D%3D&pageNo=1&numOfRows=10&startCreateDt=20201024&endCreateDt=20201024", // Using myjson.com to store the JSON
+      success: function(result) {
+        console.log(result);
+
+var theJson = xmlToJson(result);
+var cases_byAge = new Array(9);
+var death_byAge = new Array(9);
+var cases_bySex = new Array(1);
+
+for(var i=0; i<9; i++) {
+    var cases_age = (theJson.response.body.items.item[i].confCase);
+    var death_age = (theJson.response.body.items.item[i].death);
+    cases_byAge[i] = parseInt(JSON.stringify(cases_age).replace("{\"#text\":", "").replace("\"", "").replace("\"}").replace("undefined", ""));
+    death_byAge[i] = parseInt(JSON.stringify(death_age).replace("{\"#text\":", "").replace("\"", "").replace("\"}").replace("undefined", ""));
+}
+
+var case_male =(theJson.response.body.items.item[9].confCase);
+var case_female = (theJson.response.body.items.item[10].confCase);
+cases_bySex[0] = parseInt(JSON.stringify(case_female).replace("{\"#text\":", "").replace("\"", "").replace("\"}").replace("undefined", ""));
+cases_bySex[1] = parseInt(JSON.stringify(case_male).replace("{\"#text\":", "").replace("\"", "").replace("\"}").replace("undefined", ""));
+
+console.log(cases_bySex);
+
+try {
+
+    // 연령별 확진자 분포
+    var ctx = document.getElementById("singelBarChart_2");
+    if (ctx) {
+      ctx.height = 250;
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ["0~9세", "10대", "20대", "30대", "40대", "50대", "60대", "70대", "80대이상"],
+          datasets: [
+            {
+              label: "확진자 수",
+              data: cases_byAge,
+              borderColor: "rgba(255, 40, 0, 1)",
+              borderWidth: "0",
+              backgroundColor: "rgba(255, 40, 0, 0.8)"
+            }
+          ]
+        },
+        options: {
+          legend: {
+            position: 'center',
+            labels: {
+              fontFamily: 'Poppins'
+            }
+
+          },
+          scales: {
+            xAxes: [{
+              ticks: {
+                fontFamily: "Poppins"
+
+              }
+            }],
+            yAxes: [{
+              ticks: {
+                beginAtZero: true,
+                fontFamily: "Poppins"
+              }
+            }]
+          }
+        }
+      });
+    }
+
+  } catch (error) {
+    console.log(error);
+  }
+
+try {
+
+    // 연령별 사망자 분포
+    var ctx = document.getElementById("singelBarChart");
+    if (ctx) {
+      ctx.height = 250;
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ["0~9세", "10대", "20대", "30대", "40대", "50대", "60대", "70대", "80대이상"],
+          datasets: [
+            {
+              label: "사망자수",
+              data: death_byAge,
+              borderColor: "rgba(0, 0, 0, 0.9)",
+              borderWidth: "0",
+              backgroundColor: "rgba(0, 0, 0, 0.5)"
+            }
+          ]
+        },
+        options: {
+          legend: {
+            position: 'center',
+            labels: {
+              fontFamily: 'Poppins'
+            }
+
+          },
+          scales: {
+            xAxes: [{
+              ticks: {
+                fontFamily: "Poppins"
+
+              }
+            }],
+            yAxes: [{
+              ticks: {
+                beginAtZero: true,
+                fontFamily: "Poppins"
+              }
+            }]
+          }
+        }
+      });
+    }
+
+  } catch (error) {
+    console.log(error);
+  }
+
+    try {
+
+    //소재별 확진자 현황
+    var ctx = document.getElementById("doughutChart_sex");
+    if (ctx) {
+      ctx.height = 300;
+      var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          datasets: [{
+            data: cases_bySex,
+            backgroundColor: [
+              '#00b5e9',
+              '#fa4251',
+            ],
+            hoverBackgroundColor: [
+              '#00b5e9',
+              '#fa4251',
+            ]
+
+          }],
+          labels: [
+            "남성",
+            "여성"
+          ]
+        },
+        options: {
+          legend: {
+            position: 'center',
+            labels: {
+              fontFamily: 'Poppins'
+            }
+
+          },
+          responsive: true
+        }
+      });
+    }
 
 
+  } catch (error) {
+    console.log(error);
+  }
+
+        
+      }
+    });
+
+       function xmlToJson(xml) {
+       // Create the return object
+       var obj = {};
+
+       if (xml.nodeType == 1) { // element
+           // do attributes
+           if (xml.attributes.length > 0) {
+           obj["@attributes"] = {};
+               for (var j = 0; j < xml.attributes.length; j++) {
+                   var attribute = xml.attributes.item(j);
+                   obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
+               }
+           }
+       } 
+       else if (xml.nodeType == 3 || 
+                xml.nodeType == 4) { // text and cdata section
+           obj = xml.nodeValue
+       }
+
+       // do children
+       if (xml.hasChildNodes()) {
+           for(var i = 0; i < xml.childNodes.length; i++) {
+               var item = xml.childNodes.item(i);
+               var nodeName = item.nodeName;
+               if (typeof(obj[nodeName]) == "undefined") {
+                   obj[nodeName] = xmlToJson(item);
+               } else {
+                   if (typeof(obj[nodeName].length) == "undefined") {
+                       var old = obj[nodeName];
+                       obj[nodeName] = [];
+                       obj[nodeName].push(old);
+                   }
+                   if (typeof(obj[nodeName]) === 'object') {
+                       obj[nodeName].push(xmlToJson(item));
+                   }
+               }
+           }
+       }
+       return obj;
+}
 
 
 /*
@@ -1138,6 +1351,8 @@ function rtTodayGet() {
       }
     });
 }
+
+
 
 $(function() {
   var taeb = $(".taeb-switch");
