@@ -1,11 +1,9 @@
-@font-face { font-family: 'CookieRunOTF-Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/CookieRunOTF-Bold00.woff') format('woff'); font-weight: normal; font-style: normal; }
-                        @font-face {
-    font-family: 'GyeonggiBatang';
-    src: url('../fonts/MaruBuri-Regular.woff') format('woff');
+@font-face {
+    font-family: 'KyoboHand';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
-            
             
 /* poppins-100 - latin */
 @font-face {
