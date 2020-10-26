@@ -960,13 +960,13 @@ svg {
         day = "0"+day;
     }
  
-    var today = year+""+month+""+day;
+   var today = year+""+month+""+day;
 
 
 //연령/성별 현황
     $.ajax({
       type: "GET",
-      url: "https://cors-anywhere.herokuapp.com/http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19GenAgeCaseInfJson?serviceKey=0Ii2OFEKp3FQwYT0kWzwDNlmKa3JyD2hY4PPXBL3yA5RbBmUD8JSCBGEkGlVzmMIDF%2B2YFli6qA74ybbeSot3Q%3D%3D&ServiceKey=0Ii2OFEKp3FQwYT0kWzwDNlmKa3JyD2hY4PPXBL3yA5RbBmUD8JSCBGEkGlVzmMIDF%2B2YFli6qA74ybbeSot3Q%3D%3D&pageNo=1&numOfRows=10&startCreateDt="+today+"&endCreateDt="+today, // Using myjson.com to store the JSON
+      url: "https://cors-anywhere.herokuapp.com/http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19GenAgeCaseInfJson?serviceKey=0Ii2OFEKp3FQwYT0kWzwDNlmKa3JyD2hY4PPXBL3yA5RbBmUD8JSCBGEkGlVzmMIDF%2B2YFli6qA74ybbeSot3Q%3D%3D&ServiceKey=0Ii2OFEKp3FQwYT0kWzwDNlmKa3JyD2hY4PPXBL3yA5RbBmUD8JSCBGEkGlVzmMIDF%2B2YFli6qA74ybbeSot3Q%3D%3D&pageNo=1&numOfRows=10&startCreateDt=20201025&endCreateDt=20201025", // Using myjson.com to store the JSON
       success: function(result) {
         console.log(result);
 
