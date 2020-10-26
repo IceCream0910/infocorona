@@ -263,7 +263,7 @@ box-shadow:  5px 5px 10px #3861b7,
                 <div class="container" >
                     <div class="row" >
                         <div class="col-md-12" >
-                            <h3 style="margin-left:10px; display:inline-block;">통계<h6 style="margin-left:10px;color:#a9a9a9; display:inline-block;">10.25. 0시 기준</h6></h3><br><br>
+                            <h3 style="margin-left:10px; display:inline-block;">통계<h6 style="margin-left:10px;color:#a9a9a9; display:inline-block;">10.26. 00시 기준</h6></h3><br><br>
                         </div>
                     </div>
 
@@ -527,18 +527,6 @@ setTimeout(function() {
                          </style>
 
 
-                            <div class="col-md-6 col-lg-4">
-                            <!-- CHART PERCENT-->
-                            <div class="chart-percent-2" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
-             -5px -5px 0px #e5e5e5;">
-                                <div class="chart-wrap">
-                                    <h3>해외유입 <h3 style="color:#a9a9a9;">환자 현황</h3></h3><br>
-                                    
-                                    <div id="localTable"></div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                         
                         
@@ -659,14 +647,12 @@ setTimeout(function() {
                                                 <td id="jejuCure">-</td>
                                                 <td id="jejuDeath">-</td>
                                             </tr>
-                                            <!-- 검역은 자동 업데이트 제외
                                             <tr>
                                                 <td>검역</td>
                                                 <td id="gumCases">511</td>
                                                 <td id="gumCure">373</td>
                                                 <td id="gumDeath">0</td>
                                             </tr>
-                                            -->
                                         </tbody>
                                     </table>
                                     </table>
@@ -749,7 +735,7 @@ box-shadow:  5px 5px 10px #0d0d0d,
 
                                      <div class="copyright">
                                 <p>Copyright ©2020 All rights reserved. <br>
-                                  정보 제공 : <a href="http://www.cdc.go.kr/" target="_blank">질병관리청</a>, <a href="https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15043377" target="_blank">보건복지부</a>, <a href="https://www.worldometers.info/coronavirus/" target="_blank">worldmeters</a><br>
+                                  정보 제공 : <a href="https://api.corona-19.kr/" target="_blank">굿바이코로나</a>, <a href="http://www.cdc.go.kr/" target="_blank">질병관리청</a>, <a href="https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15043377" target="_blank">보건복지부</a>, <a href="https://www.worldometers.info/coronavirus/" target="_blank">worldmeters</a><br>
                                   사용 폰트 : <a href="https://noonnu.cc/font_page/419" target="_blank">교보손글씨</a>, <a href="https://fontawesome.com/" target="_blank">Font Awesome</a><br>
                                   <a href="http://channel.io/" target="_blank">채널톡</a>, <a href="https://herokuapp.com/" target="_blank">Heroku</a>, <a href="https://github.com/" target="_blank">Github</a>, <a href="https://www.dothome.co.kr/index.php" target="_blank">DOTHOME</a>과 함께 코로나콕은 원활한 서비스를 제공중입니다.
 
@@ -988,7 +974,6 @@ if(JSON.stringify(theJson.response.body.totalCount).replace("{\"#text\":", "").r
   yesterdayData();
 
 } else {
-   console.log(result);
    var cases_byAge = new Array(9);
 var death_byAge = new Array(9);
 var cases_bySex = new Array(1);
@@ -1005,7 +990,6 @@ var case_female = (theJson.response.body.items.item[10].confCase);
 cases_bySex[0] = parseInt(JSON.stringify(case_female).replace("{\"#text\":", "").replace("\"", "").replace("\"}").replace("undefined", ""));
 cases_bySex[1] = parseInt(JSON.stringify(case_male).replace("{\"#text\":", "").replace("\"", "").replace("\"}").replace("undefined", ""));
 
-console.log(cases_bySex);
 }
 
 
@@ -1208,8 +1192,6 @@ function yesterdayData() {
       success: function(result) {
 
 var theJson = xmlToJson(result);
-
-   console.log(result);
    var cases_byAge = new Array(9);
 var death_byAge = new Array(9);
 var cases_bySex = new Array(1);
@@ -1226,15 +1208,13 @@ var case_female = (theJson.response.body.items.item[10].confCase);
 cases_bySex[0] = parseInt(JSON.stringify(case_female).replace("{\"#text\":", "").replace("\"", "").replace("\"}").replace("undefined", ""));
 cases_bySex[1] = parseInt(JSON.stringify(case_male).replace("{\"#text\":", "").replace("\"", "").replace("\"}").replace("undefined", ""));
 
-console.log(cases_bySex);
-
 
 try {
 
     // 연령별 확진자 분포
     var ctx = document.getElementById("singelBarChart_2");
     if (ctx) {
-      ctx.height = 250;
+      ctx.height = 230;
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -1284,7 +1264,7 @@ try {
     // 연령별 사망자 분포
     var ctx = document.getElementById("singelBarChart");
     if (ctx) {
-      ctx.height = 250;
+      ctx.height = 230;
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -1334,7 +1314,7 @@ try {
     //소재별 확진자 현황
     var ctx = document.getElementById("doughutChart_sex");
     if (ctx) {
-      ctx.height = 300;
+      ctx.height = 280;
       var myChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
@@ -1377,79 +1357,111 @@ try {
       }
     });
 }
-/*
-    document.getElementById('confirmed').innerHTML = koreaRegionalData[0].확진자수.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"명";
- document.getElementById('cure').innerHTML = koreaRegionalData[0].격리해제수.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"명";
-    document.getElementById('death').innerHTML = koreaRegionalData[0].사망자수.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"명";
-    document.getElementById('whenUpdate').innerHTML = koreaRegionalData[18].업데이트날짜+" 기준";
-*/
-    document.getElementById('seoulCases').innerHTML = koreaRegionalData[1].확진자수;
-    document.getElementById('seoulCure').innerHTML = koreaRegionalData[1].격리해제수;
-    document.getElementById('seoulDeath').innerHTML = koreaRegionalData[1].사망자수;
 
-    document.getElementById('busanCases').innerHTML = koreaRegionalData[2].확진자수;
-    document.getElementById('busanCure').innerHTML = koreaRegionalData[2].격리해제수;
-    document.getElementById('busanDeath').innerHTML = koreaRegionalData[2].사망자수;
 
-    document.getElementById('daeguCases').innerHTML = koreaRegionalData[3].확진자수;
-    document.getElementById('daeguCure').innerHTML = koreaRegionalData[3].격리해제수;
-    document.getElementById('daeguDeath').innerHTML = koreaRegionalData[3].사망자수;
+var e = new Array("https://cors-coronacoc.herokuapp.com/", "https://cors-coronacoc-v2.herokuapp.com/", "https://cors-coronacoc-v3.herokuapp.com/"),
+    proxyServer = randomItem(e);
+    $.ajax({
+      type: "GET",
+      url: "https://cors-anywhere.herokuapp.com/http://api.corona-19.kr/korea/country/new/?serviceKey=5d4143bd958c16e18abe1acef5386c12d", // Using myjson.com to store the JSON
+      success: function(result) {
+        document.getElementById("confirmedPM").innerHTML = "확진자 (+ "+result.korea.newCase+")";
+        document.getElementById("localConfirmed").innerHTML = "국내발생 "+result.korea.newFcase+"명<br>해외유입 "+result.korea.newCcase+"명";
 
-    document.getElementById('incheonCases').innerHTML = koreaRegionalData[4].확진자수;
-    document.getElementById('incheonCure').innerHTML = koreaRegionalData[4].격리해제수;
-    document.getElementById('incheonDeath').innerHTML = koreaRegionalData[4].사망자수;
+        //시도별 현황
+       document.getElementById('seoulCases').innerHTML = result.seoul.totalCase+"(+"+result.seoul.newCase+")";
+    document.getElementById('seoulCure').innerHTML = result.seoul.recovered;
+    document.getElementById('seoulDeath').innerHTML = result.seoul.death;
 
-    document.getElementById('gwangjuCases').innerHTML = koreaRegionalData[5].확진자수;
-    document.getElementById('gwangjuCure').innerHTML = koreaRegionalData[5].격리해제수;
-    document.getElementById('gwangjuDeath').innerHTML = koreaRegionalData[5].사망자수;
+    document.getElementById('busanCases').innerHTML = result.busan.totalCase+"(+"+result.busan.newCase+")";
+    document.getElementById('busanCure').innerHTML = result.busan.recovered;
+    document.getElementById('busanDeath').innerHTML = result.busan.death;
 
-    document.getElementById('daejeonCases').innerHTML = koreaRegionalData[6].확진자수;
-    document.getElementById('daejeonCure').innerHTML = koreaRegionalData[6].격리해제수;
-    document.getElementById('daejeonDeath').innerHTML = koreaRegionalData[6].사망자수;
+    document.getElementById('daeguCases').innerHTML = result.daegu.totalCase+"(+"+result.daegu.newCase+")";
+    document.getElementById('daeguCure').innerHTML = result.daegu.recovered;
+    document.getElementById('daeguDeath').innerHTML = result.daegu.death;
 
-    document.getElementById('ulsanCases').innerHTML = koreaRegionalData[7].확진자수;
-    document.getElementById('ulsanCure').innerHTML = koreaRegionalData[7].격리해제수;
-    document.getElementById('ulsanDeath').innerHTML = koreaRegionalData[7].사망자수;
+    document.getElementById('incheonCases').innerHTML = result.incheon.totalCase+"(+"+result.incheon.newCase+")";
+    document.getElementById('incheonCure').innerHTML = result.incheon.recovered;
+    document.getElementById('incheonDeath').innerHTML = result.incheon.death;
 
-    document.getElementById('sejongCases').innerHTML = koreaRegionalData[8].확진자수;
-    document.getElementById('sejongCure').innerHTML = koreaRegionalData[8].격리해제수;
-    document.getElementById('sejongDeath').innerHTML = koreaRegionalData[8].사망자수;
+    document.getElementById('gwangjuCases').innerHTML = result.gwangju.totalCase+"(+"+result.gwangju.newCase+")";
+    document.getElementById('gwangjuCure').innerHTML = result.gwangju.recovered;
+    document.getElementById('gwangjuDeath').innerHTML = result.gwangju.death;
 
-    document.getElementById('ggCases').innerHTML = koreaRegionalData[9].확진자수;
-     document.getElementById('ggCure').innerHTML = koreaRegionalData[9].격리해제수;
-      document.getElementById('ggDeath').innerHTML = koreaRegionalData[9].사망자수;
+    document.getElementById('daejeonCases').innerHTML = result.daejeon.totalCase+"(+"+result.daejeon.newCase+")";
+    document.getElementById('daejeonCure').innerHTML = result.daejeon.recovered;
+    document.getElementById('daejeonDeath').innerHTML = result.daejeon.death;
 
-    document.getElementById('gangwonCases').innerHTML = koreaRegionalData[10].확진자수;
-    document.getElementById('gangwonCure').innerHTML = koreaRegionalData[10].격리해제수;
-    document.getElementById('gangwonDeath').innerHTML = koreaRegionalData[10].사망자수;
+    document.getElementById('ulsanCases').innerHTML = result.ulsan.totalCase+"(+"+result.ulsan.newCase+")";
+    document.getElementById('ulsanCure').innerHTML = result.ulsan.recovered;
+    document.getElementById('ulsanDeath').innerHTML = result.ulsan.death;
 
-    document.getElementById('cbCases').innerHTML = koreaRegionalData[11].확진자수;
-    document.getElementById('cbCure').innerHTML = koreaRegionalData[11].격리해제수;
-    document.getElementById('cbDeath').innerHTML = koreaRegionalData[11].사망자수;
+    document.getElementById('sejongCases').innerHTML = result.sejong.totalCase+"(+"+result.sejong.newCase+")";
+    document.getElementById('sejongCure').innerHTML = result.sejong.recovered;
+    document.getElementById('sejongDeath').innerHTML = result.sejong.death;
 
-    document.getElementById('cnCases').innerHTML = koreaRegionalData[12].확진자수;
-    document.getElementById('cnCure').innerHTML = koreaRegionalData[12].격리해제수;
-    document.getElementById('cnDeath').innerHTML = koreaRegionalData[12].사망자수;
+    document.getElementById('ggCases').innerHTML = result.gyeonggi.totalCase+"(+"+result.gyeonggi.newCase+")";
+     document.getElementById('ggCure').innerHTML = result.gyeonggi.recovered;
+      document.getElementById('ggDeath').innerHTML = result.gyeonggi.death;
 
-    document.getElementById('jbCases').innerHTML = koreaRegionalData[13].확진자수;
-    document.getElementById('jbCure').innerHTML = koreaRegionalData[13].격리해제수;
-    document.getElementById('jbDeath').innerHTML = koreaRegionalData[13].사망자수;
+    document.getElementById('gangwonCases').innerHTML = result.gangwon.totalCase+"(+"+result.gangwon.newCase+")";
+    document.getElementById('gangwonCure').innerHTML = result.gangwon.recovered;
+    document.getElementById('gangwonDeath').innerHTML = result.gangwon.death;
 
-    document.getElementById('jnCases').innerHTML = koreaRegionalData[14].확진자수;
-    document.getElementById('jnCure').innerHTML = koreaRegionalData[14].격리해제수;
-    document.getElementById('jnDeath').innerHTML = koreaRegionalData[14].사망자수;
+    document.getElementById('cbCases').innerHTML = result.chungbuk.totalCase+"(+"+result.chungbuk.newCase+")";
+    document.getElementById('cbCure').innerHTML = result.chungbuk.recovered;
+    document.getElementById('cbDeath').innerHTML = result.chungbuk.death;
 
-    document.getElementById('gbCases').innerHTML = koreaRegionalData[15].확진자수;
-    document.getElementById('gbCure').innerHTML = koreaRegionalData[15].격리해제수;
-    document.getElementById('gbDeath').innerHTML = koreaRegionalData[15].사망자수;
+    document.getElementById('cnCases').innerHTML = result.chungnam.totalCase+"(+"+result.chungnam.newCase+")";
+    document.getElementById('cnCure').innerHTML = result.chungnam.recovered;
+    document.getElementById('cnDeath').innerHTML = result.chungnam.death;
 
-    document.getElementById('gnCases').innerHTML = koreaRegionalData[16].확진자수;
-    document.getElementById('gnCure').innerHTML = koreaRegionalData[16].격리해제수;
-    document.getElementById('gnDeath').innerHTML = koreaRegionalData[16].사망자수;
+    document.getElementById('jbCases').innerHTML = result.jeonbuk.totalCase+"(+"+result.jeonbuk.newCase+")";
+    document.getElementById('jbCure').innerHTML = result.jeonbuk.recovered;
+    document.getElementById('jbDeath').innerHTML = result.jeonbuk.death;
 
-    document.getElementById('jejuCases').innerHTML = koreaRegionalData[17].확진자수;
-    document.getElementById('jejuCure').innerHTML = koreaRegionalData[17].격리해제수;
-    document.getElementById('jejuDeath').innerHTML = koreaRegionalData[17].사망자수;
+    document.getElementById('jnCases').innerHTML = result.jeonnam.totalCase+"(+"+result.jeonnam.newCase+")";
+    document.getElementById('jnCure').innerHTML = result.jeonnam.recovered;
+    document.getElementById('jnDeath').innerHTML = result.jeonnam.death;
+
+    document.getElementById('gbCases').innerHTML = result.gyeongbuk.totalCase+"(+"+result.gyeongbuk.newCase+")";
+    document.getElementById('gbCure').innerHTML = result.gyeongbuk.recovered;
+    document.getElementById('gbDeath').innerHTML = result.gyeongbuk.death;
+
+    document.getElementById('gnCases').innerHTML =result.gyeongnam.totalCase+"(+"+result.gyeongnam.newCase+")";
+    document.getElementById('gnCure').innerHTML = result.gyeongnam.recovered;
+    document.getElementById('gnDeath').innerHTML = result.gyeongnam.death;
+
+    document.getElementById('jejuCases').innerHTML = result.jeju.totalCase+"(+"+result.jeju.newCase+")";
+    document.getElementById('jejuCure').innerHTML = result.jeju.recovered;
+    document.getElementById('jejuDeath').innerHTML = result.jeju.death;
+
+    document.getElementById('gumCases').innerHTML = result.quarantine.totalCase+"(+"+result.quarantine.newCase+")";
+    document.getElementById('gumCure').innerHTML = result.quarantine.recovered;
+    document.getElementById('gumDeath').innerHTML = result.quarantine.death;
+
+    $.ajax({
+      type: "GET",
+      url: "https://cors-anywhere.herokuapp.com/http://api.corona-19.kr/korea/?serviceKey=5d4143bd958c16e18abe1acef5386c12d", // Using myjson.com to store the JSN
+      success: function(result2) {
+        console.log(result2);
+        document.getElementById("whenUpdate").innerHTML = result2.updateTime.replace("코로나바이러스감염증-19 국내 발생현황 (", "").replace(")", "");
+        document.getElementById("confirmed").innerHTML = result2.TotalCase+"명";
+        document.getElementById("cure").innerHTML = result2.TotalRecovered+"명";
+        document.getElementById("death").innerHTML = result2.TotalDeath+"명";
+        document.getElementById("confirmedPM").innerHTML += "<br>치료중 : "+result2.NowCase+"명";
+        document.getElementById("curePM").innerHTML = "격리해제자 (+ "+result2.TodayRecovered+")";
+        document.getElementById("deathPM").innerHTML = "사망자 (+ "+result2.TodayDeath+")";
+        updateTime
+        
+      }
+    });
+
+      }
+    });
+
+
 
     rtTodayGet();
 
