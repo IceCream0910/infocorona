@@ -658,7 +658,29 @@ setTimeout(function() {
                                     </table>
                                 </div>
                             </div>
+
+                            <span style="color:#a9a9a9; font-size:13px; margin-bottom:15px;">확진율</span>
+
+                            <div class="progress">
+  <div class="progress-done case" id="casePercent" data-done="0">
+    0%
+  </div>
+</div>
+
+<span style="color:#a9a9a9; font-size:13px; margin-bottom:15px;">완치율</span>
+<div class="progress">
+  <div class="progress-done2 cure" id="curePercent" data-done="0">
+    0%
+  </div>
+</div>
+<span style="color:#a9a9a9; font-size:13px; margin-bottom:15px;">사망률</span>
+<div class="progress">
+  <div class="progress-done3 death" id="deathPercent" data-done="0">
+    0%
+  </div>
+</div>
                 </div>
+
 
 
 
@@ -674,9 +696,21 @@ background: #fa4251;
 box-shadow:  5px 5px 10px #d53845, 
              -5px -5px 0px #e5e5e5;">
                                 <h2 class="number" id="globeConfirmed">로딩중</h2>
-                                <span class="desc">확진자</span>
+                                <span class="desc" id="globeConfirmedPM">확진자</span>
                                 <div class="icon">
                                     <i class="zmdi zmdi-account-o"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="statistic__item statistic__item--green" style="border-radius: 20px;
+background: #00ad5f;
+box-shadow:  5px 5px 10px #009351, 
+             -5px -5px 0px #f7f7f7;">
+                                <h2 class="number" id="globeCure">로딩중</h2>
+                                <span class="desc" id="globeCurePM">격리해제자</span>
+                                <div class="icon">
+                                    <i class="zmdi zmdi-check-all"></i>
                                 </div>
                             </div>
                         </div>
@@ -686,7 +720,7 @@ background: #0f0f0f;
 box-shadow:  5px 5px 10px #0d0d0d, 
              -5px -5px 0px #e5e5e5;">
                                 <h2 class="number" id="globeDeath">로딩중</h2>
-                                <span class="desc">사망자</span>
+                                <span class="desc" id="globeDeathPM">사망자</span>
                                 <div class="icon">
                                     <i class="zmdi zmdi-accounts-outline"></i>
                                 </div>
@@ -716,22 +750,6 @@ box-shadow:  5px 5px 10px #0d0d0d,
                                         </div>
 -->
                     <br>
-
-                                <div class="col-md-6 col-lg-4"> <!-- CHART--> 
-                                    <div class="statistic-chart-1" style="margin-left:-15px; margin-right:-15px; border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
-             -5px -5px 0px #e5e5e5;"> 
-                                        <div class="chart-wrap" style=" margin:-20px;"> <h3 style="background-color:#fff; margin-left:15px;">
-                                            주요<h3 style="color:#a9a9a9; margin-left:15px;">발생국 현황<br></h3></h3> 
-                                            <div style="width:100%; overflow:scroll;">
-                                            <div id="tableByCountry" style="width:130%; margin-top:30px;"></div> 
-                                            </div>
-
-                                        </div> 
-                                        <a class="ripple-effect" href="http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=14&ncvContSeq=&contSeq=&board_id=&gubun=" target="_blank" style=" text-align:right; margin-left:-15px;"><br>더보기 ></a>
-                                        <br><Br>
-                                    </div> 
-                                    <!-- END CHART-->
-                                     </div>
 
                                      <div class="copyright">
                                 <p>Copyright ©2020 All rights reserved. <br>
@@ -1190,6 +1208,7 @@ function yesterdayData() {
       type: "GET",
       url: "https://cors-anywhere.herokuapp.com/http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19GenAgeCaseInfJson?serviceKey=0Ii2OFEKp3FQwYT0kWzwDNlmKa3JyD2hY4PPXBL3yA5RbBmUD8JSCBGEkGlVzmMIDF%2B2YFli6qA74ybbeSot3Q%3D%3D&ServiceKey=0Ii2OFEKp3FQwYT0kWzwDNlmKa3JyD2hY4PPXBL3yA5RbBmUD8JSCBGEkGlVzmMIDF%2B2YFli6qA74ybbeSot3Q%3D%3D&pageNo=1&numOfRows=10&startCreateDt="+getFormatDate(yesterday)+"&endCreateDt="+getFormatDate(yesterday), // Using myjson.com to store the JSON
       success: function(result) {
+        console.log(result);
 
 var theJson = xmlToJson(result);
    var cases_byAge = new Array(9);
@@ -1441,11 +1460,15 @@ var e = new Array("https://cors-coronacoc.herokuapp.com/", "https://cors-coronac
     document.getElementById('gumCure').innerHTML = result.quarantine.recovered;
     document.getElementById('gumDeath').innerHTML = result.quarantine.death;
 
-    $.ajax({
+    
+
+      }
+    });
+
+$.ajax({
       type: "GET",
       url: "https://cors-anywhere.herokuapp.com/http://api.corona-19.kr/korea/?serviceKey=5d4143bd958c16e18abe1acef5386c12d", // Using myjson.com to store the JSN
       success: function(result2) {
-        console.log(result2);
         document.getElementById("whenUpdate").innerHTML = result2.updateTime.replace("코로나바이러스감염증-19 국내 발생현황 (", "").replace(")", "");
         document.getElementById("confirmed").innerHTML = result2.TotalCase+"명";
         document.getElementById("cure").innerHTML = result2.TotalRecovered+"명";
@@ -1453,14 +1476,36 @@ var e = new Array("https://cors-coronacoc.herokuapp.com/", "https://cors-coronac
         document.getElementById("confirmedPM").innerHTML += "<br>치료중 : "+result2.NowCase+"명";
         document.getElementById("curePM").innerHTML = "격리해제자 (+ "+result2.TodayRecovered+")";
         document.getElementById("deathPM").innerHTML = "사망자 (+ "+result2.TodayDeath+")";
-        updateTime
+        $('#casePercent').attr("data-done",parseInt(result2.casePercentage)*10.0);
+        $('#curePercent').attr("data-done",parseInt(result2.recoveredPercentage));
+        $('#deathPercent').attr("data-done",parseInt(result2.deathPercentage)*10.0);
+
+        progressbar_case();
+         progressbar_cure();
+          progressbar_death();
+        
         
       }
     });
 
+$.ajax({
+      type: "GET",
+      url: "https://api.covid19api.com/summary", // Using myjson.com to store the JSN
+      success: function(result3) {
+        console.log(result3);
+
+        document.getElementById("globeConfirmed").innerHTML = result3.Global.TotalConfirmed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"명";
+        document.getElementById("globeDeath").innerHTML = result3.Global.TotalDeaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"명";
+        document.getElementById("globeCure").innerHTML = result3.Global.TotalRecovered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"명";
+
+        document.getElementById("globeConfirmedPM").innerHTML = "확진자 (+ "+result3.Global.NewConfirmed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+")";
+        document.getElementById("globeCurePM").innerHTML = "격리해제자 (+ "+result3.Global.NewRecovered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+")";
+        document.getElementById("globeDeathPM").innerHTML = "사망자 (+ "+result3.Global.NewDeaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+")";
+
+        
+        
       }
     });
-
 
 
     rtTodayGet();
