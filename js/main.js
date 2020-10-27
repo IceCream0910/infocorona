@@ -12,6 +12,7 @@ $( '.top' ).click( function() {
 } );
 
 
+
    $(document).ready(function(){       
         
         //우클릭 방지
@@ -1827,3 +1828,79 @@ $(document).ready(function() {
     });
   };
 }(jQuery));
+
+function progressbar_case() {
+  const progress = document.querySelector('.progress-done');
+
+progress.style.width = progress.getAttribute('data-done') + '%';
+progress.style.opacity = 1;
+
+/*counter code*/
+/*adapted from answer on: https://stackoverflow.com/questions/50245161/simple-javascript-counter-without-using-jquery-or-other-frameworks */
+const final = parseInt(progress.getAttribute('data-done'))/10;
+const duration = 1000;
+let start;
+
+const step = ts => {
+  if (!start) { start = ts; }
+  // get the time passed as a fraction of total duration
+  let prog = (ts - start) / duration;
+  progress.textContent = progress.getAttribute('data-done')/10+"%";
+  if (prog < 1) { // if not done, request another frame
+    requestAnimationFrame(step); 
+  }
+}
+requestAnimationFrame(step)
+
+}
+
+function progressbar_cure() {
+  const progress2 = document.querySelector('.progress-done2');
+
+progress2.style.width = progress2.getAttribute('data-done') + '%';
+progress2.style.opacity = 1;
+
+/*counter code*/
+/*adapted from answer on: https://stackoverflow.com/questions/50245161/simple-javascript-counter-without-using-jquery-or-other-frameworks */
+const final = parseInt(progress2.getAttribute('data-done'));
+const duration = 1000;
+let start;
+
+const step = ts => {
+  if (!start) { start = ts; }
+  // get the time passed as a fraction of total duration
+  let prog = (ts - start) / duration;
+  progress2.textContent = progress2.getAttribute('data-done') +"%";
+  if (prog < 1) { // if not done, request another frame
+    requestAnimationFrame(step); 
+  }
+}
+requestAnimationFrame(step)
+
+}
+
+
+function progressbar_death() {
+  const progress3 = document.querySelector('.progress-done3');
+
+progress3.style.width = progress3.getAttribute('data-done') + '%';
+progress3.style.opacity = 1;
+
+/*counter code*/
+/*adapted from answer on: https://stackoverflow.com/questions/50245161/simple-javascript-counter-without-using-jquery-or-other-frameworks */
+const final = parseInt(progress3.getAttribute('data-done'))/10;
+const duration = 1000;
+let start;
+
+const step = ts => {
+  if (!start) { start = ts; }
+  // get the time passed as a fraction of total duration
+  let prog = (ts - start) / duration;
+  progress3.textContent = progress3.getAttribute('data-done')/10+"%";
+  if (prog < 1) { // if not done, request another frame
+    requestAnimationFrame(step); 
+  }
+}
+requestAnimationFrame(step)
+
+}
