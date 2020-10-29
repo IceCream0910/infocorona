@@ -1896,7 +1896,7 @@ const step = ts => {
   if (!start) { start = ts; }
   // get the time passed as a fraction of total duration
   let prog = (ts - start) / duration;
-  progress3.textContent = progress3.getAttribute('data-done')/10+"%";
+  progress3.textContent = parseInt(progress3.getAttribute('data-done'))/10+"%";
   if (prog < 1) { // if not done, request another frame
     requestAnimationFrame(step); 
   }
