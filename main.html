@@ -54,7 +54,7 @@
 <style>
 
   .page-wrapper {
-    overflow:hidden;
+    overflow:scroll;
   }
 </style>
      
@@ -1385,7 +1385,7 @@ var e = new Array("https://cors-coronacoc.herokuapp.com/", "https://cors-coronac
       url: "https://cors-anywhere.herokuapp.com/http://api.corona-19.kr/korea/country/new/?serviceKey=5d4143bd958c16e18abe1acef5386c12d", // Using myjson.com to store the JSON
       success: function(result) {
         document.getElementById("confirmedPM").innerHTML = "확진자 (+ "+result.korea.newCase+")";
-        document.getElementById("localConfirmed").innerHTML = "국내발생 "+result.korea.newFcase+"명<br>해외유입 "+result.korea.newCcase+"명";
+        document.getElementById("localConfirmed").innerHTML = "국내발생 "+result.korea.newCcase+"명<br>해외유입 "+result.korea.newFcase+"명";
 
         //시도별 현황
        document.getElementById('seoulCases').innerHTML = result.seoul.totalCase+"(+"+result.seoul.newCase+")";
@@ -1476,9 +1476,9 @@ $.ajax({
         document.getElementById("confirmedPM").innerHTML += "<br>치료중 : "+result2.NowCase+"명";
         document.getElementById("curePM").innerHTML = "격리해제자 (+ "+result2.TodayRecovered+")";
         document.getElementById("deathPM").innerHTML = "사망자 (+ "+result2.TodayDeath+")";
-        $('#casePercent').attr("data-done",parseInt(result2.casePercentage)*10.0);
-        $('#curePercent').attr("data-done",parseInt(result2.recoveredPercentage));
-        $('#deathPercent').attr("data-done",parseInt(result2.deathPercentage)*10.0);
+        $('#casePercent').attr("data-done",(result2.casePercentage)*10.0);
+        $('#curePercent').attr("data-done",(result2.recoveredPercentage));
+        $('#deathPercent').attr("data-done",(result2.deathPercentage)*10.0);
 
         progressbar_case();
          progressbar_cure();
@@ -1546,7 +1546,6 @@ function rtTodayGet() {
       success: function(result) {
         var length =  result.length;
         document.getElementById('rtModalBtn').innerHTML = result[length-1].cases+"명 추가 확진 >";
-
         
         for(var i=0; i<result.length; i++) {
             $('#rtUpdates').prepend('<div id="pattern"><h5>'+result[i].datetime+'<span style="color:red; margin-left:10px;">'+result[i].cases+'명 발생</span></h5><span style="font-size:15px;">'+result[i].src+'</span><hr></div>');
