@@ -68,8 +68,8 @@ a.top:hover {
 }
 
 .progress-done2 {
-	background: linear-gradient(to left, #F2709C, #FF9472);
-	box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
+	background: linear-gradient(to left, #6ee2f5, #6454f0);
+	box-shadow: 0 3px 3px -5px #6ee2f5, 0 2px 5px #6ee2f5;
 	border-radius: 20px;
 	color: #fff;
 	display: flex;
@@ -82,8 +82,8 @@ a.top:hover {
 }
 
 .progress-done3 {
-	background: linear-gradient(to left, #F2709C, #FF9472);
-	box-shadow: 0 3px 3px -5px #F2709C, 0 2px 5px #F2709C;
+	background: linear-gradient(to left, #363553, #38458b);
+	box-shadow: 0 3px 3px -5px #363553, 0 2px 5px #363553;
 	border-radius: 20px;
 	color: #fff;
 	display: flex;
