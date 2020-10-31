@@ -186,7 +186,7 @@ $( '.top' ).click( function() {
         type: 'bar',
         defaultFontFamily: 'Poppins',
         data: {
-          labels: ['10.25', '10.26', '10.27', '10.28', '10.29'],
+          labels: ['10.25', '10.26', '10.27', '10.28', '10.29', '10.30'],
           datasets: [
             {
               label: "확진",
