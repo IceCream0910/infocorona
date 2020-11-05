@@ -128,10 +128,15 @@ document.getElementById("text2").innerHTML = "";
         array = string.split("");
         string2 = "1단계";
         array2 = string2.split("");
-            } else {
+            } else if(string == "천안/아산 사회적 거리두기") {
         string = "감염병 위기경보";
         array = string.split("");
         string2 = "심각";
+        array2 = string2.split("");
+            } else {
+        string = "천안/아산 사회적 거리두기";
+        array = string.split("");
+        string2 = "1.5단계";
         array2 = string2.split("");
     }
 frameLooper();
