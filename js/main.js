@@ -80,11 +80,11 @@ $( '.top' ).click( function() {
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['10.30', '10.31', '11.1', '11.2', '11.3', '11.4', '11.5', '11.6', '11.7', '11.8'],
+          labels: ['10.31', '11.1', '11.2', '11.3', '11.4', '11.5', '11.6', '11.7', '11.8', '11.9'],
           datasets: [
             {
-              label: "신규 확진자",
-              data: [127, 124, 97, 75, 118, 125, 145, 89, 143, 126],
+              label: "일일 확진자",
+              data: [124, 97, 75, 118, 125, 145, 89, 143, 126, 100],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
@@ -186,11 +186,11 @@ $( '.top' ).click( function() {
         type: 'bar',
         defaultFontFamily: 'Poppins',
         data: {
-          labels: ['11.3', '11.4', '11.5', '11.6', '11.7', '11.8'],
+          labels: ['11.3', '11.4', '11.5', '11.6', '11.7', '11.8', '11.9'],
           datasets: [
             {
               label: "확진",
-              data: [118, 125, 145, 89, 143, 126],
+              data: [125, 145, 89, 143, 126, 100],
               borderColor: "rgba(250, 66, 81, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(250, 66, 81,0.5)",
@@ -198,7 +198,7 @@ $( '.top' ).click( function() {
             },
             {
               label: "완치",
-              data: [106, 119, 86, 89, 58, 61],
+              data: [119, 86, 89, 58, 61, 131],
               borderColor: "rgba(0,173,95, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,173,95, 0.5)",
@@ -206,7 +206,7 @@ $( '.top' ).click( function() {
             },
             {
               label: "사망",
-              data: [2, 1, 1, 1, 1, 2],
+              data: [1, 1, 1, 1, 2, 5],
               borderColor: "rgba(0,0,0, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,0,0, 0.5)",
