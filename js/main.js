@@ -311,7 +311,7 @@ $( '.top' ).click( function() {
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [0.81, 2.54, 2.00, 0.68, 1.16, 1.08] //  (확진수)/(검사수)*100
+    var data3 = [2.54, 2.00, 0.68, 1.16, 1.08, 1.64] //  (확진수)/(검사수)*100
 
     var ctx = document.getElementById("tests-percent-chart");
     if (ctx) {
@@ -319,7 +319,7 @@ $( '.top' ).click( function() {
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ["11.6", "11.7", "11.8", "11.9", "11.10", "11.11"],
+          labels: ["11.7", "11.8", "11.9", "11.10", "11.11", "11.12"],
           datasets: [
             {
               label: "검사 대비 확진율",
