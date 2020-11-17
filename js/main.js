@@ -319,7 +319,7 @@ $( '.top' ).click( function() {
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ["11.11", "11.12", "11.13", "11.14", "11.15, "11.16"],
+          labels: ["11.11", "11.12", "11.13", "11.14", "11.15", "11.16"],
           datasets: [
             {
               label: "검사 대비 확진율",
