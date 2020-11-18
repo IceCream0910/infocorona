@@ -84,7 +84,7 @@ $( '.top' ).click( function() {
           datasets: [
             {
               label: "일일 확진자",
-              data: [126, 100, 146, 143, 191, 205, 208, 223, 230, 313],
+              data: [126, 100, 146, 143, 191, 205, 208, 222, 230, 313],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
@@ -190,7 +190,7 @@ $( '.top' ).click( function() {
           datasets: [
             {
               label: "확진",
-              data: [191, 205, 208, 223, 230, 313],
+              data: [191, 205, 208, 222, 230, 313],
               borderColor: "rgba(250, 66, 81, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(250, 66, 81,0.5)",
