@@ -330,11 +330,11 @@ function rtTodayGet() {
       url: "https://coronacoc-news.herokuapp.com/covid19", 
       success: function(result) {
         var res = JSON.parse(result);
-        var length = res.totalResults;
+        var length_article = res.totalResults;
         console.clear();
         $('.newsfeed').html('');
 
-        for(var i=0; i<7; i++) {
+        for(var i=0; i<length_article; i++) {
           var description = res.articles[i].description;
 
           var length = 80; // 표시할 글자수 기준
