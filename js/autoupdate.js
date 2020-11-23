@@ -145,13 +145,13 @@ reloadChart(cases_byAge, death_byAge, cases_bySex);
     });
 }
 
-
+var nowcase;
 
     $.ajax({
       type: "GET",
       url: proxyServer+"http://api.corona-19.kr/korea/country/new/?serviceKey=5d4143bd958c16e18abe1acef5386c12d", // Using myjson.com to store the JSON
       success: function(result) {
-        document.getElementById("confirmedPM").innerHTML = "확진자 (+ "+result.korea.newCase+")";
+        document.getElementById("confirmedPM").innerHTML = "확진자 (+ "+result.korea.newCase+")"+"<br>치료중 : "+nowcase+"명";;
         document.getElementById("localConfirmed").innerHTML = "국내발생 "+result.korea.newCcase+"명<br>해외유입 "+result.korea.newFcase+"명";
 
         //시도별 현황
@@ -232,6 +232,9 @@ reloadChart(cases_byAge, death_byAge, cases_bySex);
       }
     });
 
+
+
+
 $.ajax({
       type: "GET",
       url: proxyServer+"http://api.corona-19.kr/korea/?serviceKey=5d4143bd958c16e18abe1acef5386c12d", // Using myjson.com to store the JSN
@@ -240,7 +243,7 @@ $.ajax({
         document.getElementById("confirmed").innerHTML = result2.TotalCase+"명";
         document.getElementById("cure").innerHTML = result2.TotalRecovered+"명";
         document.getElementById("death").innerHTML = result2.TotalDeath+"명";
-        document.getElementById("confirmedPM").innerHTML += "<br>치료중 : "+result2.NowCase+"명";
+        nowcase = result2.NowCase;
         document.getElementById("curePM").innerHTML = "격리해제자 (+ "+result2.TodayRecovered+")";
         document.getElementById("deathPM").innerHTML = "사망자 (+ "+result2.TodayDeath+")";
         $('#casePercent').attr("data-done",(result2.casePercentage)*10.0);
