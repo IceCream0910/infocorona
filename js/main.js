@@ -80,11 +80,11 @@ $( '.top' ).click( function() {
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['11.16', '11.17', '11.18', '11.19', '11.20', '11.21', '11.22', '11.23', '11.24', '11.25'],
+          labels: ['11.17', '11.18', '11.19', '11.20', '11.21', '11.22', '11.23', '11.24', '11.25', '11.26'],
           datasets: [
             {
               label: "일일 확진자",
-              data: [230, 313, 343, 363, 386, 330, 271, 349, 382, 583],
+              data: [313, 343, 363, 386, 330, 271, 349, 382, 583, 569],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
@@ -186,11 +186,11 @@ $( '.top' ).click( function() {
         type: 'bar',
         defaultFontFamily: 'Poppins',
         data: {
-          labels: ['11.19', '11.20', '11.21', '11.22', '11.23', '11.24'],
+          labels: ['11.20', '11.21', '11.22', '11.23', '11.24', '11.25'],
           datasets: [
             {
               label: "확진",
-              data: [386, 330, 271, 349, 382, 583],
+              data: [330, 271, 349, 382, 583, 569],
               borderColor: "rgba(250, 66, 81, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(250, 66, 81,0.5)",
@@ -198,7 +198,7 @@ $( '.top' ).click( function() {
             },
             {
               label: "완치",
-              data: [102, 101, 73, 183, 103, 125],
+              data: [101, 73, 183, 103, 125, 153],
               borderColor: "rgba(0,173,95, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,173,95, 0.5)",
@@ -206,7 +206,7 @@ $( '.top' ).click( function() {
             },
             {
               label: "사망",
-              data: [2, 2, 4, 1, 3, 2],
+              data: [2, 4, 1, 3, 2, 1],
               borderColor: "rgba(0,0,0, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,0,0, 0.5)",
