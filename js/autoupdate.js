@@ -260,7 +260,7 @@ $.ajax({
 
 $.ajax({
       type: "GET",
-      url: "https://api.covid19api.com/summary", // Using myjson.com to store the JSN
+      url: proxyServer+"https://api.covid19api.com/summary", // Using myjson.com to store the JSN
       success: function(result3) {
 
         document.getElementById("globeConfirmed").innerHTML = result3.Global.TotalConfirmed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"명";
@@ -346,7 +346,7 @@ if (description.length > length) {
 }
 
 
-           $('.newsfeed').append('<div class="newsfeed_item" onclick="window.open(\''+res.articles[i].url+'\', \'_blank\');"> <h4 class="title">'+res.articles[i].title+'</h4><span class="description">'+description+'</span></div>');
+           $('.newsfeed').append('<div class="newsfeed_item ripple-effect" onclick="window.open(\''+res.articles[i].url+'\', \'_blank\');"> <h4 class="title">'+res.articles[i].title+'</h4><span class="description">'+description+'</span></div>');
         }
 
       }
