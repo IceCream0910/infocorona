@@ -80,11 +80,11 @@ $( '.top' ).click( function() {
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['11.17', '11.18', '11.19', '11.20', '11.21', '11.22', '11.23', '11.24', '11.25', '11.26'],
+          labels: ['11.18', '11.19', '11.20', '11.21', '11.22', '11.23', '11.24', '11.25', '11.26', '11.27'],
           datasets: [
             {
               label: "일일 확진자",
-              data: [313, 343, 363, 386, 330, 271, 349, 382, 583, 569],
+              data: [343, 363, 386, 330, 271, 349, 382, 583, 569, 504],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "#ccc",
@@ -186,11 +186,11 @@ $( '.top' ).click( function() {
         type: 'bar',
         defaultFontFamily: 'Poppins',
         data: {
-          labels: ['11.20', '11.21', '11.22', '11.23', '11.24', '11.25'],
+          labels: ['11.22', '11.23', '11.24', '11.25', '11.26', '11.27'],
           datasets: [
             {
               label: "확진",
-              data: [330, 271, 349, 382, 583, 569],
+              data: [271, 349, 382, 583, 569, 504],
               borderColor: "rgba(250, 66, 81, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(250, 66, 81,0.5)",
@@ -198,7 +198,7 @@ $( '.top' ).click( function() {
             },
             {
               label: "완치",
-              data: [101, 73, 183, 103, 125, 153],
+              data: [73, 183, 103, 125, 153, 246],
               borderColor: "rgba(0,173,95, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,173,95, 0.5)",
@@ -206,7 +206,7 @@ $( '.top' ).click( function() {
             },
             {
               label: "사망",
-              data: [2, 4, 1, 3, 2, 1],
+              data: [4, 1, 3, 2, 1, 6],
               borderColor: "rgba(0,0,0, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,0,0, 0.5)",
@@ -254,7 +254,7 @@ $( '.top' ).click( function() {
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [12144, 13245, 24264, 20006, 21641, 21531] //검사
+    var data3 = [13245, 24264, 20006, 21641, 21531, 22442] //검사
 
     var ctx = document.getElementById("recent-rep2-chart");
     if (ctx) {
@@ -262,7 +262,7 @@ $( '.top' ).click( function() {
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ["11.21", "11.22", "11.23", "11.24", "11.25", "11.26"],
+          labels: ["11.22", "11.23", "11.24", "11.25", "11.26", "11.27"],
           datasets: [
             {
               label: "일 검사자수",
@@ -311,7 +311,7 @@ $( '.top' ).click( function() {
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [2.72, 2.05, 1.44, 1.91, 2.69, 2.64] //  (확진수)/(검사수)*100
+    var data3 = [2.05, 1.44, 1.91, 2.69, 2.64, 2.25] //  (확진수)/(검사수)*100
 
     var ctx = document.getElementById("tests-percent-chart");
     if (ctx) {
@@ -319,7 +319,7 @@ $( '.top' ).click( function() {
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ["11.21", "11.22", "11.23", "11.24", "11.25", "11.26"],
+          labels: ["11.22", "11.23", "11.24", "11.25", "11.26", "11.27"],
           datasets: [
             {
               label: "검사 대비 확진율",
