@@ -75,7 +75,7 @@
 
 <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
 
-                <a href="#" class="top"><i class="fa fa-arrow-up"></i></a>
+                <a href="#" class="top ripple-effect"><i class="fa fa-arrow-up"></i></a>
 
 
 
@@ -83,17 +83,12 @@
         <!-- PAGE CONTENT-->
         <div class="page-content--bgf7">
 
-            
-            
-
-
             <!-- STATISTIC-->
 
             <section class="statistic statistic2">
 
-            
                 <div class="container">
-                    <div class="row" >
+                    <div class="row">
                         <div class="col-md-12" >
 
                           <div class="play ripple-effect" onclick="window.open('http://coronacoc-notice.kro.kr/');" style="position:absolute; top:0; right:20px; width:35px; height:35px; border:1.5px solid #a9a9a9; border-radius:50%; color:#a9a9a9; -webkit-justify-content: center; justify-content: center; -webkit-align-items: center; padding-left:8px; align-items: center;"><i class="fa fa-bell"></i></div>
@@ -206,11 +201,12 @@ frameLooper2();
                     </div>
 
                     <div class="row" id="korea">
+
                         <div class="col-md-6 col-lg-3">
                             <div class="statistic__item statistic__item--red" style="border-radius: 20px;
 background: #fa4251;
 box-shadow:  5px 5px 10px #d53845, 
-             -5px -5px 0px #f7f7f7;">
+             -5px -5px 0px transparent;">
                                 <h2 class="number" id="confirmed">로딩중</h2>
                                 <span class="desc" id="confirmedPM">확진자</span><br>
                                 <span class="desc" id="cureNow"></span>
@@ -223,7 +219,7 @@ box-shadow:  5px 5px 10px #d53845,
                             <div class="statistic__item statistic__item--green" style="border-radius: 20px;
 background: #00ad5f;
 box-shadow:  5px 5px 10px #009351, 
-             -5px -5px 0px #f7f7f7;">
+             -5px -5px 0px transparent;">
                                 <h2 class="number" id="cure">로딩중</h2>
                                 <span class="desc" id="curePM">격리해제자</span>
                                 <div class="icon">
@@ -235,7 +231,7 @@ box-shadow:  5px 5px 10px #009351,
                             <div class="statistic__item statistic__item--black" style="border-radius: 20px;
 background: #0f0f0f;
 box-shadow:  5px 5px 10px #0d0d0d, 
-             -5px -5px 0px #f7f7f7;">
+             -5px -5px 0px transparent;">
                                 <h2 class="number" id="death">로딩중</h2>
                                 <span class="desc" id="deathPM">사망자</span>
                                 <div class="icon">
@@ -249,7 +245,7 @@ box-shadow:  5px 5px 10px #0d0d0d,
 background: #f8d7da;
 border:none;
 box-shadow:  5px 5px 10px #d3b7b9, 
-             -5px -5px 0px #f7f7f7;">
+             -5px -5px 0px transparent;">
 <span class="badge badge-pill badge-danger">사회적 거리두기</span>
 <button type="button" class="ripple-effect" onclick="window.open('http://ncov.mohw.go.kr/tcmBoardView.do?contSeq=361388');" style="color:black; text-align:left;">
  수도권은 2단계 유지(위험시설 방역강화), 비수도권은 1.5단계(일부 지자체 2단계 격상)<br>
@@ -290,7 +286,7 @@ box-shadow:  5px 5px 10px #3861b7,
 
                     <!-- CHART-->
                             <div class="statistic-chart-1" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
-             -5px -5px 0px #e5e5e5;">
+             -5px -5px 0px transparent;">
                                 <div class="chart-wrap">
                                     <div id="rtSection">
     <h4>실시간 확진자<span style="color:#a9a9a9; font-size:15px;"></span>
@@ -392,9 +388,9 @@ setTimeout(function() {
                         <div class="col-md-6 col-lg-4">
                             <!-- CHART-->
                             <div class="statistic-chart-1" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
-             -5px -5px 0px #e5e5e5;">
+             -5px -5px 0px transparent;">
                                 <div class="chart-wrap">
-                                    <h3>신규 <h3 style="color:#a9a9a9;">확진자 추이<br></h3></h3>
+                                    <h3>신규 <h3 style="color:#a9a9a9;">확진자 추이<br><br></h3></h3>
                                     <canvas id="widgetChart5"></canvas>
                                 </div>
                                 <div class="statistic-chart-1-note">
@@ -413,7 +409,7 @@ setTimeout(function() {
 
                         <div class="col-lg-6">
                                 <div class="au-card m-b-30" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
-             -5px -5px 0px #e5e5e5;">
+             -5px -5px 0px transparent;">
                                     <div class="au-card-inner">
                                         <h3>국내 일별 현황</h3><br>
                                         <canvas id="barChart"></canvas>
@@ -423,7 +419,7 @@ setTimeout(function() {
 
                              <div class="col-lg-6">
                                 <div class="au-card m-b-30" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
-             -5px -5px 0px #e5e5e5;">
+             -5px -5px 0px transparent;">
                                     <div class="recent-report__chart">
                                         <h3>국내 <h3 style="color:#a9a9a9;">검사 현황<br>
                                             <br><div class="wrapper">
@@ -446,7 +442,7 @@ setTimeout(function() {
                             <div class="col-md-6 col-lg-4" style="display:none;">
                             <!-- CHART PERCENT-->
                             <div class="chart-percent-2" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
-             -5px -5px 0px #e5e5e5;">
+             -5px -5px 0px transparent;">
                                 <div class="chart-wrap">
                                     <h3>국가별 <h3 style="color:#a9a9a9;">해외 유입 현황<span style="font-size:14px;">(추정)</span></h3></h3><br>
                                     <canvas id="doughutChart_abroad"></canvas>
@@ -469,7 +465,7 @@ setTimeout(function() {
                             <div class="col-md-6 col-lg-4">
                             <!-- CHART PERCENT-->
                             <div class="chart-percent-2" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
-             -5px -5px 0px #e5e5e5;">
+             -5px -5px 0px transparent;">
                                 <div class="chart-wrap">
                                     <h3>연령별 <h3 style="color:#a9a9a9;">현황</h3></h3><br>
                                     <div class="wrapper">
@@ -489,7 +485,7 @@ setTimeout(function() {
                             <div class="col-md-6 col-lg-4">
                             <!-- CHART PERCENT-->
                             <div class="chart-percent-2" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
-             -5px -5px 0px #e5e5e5;">
+             -5px -5px 0px transparent;">
                                 <div class="chart-wrap">
                                     <h3>성별 <h3 style="color:#a9a9a9;">확진자 현황</h3></h3><br>
                                     <canvas id="doughutChart_sex" style="width:100%; height:250px;"></canvas>
@@ -515,7 +511,7 @@ setTimeout(function() {
                                 <h3>지역별 <span style="color:#a0a0a0;">현황<span style="font-size:15px;"> (명)<br><span style="font-size:15px;">좌우로 드래그할 수 있어요.</span></span></span></h3><br>
 
                                 <div class="table-responsive table--no-card m-b-40" style="margin-left:-15px; width:110%; border-radius: 20px; box-shadow: 5px 5px 10px #c3c3c3, 
-             -5px -5px 0px #e5e5e5;">
+             -5px -5px 0px transparent;">
                                     <table class="table table-borderless table-striped table-earning" style="width:110%;">
                                         <thead>
                                             <tr>
@@ -675,7 +671,7 @@ setTimeout(function() {
                             <div class="statistic__item statistic__item--red" style="border-radius: 20px;
 background: #fa4251;
 box-shadow:  5px 5px 10px #d53845, 
-             -5px -5px 0px #e5e5e5;">
+             -5px -5px 0px transparent;">
                                 <h2 class="number" id="globeConfirmed">로딩중</h2>
                                 <span class="desc" id="globeConfirmedPM">확진자</span>
                                 <div class="icon">
@@ -687,7 +683,7 @@ box-shadow:  5px 5px 10px #d53845,
                             <div class="statistic__item statistic__item--green" style="border-radius: 20px;
 background: #00ad5f;
 box-shadow:  5px 5px 10px #009351, 
-             -5px -5px 0px #e5e5e5;">
+             -5px -5px 0px transparent;">
                                 <h2 class="number" id="globeCure">로딩중</h2>
                                 <span class="desc" id="globeCurePM">격리해제자</span>
                                 <div class="icon">
@@ -699,7 +695,7 @@ box-shadow:  5px 5px 10px #009351,
                             <div class="statistic__item statistic__item--black"style="border-radius: 20px;
 background: #0f0f0f;
 box-shadow:  5px 5px 10px #0d0d0d, 
-             -5px -5px 0px #e5e5e5;">
+             -5px -5px 0px transparent;">
                                 <h2 class="number" id="globeDeath">로딩중</h2>
                                 <span class="desc" id="globeDeathPM">사망자</span>
                                 <div class="icon">
@@ -724,7 +720,7 @@ box-shadow:  5px 5px 10px #0d0d0d,
                       .newsfeed_item {
   background-color:#fff;
   box-shadow: 5px 5px 10px #c3c3c3, 
-             -5px -5px 0px #e5e5e5;
+             -5px -5px 0px transparent;
   width:100%;
   border-radius:20px;
   padding:20px;
