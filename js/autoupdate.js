@@ -396,7 +396,16 @@ function reloadChart(cases_byAge, death_byAge, cases_bySex) {
                 fontFamily: "Poppins"
               }
             }]
-          }
+          },
+          tooltips: {
+    titleFontFamily: 'Open Sans',
+    backgroundColor: 'rgba(0,0,0,0.6)',
+    titleFontColor: 'white',
+    caretSize: 5,
+    cornerRadius: 15,
+    xPadding: 10,
+    yPadding: 10
+  }
         }
       });
     }
@@ -445,7 +454,16 @@ try {
                 fontFamily: "Poppins"
               }
             }]
-          }
+          },
+          tooltips: {
+    titleFontFamily: 'Open Sans',
+    backgroundColor: 'rgba(0,0,0,0.6)',
+    titleFontColor: 'white',
+    caretSize: 5,
+    cornerRadius: 15,
+    xPadding: 10,
+    yPadding: 10
+  }
         }
       });
     }
@@ -487,6 +505,15 @@ try {
             }
 
           },
+          tooltips: {
+    titleFontFamily: 'Open Sans',
+    backgroundColor: 'rgba(0,0,0,0.6)',
+    titleFontColor: 'white',
+    caretSize: 5,
+    cornerRadius: 15,
+    xPadding: 10,
+    yPadding: 10
+  },
           responsive: true
         }
       });
