@@ -69,9 +69,6 @@ $( '.top' ).click( function() {
   // USE STRICT
   "use strict";
 
-
-     
-
     try {
     //일별 신규 확진자
     var ctx = document.getElementById("widgetChart5");
@@ -87,7 +84,9 @@ $( '.top' ).click( function() {
               data: [330, 271, 349, 382, 583, 569, 504, 450, 438, 451],
               borderColor: "transparent",
               borderWidth: "0",
-              backgroundColor: "#ccc",
+              backgroundColor: ['#ccc', '#ccc', '#ccc', '#ccc', '#ccc', '#ccc', '#ccc', '#ccc', '#ccc', 'rgba(250, 66, 81,0.7)'],
+
+
             }
           ]
         },
@@ -110,7 +109,16 @@ $( '.top' ).click( function() {
                 stepSize: 5,
               }
             }]
-          }
+          },
+            tooltips: {
+    titleFontFamily: 'Open Sans',
+    backgroundColor: 'rgba(0,0,0,0.6)',
+    titleFontColor: 'white',
+    caretSize: 5,
+    cornerRadius: 15,
+    xPadding: 10,
+    yPadding: 10
+  }
         }
       });
     }
@@ -165,6 +173,15 @@ $( '.top' ).click( function() {
             }
 
           },
+           tooltips: {
+    titleFontFamily: 'Open Sans',
+    backgroundColor: 'rgba(0,0,0,0.6)',
+    titleFontColor: 'white',
+    caretSize: 5,
+    cornerRadius: 15,
+    xPadding: 10,
+    yPadding: 10
+  },
           responsive: true
         }
       });
@@ -191,7 +208,6 @@ $( '.top' ).click( function() {
             {
               label: "확진",
               data: [583, 569, 504, 450, 438, 451],
-              borderColor: "rgba(250, 66, 81, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(250, 66, 81,0.5)",
               fontFamily: "Poppins"
@@ -199,7 +215,6 @@ $( '.top' ).click( function() {
             {
               label: "완치",
               data: [125, 153, 246, 193, 111, 260],
-              borderColor: "rgba(0,173,95, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,173,95, 0.5)",
               fontFamily: "Poppins"
@@ -207,7 +222,6 @@ $( '.top' ).click( function() {
             {
               label: "사망",
               data: [2, 1, 6, 1, 3, 0],
-              borderColor: "rgba(0,0,0, 0.8)",
               borderWidth: "0",
               backgroundColor: "rgba(0,0,0, 0.5)",
               fontFamily: "Poppins"
@@ -236,7 +250,16 @@ $( '.top' ).click( function() {
                 fontFamily: "Poppins"
               }
             }]
-          }
+          },
+           tooltips: {
+    titleFontFamily: 'Open Sans',
+    backgroundColor: 'rgba(0,0,0,0.6)',
+    titleFontColor: 'white',
+    caretSize: 5,
+    cornerRadius: 15,
+    xPadding: 10,
+    yPadding: 10
+  }
         }
       });
     }
@@ -294,7 +317,16 @@ $( '.top' ).click( function() {
                 fontFamily: "Poppins"
               }
             }]
-          }
+          },
+           tooltips: {
+    titleFontFamily: 'Open Sans',
+    backgroundColor: 'rgba(0,0,0,0.7)',
+    titleFontColor: 'white',
+    caretSize: 5,
+    cornerRadius: 15,
+    xPadding: 10,
+    yPadding: 10
+  }
         }
       });
     }
@@ -351,7 +383,16 @@ $( '.top' ).click( function() {
                 fontFamily: "Poppins"
               }
             }]
-          }
+          },
+           tooltips: {
+    titleFontFamily: 'Open Sans',
+    backgroundColor: 'rgba(0,0,0,0.7)',
+    titleFontColor: 'white',
+    caretSize: 5,
+    cornerRadius: 15,
+    xPadding: 10,
+    yPadding: 10
+  }
         }
       });
     }
