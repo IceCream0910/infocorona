@@ -277,7 +277,7 @@ $( '.top' ).click( function() {
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = 21531, 22442, 14968, 14262, 22825, 22973] //검사
+    var data3 = [21531, 22442, 14968, 14262, 22825, 22973] //검사
 
     var ctx = document.getElementById("recent-rep2-chart");
     if (ctx) {
