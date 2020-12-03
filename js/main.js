@@ -345,7 +345,7 @@ $( '.top' ).click( function() {
 
     var data3 = [2.25, 3.01, 3.07, 1.98, 2.22, 2.17] //  (확진수)/(검사수)*100
 
-    var ctx = documen[t.getElementById("tests-percent-chart");
+    var ctx = document.getElementById("tests-percent-chart");
     if (ctx) {
       ctx.height = 250;
       var myChart = new Chart(ctx, {
