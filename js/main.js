@@ -77,11 +77,11 @@ $( '.top' ).click( function() {
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['11.24', '11.25', '11.26', '11.27', '11.28', '11.29', '11.30', '12.01', '12.02', '12.03'],
+          labels: ['11.25', '11.26', '11.27', '11.28', '11.29', '11.30', '12.01', '12.02', '12.03', '12.04'],
           datasets: [
             {
               label: "일일 확진자",
-              data: [382, 583, 569, 504, 450, 438, 451, 511, 540, 629],
+              data: [583, 569, 504, 450, 438, 451, 511, 540, 629, 583],
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: ['#ccc', '#ccc', '#ccc', '#ccc', '#ccc', '#ccc', '#ccc', '#ccc', '#ccc', 'rgba(250, 66, 81,0.7)'],
@@ -203,25 +203,25 @@ $( '.top' ).click( function() {
         type: 'bar',
         defaultFontFamily: 'Poppins',
         data: {
-          labels: ['11.28', '11.29', '11.30', '12.01', '12.02', '12.03'],
+          labels: ['11.29', '11.30', '12.01', '12.02', '12.03', '12.04'],
           datasets: [
             {
               label: "확진",
-              data: [450, 438, 451, 511, 540, 629],
+              data: [438, 451, 511, 540, 629, 583],
               borderWidth: "0",
               backgroundColor: "rgba(250, 66, 81,0.5)",
               fontFamily: "Poppins"
             },
             {
               label: "완치",
-              data: [193, 111, 260, 180, 287, 259],
+              data: [111, 260, 180, 287, 259, 306],
               borderWidth: "0",
               backgroundColor: "rgba(0,173,95, 0.5)",
               fontFamily: "Poppins"
             },
             {
               label: "사망",
-              data: [1, 3, 0, 0, 3, 7],
+              data: [3, 0, 0, 3, 7, 4],
               borderWidth: "0",
               backgroundColor: "rgba(0,0,0, 0.5)",
               fontFamily: "Poppins"
