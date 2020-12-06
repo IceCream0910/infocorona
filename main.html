@@ -136,17 +136,23 @@ document.getElementById("text2").innerHTML = "";
         array = string.split("");
         string2 = "1.5단계";
         array2 = string2.split("");
-            } else if(string == "수도권·부산·강원 영서·경남·충남·전북·광주·김해·춘천 사회적 거리두기") {
+            } else if(string == "부산·강원 영서·경남·충남·전북·광주·김해·춘천 사회적 거리두기") {
         string = "감염병 위기경보";
         array = string.split("");
         string2 = "심각";
         array2 = string2.split("");
-            } else {
-        string = "수도권·부산·강원 영서·경남·충남·전북·광주·김해·춘천 사회적 거리두기";
+            } else if(string == "이외 전국 사회적 거리두기") {
+        string = "부산·강원 영서·경남·충남·전북·광주·김해·춘천 사회적 거리두기";
         array = string.split("");
         string2 = "2단계";
         array2 = string2.split("");
+} else {
+    string = "수도권 사회적 거리두기";
+        array = string.split("");
+        string2 = "2.5단계";
+        array2 = string2.split("");
 }
+    
 
 frameLooper();
 frameLooper2();
@@ -241,36 +247,18 @@ box-shadow:  5px 5px 10px #0d0d0d,
                         </div>
                         </div>
  
- <!--
  <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show" style="border-radius: 15px;
 background: #f8d7da;
 border:none;
 box-shadow:  5px 5px 10px #d3b7b9, 
              -5px -5px 0px transparent;">
-<span class="badge badge-pill badge-danger">사회적 거리두기</span>
-<button type="button" class="ripple-effect" style="color:black; text-align:left;" onclick="window.open('https://imgnews.pstatic.net/image/421/2020/12/04/0005031548_001_20201204151507805.jpg?type=w647');">
-서울시, 12월 5일부터 오후 9시 이후 완전 멈춤 시행.<br>
-12월 7일부터 내년 1월 3일까지를 연말연시 특별방역기간 지정.<br>
-김해시, 6일부터 2단계 격상.<br>
+<span class="badge badge-pill badge-danger" style="display:inline-block;">사회적 거리두기</span>
+<button type="button" class="ripple-effect" style="color:black; text-align:left;">
+수도권, 3주간 2.5단계 격상 시행.<br>
 </button>
 </button>
 </div>
--->
-            
- <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show" style="border-radius: 15px;
-background: #f8d7da;
-border:none;
-box-shadow:  5px 5px 10px #d3b7b9, 
-             -5px -5px 0px transparent;">
-
-<button type="button" class="ripple-effect" style="display:inline-block; text-align:left;" onclick="window.open('https://youtu.be/0SeRjZok6_M');"><i class="fas fa-video" style="color:#fa4251;"></i> 코로나19 예방수칙을 알아볼까요?
-</button>
-<button type="button" class="ripple-effect" style="display:inline-block; text-align:left;" onclick="window.open('https://youtu.be/yUpKB66Zlc8');"><i class="fas fa-video" style="color:#fa4251;"></i> 카페, 식당에서도 마스크 착용!
-</button>
-<button type="button" class="ripple-effect" style="display:inline-block; text-align:left;" onclick="window.open('https://youtu.be/RRinIPXHNBc');"><i class="fas fa-video" style="color:#fa4251;"></i> 달라진 사회적 거리두기 체계
-</button>
-</div>
-
+    
 <div class="sufee-alert alert alert-primary" style="border-radius: 15px;
 background: #4272d7;
 border:none;
@@ -724,6 +712,21 @@ box-shadow:  5px 5px 10px #0d0d0d,
 
  <a class="ripple-effect" href="https://app.developer.here.com/coronavirus/" target="_blank" style=" text-align:right; margin-top:-25px; margin-bottom: 25px;"><br>지도로 보는 전세계 현황 ></a>
 
+                    <br>
+                                        
+ <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show" style="border-radius: 15px;
+background: #f8d7da;
+border:none;
+box-shadow:  5px 5px 10px #d3b7b9, 
+             -5px -5px 0px transparent;">
+
+<button type="button" class="ripple-effect" style="display:inline-block; text-align:left;" onclick="window.open('https://youtu.be/0SeRjZok6_M');"><i class="fas fa-video" style="color:#fa4251;"></i> 코로나19 예방수칙을 알아볼까요?
+</button>
+<button type="button" class="ripple-effect" style="display:inline-block; text-align:left;" onclick="window.open('https://youtu.be/yUpKB66Zlc8');"><i class="fas fa-video" style="color:#fa4251;"></i> 카페, 식당에서도 마스크 착용!
+</button>
+<button type="button" class="ripple-effect" style="display:inline-block; text-align:left;" onclick="window.open('https://youtu.be/RRinIPXHNBc');"><i class="fas fa-video" style="color:#fa4251;"></i> 달라진 사회적 거리두기 체계
+</button>
+</div>
                     <br>
                     <h3>최신 뉴스</h3><br>
 
