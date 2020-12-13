@@ -61,9 +61,10 @@ var case_female = (theJson.response.body.items.item[10].confCase);
 cases_bySex[0] = parseInt(JSON.stringify(case_female).replace("{\"#text\":", "").replace("\"", "").replace("\"}").replace("undefined", ""));
 cases_bySex[1] = parseInt(JSON.stringify(case_male).replace("{\"#text\":", "").replace("\"", "").replace("\"}").replace("undefined", ""));
 
+reloadChart(cases_byAge, death_byAge, cases_bySex);
 }
 
-reloadChart(cases_byAge, death_byAge, cases_bySex);
+
 
 
         
@@ -146,12 +147,13 @@ reloadChart(cases_byAge, death_byAge, cases_bySex);
 }
 
 var nowcase;
+var nownewcase;
 
     $.ajax({
       type: "GET",
       url: proxyServer+"http://api.corona-19.kr/korea/country/new/?serviceKey=5d4143bd958c16e18abe1acef5386c12d", // Using myjson.com to store the JSON
       success: function(result) {
-        document.getElementById("confirmedPM").innerHTML = "확진자 (+ "+result.korea.newCase+")"+"<br>치료중 : "+nowcase+"명";;
+        document.getElementById("confirmedPM").innerHTML = "확진자 (+ "+result.korea.newCase+")"+"<br>격리중 : "+nowcase+"명 (+"+nownewcase+")";
         document.getElementById("localConfirmed").innerHTML = "국내발생 "+result.korea.newCcase+"명<br>해외유입 "+result.korea.newFcase+"명";
 
         //시도별 현황
@@ -244,6 +246,7 @@ $.ajax({
         document.getElementById("cure").innerHTML = result2.TotalRecovered+"명";
         document.getElementById("death").innerHTML = result2.TotalDeath+"명";
         nowcase = result2.NowCase;
+        nownewcase = result2.TotalCaseBefore;
         document.getElementById("curePM").innerHTML = "격리해제자 (+ "+result2.TodayRecovered+")";
         document.getElementById("deathPM").innerHTML = "사망자 (+ "+result2.TodayDeath+")";
         $('#casePercent').attr("data-done",(result2.casePercentage)*10.0);
@@ -334,7 +337,7 @@ function rtTodayGet() {
       success: function(result) {
         var res = JSON.parse(result);
         var length_article = res.totalResults;
-        console.clear();
+        //console.clear();
         $('.newsfeed').html('');
 
         for(var i=0; i<length_article; i++) {
@@ -359,7 +362,7 @@ function reloadChart(cases_byAge, death_byAge, cases_bySex) {
   try {
 
     // 연령별 확진자 분포
-    var ctx = document.getElementById("singelBarChart_2");
+    var ctx = document.getElementById("singelBarChart_case");
     if (ctx) {
       var myChart = new Chart(ctx, {
         type: 'bar',
@@ -417,7 +420,7 @@ function reloadChart(cases_byAge, death_byAge, cases_bySex) {
 try {
 
     // 연령별 사망자 분포
-    var ctx = document.getElementById("singelBarChart");
+    var ctx = document.getElementById("singelBarChart_death");
     if (ctx) {
       var myChart = new Chart(ctx, {
         type: 'bar',
