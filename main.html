@@ -436,44 +436,30 @@ box-shadow:  5px 5px 10px #3861b7,
                                     <h3>국내
                                         <h3 style="color:#a9a9a9;">검사 현황<br>
                                             <br>
-                                            <div class="wrapper">
-                                                <div class="taeb-switch left text-center">
-                                                    <div class="taeb active ripple-effect" taeb-direction="left" onclick="$('#recent-rep2-chart').show();$('#tests-percent').hide();">검사수</div>
-                                                    <!--
-  -->
-                                                    <div class="taeb ripple-effect" taeb-direction="right" onclick="$('#recent-rep2-chart').hide();$('#tests-percent').show();">확진율</div>
-                                                </div>
-                                            </div>
-                                            <br></h3>
-                                    </h3>
-                                    <canvas id="recent-rep2-chart"></canvas>
-                                    <div id="tests-percent" style="display:none;">
+                                            <div class="container">
+    <div class="tab-slider--nav">
+        <ul class="tab-slider--tabs">
+            <li class="tab-slider--trigger active" rel="tab1">검사수</li>
+            <li class="tab-slider--trigger" rel="tab2">확진율</li>
+        </ul>
+    </div>
+    <div class="tab-slider--container">
+        <div id="tab1" class="tab-slider--body">
+                                                <canvas id="recent-rep2-chart"></canvas>
+
+        </div>
+        <div id="tab2" class="tab-slider--body">
+            <div id="tests-percent">
                                         <canvas id="tests-percent-chart"></canvas>
                                         <h3 style="color:#a9a9a9; font-size:15px;">(확진율) = (확진자수)/(검사자수)*100</h3>
                                     </div>
-
+        </div>
+    </div>
+</div></h3>
+                                    </h3>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-md-6 col-lg-4" style="display:none;">
-                            <!-- CHART PERCENT-->
-                            <div class="chart-percent-2" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
-             -5px -5px 0px transparent;">
-                                <div class="chart-wrap">
-                                    <h3>국가별
-                                        <h3 style="color:#a9a9a9;">해외 유입 현황<span style="font-size:14px;">(추정)</span></h3>
-                                    </h3><br>
-                                    <canvas id="doughutChart_abroad"></canvas>
-                                    <table></table>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-6 col-lg-4">
-                        </div>
-
 
                     </div>
 
@@ -481,29 +467,35 @@ box-shadow:  5px 5px 10px #3861b7,
 
                     <div class="row">
 
-                        <div class="col-md-6 col-lg-4">
-                            <!-- CHART PERCENT-->
-                            <div class="chart-percent-2" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
-             -5px -5px 0px transparent;">
-                                <div class="chart-wrap">
-                                    <h3>연령별
-                                        <h3 style="color:#a9a9a9;">현황</h3>
-                                    </h3><br>
-                                    <div class="wrapper">
-                                        <div class="taeb-switch2 left text-center">
-                                            <div class="taeb active ripple-effect" taeb-direction="left" onclick="$('#singelBarChart_2').show();$('#singelBarChart').hide();">확진자</div>
-                                            <!--
-  -->
-                                            <div class="taeb ripple-effect" taeb-direction="right" onclick="$('#singelBarChart_2').hide();$('#singelBarChart').show();">사망자</div>
-                                        </div>
-                                    </div><br>
-                                    <canvas id="singelBarChart_2" style="width:100%; height:250px;"></canvas>
-                                    <canvas id="singelBarChart" style="width:100%; height:250px;"></canvas>
 
+                        <div class="col-lg-6">
+                            <div class="au-card m-b-30" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
+             -5px -5px 0px transparent;">
+                                <div class="recent-report__chart">
+                                    <h3>연령별
+                                        <h3 style="color:#a9a9a9;">현황<br>
+                                            <br>
+                                            <div class="container">
+    <div class="tab-slider--nav2">
+        <ul class="tab-slider--tabs2">
+            <li class="tab-slider--trigger2 active" rel="tab3">확진자</li>
+            <li class="tab-slider--trigger2" rel="tab4">사망자</li>
+        </ul>
+    </div>
+    <div class="tab-slider--container2">
+        <div id="tab3" class="tab-slider--body2">
+          <canvas id="singelBarChart_case" style="width:100%; height:250px;"></canvas>
+        </div>
+
+        <div id="tab4" class="tab-slider--body2">
+          <canvas id="singelBarChart_death" style="width:100%; height:250px;"></canvas>
+                                  
+        </div>
+    </div>
+</div></h3>
                                 </div>
                             </div>
-                        </div>
-                        <!-- END CHART PERCENT-->
+                    </div>
 
                         <div class="col-md-6 col-lg-4">
                             <!-- CHART PERCENT-->
@@ -865,33 +857,3 @@ box-shadow:  5px 5px 10px #d3b7b9,
 
 </html>
 <!-- end document-->
-
-<script>
-    $(function() {
-        var taeb = $(".taeb-switch");
-        taeb.find(".taeb").on("click", function() {
-            var $this = $(this);
-
-            if ($this.hasClass("active")) return;
-
-            var direction = $this.attr("taeb-direction");
-
-            taeb.removeClass("left right").addClass(direction);
-            taeb.find(".taeb.active").removeClass("active");
-            $this.addClass("active");
-        });
-
-        var taeb2 = $(".taeb-switch2");
-        taeb2.find(".taeb").on("click", function() {
-            var $this = $(this);
-
-            if ($this.hasClass("active")) return;
-
-            var direction = $this.attr("taeb-direction");
-
-            taeb2.removeClass("left right").addClass(direction);
-            taeb2.find(".taeb.active").removeClass("active");
-            $this.addClass("active");
-        });
-    });
-</script>
