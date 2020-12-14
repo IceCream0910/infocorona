@@ -312,7 +312,7 @@ $( '.top' ).click( function() {
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [28113, 27043, 28341, 29597, 21344, 23326] //검사
+    var data3 = [11949, 31919, 24727, 38651, 24731, 22444] //검사
 
     var ctx = document.getElementById("recent-rep2-chart");
     if (ctx) {
@@ -378,7 +378,7 @@ $( '.top' ).click( function() {
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [2.44, 2.52, 2.43, 3.21, 4.83, 3.08] //  (확진수)/(검사수)*100
+    var data3 = [5.74, 2.13, 2.78, 2.45, 4.16, 3.19] //  (확진수)/(검사수)*100
 
     var ctx = document.getElementById("tests-percent-chart");
     if (ctx) {
