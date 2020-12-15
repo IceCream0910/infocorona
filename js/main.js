@@ -104,63 +104,54 @@ $( '.top' ).click( function() {
   // USE STRICT
   "use strict";
 
-    try {
+ try {
     //일별 신규 확진자
-    var ctx = document.getElementById("widgetChart5");
-    if (ctx) {
-      ctx.height = 220;
-      var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: ['12.05', '12.06', '12.07', '12.08', '12.09', '12.10', '12.11', '12.12', '12.13', '12.14'],
-          datasets: [
-            {
-              label: "일일 확진자",
-              data: [631, 615, 594, 686, 682, 689, 950, 1030, 718, 880],
-              borderColor: "transparent",
-              borderWidth: "0",
-              backgroundColor: ['#ccc', '#ccc', '#ccc', '#ccc', '#ccc', '#ccc', '#ccc', '#ccc', '#ccc', 'rgba(250, 66, 81,0.7)'],
-
-
-            }
-          ]
-        },
-        options: {
-          maintainAspectRatio: true,
-          legend: {
-            display: false
-          },
-          scales: {
-            xAxes: [{
-              display: false,
-              categoryPercentage: 1,
-              barPercentage: 0.65
-            }],
-            yAxes: [{
-              display: false,
-              ticks: {
-                beginAtZero: true,
-                maxTicksLimit: 5,
-                stepSize: 5,
-              }
-            }]
-          },
-            tooltips: {
-    titleFontFamily: 'Open Sans',
-    backgroundColor: 'rgba(0,0,0,0.6)',
-    titleFontColor: 'white',
-    caretSize: 5,
-    cornerRadius: 15,
-    xPadding: 10,
-    yPadding: 10
-  }
+   var ctx = document.getElementById("widgetChart5");
+ctx.height = 300;
+var myChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['12.09', '12.10', '12.11', '12.12', '12.13', '12.14'],
+    datasets: [{
+      label: '국내 발생',
+      backgroundColor: "#778beb",
+      data: [646, 673, 928, 1002, 682, 848],
+    }, {
+      label: '해외 유입',
+      backgroundColor: "#a9a9a9",
+      data: [36, 16, 22, 28, 36, 32],
+    }],
+  },
+options: {
+    tooltips: {
+      displayColors: true,
+    },
+    scales: {
+      xAxes: [{
+        stacked: true,
+        gridLines: {
+          display: false,
         }
-      });
-    }
+      }],
+      yAxes: [{
+        stacked: true,
+        ticks: {
+          beginAtZero: false,
+        },
+        type: 'linear',
+      }]
+    },
+    responsive: true,
+    maintainAspectRatio: true,
+    legend: { position: 'bottom' },
+  }
+});
 
   } catch (error) {
     console.log(error);
   }
+  
+
 
    try {
 
