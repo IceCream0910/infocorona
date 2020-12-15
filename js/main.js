@@ -124,8 +124,14 @@ var myChart = new Chart(ctx, {
   },
 options: {
     tooltips: {
-      displayColors: true,
-    },
+    titleFontFamily: 'Open Sans',
+    backgroundColor: 'rgba(0,0,0,0.6)',
+    titleFontColor: 'white',
+    caretSize: 5,
+    cornerRadius: 15,
+    xPadding: 10,
+    yPadding: 10
+  },
     scales: {
       xAxes: [{
         stacked: true,
