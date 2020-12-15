@@ -303,7 +303,7 @@ options: {
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [31919, 24727, 38651, 24731, 22444, 39955] //검사
+    var data3 = [31919, 24727, 38651, 24731, 22444, 44181] //검사
 
     var ctx = document.getElementById("recent-rep2-chart");
     if (ctx) {
@@ -369,7 +369,7 @@ options: {
     const brandProduct2 = 'rgba(0,181,233,0.2)'
     const brandService2 = 'rgba(0,173,95,0.2)'
 
-    var data3 = [2.13, 2.78, 2.45, 4.16, 3.19, 2.20] //  (확진수)/(검사수)*100
+    var data3 = [2.13, 2.78, 2.45, 4.16, 3.19, 1.99] //  (확진수)/(검사수)*100
 
     var ctx = document.getElementById("tests-percent-chart");
     if (ctx) {
