@@ -130,29 +130,26 @@
                                     }
                                     loopTimer = setTimeout('frameLooper2()', 70); /* change 70 for speed */
                                 }
-
-                                //2단계 : 수도권·순천·하동·진주·홍천·창원·군산·제천 사회적 거리두기
-                                // 1.5단계 : 경남·광주·전북·전남·천안·아산·원주·횡성·철원·음성·거창·밀양 사회적 거리두기
                                 setInterval(function() {
                                     document.getElementById("text").innerHTML = "";
                                     document.getElementById("text2").innerHTML = "";
                                     if (string == "감염병 위기경보") {
-                                        string = "이외 비수도권 사회적 거리두기";
+                                        string = "이외 지역 사회적 거리두기";
                                         array = string.split("");
                                         string2 = "2단계";
                                         array2 = string2.split("");
-                                    } else if (string == "수도권·강릉·부산 사회적 거리두기") {
+                                    } else if (string == "수도권·강릉·부산·김제·당진·보령 사회적 거리두기") {
                                         string = "감염병 위기경보";
                                         array = string.split("");
                                         string2 = "심각";
                                         array2 = string2.split("");
-                                    } else if(string == "동해·태백·삼척·홍천·평창·화천·인제·고성·양양 사회적 거리두기") {
-                                        string = "수도권·강릉·부산 사회적 거리두기";
+                                    } else if(string == "동해·태백·삼척·홍천·평창·화천·인제·고성·양양·무주 사회적 거리두기") {
+                                        string = "수도권·강릉·부산·김제·당진·보령 사회적 거리두기";
                                         array = string.split("");
                                         string2 = "2.5단계";
                                         array2 = string2.split("");
                                     } else {
-                                        string = "동해·태백·삼척·홍천·평창·화천·인제·고성·양양 사회적 거리두기";
+                                        string = "동해·태백·삼척·홍천·평창·화천·인제·고성·양양·무주 사회적 거리두기";
                                         array = string.split("");
                                         string2 = "1.5단계";
                                         array2 = string2.split("");
