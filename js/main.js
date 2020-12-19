@@ -111,15 +111,15 @@ ctx.height = 300;
 var myChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ['12.11', '12.12', '12.13', '12.14', '12.15', '12.16', '12.17'],
+    labels: ['12.12', '12.13', '12.14', '12.15', '12.16', '12.17', '12.18'],
     datasets: [{
       label: '국내 발생',
       backgroundColor: "#778beb",
-      data: [928, 1002, 682, 848, 1054, 993, 1036], 
+      data: [1002, 682, 848, 1054, 993, 1036, 1029], 
     }, {
       label: '해외 유입',
       backgroundColor: "#a9a9a9",
-      data: [22, 28, 36, 32, 24, 21, 26],
+      data: [28, 36, 32, 24, 21, 26, 24],
     }],
   },
 options: {
@@ -235,25 +235,25 @@ options: {
         type: 'bar',
         defaultFontFamily: 'Poppins',
         data: {
-          labels: ['12.12', '12.13', '12.14', '12.15', '12.16', '12.17'],
+          labels: ['12.13', '12.14', '12.15', '12.16', '12.17', '12.18'],
           datasets: [
             {
               label: "확진",
-              data: [1030, 718, 880, 1078, 1014, 1062],
+              data: [880, 1078, 1014, 1062, 1052],
               borderWidth: "0",
               backgroundColor: "rgba(250, 66, 81,0.5)",
               fontFamily: "Poppins"
             },
             {
               label: "완치",
-              data: [321, 288, 457, 388, 663, 372],
+              data: [288, 457, 388, 663, 372, 352],
               borderWidth: "0",
               backgroundColor: "rgba(0,173,95, 0.5)",
               fontFamily: "Poppins"
             },
             {
               label: "사망",
-              data: [2, 7, 13, 12, 22, 11],
+              data: [7, 13, 12, 22, 11, 14],
               borderWidth: "0",
               backgroundColor: "rgba(0,0,0, 0.5)",
               fontFamily: "Poppins"
