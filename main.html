@@ -143,7 +143,7 @@
                                         array = string.split("");
                                         string2 = "심각";
                                         array2 = string2.split("");
-                                    } else if(string == "동해·태백·삼척·홍천·평창·화천·인제·고성·양양·무주 사회적 거리두기") {
+                                    } else if (string == "동해·태백·삼척·홍천·평창·화천·인제·고성·양양·무주 사회적 거리두기") {
                                         string = "수도권·강릉·부산·김제·당진·보령 사회적 거리두기";
                                         array = string.split("");
                                         string2 = "2.5단계";
@@ -250,7 +250,7 @@ box-shadow:  5px 5px 10px #0d0d0d,
                                 </div>
                             </div>
 
-                      
+
                             <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show" style="border-radius: 15px;
 background: #f8d7da;
 border:none;
@@ -263,8 +263,8 @@ box-shadow:  5px 5px 10px #d3b7b9,
                                 </button>
                             </div>
 
-                            
-<!--
+
+                            <!--
                             <div class="sufee-alert alert alert-primary" style="border-radius: 15px;
 background: #4272d7;
 border:none;
@@ -420,7 +420,7 @@ box-shadow:  5px 5px 10px #3861b7,
                                     <h3 style="color:#a9a9a9; font-size:15px;">신규 환자 중
                                         <h3 style="color:#4272d7; font-size:20px;" id="localConfirmed"></h3>
                                     </h3>
-                                    
+
                                     <!-- (673+928+1002+682+848+1054+993)/7 -->
 
 
@@ -443,30 +443,41 @@ box-shadow:  5px 5px 10px #3861b7,
                         <div class="col-lg-6">
                             <div class="au-card m-b-30" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
              -5px -5px 0px transparent;">
+                                <div class="au-card-inner">
+                                    <h3>위중증 환자 <span style="color:#a9a9a9;">추이</span></h3><br>
+                                    <canvas id="barChart_seriousCases"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="au-card m-b-30" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
+             -5px -5px 0px transparent;">
                                 <div class="recent-report__chart">
                                     <h3>국내
                                         <h3 style="color:#a9a9a9;">검사 현황<br>
                                             <br>
                                             <div class="container">
-    <div class="tab-slider--nav">
-        <ul class="tab-slider--tabs">
-            <li class="tab-slider--trigger active" rel="tab1">검사수</li>
-            <li class="tab-slider--trigger" rel="tab2">확진율</li>
-        </ul>
-    </div>
-    <div class="tab-slider--container">
-        <div id="tab1" class="tab-slider--body">
-                                                <canvas id="recent-rep2-chart"></canvas>
+                                                <div class="tab-slider--nav">
+                                                    <ul class="tab-slider--tabs">
+                                                        <li class="tab-slider--trigger active" rel="tab1">검사수</li>
+                                                        <li class="tab-slider--trigger" rel="tab2">확진율</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="tab-slider--container">
+                                                    <div id="tab1" class="tab-slider--body">
+                                                        <canvas id="recent-rep2-chart"></canvas>
 
-        </div>
-        <div id="tab2" class="tab-slider--body">
-            <div id="tests-percent">
-                                        <canvas id="tests-percent-chart"></canvas>
-                                        <h3 style="color:#a9a9a9; font-size:15px;">(확진율) = (확진자수)/(검사자수)*100</h3>
-                                    </div>
-        </div>
-    </div>
-</div></h3>
+                                                    </div>
+                                                    <div id="tab2" class="tab-slider--body">
+                                                        <div id="tests-percent">
+                                                            <canvas id="tests-percent-chart"></canvas>
+                                                            <h3 style="color:#a9a9a9; font-size:15px;">(확진율) = (확진자수)/(검사자수)*100</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </h3>
                                     </h3>
                                 </div>
                             </div>
@@ -487,26 +498,27 @@ box-shadow:  5px 5px 10px #3861b7,
                                         <h3 style="color:#a9a9a9;">현황<br>
                                             <br>
                                             <div class="container">
-    <div class="tab-slider--nav2">
-        <ul class="tab-slider--tabs2">
-            <li class="tab-slider--trigger2 active" rel="tab3">확진자</li>
-            <li class="tab-slider--trigger2" rel="tab4">사망자</li>
-        </ul>
-    </div>
-    <div class="tab-slider--container2">
-        <div id="tab3" class="tab-slider--body2">
-          <canvas id="singelBarChart_case" style="width:100%; height:250px;"></canvas>
-        </div>
+                                                <div class="tab-slider--nav2">
+                                                    <ul class="tab-slider--tabs2">
+                                                        <li class="tab-slider--trigger2 active" rel="tab3">확진자</li>
+                                                        <li class="tab-slider--trigger2" rel="tab4">사망자</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="tab-slider--container2">
+                                                    <div id="tab3" class="tab-slider--body2">
+                                                        <canvas id="singelBarChart_case" style="width:100%; height:250px;"></canvas>
+                                                    </div>
 
-        <div id="tab4" class="tab-slider--body2">
-          <canvas id="singelBarChart_death" style="width:100%; height:250px;"></canvas>
-                                  
-        </div>
-    </div>
-</div></h3>
+                                                    <div id="tab4" class="tab-slider--body2">
+                                                        <canvas id="singelBarChart_death" style="width:100%; height:250px;"></canvas>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </h3>
                                 </div>
                             </div>
-                    </div>
+                        </div>
 
                         <div class="col-md-6 col-lg-4">
                             <!-- CHART PERCENT-->
@@ -826,41 +838,41 @@ box-shadow:  5px 5px 10px #d3b7b9,
                 </section>
 
 
-        </div>
+                </div>
 
-    </div>
-
-
+                </div>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.3.4/vue-resource.js"></script>
-    <!-- Jquery JS-->
-    <script src="vendor/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap JS-->
-    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <!-- Vendor JS-->
-    <script src="vendor/slick/slick.min.js">
-    </script>
-    <script src="vendor/wow/wow.min.js"></script>
-    <script src="vendor/animsition/animsition.min.js"></script>
-    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
-    </script>
-    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
-    <script src="vendor/counter-up/jquery.counterup.min.js">
-    </script>
-    <script src="vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="vendor/select2/select2.min.js">
-    </script>
 
-    <!-- Main JS-->
-    <script src="js/main.js"></script>
-    <script src="js/custom.js"></script>
-    <script src="js/autoupdate.js"></script>
-    <!-- 트래픽 과부화 방지를 위해 작업 시에는 autoUpdate 파일 비활성화 하고 사용해주세요 
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.3.4/vue-resource.js"></script>
+                <!-- Jquery JS-->
+                <script src="vendor/jquery-3.2.1.min.js"></script>
+                <!-- Bootstrap JS-->
+                <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+                <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+                <!-- Vendor JS-->
+                <script src="vendor/slick/slick.min.js">
+                </script>
+                <script src="vendor/wow/wow.min.js"></script>
+                <script src="vendor/animsition/animsition.min.js"></script>
+                <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+                </script>
+                <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+                <script src="vendor/counter-up/jquery.counterup.min.js">
+                </script>
+                <script src="vendor/circle-progress/circle-progress.min.js"></script>
+                <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+                <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+                <script src="vendor/select2/select2.min.js">
+                </script>
+
+                <!-- Main JS-->
+                <script src="js/main.js"></script>
+                <script src="js/custom.js"></script>
+                <script src="js/autoupdate.js"></script>
+                <!-- 트래픽 과부화 방지를 위해 작업 시에는 autoUpdate 파일 비활성화 하고 사용해주세요 
    
  -->
 
