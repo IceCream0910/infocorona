@@ -239,7 +239,7 @@ options: {
           datasets: [
             {
               label: "확진",
-              data: [880, 1078, 1014, 1062, 1052],
+              data: [718, 880, 1078, 1014, 1062, 1052],
               borderWidth: "0",
               backgroundColor: "rgba(250, 66, 81,0.5)",
               fontFamily: "Poppins"
