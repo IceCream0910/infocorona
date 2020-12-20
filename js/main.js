@@ -318,7 +318,7 @@ function disableSelection(target) {
         const brandProduct2 = 'rgba(0,181,233,0.2)'
         const brandService2 = 'rgba(0,173,95,0.2)'
 
-        var data3 = [22444, 44181, 47549, 50071, 50955, 56450] //검사
+        var data3 = [44181, 47549, 50071, 50955, 56450, 36847] //검사
 
         var ctx = document.getElementById("recent-rep2-chart");
         if (ctx) {
@@ -326,7 +326,7 @@ function disableSelection(target) {
             var myChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ["12.13", "12.14", "12.15", "12.16", "12.17", "12.18"],
+                    labels: ["12.14", "12.15", "12.16", "12.17", "12.18", "12.19"],
                     datasets: [{
                         label: "일 검사자수",
                         data: data3,
@@ -382,7 +382,7 @@ function disableSelection(target) {
         const brandProduct2 = 'rgba(0,181,233,0.2)'
         const brandService2 = 'rgba(0,173,95,0.2)'
 
-        var data3 = [3.19, 1.99, 2.27, 2.03, 2.08, 1.86] //  (확진수)/(검사수)*100
+        var data3 = [1.99, 2.27, 2.03, 2.08, 1.86, 2.98] //  (확진수)/(검사수)*100
 
         var ctx = document.getElementById("tests-percent-chart");
         if (ctx) {
@@ -390,7 +390,7 @@ function disableSelection(target) {
             var myChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ["12.13", "12.14", "12.15", "12.16", "12.17", "12.18"],
+                    labels: ["12.14", "12.15", "12.16", "12.17", "12.18", "12.19"],
                     datasets: [{
                         label: "검사 대비 확진율",
                         data: data3,
