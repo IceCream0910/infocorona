@@ -90,12 +90,12 @@
                     <div class="row">
                         <div class="col-md-12">
 
-                            <div class="play ripple-effect" onclick="window.open('https://www.notion.so/11f6842414ec4b33886bfbfac06ddad8');" style="position:absolute; top:-20px; right:20px; width:35px; height:35px; border:1.5px solid #a9a9a9; border-radius:50%; color:#a9a9a9; -webkit-justify-content: center; justify-content: center; -webkit-align-items: center; padding-left:8px; align-items: center;"><i class="fa fa-bell"></i></div>
+                            <div class="play ripple-effect" onclick="window.open('https://www.notion.so/11f6842414ec4b33886bfbfac06ddad8');" style="position:absolute; top:-20px; right:10px; width:35px; height:35px;color:#a9a9a9;"><i class="fa fa-bell"></i></div>
 
+                            <img src="http://coronacoc.dothome.co.kr/icon.png" width="50px" style="position: relative; top:-25px;">
 
-                            <h6 class="pb-4 display-5" style="font-size:13px;margin-left:10px;margin-top:-10px;color:#0f0f0f;line-height: 0.1em;" onclick="javascript:sendMsgToParent('socialdistancing');">
-                                <div id="regionName" style="display:inline-block;margin-right:5px;font-size:16px;">regionName</div><br>
-                                <span id="disLev" style="font-size:20px;color:#ff6961;">disLev</span><i class="fa fa-angle-down" style="padding-top:10px;margin-left:10px;font-size:25px;color:#686868;"></i>
+                            <h6 class="pb-4 display-5" style="width:90%;font-size:13px;margin-left:10px;color:#0f0f0f;line-height: 0.1em;" onclick="javascript:sendMsgToParent('socialdistancing');">
+                                <div id="regionName" style="display:inline-block;margin-right:5px;font-size:16px;"></div>
                             </h6>
 
 
@@ -143,47 +143,65 @@
                                         <div class="parent"></div>
                                         <div class="padding"></div>
                                         <div class="title"></div>정보 가져오는 중...</h6>
+                                <!--
                                 <div id="player-container" style="display:inline-block;">
                                     <div id="play-pause" class="play ripple-effect" onclick="getTTS();" style="width:35px; height:35px; border:1.5px solid #a9a9a9; border-radius:50%; display:flex; -webkit-justify-content: center; justify-content: center; -webkit-align-items: center; align-items: center; color:#a9a9a9;"><i id="ttsBtn" class="fa fa-volume-up"></i></div>
                                 </div>
+                                -->
                             </h3>
                             </div>
                             </div>
 
                             <div class="row" id="korea">
 
-                                <div class="col-md-6 col-lg-3">
+                                <div class="col-md-6 col-lg-3" style="width:50%;">
                                     <div class="statistic__item statistic__item--red" style="border-radius: 20px;
 background: #fa4251;
 box-shadow:  5px 5px 10px #d53845, 
              -5px -5px 0px transparent;">
+                                        <span class="desc">확진자</span>
                                         <h2 class="number" id="confirmed">로딩중</h2>
-                                        <span class="desc" id="confirmedPM">확진자</span><br>
+                                        <span class="desc" id="confirmedPM"></span><br>
                                         <span class="desc" id="cureNow"></span>
                                         <div class="icon">
                                             <i class="zmdi zmdi-account-o"></i>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-lg-3">
+                                <div class="col-md-6 col-lg-3" style="width:50%; margin-left:-10px;">
                                     <div class="statistic__item statistic__item--green" style="border-radius: 20px;
 background: #00ad5f;
 box-shadow:  5px 5px 10px #009351, 
              -5px -5px 0px transparent;">
+                                        <span class="desc">격리해제</span>
                                         <h2 class="number" id="cure">로딩중</h2>
-                                        <span class="desc" id="curePM">격리해제자</span>
+                                        <span class="desc" id="curePM"></span>
                                         <div class="icon">
-                                            <i class="zmdi zmdi-check-all"></i>
+                                            <i class="zmdi zmdi-shield-check"></i>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-lg-3">
+                                <div class="col-md-6 col-lg-3" style="width:50%;">
+                                    <div class="statistic__item statistic__item--blue" style="border-radius: 20px;
+background: #00b5e9;
+box-shadow:  5px 5px 10px #009ac6, 
+             -5px -5px 0px transparent;">
+                                        <span class="desc">치료중</span>
+                                        <h2 class="number" id="nowcases">로딩중</h2>
+                                        <span class="desc" id="nowPM"></span>
+                                        <div class="icon">
+                                            <i class="zmdi zmdi-play-circle"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3" style="width:50%; margin-left:-10px;">
                                     <div class="statistic__item statistic__item--black" style="border-radius: 20px;
 background: #0f0f0f;
 box-shadow:  5px 5px 10px #0d0d0d, 
              -5px -5px 0px transparent;">
+                                        <span class="desc">사망자</span>
                                         <h2 class="number" id="death">로딩중</h2>
-                                        <span class="desc" id="deathPM">사망자</span>
+                                        <span class="desc" id="deathPM"></span>
                                         <div class="icon">
                                             <i class="zmdi zmdi-accounts-outline"></i>
                                         </div>
@@ -191,7 +209,7 @@ box-shadow:  5px 5px 10px #0d0d0d,
                                 </div>
                             </div>
 
-
+                            <!--
                             <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show" style="border-radius: 15px;
 background: #f8d7da;
 border:none;
@@ -203,8 +221,10 @@ box-shadow:  5px 5px 10px #d3b7b9,
 수도권 23일 0시부터 5인 이상 집합 금지, 결혼식·장례식만 예외로 허용
                                 </button>
                             </div>
+-->
 
 
+                            <!--
                             <div class="sufee-alert alert alert-primary" style="border-radius: 15px;
 background: #4272d7;
 border:none;
@@ -215,6 +235,7 @@ box-shadow:  5px 5px 10px #3861b7,
                                 수도권 24개(서울 22, 경기 2, 인천 0), 전국 74개(수도권 포함) (12.23 기준)</button>
                                 </button>
                             </div>
+                        -->
                             <br>
 
                         </div>
