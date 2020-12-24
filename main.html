@@ -21,12 +21,6 @@
 
         gtag('config', 'UA-159921858-1');
     </script>
-    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-    <script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5fc1e81433689202"></script>
-
-
-    <!-- Title Page-->
-    <title></title>
 
 
     <!-- Fontfaces CSS-->
@@ -61,7 +55,7 @@
     <script src="https://uicdn.toast.com/tui.chart/latest/tui-chart.min.js"></script>
 
     <script src="https://uicdn.toast.com/tui.chart/latest/maps/south-korea.js"></script>
-
+    <script src="https://socialdistancing.kr/data/data.js"></script>
 
 
     <!-- Main CSS-->
@@ -96,70 +90,17 @@
                     <div class="row">
                         <div class="col-md-12">
 
-                            <div class="play ripple-effect" onclick="window.open('https://www.notion.so/11f6842414ec4b33886bfbfac06ddad8');" style="position:absolute; top:0; right:20px; width:35px; height:35px; border:1.5px solid #a9a9a9; border-radius:50%; color:#a9a9a9; -webkit-justify-content: center; justify-content: center; -webkit-align-items: center; padding-left:8px; align-items: center;"><i class="fa fa-bell"></i></div>
-
-                            <h1 class="ripple-effect" onclick="javascript:welcome();" style="font-size:22px; margin-left:10px; font-family:KyoboHand;" id="suggestText"> <br>
-                            </h1><br><br>
-
-                            <h6 class="pb-4 display-5" style="font-size:15px;margin-top:-20px;margin-left:10px;color:#a9a9a9;font-family:KyoboHand;" onclick="window.open('http://ncov.mohw.go.kr/duBoardList.do?brdId=2&brdGubun=29&flowId=main#banner_02');">
-                                <div id="text" style="display:inline-block;margin-right:5px;">감염병 위기경보</div><span id="text2" style="display:inline-block; border-radius:20px; background:#ff6961; color:white; padding:2px 8px;">심각</span></h6>
-
-                            <script>
-                                var string = ""; /* type your text here */
-                                var array = string.split("");
-                                var timer;
-
-                                var string2 = ""; /* type your text here */
-                                var array2 = string.split("");
-                                var timer2;
-
-                                function frameLooper() {
-                                    if (array.length > 0) {
-                                        document.getElementById("text").innerHTML += array.shift();
-                                    } else {
-                                        clearTimeout(timer);
-                                    }
-                                    loopTimer = setTimeout('frameLooper()', 70); /* change 70 for speed */
-                                }
-
-                                function frameLooper2() {
-                                    if (array2.length > 0) {
-                                        document.getElementById("text2").innerHTML += array2.shift();
-                                    } else {
-                                        clearTimeout(timer2);
-                                    }
-                                    loopTimer = setTimeout('frameLooper2()', 70); /* change 70 for speed */
-                                }
-                                setInterval(function() {
-                                    document.getElementById("text").innerHTML = "";
-                                    document.getElementById("text2").innerHTML = "";
-                                    if (string == "감염병 위기경보") {
-                                        string = "이외 지역 사회적 거리두기";
-                                        array = string.split("");
-                                        string2 = "2단계";
-                                        array2 = string2.split("");
-                                    } else if (string == "수도권·강릉·부산·김제·당진·동해·거제 사회적 거리두기") {
-                                        string = "감염병 위기경보";
-                                        array = string.split("");
-                                        string2 = "심각";
-                                        array2 = string2.split("");
-                                    } else if (string == "태백·화천·양구 인제·고성 양양·속초·무주 사회적 거리두기") {
-                                        string = "수도권·강릉·부산·김제·당진·동해·거제 사회적 거리두기";
-                                        array = string.split("");
-                                        string2 = "2.5단계";
-                                        array2 = string2.split("");
-                                    } else {
-                                        string = "태백·화천·양구 인제·고성 양양·속초·무주 사회적 거리두기";
-                                        array = string.split("");
-                                        string2 = "1.5단계";
-                                        array2 = string2.split("");
-                                    }
+                            <div class="play ripple-effect" onclick="window.open('https://www.notion.so/11f6842414ec4b33886bfbfac06ddad8');" style="position:absolute; top:-20px; right:20px; width:35px; height:35px; border:1.5px solid #a9a9a9; border-radius:50%; color:#a9a9a9; -webkit-justify-content: center; justify-content: center; -webkit-align-items: center; padding-left:8px; align-items: center;"><i class="fa fa-bell"></i></div>
 
 
-                                    frameLooper();
-                                    frameLooper2();
-                                }, 9000);
-                            </script>
+                            <h6 class="pb-4 display-5" style="font-size:13px;margin-left:10px;margin-top:-10px;color:#0f0f0f;line-height: 0.1em;" onclick="javascript:sendMsgToParent('socialdistancing');">
+                                <div id="regionName" style="display:inline-block;margin-right:5px;font-size:16px;">regionName</div><br>
+                                <span id="disLev" style="font-size:20px;color:#ff6961;">disLev</span><i class="fa fa-angle-down" style="padding-top:10px;margin-left:10px;font-size:25px;color:#686868;"></i>
+                            </h6>
+
+
+
+
 
                             <section class="welcome p-t-10" id="Rtop" style="margin-left:-15px; margin-top:-50px; margin-bottom:70px;">
                                 <div class="container">
@@ -257,7 +198,7 @@ border:none;
 box-shadow:  5px 5px 10px #d3b7b9, 
              -5px -5px 0px transparent;">
                                 <span class="badge badge-pill badge-danger" style="display:inline-block;">정보</span>
-                                <button type="button" class="ripple-effect" style="color:black; text-align:left;"  onclick="window.open('http://ncov.mohw.go.kr/tcmBoardView.do?contSeq=362283');">
+                                <button type="button" class="ripple-effect" style="color:black; text-align:left;" onclick="window.open('http://ncov.mohw.go.kr/tcmBoardView.do?contSeq=362283');">
 24일 0시부터 연말연시 특별방역 강화대책 시행<br>
 수도권 23일 0시부터 5인 이상 집합 금지, 결혼식·장례식만 예외로 허용
                                 </button>
@@ -333,7 +274,7 @@ box-shadow:  5px 5px 10px #3861b7,
                                     <h3 id="rtToday" style="display:inline-block;"></h3>
                                     <div id="rtpmBox" style="padding:5px 10px; border-radius:10px; background:rgba(255, 105, 97, 0.3); display:inline-block; margin-left:10px;"><span id="rtPM"></span></div>
                                 </h3><br>
-                                <button id="rtModalBtn" type="button" class="btn btn-primary ripple-effect" onclick="sendChildMessage();" style="margin-top:15px;width:100%; text-align:left; border-radius:10px;">
+                                <button id="rtModalBtn" type="button" class="btn btn-primary ripple-effect" style="margin-top:15px;width:100%; text-align:left; border-radius:10px;">
   상세 
 </button><br><br>
                                 <span style="color:#a9a9a9; font-size:13px;" id="rtDec"></span><br>
@@ -351,10 +292,9 @@ box-shadow:  5px 5px 10px #3861b7,
 
 
                     <script type="text/javascript">
-                        var btn = document.getElementById('rtModalBtn');
+                        var btnRt = document.getElementById('rtModalBtn');
 
-
-                        btn.addEventListener('click', function(e) {
+                        btnRt.addEventListener('click', function(e) {
                             sendMsgToParent($('#rtUpdates').html());
                         });
 
@@ -837,41 +777,41 @@ box-shadow:  5px 5px 10px #d3b7b9,
                 </section>
 
 
-                </div>
+        </div>
 
-                </div>
-
-
+    </div>
 
 
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.3.4/vue-resource.js"></script>
-                <!-- Jquery JS-->
-                <script src="vendor/jquery-3.2.1.min.js"></script>
-                <!-- Bootstrap JS-->
-                <script src="vendor/bootstrap-4.1/popper.min.js"></script>
-                <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
-                <!-- Vendor JS-->
-                <script src="vendor/slick/slick.min.js">
-                </script>
-                <script src="vendor/wow/wow.min.js"></script>
-                <script src="vendor/animsition/animsition.min.js"></script>
-                <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
-                </script>
-                <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
-                <script src="vendor/counter-up/jquery.counterup.min.js">
-                </script>
-                <script src="vendor/circle-progress/circle-progress.min.js"></script>
-                <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-                <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-                <script src="vendor/select2/select2.min.js">
-                </script>
 
-                <!-- Main JS-->
-                <script src="js/main.js"></script>
-                <script src="js/custom.js"></script>
-                <script src="js/autoupdate.js"></script>
-                <!-- 트래픽 과부화 방지를 위해 작업 시에는 autoUpdate 파일 비활성화 하고 사용해주세요 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.3.4/vue-resource.js"></script>
+    <!-- Jquery JS-->
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="vendor/slick/slick.min.js">
+    </script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="vendor/select2/select2.min.js">
+    </script>
+
+    <!-- Main JS-->
+    <script src="js/main.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/autoupdate.js"></script>
+    <!-- 트래픽 과부화 방지를 위해 작업 시에는 autoUpdate 파일 비활성화 하고 사용해주세요 
    
  -->
 
