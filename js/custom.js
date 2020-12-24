@@ -50,25 +50,24 @@ function GenerateVoice(e) {
     }, !1)
 }
 
+
 // 사회적 거리두기 현황
 var distanceData = data;
-console.clear();
 console.log(distanceData);
 var regionList = [distanceData.region.seoul.region, distanceData.region.gyeonggi.region, distanceData.region.busan.region, distanceData.region.chungbuk.region, distanceData.region.chungnam.region, distanceData.region.daegu.region, distanceData.region.daejeon.region, distanceData.region.gangwon.region, distanceData.region.gwangju.region, distanceData.region.gyeongbuk.region, distanceData.region.gyeongnam.region, distanceData.region.incheon.region, distanceData.region.jeju.region, distanceData.region.jeonbuk.region, distanceData.region.jeonnam.region, distanceData.region.sejong.region, distanceData.region.ulsan.region];
 
 var disLevList = [distanceData.region.seoul.type, distanceData.region.gyeonggi.type, distanceData.region.busan.type, distanceData.region.chungbuk.type, distanceData.region.chungnam.type, distanceData.region.daegu.type, distanceData.region.daejeon.type, distanceData.region.gangwon.type, distanceData.region.gwangju.type, distanceData.region.gyeongbuk.type, distanceData.region.gyeongnam.type, distanceData.region.incheon.type, distanceData.region.jeju.type, distanceData.region.jeonbuk.type, distanceData.region.jeonnam.type, distanceData.region.sejong.type, distanceData.region.ulsan.type];
 var cnt = 0;
 
-$('#regionName').html(regionList[0] + '는 지금');
-$('#disLev').html(disLevToString(disLevList[cnt]));
+$('#regionName').html(regionList[cnt] + '는 ' + '<br><span id="disLev" style="color:#ff6961;">' + disLevToString(disLevList[cnt]) + '</span>' + ' 시행중입니다<i class="fa fa-angle-right" style="padding-top:10px;margin-left:10px;font-size:25px;color:#686868;"></i>');
 cnt++;
 
 var updateRegion = setInterval(function() {
     if (cnt > 16) {
         cnt = 0;
     } else {
-        $('#regionName').html(regionList[cnt] + '는 지금');
-        $('#disLev').html(disLevToString(disLevList[cnt]));
+        $('#regionName').html(regionList[cnt] + '는 ' + '<br><span id="disLev" style="color:#ff6961;">' + disLevToString(disLevList[cnt]) + '</span>' + ' 시행중입니다<i class="fa fa-angle-right" style="padding-top:10px;margin-left:10px;font-size:25px;color:#686868;"></i>');
+
         cnt++;
     }
 }, 8000);
