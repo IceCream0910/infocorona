@@ -110,15 +110,15 @@ function disableSelection(target) {
         var myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['12.17', '12.18', '12.19', '12.20', '12.21', '12.22', '12.23'],
+                labels: ['12.18', '12.19', '12.20', '12.21', '12.22', '12.23', '12.24'],
                 datasets: [{
                     label: '국내 발생',
                     backgroundColor: "#778beb",
-                    data: [1036, 1029, 1072, 892, 824, 1060, 955],
+                    data: [1029, 1072, 892, 824, 1060, 955, 1216],
                 }, {
                     label: '해외 유입',
                     backgroundColor: "#a9a9a9",
-                    data: [26, 24, 25, 34, 45, 32, 30],
+                    data: [24, 25, 34, 45, 32, 30, 25],
                 }],
             },
             options: {
@@ -165,17 +165,17 @@ function disableSelection(target) {
                 type: 'bar',
                 defaultFontFamily: 'Poppins',
                 data: {
-                    labels: ['12.18', '12.19', '12.20', '12.21', '12.22', '12.23'],
+                    labels: ['12.19', '12.20', '12.21', '12.22', '12.23', '12.24'],
                     datasets: [{
                             label: "확진",
-                            data: [1052, 1097, 926, 869, 1092, 985],
+                            data: [1097, 926, 869, 1092, 985, 1241],
                             borderWidth: "0",
                             backgroundColor: "rgba(250, 66, 81,0.5)",
                             fontFamily: "Poppins"
                         },
                         {
                             label: "완치",
-                            data: [352, 388, 433, 773, 798, 699],
+                            data: [388, 433, 773, 798, 699, 623],
                             borderWidth: "0",
                             backgroundColor: "rgba(0,173,95, 0.5)",
                             fontFamily: "Poppins"
@@ -246,7 +246,7 @@ function disableSelection(target) {
         var myChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['12.18', '12.19', '12.20', '12.21', '12.22', '12.23'],
+                labels: ['12.19', '12.20', '12.21', '12.22', '12.23', '12.24'],
                 datasets: [{
                     label: "위중증 환자",
                     borderColor: gradientStroke,
@@ -261,7 +261,7 @@ function disableSelection(target) {
                     fill: true,
                     backgroundColor: gradientFill,
                     borderWidth: 4,
-                    data: [275, 278, 274, 281, 284, 291]
+                    data: [278, 274, 281, 284, 291, 311]
                 }]
             },
             options: {
