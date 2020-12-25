@@ -2,6 +2,9 @@ function randomItem(e) {
     return e[Math.floor(Math.random() * e.length)]
 }
 
+var region1 = '';
+var region2 = '';
+
 function welcome() {
     //var special = new Array("수험생 여러분들을<br>응원합니다!", "늘 응원하는 사람이 있다는 것,<br>잊지 말고 당신을 믿어요!", "수험생 여러분들의<br>빛나는 열정을 응원합니다.", "잘했고, 잘하고 있고,<br>잘 할 거예요", "멈추지 않은 여러분의 노력<br>좋은 결과로 이어질 거예요.", "있는 그대로, 지금 느낌<br>그대로 여러분을 보여주세요", "파란 하늘 끝까지<br>올라가 보자, 높이", "하늘을 바라봐요,<br> 어두워도 괜찮아요.", "하늘 위로 날아오를<br>시간이에요.", "지금이야,<br>하늘로 비상할 시간", "힘을 내세요,<br>여기까지 왔잖아요", "단 한 가지 약속은,<br>틀림없이 끝이 있다는 것.");
     //var e = new Array("모두를 위한 거리두기에<br>동참해주세요.", "증상 발생 시,<br>1339로 전화하세요!", "올바른 손씻기는<br>비누로 30초 이상!", "예방 수칙 준수로<br>이겨낼 수 있습니다.", "기침할 땐,<br>옷소매로 가리고 해주세요.", "모든 의료진분들을<br>응원합니다!", "거리는 멀어져도,<br>마음은 가까이!", "외출할 때는<br>마스크 착용 필수!", "한순간의 방심이<br>재확산의 시작이 됩니다.", "나 하나쯤이야 라는 생각이<br>모두의 안전을 위협합니다", "진정한 인싸라면<br>클럽말고 집으로", "밀집된 사람들 속에<br>방심한 너와나 거리", "당연한 것들을 누릴<br>그날이 빨리 오길", "집콕운동,<br>모두를 위한 스포츠", "우리의 일상은 잠시 멈춤<br>서로의 마음은 계속 끈끈", "집회, 모임, 종교행사는<br>잠시 자제해주세요.", "모두 만나요.<br>온라인에서", "다시 만날 그때까지<br>힘내요, 우리!", "꼭 다시 만나자,<br>잃어버린 모든 것들아", "힘을 내요, 대한민국.<br>마음을 모아 이겨냅시다.", "비정상이 일상이 된 지금<br>함께 극복할 수 있어요!");
@@ -13,7 +16,7 @@ function welcome() {
     //  document.getElementById("suggestText").innerHTML = randomItem(special)
 }
 window.onload = function() {
-    welcome()
+    welcome();
 };
 var ttsurl = "정보 없음.";
 
@@ -94,4 +97,424 @@ function disLevToString(lev) {
             break;
     }
 
+}
+
+//동선데이터
+$.ajax({
+    type: "GET",
+    url: "https://coroname.me/getdata", // Using myjson.com to store the JSN
+    success: function(routesData) {
+        console.log(routesData);
+        dataset = routesData.data;
+
+        var loadedRegion1 = localStorage.getItem("region1");
+        var loadedRegion2 = localStorage.getItem("region2");
+        if (loadedRegion1 != null) {
+            $('#regionFirst-select').val(loadedRegion1).trigger('change');
+
+            region1 = loadedRegion1;
+
+        }
+        if (loadedRegion2 != null) {
+            document.getElementById('regionSecond-select').value = loadedRegion2;
+            $("#regionSecond-select").val(loadedRegion2);
+            updateOptions();
+            region2 = loadedRegion2;
+            console.log(region1, region2);
+            getRoutesByRegion();
+        }
+
+    }
+});
+
+/// 광역시/도 -> 시/군/구 매핑
+function updateOptions() { 
+    var selector = document.getElementById("regionFirst-select");
+
+    var selectValue = selector.options[selector.selectedIndex].value;
+    region1 = selectValue; //광역시/도 저장
+    localStorage.setItem("region1", region1);
+
+    switch (selectValue) {
+        case '서울':
+            $('.seoul').show();
+            $('.busan').hide();
+            $('.daegu').hide();
+            $('.daejeon').hide();
+            $('.incheon').hide();
+            $('.gwangju').hide();
+            $('.ulsan').hide();
+            $('.sejong').hide();
+            $('.gyeonggi').hide();
+            $('.gangwon').hide();
+            $('.chungbuk').hide();
+            $('.chungnam').hide();
+            $('.jeonbuk').hide();
+            $('.jeonnam').hide();
+            $('.gyeongbuk').hide();
+            $('.gyeongnam').hide();
+            $('.jeju').hide();
+            break;
+        case '부산':
+            $('.seoul').hide();
+            $('.busan').show();
+            $('.daegu').hide();
+            $('.daejeon').hide();
+            $('.incheon').hide();
+            $('.gwangju').hide();
+            $('.ulsan').hide();
+            $('.sejong').hide();
+            $('.gyeonggi').hide();
+            $('.gangwon').hide();
+            $('.chungbuk').hide();
+            $('.chungnam').hide();
+            $('.jeonbuk').hide();
+            $('.jeonnam').hide();
+            $('.gyeongbuk').hide();
+            $('.gyeongnam').hide();
+            $('.jeju').hide();
+            break;
+        case '대구':
+            $('.seoul').hide();
+            $('.busan').hide();
+            $('.daegu').show();
+            $('.daejeon').hide();
+            $('.incheon').hide();
+            $('.gwangju').hide();
+            $('.ulsan').hide();
+            $('.sejong').hide();
+            $('.gyeonggi').hide();
+            $('.gangwon').hide();
+            $('.chungbuk').hide();
+            $('.chungnam').hide();
+            $('.jeonbuk').hide();
+            $('.jeonnam').hide();
+            $('.gyeongbuk').hide();
+            $('.gyeongnam').hide();
+            $('.jeju').hide();
+            break;
+        case '대전':
+            $('.seoul').hide();
+            $('.busan').hide();
+            $('.daegu').hide();
+            $('.daejeon').show();
+            $('.incheon').hide();
+            $('.gwangju').hide();
+            $('.ulsan').hide();
+            $('.sejong').hide();
+            $('.gyeonggi').hide();
+            $('.gangwon').hide();
+            $('.chungbuk').hide();
+            $('.chungnam').hide();
+            $('.jeonbuk').hide();
+            $('.jeonnam').hide();
+            $('.gyeongbuk').hide();
+            $('.gyeongnam').hide();
+            $('.jeju').hide();
+            break;
+        case '인천':
+            $('.seoul').hide();
+            $('.busan').hide();
+            $('.daegu').hide();
+            $('.daejeon').hide();
+            $('.incheon').show();
+            $('.gwangju').hide();
+            $('.ulsan').hide();
+            $('.sejong').hide();
+            $('.gyeonggi').hide();
+            $('.gangwon').hide();
+            $('.chungbuk').hide();
+            $('.chungnam').hide();
+            $('.jeonbuk').hide();
+            $('.jeonnam').hide();
+            $('.gyeongbuk').hide();
+            $('.gyeongnam').hide();
+            $('.jeju').hide();
+            break;
+        case '광주':
+            $('.seoul').hide();
+            $('.busan').hide();
+            $('.daegu').hide();
+            $('.daejeon').hide();
+            $('.incheon').hide();
+            $('.gwangju').show();
+            $('.ulsan').hide();
+            $('.sejong').hide();
+            $('.gyeonggi').hide();
+            $('.gangwon').hide();
+            $('.chungbuk').hide();
+            $('.chungnam').hide();
+            $('.jeonbuk').hide();
+            $('.jeonnam').hide();
+            $('.gyeongbuk').hide();
+            $('.gyeongnam').hide();
+            $('.jeju').hide();
+            break;
+        case '울산':
+            $('.seoul').hide();
+            $('.busan').hide();
+            $('.daegu').hide();
+            $('.daejeon').hide();
+            $('.incheon').hide();
+            $('.gwangju').hide();
+            $('.ulsan').show();
+            $('.sejong').hide();
+            $('.gyeonggi').hide();
+            $('.gangwon').hide();
+            $('.chungbuk').hide();
+            $('.chungnam').hide();
+            $('.jeonbuk').hide();
+            $('.jeonnam').hide();
+            $('.gyeongbuk').hide();
+            $('.gyeongnam').hide();
+            $('.jeju').hide();
+            break;
+        case '세종':
+            $('.seoul').hide();
+            $('.busan').hide();
+            $('.daegu').hide();
+            $('.daejeon').hide();
+            $('.incheon').hide();
+            $('.gwangju').hide();
+            $('.ulsan').hide();
+            $('.sejong').show();
+            $('.gyeonggi').hide();
+            $('.gangwon').hide();
+            $('.chungbuk').hide();
+            $('.chungnam').hide();
+            $('.jeonbuk').hide();
+            $('.jeonnam').hide();
+            $('.gyeongbuk').hide();
+            $('.gyeongnam').hide();
+            $('.jeju').hide();
+            break;
+        case '경기':
+            $('.seoul').hide();
+            $('.busan').hide();
+            $('.daegu').hide();
+            $('.daejeon').hide();
+            $('.incheon').hide();
+            $('.gwangju').hide();
+            $('.ulsan').hide();
+            $('.sejong').hide();
+            $('.gyeonggi').show();
+            $('.gangwon').hide();
+            $('.chungbuk').hide();
+            $('.chungnam').hide();
+            $('.jeonbuk').hide();
+            $('.jeonnam').hide();
+            $('.gyeongbuk').hide();
+            $('.gyeongnam').hide();
+            $('.jeju').hide();
+            break;
+        case '강원':
+            $('.seoul').hide();
+            $('.busan').hide();
+            $('.daegu').hide();
+            $('.daejeon').hide();
+            $('.incheon').hide();
+            $('.gwangju').hide();
+            $('.ulsan').hide();
+            $('.sejong').hide();
+            $('.gyeonggi').hide();
+            $('.gangwon').show();
+            $('.chungbuk').hide();
+            $('.chungnam').hide();
+            $('.jeonbuk').hide();
+            $('.jeonnam').hide();
+            $('.gyeongbuk').hide();
+            $('.gyeongnam').hide();
+            $('.jeju').hide();
+            break;
+        case '충북':
+            $('.seoul').hide();
+            $('.busan').hide();
+            $('.daegu').hide();
+            $('.daejeon').hide();
+            $('.incheon').hide();
+            $('.gwangju').hide();
+            $('.ulsan').hide();
+            $('.sejong').hide();
+            $('.gyeonggi').hide();
+            $('.gangwon').hide();
+            $('.chungbuk').show();
+            $('.chungnam').hide();
+            $('.jeonbuk').hide();
+            $('.jeonnam').hide();
+            $('.gyeongbuk').hide();
+            $('.gyeongnam').hide();
+            $('.jeju').hide();
+            break;
+        case '충남':
+            $('.seoul').hide();
+            $('.busan').hide();
+            $('.daegu').hide();
+            $('.daejeon').hide();
+            $('.incheon').hide();
+            $('.gwangju').hide();
+            $('.ulsan').hide();
+            $('.sejong').hide();
+            $('.gyeonggi').hide();
+            $('.gangwon').hide();
+            $('.chungbuk').hide();
+            $('.chungnam').show();
+            $('.jeonbuk').hide();
+            $('.jeonnam').hide();
+            $('.gyeongbuk').hide();
+            $('.gyeongnam').hide();
+            $('.jeju').hide();
+            break;
+        case '전북':
+            $('.seoul').hide();
+            $('.busan').hide();
+            $('.daegu').hide();
+            $('.daejeon').hide();
+            $('.incheon').hide();
+            $('.gwangju').hide();
+            $('.ulsan').hide();
+            $('.sejong').hide();
+            $('.gyeonggi').hide();
+            $('.gangwon').hide();
+            $('.chungbuk').hide();
+            $('.chungnam').hide();
+            $('.jeonbuk').hide();
+            $('.jeonnam').hide();
+            $('.gyeongbuk').hide();
+            $('.gyeongnam').hide();
+            $('.jeju').hide();
+            region2 = '';
+            getRoutesByRegion();
+            break;
+        case '전남':
+            $('.seoul').hide();
+            $('.busan').hide();
+            $('.daegu').hide();
+            $('.daejeon').hide();
+            $('.incheon').hide();
+            $('.gwangju').hide();
+            $('.ulsan').hide();
+            $('.sejong').hide();
+            $('.gyeonggi').hide();
+            $('.gangwon').hide();
+            $('.chungbuk').hide();
+            $('.chungnam').hide();
+            $('.jeonbuk').hide();
+            $('.jeonnam').hide();
+            $('.gyeongbuk').hide();
+            $('.gyeongnam').hide();
+            $('.jeju').hide();
+            region2 = '';
+            getRoutesByRegion();
+            break;
+        case '경북':
+            $('.seoul').hide();
+            $('.busan').hide();
+            $('.daegu').hide();
+            $('.daejeon').hide();
+            $('.incheon').hide();
+            $('.gwangju').hide();
+            $('.ulsan').hide();
+            $('.sejong').hide();
+            $('.gyeonggi').hide();
+            $('.gangwon').hide();
+            $('.chungbuk').hide();
+            $('.chungnam').hide();
+            $('.jeonbuk').hide();
+            $('.jeonnam').hide();
+            $('.gyeongbuk').show();
+            $('.gyeongnam').hide();
+            $('.jeju').hide();
+            break;
+        case '경남':
+            $('.seoul').hide();
+            $('.busan').hide();
+            $('.daegu').hide();
+            $('.daejeon').hide();
+            $('.incheon').hide();
+            $('.gwangju').hide();
+            $('.ulsan').hide();
+            $('.sejong').hide();
+            $('.gyeonggi').hide();
+            $('.gangwon').hide();
+            $('.chungbuk').hide();
+            $('.chungnam').hide();
+            $('.jeonbuk').hide();
+            $('.jeonnam').hide();
+            $('.gyeongbuk').hide();
+            $('.gyeongnam').show();
+            $('.jeju').hide();
+            break;
+        case '제주':
+            $('.seoul').hide();
+            $('.busan').hide();
+            $('.daegu').hide();
+            $('.daejeon').hide();
+            $('.incheon').hide();
+            $('.gwangju').hide();
+            $('.ulsan').hide();
+            $('.sejong').hide();
+            $('.gyeonggi').hide();
+            $('.gangwon').hide();
+            $('.chungbuk').hide();
+            $('.chungnam').hide();
+            $('.jeonbuk').hide();
+            $('.jeonnam').hide();
+            $('.gyeongbuk').hide();
+            $('.gyeongnam').hide();
+            $('.jeju').show();
+            break;
+        default:
+            $('.seoul').hide();
+            $('.busan').hide();
+            $('.daegu').hide();
+            $('.daejeon').hide();
+            $('.incheon').hide();
+            $('.gwangju').hide();
+            $('.ulsan').hide();
+            $('.sejong').hide();
+            $('.gyeonggi').hide();
+            $('.gangwon').hide();
+            $('.chungbuk').hide();
+            $('.chungnam').hide();
+            $('.jeonbuk').hide();
+            $('.jeonnam').hide();
+            $('.gyeongbuk').hide();
+            $('.gyeongnam').hide();
+            $('.jeju').hide();
+            break;
+
+    }
+}
+///
+
+function completeRegionSelect(value) {
+    region2 = value; //시/군/구 저장
+
+    // 키에 데이터 쓰기
+    localStorage.setItem("region2", region2);
+    getRoutesByRegion();
+}
+
+var dataset;
+var countRoutesByFilter;
+
+function getRoutesByRegion() {
+    $('.routes_container').html('');
+    $.each(dataset, function(idx, row) {
+        if (dataset[idx].address.indexOf(region1 + " " + region2) != -1) {
+            countRoutesByFilter++;
+            updateRoutesList(dataset[idx]);
+        }
+
+        return "";
+    })
+    if (region1 == 'hide' || countRoutesByFilter == 0) {
+        $('.routes_container').html('<img src="https://i.imgur.com/16n2NTW.png" style="width:100%;"><br> <span style="position:relative;left:35%;">결과가 없습니다.</span>');
+
+    }
+}
+
+
+function updateRoutesList(data) {
+    $('.routes_container').append('<div class="box"  onclick="window.open(\'https://map.kakao.com/link/map/' + data.place + ',' + data.latlng + '\'' + ');"><div class="text"><h3 style="margin-bottom:10px;">' + data.place + '</h3><p><i class="fa fa-clock" style="margin-right:10px;"></i>' + data.visitedDate.toString().replace("00:00:00.000Z", " 방문") + '</p><p><i class="fa fa-map" style="margin-right:10px;"></i>' + data.address + '</p></div></div>');
 }
