@@ -168,7 +168,7 @@ function disableSelection(target) {
                     labels: ['12.20', '12.21', '12.22', '12.23', '12.24', '12.25'],
                     datasets: [{
                             label: "확진",
-                            data: [869, 1092, 985, 1241, 1132],
+                            data: [926, 869, 1092, 985, 1241, 1132],
                             borderWidth: "0",
                             backgroundColor: "rgba(250, 66, 81,0.5)",
                             fontFamily: "Poppins"
