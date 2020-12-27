@@ -165,7 +165,7 @@ function disableSelection(target) {
                 type: 'bar',
                 defaultFontFamily: 'Poppins',
                 data: {
-                    labels: ['12.21', '12.22', '12.23', '12.24', '12.25', '12.26"],
+                    labels: ['12.21', '12.22', '12.23', '12.24', '12.25', '12.26'],
                     datasets: [{
                             label: "확진",
                             data: [869, 1092, 985, 1241, 1132, 970],
