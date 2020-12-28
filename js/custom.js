@@ -99,6 +99,8 @@ function disLevToString(lev) {
 
 }
 
+
+var regionCode;
 //동선데이터
 $.ajax({
     type: "GET",
@@ -116,8 +118,9 @@ $.ajax({
 
         }
         if (loadedRegion2 != null) {
-            document.getElementById('regionSecond-select').value = loadedRegion2;
-            $("#regionSecond-select").val(loadedRegion2);
+            //  document.getElementsById('regionSecond-select')[7].value = loadedRegion2;
+            document.getElementsByTagName('select')[regionCode].value = loadedRegion2;
+
             updateOptions();
             region2 = loadedRegion2;
             console.log(region1, region2);
@@ -133,10 +136,12 @@ function updateOptions() { 
 
     var selectValue = selector.options[selector.selectedIndex].value;
     region1 = selectValue; //광역시/도 저장
+    region2 = '';
     localStorage.setItem("region1", region1);
 
     switch (selectValue) {
         case '서울':
+            regionCode = 1;
             $('.seoul').show();
             $('.busan').hide();
             $('.daegu').hide();
@@ -156,6 +161,7 @@ function updateOptions() { 
             $('.jeju').hide();
             break;
         case '부산':
+            regionCode = 2;
             $('.seoul').hide();
             $('.busan').show();
             $('.daegu').hide();
@@ -175,6 +181,7 @@ function updateOptions() { 
             $('.jeju').hide();
             break;
         case '대구':
+            regionCode = 3;
             $('.seoul').hide();
             $('.busan').hide();
             $('.daegu').show();
@@ -194,6 +201,7 @@ function updateOptions() { 
             $('.jeju').hide();
             break;
         case '대전':
+            regionCode = 4;
             $('.seoul').hide();
             $('.busan').hide();
             $('.daegu').hide();
@@ -213,6 +221,7 @@ function updateOptions() { 
             $('.jeju').hide();
             break;
         case '인천':
+            regionCode = 5;
             $('.seoul').hide();
             $('.busan').hide();
             $('.daegu').hide();
@@ -232,6 +241,7 @@ function updateOptions() { 
             $('.jeju').hide();
             break;
         case '광주':
+            regionCode = 6;
             $('.seoul').hide();
             $('.busan').hide();
             $('.daegu').hide();
@@ -251,6 +261,7 @@ function updateOptions() { 
             $('.jeju').hide();
             break;
         case '울산':
+            regionCode = 7;
             $('.seoul').hide();
             $('.busan').hide();
             $('.daegu').hide();
@@ -270,6 +281,7 @@ function updateOptions() { 
             $('.jeju').hide();
             break;
         case '세종':
+            regionCode = 8;
             $('.seoul').hide();
             $('.busan').hide();
             $('.daegu').hide();
@@ -289,6 +301,7 @@ function updateOptions() { 
             $('.jeju').hide();
             break;
         case '경기':
+            regionCode = 9;
             $('.seoul').hide();
             $('.busan').hide();
             $('.daegu').hide();
@@ -308,6 +321,7 @@ function updateOptions() { 
             $('.jeju').hide();
             break;
         case '강원':
+            regionCode = 10;
             $('.seoul').hide();
             $('.busan').hide();
             $('.daegu').hide();
@@ -327,6 +341,7 @@ function updateOptions() { 
             $('.jeju').hide();
             break;
         case '충북':
+            regionCode = 11;
             $('.seoul').hide();
             $('.busan').hide();
             $('.daegu').hide();
@@ -346,6 +361,7 @@ function updateOptions() { 
             $('.jeju').hide();
             break;
         case '충남':
+            regionCode = 12;
             $('.seoul').hide();
             $('.busan').hide();
             $('.daegu').hide();
@@ -365,6 +381,7 @@ function updateOptions() { 
             $('.jeju').hide();
             break;
         case '전북':
+            regionCode = 13;
             $('.seoul').hide();
             $('.busan').hide();
             $('.daegu').hide();
@@ -386,6 +403,7 @@ function updateOptions() { 
             getRoutesByRegion();
             break;
         case '전남':
+            regionCode = 14;
             $('.seoul').hide();
             $('.busan').hide();
             $('.daegu').hide();
@@ -407,6 +425,7 @@ function updateOptions() { 
             getRoutesByRegion();
             break;
         case '경북':
+            regionCode = 15;
             $('.seoul').hide();
             $('.busan').hide();
             $('.daegu').hide();
@@ -426,6 +445,7 @@ function updateOptions() { 
             $('.jeju').hide();
             break;
         case '경남':
+            regionCode = 16;
             $('.seoul').hide();
             $('.busan').hide();
             $('.daegu').hide();
@@ -445,6 +465,7 @@ function updateOptions() { 
             $('.jeju').hide();
             break;
         case '제주':
+            regionCode = 17;
             $('.seoul').hide();
             $('.busan').hide();
             $('.daegu').hide();
@@ -496,10 +517,11 @@ function completeRegionSelect(value) {
 }
 
 var dataset;
-var countRoutesByFilter;
+var countRoutesByFilter = 0;
 
 function getRoutesByRegion() {
     $('.routes_container').html('');
+    countRoutesByFilter = 0;
     $.each(dataset, function(idx, row) {
         if (dataset[idx].address.indexOf(region1 + " " + region2) != -1) {
             countRoutesByFilter++;
@@ -509,7 +531,7 @@ function getRoutesByRegion() {
         return "";
     })
     if (region1 == 'hide' || countRoutesByFilter == 0) {
-        $('.routes_container').html('<img src="https://i.imgur.com/16n2NTW.png" style="width:100%;"><br> <span style="position:relative;left:35%;">결과가 없습니다.</span>');
+        $('.routes_container').html('<img src="https://uploads-ssl.webflow.com/5e3ce2ec7f6e53c045fe7cfa/5e422b697e27946184ae51f1_location-p-800.png" style="width:100%;"><br> <span style="position:relative;left:35%;">동선이 없습니다.</span>');
 
     }
 }
