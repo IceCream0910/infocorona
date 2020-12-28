@@ -9,11 +9,8 @@ function welcome() {
     //var special = new Array("수험생 여러분들을<br>응원합니다!", "늘 응원하는 사람이 있다는 것,<br>잊지 말고 당신을 믿어요!", "수험생 여러분들의<br>빛나는 열정을 응원합니다.", "잘했고, 잘하고 있고,<br>잘 할 거예요", "멈추지 않은 여러분의 노력<br>좋은 결과로 이어질 거예요.", "있는 그대로, 지금 느낌<br>그대로 여러분을 보여주세요", "파란 하늘 끝까지<br>올라가 보자, 높이", "하늘을 바라봐요,<br> 어두워도 괜찮아요.", "하늘 위로 날아오를<br>시간이에요.", "지금이야,<br>하늘로 비상할 시간", "힘을 내세요,<br>여기까지 왔잖아요", "단 한 가지 약속은,<br>틀림없이 끝이 있다는 것.");
     //var e = new Array("모두를 위한 거리두기에<br>동참해주세요.", "증상 발생 시,<br>1339로 전화하세요!", "올바른 손씻기는<br>비누로 30초 이상!", "예방 수칙 준수로<br>이겨낼 수 있습니다.", "기침할 땐,<br>옷소매로 가리고 해주세요.", "모든 의료진분들을<br>응원합니다!", "거리는 멀어져도,<br>마음은 가까이!", "외출할 때는<br>마스크 착용 필수!", "한순간의 방심이<br>재확산의 시작이 됩니다.", "나 하나쯤이야 라는 생각이<br>모두의 안전을 위협합니다", "진정한 인싸라면<br>클럽말고 집으로", "밀집된 사람들 속에<br>방심한 너와나 거리", "당연한 것들을 누릴<br>그날이 빨리 오길", "집콕운동,<br>모두를 위한 스포츠", "우리의 일상은 잠시 멈춤<br>서로의 마음은 계속 끈끈", "집회, 모임, 종교행사는<br>잠시 자제해주세요.", "모두 만나요.<br>온라인에서", "다시 만날 그때까지<br>힘내요, 우리!", "꼭 다시 만나자,<br>잃어버린 모든 것들아", "힘을 내요, 대한민국.<br>마음을 모아 이겨냅시다.", "비정상이 일상이 된 지금<br>함께 극복할 수 있어요!");
     //var special = new Array("수고했어요.<br>원하는 꿈을 이룰거예요", "여러분의 열정과 노력에<br>박수를 보냅니다!", "코로나19 속에서도<br>최선을 다해줘 고마워요", "앞으로의 즐거운<br>일들만 생각해요.", "여러분의 멋진<br>2021년을 기대할게요.");
-    var special = new Array("빠르게 지나간 올 한 해,<br>정말 수고했어요.", "잘가 2020,<br>안녕 2021", "어느덧 2020년이 끝나가네요,<br>한해동안 수고 많았어요.", "오늘보다 더 나은 날들이<br>당신을 기다리고 있어요", "모두가 함께했기에 소중한 것들을<br>지킬 수 있었습니다.", "행복한 일만 가득한<br>2021년을 기대할게요!", "우리의 일상이 다시<br>반짝였으면 좋겠어요.",
-        "이번 크리스마스는<br>따뜻한 방안에서 보내봐요", "메리 크리스마스<br>2020년 수고했어요.", "단 한가지 약속은<br>틀림없이 끝이 있다는 것", "집에서 보내는<br>따뜻한 크리스마스 보내세요.", "모두의 노력 덕분에<br>소중한 일상을 지켜내고 있어요.", "나와 소중한 이웃을 위해<br>조금만 더 힘내주세요!", "순식간에 지나가버린 올해,<br>내년에는 더 나은 한 해가 될거예요.");
-
-
-    //  document.getElementById("suggestText").innerHTML = randomItem(special)
+    var special = new Array("올해보다 더 나은<br>내년이 되길", "올 한 해,<br>정말 수고했어요.", "여러분의 멋진<br>2021년을 기대할게요.", "안녕, 2021<br>새해 복 많이 받으세요!", "끝이 보이지 않는 터널 속,<br>우리 모두 좀 더 힘내요!");
+    $('#regionName').html(randomItem(special) + '<i class="fa fa-angle-right" style="padding-top:10px;margin-left:10px;font-size:25px;color:#686868;"></i>');
 }
 window.onload = function() {
     welcome();
@@ -61,9 +58,6 @@ var regionList = [distanceData.region.seoul.region, distanceData.region.gyeonggi
 
 var disLevList = [distanceData.region.seoul.type, distanceData.region.gyeonggi.type, distanceData.region.busan.type, distanceData.region.chungbuk.type, distanceData.region.chungnam.type, distanceData.region.daegu.type, distanceData.region.daejeon.type, distanceData.region.gangwon.type, distanceData.region.gwangju.type, distanceData.region.gyeongbuk.type, distanceData.region.gyeongnam.type, distanceData.region.incheon.type, distanceData.region.jeju.type, distanceData.region.jeonbuk.type, distanceData.region.jeonnam.type, distanceData.region.sejong.type, distanceData.region.ulsan.type];
 var cnt = 0;
-
-$('#regionName').html(regionList[cnt] + '는 ' + '<br><span id="disLev" style="color:#ff6961;">' + disLevToString(disLevList[cnt]) + '</span>' + ' 시행중입니다<i class="fa fa-angle-right" style="padding-top:10px;margin-left:10px;font-size:25px;color:#686868;"></i>');
-cnt++;
 
 var updateRegion = setInterval(function() {
     if (cnt > 16) {
