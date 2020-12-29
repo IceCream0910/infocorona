@@ -153,7 +153,7 @@ $.ajax({
     success: function(result) {
         document.getElementById("confirmedPM").innerHTML = "+ " + result.korea.newCase;
         document.getElementById("nowcases").innerHTML = nowcase;
-        if(nowcase<0) {
+        if(nowcase.toString.indexOf('-') != -1) {
             document.getElementById("nowPM").innerHTML = nownewcase;
         } else {
             document.getElementById("nowPM").innerHTML = "+ " + nownewcase;
