@@ -153,7 +153,12 @@ $.ajax({
     success: function(result) {
         document.getElementById("confirmedPM").innerHTML = "+ " + result.korea.newCase;
         document.getElementById("nowcases").innerHTML = nowcase;
-        document.getElementById("nowPM").innerHTML = "+ " + nownewcase;
+        if(nowcase<0) {
+            document.getElementById("nowPM").innerHTML = nownewcase;
+        } else {
+            document.getElementById("nowPM").innerHTML = "+ " + nownewcase;
+        }
+        
         document.getElementById("localConfirmed").innerHTML = "국내발생 " + result.korea.newCcase + "명<br>해외유입 " + result.korea.newFcase + "명";
 
         //시도별 현황
