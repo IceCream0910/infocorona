@@ -322,11 +322,21 @@ function rtTodayGet() {
         url: proxyServer + "https://apiv2.corona-live.com/updates.json", // Using myjson.com to store the JSON
         success: function(result) {
             var length = result.length;
-            document.getElementById('rtModalBtn').innerHTML = result[length - 1].cases + "명 추가 확진 >";
+            if(result[length - 1].cases.toString() == null) {
+                document.getElementById('rtModalBtn').innerHTML = result[length - 1].total + "명 추가 확진 >";
+            } else {
+                document.getElementById('rtModalBtn').innerHTML = result[length - 1].cases + "명 추가 확진 >";
+            }
+            
 
             for (var i = 0; i < result.length; i++) {
+            if(result[i].cases.toString() == null) {
+                $('#rtUpdates').prepend('<div id="pattern"><h5>' + result[i].datetime + '<span style="color:red; margin-left:10px;">' + result[i].total + '명 중 '+result[i].cases+'명 오늘 확진</span></h5><span style="font-size:15px;">' + result[i].src + '</span><hr></div>');
+            } else {
                 $('#rtUpdates').prepend('<div id="pattern"><h5>' + result[i].datetime + '<span style="color:red; margin-left:10px;">' + result[i].cases + '명 발생</span></h5><span style="font-size:15px;">' + result[i].src + '</span><hr></div>');
+
             }
+                            }
 
 
 
