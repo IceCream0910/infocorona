@@ -153,7 +153,7 @@ $.ajax({
     success: function(result) {
         document.getElementById("confirmedPM").innerHTML = "+ " + result.korea.newCase;
         document.getElementById("nowcases").innerHTML = nowcase;
-        if(nowcase.toString.indexOf('-') != -1) {
+        if(nownewcase.toString.indexOf('-') != -1) {
             document.getElementById("nowPM").innerHTML = nownewcase;
         } else {
             document.getElementById("nowPM").innerHTML = "+ " + nownewcase;
@@ -330,13 +330,8 @@ function rtTodayGet() {
             
 
             for (var i = 0; i < result.length; i++) {
-            if(result[i].cases.toString() == null) {
-                $('#rtUpdates').prepend('<div id="pattern"><h5>' + result[i].datetime + '<span style="color:red; margin-left:10px;">' + result[i].total + '명 중 '+result[i].cases+'명 오늘 확진</span></h5><span style="font-size:15px;">' + result[i].src + '</span><hr></div>');
-            } else {
-                $('#rtUpdates').prepend('<div id="pattern"><h5>' + result[i].datetime + '<span style="color:red; margin-left:10px;">' + result[i].cases + '명 발생</span></h5><span style="font-size:15px;">' + result[i].src + '</span><hr></div>');
-
-            }
-                            }
+                  $('#rtUpdates').prepend('<div id="pattern"><h5>' + result[i].datetime + '<span style="color:red; margin-left:10px;">' + result[i].cases + '명 발생</span></h5><span style="font-size:15px;">' + result[i].src + '</span><hr></div>');
+  }
 
 
 
