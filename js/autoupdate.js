@@ -153,12 +153,13 @@ $.ajax({
     success: function(result) {
         document.getElementById("confirmedPM").innerHTML = "+ " + result.korea.newCase;
         document.getElementById("nowcases").innerHTML = nowcase;
-        if(nownewcase.toString.indexOf('-') != -1) {
+
+        if (nownewcase.toString().indexOf('-') != -1) {
             document.getElementById("nowPM").innerHTML = nownewcase;
         } else {
             document.getElementById("nowPM").innerHTML = "+ " + nownewcase;
         }
-        
+
         document.getElementById("localConfirmed").innerHTML = "국내발생 " + result.korea.newCcase + "명<br>해외유입 " + result.korea.newFcase + "명";
 
         //시도별 현황
@@ -322,16 +323,19 @@ function rtTodayGet() {
         url: proxyServer + "https://apiv2.corona-live.com/updates.json", // Using myjson.com to store the JSON
         success: function(result) {
             var length = result.length;
-            if(result[length - 1].cases.toString() == null) {
-                document.getElementById('rtModalBtn').innerHTML = result[length - 1].total + "명 추가 확진 >";
-            } else {
-                document.getElementById('rtModalBtn').innerHTML = result[length - 1].cases + "명 추가 확진 >";
-            }
-            
+            document.getElementById('rtModalBtn').innerHTML = result[length - 1].total + "명 추가 확진 >";
 
             for (var i = 0; i < result.length; i++) {
-                  $('#rtUpdates').prepend('<div id="pattern"><h5>' + result[i].datetime + '<span style="color:red; margin-left:10px;">' + result[i].cases + '명 발생</span></h5><span style="font-size:15px;">' + result[i].src + '</span><hr></div>');
-  }
+                if (result[i].total != '') {
+                    $('#rtUpdates').prepend('<div id="pattern"><h5>' + result[i].datetime + '<span style="color:red; margin-left:10px;">' + result[i].total + '명 중 ' + result[i].cases + '명 오늘 발생</span></h5><span style="font-size:15px;">' + result[i].src + '</span><hr></div>');
+                } else {
+                    $('#rtUpdates').prepend('<div id="pattern"><h5>' + result[i].datetime + '<span style="color:red; margin-left:10px;">' + result[i].cases + '명 발생</span></h5><span style="font-size:15px;">' + result[i].src + '</span><hr></div>');
+                }
+
+            }
+            $('#rtUpdates').prepend('<h3>실시간 확진자</h3>');
+
+
 
 
 
