@@ -323,7 +323,7 @@ function rtTodayGet() {
         url: proxyServer + "https://apiv2.corona-live.com/updates.json", // Using myjson.com to store the JSON
         success: function(result) {
             var length = result.length;
-            document.getElementById('rtModalBtn').innerHTML = result[length - 1].total + "명 추가 확진 >";
+            document.getElementById('rtModalBtn').innerHTML = result[length - 1].cases + "명 추가 확진 >";
 
             for (var i = 0; i < result.length; i++) {
                 if (result[i].total != '') {
