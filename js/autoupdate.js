@@ -252,7 +252,7 @@ $.ajax({
         document.getElementById("death").innerHTML = result2.TotalDeath;
         nowcase = result2.NowCase;
         nownewcase = result2.TotalCaseBefore;
-        document.getElementById("curePM").innerHTML = "+ " + result2.TodayRecovered;
+        document.getElementById("curePM").innerHTML = "+ " + result2.TodayRecovered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         document.getElementById("deathPM").innerHTML = "+ " + result2.TodayDeath;
         $('#casePercent').attr("data-done", (result2.casePercentage) * 10.0);
         $('#curePercent').attr("data-done", (result2.recoveredPercentage));
