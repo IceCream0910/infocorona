@@ -224,23 +224,44 @@ box-shadow:  5px 5px 10px #d3b7b9,
                             </div>
 -->
 
-                            <!--
                             <div class="sufee-alert alert alert-primary" style="border-radius: 15px;
 background: #4272d7;
 border:none;
 box-shadow:  5px 5px 10px #3861b7, 
              -5px -5px 0px transparent;">
-                                <span class="badge badge-pill badge-primary" style="display:inline-block;">가용 중환자실 현황</span>
-                                <button type="button" class="ripple-effect" style="color:white; display:inline-block; text-align:left;">
-                                수도권 40개, 전국 101개 (12.24 기준)</button>
+                                <button type="button" class="newyear" style="color:white; display:inline-block; text-align:left;">
                                 </button>
                             </div>
-                        -->
                             <br>
 
                         </div>
                     </div>
+                    <script>
+                        // Set the date we're counting down to
+                        var countDownDate = new Date("Jan 01, 2021 00:00:00").getTime();
 
+                        var x = setInterval(function() {
+
+                            var now = new Date().getTime();
+
+                            var distance = countDownDate - now;
+
+                            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                            if (minutes < 0) {
+                                $(".newyear").html("새해 복 많이 받으세요! 2021년에는 잃어버린 일상을 되찾을 수 있길 바랍니다.");
+
+                            } else {
+                                $(".newyear").html("올 한해, 수고하셨어요. 2021년 까지 " + hours + "<span>시간</span> " + minutes + "<span>분 </span>" + seconds + "<span>초 남았어요. 2021년에는 행복한 일만 가득하길 바랄게요.</span>");
+
+                            }
+
+
+                        }, 1000);
+                    </script>
             </section>
             <!-- END STATISTIC-->
 
