@@ -118,7 +118,7 @@ function disableSelection(target) {
                 }, {
                     label: '해외 유입',
                     backgroundColor: "#a9a9a9",
-                    data: [16, 25, 27, 25, 36, 16. 36],
+                    data: [16, 25, 27, 25, 36, 16, 36],
                 }],
             },
             options: {
