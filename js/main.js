@@ -110,15 +110,15 @@ function disableSelection(target) {
         var myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['12.30', '12.31', '1.1', '1.2', '1.3', '1.4', '1.5'],
+                labels: ['12.31', '1.1', '1.2', '1.3', '1.4', '1.5', '1.6'],
                 datasets: [{
                     label: '국내 발생',
                     backgroundColor: "#778beb",
-                    data: [940, 1004, 788, 641, 985, 672, 809],
+                    data: [1004, 788, 641, 985, 672, 809, 833],
                 }, {
                     label: '해외 유입',
                     backgroundColor: "#a9a9a9",
-                    data: [27, 25, 36, 16, 36, 43, 31],
+                    data: [25, 36, 16, 36, 43, 31, 37],
                 }],
             },
             options: {
@@ -165,24 +165,24 @@ function disableSelection(target) {
                 type: 'bar',
                 defaultFontFamily: 'Poppins',
                 data: {
-                    labels: ['12.31', '1.1', '1.2', '1.3', '1.4', '1.5'],
+                    labels: ['1.1', '1.2', '1.3', '1.4', '1.5', '1.6'],
                     datasets: [{
                             label: "확진",
-                            data: [1029, 824, 657, 1020, 715, 840],
+                            data: [824, 657, 1020, 715, 840, 870],
                             borderWidth: "0",
                             backgroundColor: "rgba(250, 66, 81,0.5)",
                             fontFamily: "Poppins"
                         },
                         {
                             label: "완치",
-                            data: [330, 625, 929, 753, 932, 823],
+                            data: [625, 929, 753, 932, 823, 654],
                             borderWidth: "0",
                             backgroundColor: "rgba(0,173,95, 0.5)",
                             fontFamily: "Poppins"
                         },
                         {
                             label: "사망",
-                            data: [17, 25, 20, 19, 26, 20],
+                            data: [25, 20, 19, 26, 20, 19],
                             borderWidth: "0",
                             backgroundColor: "rgba(0,0,0, 0.5)",
                             fontFamily: "Poppins"
@@ -246,7 +246,7 @@ function disableSelection(target) {
         var myChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['12.31', '1.1', '1.2', '1.3', '1.4', '1.5'],
+                labels: ['1.1', '1.2', '1.3', '1.4', '1.5', '1.6'],
                 datasets: [{
                     label: "위중증 환자",
                     borderColor: gradientStroke,
@@ -261,7 +261,7 @@ function disableSelection(target) {
                     fill: true,
                     backgroundColor: gradientFill,
                     borderWidth: 4,
-                    data: [354, 361, 355, 351, 386, 411]
+                    data: [361, 355, 351, 386, 411, 400]
                 }]
             },
             options: {
@@ -318,7 +318,7 @@ function disableSelection(target) {
         const brandProduct2 = 'rgba(0,181,233,0.2)'
         const brandService2 = 'rgba(0,173,95,0.2)'
 
-        var data3 = [101176, 53540, 74272, 59379, 95269, 97945] //검사
+        var data3 = [53540, 74272, 59379, 95269, 97945, 102791] //검사
 
         var ctx = document.getElementById("recent-rep2-chart");
         if (ctx) {
@@ -326,7 +326,7 @@ function disableSelection(target) {
             var myChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ["12.31", "1.1", "1.2", "1.3", "1.4", "1.5"],
+                    labels: ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6"],
                     datasets: [{
                         label: "일 검사자수",
                         data: data3,
@@ -382,7 +382,7 @@ function disableSelection(target) {
         const brandProduct2 = 'rgba(0,181,233,0.2)'
         const brandService2 = 'rgba(0,173,95,0.2)'
 
-        var data3 = [1.02, 1.03, 0.89, 1.72, 0.75, 0.86] //  (확진수)/(검사수)*100
+        var data3 = [1.03, 0.89, 1.72, 0.75, 0.86, 0.85] //  (확진수)/(검사수)*100
 
         var ctx = document.getElementById("tests-percent-chart");
         if (ctx) {
@@ -390,7 +390,7 @@ function disableSelection(target) {
             var myChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ["12.31", "1.1", "1.2", "1.3", "1.4", "1.5"],
+                    labels: ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6"],
                     datasets: [{
                         label: "검사 대비 확진율",
                         data: data3,
