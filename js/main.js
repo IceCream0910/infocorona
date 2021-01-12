@@ -261,7 +261,7 @@ function disableSelection(target) {
                     fill: true,
                     backgroundColor: gradientFill,
                     borderWidth: 4,
-                    data: [00, 404, 409, 401, 395, 390]
+                    data: [400, 404, 409, 401, 395, 390]
                 }]
             },
             options: {
