@@ -245,7 +245,7 @@ function disableSelection(target) {
 
         var myChart = new Chart(ctx, {
             type: 'line',
-            data: 
+            data: {
                 labels: ['1.31', '2.1', '2.2', '2.3', '2.4', '2.5'],
                 datasets: [{
                     label: "위중증 환자",
