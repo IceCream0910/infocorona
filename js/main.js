@@ -390,7 +390,7 @@ function disableSelection(target) {
             var myChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ["2.4", "2.5", "2.6", "2.7", "2.8", "2.9".],
+                    labels: ["2.4", "2.5", "2.6", "2.7", "2.8", "2.9"],
                     datasets: [{
                         label: "검사 대비 확진율",
                         data: data3,
