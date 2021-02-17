@@ -345,7 +345,7 @@ function rtTodayGet() {
     });
 }
 
-/*뉴스
+//뉴스
 $.ajax({
     type: "GET",
     url: "https://coronacoc-news.herokuapp.com/covid19",
@@ -369,7 +369,7 @@ $.ajax({
 
     }
 });
-*/
+//
 
 
 
