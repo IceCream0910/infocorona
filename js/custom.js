@@ -534,3 +534,24 @@ function getRoutesByRegion() {
 function updateRoutesList(data) {
     $('.routes_container').append('<div class="box"  onclick="window.open(\'https://map.kakao.com/link/map/' + data.place + ',' + data.latlng + '\'' + ');"><div class="text"><h3 style="margin-bottom:10px;">' + data.place + '</h3><p><i class="fa fa-clock" style="margin-right:10px;"></i>' + data.visitedDate.toString().replace("T00:00:00.000Z", " 방문").replace("T", " ").replace(".000Z", " 방문") + '</p><p><i class="fa fa-map" style="margin-right:10px;"></i>' + data.address + '</p></div></div>');
 }
+
+var e = new Array("https://cors-coronacoc.herokuapp.com/", "https://cors-coronacoc-v2.herokuapp.com/", "https://cors-coronacoc-v3.herokuapp.com/"),
+    // var e = new Array("https://cors-anywhere.herokuapp.com/"),
+    proxyServer = randomItem(e);
+
+//질본 보도자료 크롤링
+$.ajax({
+    type: "GET",
+    url: proxyServer + "http://ncov.mohw.go.kr/tcmBoardList.do?brdId=3&brdGubun=", // Using myjson.com to store the JSN
+    success: function(newsreleaseData) {
+        var result = newsreleaseData.substring(newsreleaseData.indexOf('<div class="board_list">'), newsreleaseData.indexOf('<!--페이징-->'));
+
+        console.log(result);
+
+        $('.newsrelease').html(result.replace("새글", "").replace("전체 목록 : 번호, 제목, 담당, 작성일, 첨부 구성 제목 클릭시 게시물 상세 내용으로 이동", "").substring(0, result.indexOf('첨부파일')) + "<style>.m_dp_n{display:none;}.hdn{display:none;}</style>");
+    }
+});
+
+function fn_tcm_boardView(schema, blank, blank2, id, blank3, all) {
+    window.open('http://ncov.mohw.go.kr/tcmBoardView.do?brdId=' + blank + '&brdGubun=' + blank2 + '&dataGubun=&ncvContSeq=' + id + '&contSeq=' + id + '&board_id=' + blank3 + '&gubun=' + all, '_blank');
+}
