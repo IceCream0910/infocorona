@@ -209,6 +209,37 @@ box-shadow:  5px 5px 10px #0d0d0d,
                                 </div>
                             </div>
 
+                            <div class="row">
+                                <div class="col-md-6 col-lg-4">
+                                    <!-- CHART-->
+                                    <div class="statistic-chart-1" style="background:#e5e5e5;border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
+                 -5px -5px 0px transparent;">
+                                        <div class="chart-wrap" style="margin-top:-20px;">
+                                            <div style="float:left;text-align: center;width:50%;">
+                                                <h3 style="color:#4272d7; font-size:20px;" id="localConfirmed"></h3>
+                                                <h3 style="color:#a9a9a9; font-size:15px;">지역발생
+                                                </h3>
+                                            </div>
+                                            <div style="float:right;text-align: center;width:50%;">
+                                                <h3 style="color:#4272d7; font-size:20px;" id="abroadConfirmed"></h3>
+                                                <h3 style="color:#a9a9a9; font-size:15px;">해외유입
+                                            </div>
+
+
+                                            <!-- (429+590+590+533+414+391+313)/7 -->
+
+
+
+                                        </div>
+                                    </div>
+                                    <!-- END CHART-->
+                                </div>
+
+
+
+
+                            </div>
+
 
                             <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show" style="border-radius: 15px;
 background: #4272d7;
@@ -220,20 +251,17 @@ box-shadow:  5px 5px 10px #3861b7,
                                 </button>
                             </div>
 
-                            <br>
-
-                            <!--
                             <div class="sufee-alert alert alert-primary" style="border-radius: 15px;
-background: #4272d7;
-border:none;
-box-shadow:  5px 5px 10px #3861b7, 
-             -5px -5px 0px transparent;">
+background: #ff4b5a;
+box-shadow:  5px 5px 10px #d9404d, 
+              -5px -5px 0px transparent;
+              border:none;">
                                 <button type="button" class="newyear" style="color:white; display:inline-block; text-align:left;">
-                                    1월 17일 0시~6시에 서비스 점검으로 인해 접속이 제한될 예정입니다. 이용에 불편을 드려 죄송합니다.
-                                </button>
+                                     안녕하세요. 개발자입니다. 학업 일정 상 수동 업데이트가 어려운 일부 차트들은 제공이 중단되었습니다. 현재 표시되는 차트들은 모두 자동으로 갱신됩니다. 양해 바랍니다.
+                                 </button>
                             </div>
-                           
--->
+                            <Br>
+
 
                         </div>
                     </div>
@@ -249,7 +277,6 @@ box-shadow:  5px 5px 10px #3861b7,
                             </h3>
                             <h3 class="tab2_routes" onclick="javascript:changeTab(2);" style="color:#a9a9a9;margin-left:10px; display:inline-block;">동선
                             </h3>
-                            <h6 style="margin-left:10px;color:#a9a9a9; display:inline-block;">2.22. 00시 기준</h6><br><br>
                         </div>
 
                     </div>
@@ -270,7 +297,7 @@ box-shadow:  5px 5px 10px #3861b7,
                             }
                         }
                     </script>
-
+                    <Br>
                     <div class="analy_tab_wrap ">
                         <!-- CHART-->
                         <div class="statistic-chart-1" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
@@ -374,94 +401,6 @@ box-shadow:  5px 5px 10px #3861b7,
 
 
 
-                        <div class="row">
-                            <div class="col-md-6 col-lg-4">
-                                <!-- CHART-->
-                                <div class="statistic-chart-1" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
-             -5px -5px 0px transparent;">
-                                    <div class="chart-wrap">
-                                        <h3>신규
-                                            <h3 style="color:#a9a9a9;">확진자 추이<br><br></h3>
-                                        </h3>
-                                        <canvas id="widgetChart5"></canvas>
-                                    </div>
-                                    <div class="statistic-chart-1-note">
-                                        <span>어제 신규확진수보다</span>
-                                        <span class="big">84명</span>
-                                        <span>적어요.</span>
-                                        <br>
-                                        <span>전국 주평균 확진자 </span>
-                                        <span class="big">466명</span>
-                                        <span style="color:#a9a9a9; font-size:11px;"><br>(최근 7일간 국내 발생 환자 평균)</span>
-                                        <br><br>
-                                        <h3 style="color:#a9a9a9; font-size:15px;">신규 환자 중
-                                            <h3 style="color:#4272d7; font-size:20px;" id="localConfirmed"></h3>
-                                        </h3>
-
-                                        <!-- (429+590+590+533+414+391+313)/7 -->
-
-
-
-                                    </div>
-                                </div>
-                                <!-- END CHART-->
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="au-card m-b-30" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
-             -5px -5px 0px transparent;">
-                                    <div class="au-card-inner">
-                                        <h3>국내 일별 현황</h3><br>
-                                        <canvas id="barChart"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="au-card m-b-30" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
-             -5px -5px 0px transparent;">
-                                    <div class="au-card-inner">
-                                        <h3>위중증 환자 <span style="color:#a9a9a9;">추이</span></h3><br>
-                                        <canvas id="barChart_seriousCases"></canvas>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="au-card m-b-30" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
-             -5px -5px 0px transparent;">
-                                    <div class="recent-report__chart">
-                                        <h3>국내
-                                            <h3 style="color:#a9a9a9;">검사 현황<br>
-                                                <br>
-                                                <div class="container">
-                                                    <div class="tab-slider--nav">
-                                                        <ul class="tab-slider--tabs">
-                                                            <li class="tab-slider--trigger active" rel="tab1">검사수</li>
-                                                            <li class="tab-slider--trigger" rel="tab2">확진율</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="tab-slider--container">
-                                                        <div id="tab1" class="tab-slider--body">
-                                                            <canvas id="recent-rep2-chart"></canvas>
-
-                                                        </div>
-                                                        <div id="tab2" class="tab-slider--body">
-                                                            <div id="tests-percent">
-                                                                <canvas id="tests-percent-chart"></canvas>
-                                                                <h3 style="color:#a9a9a9; font-size:15px;">(확진율) = (확진자수)/(검사자수)*100</h3>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </h3>
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
 
 
 
@@ -748,8 +687,21 @@ box-shadow:  5px 5px 10px #0d0d0d,
                                 <br>
 
 
-                                <!--
-                                <h3>최신 뉴스</h3><br>-->
+                                <!-- CHART PERCENT-->
+                                <div class="chart-percent-2" style="border-radius: 20px; box-shadow:  5px 5px 10px #c3c3c3, 
+                 -5px -5px 0px transparent;">
+                                    <div class="chart-wrap">
+                                        <h3>최근 방역당국
+                                            <h3 style="color:#a9a9a9;">보도자료</h3>
+                                        </h3><br>
+                                        <div class="newsrelease"></div>
+
+                                    </div>
+                                </div>
+
+
+
+                                <h3>최신 뉴스</h3><br>
 
                                 <div class="newsfeed">
 
