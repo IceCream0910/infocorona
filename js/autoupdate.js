@@ -147,6 +147,33 @@ function yesterdayData() {
 
 var nowcase;
 var nownewcase;
+
+
+
+
+
+
+$.ajax({
+    type: "GET",
+    url: "https://ajax-api.corona-19.kr/?dir=korea&serviceKey=5d4143bd958c16e18abe1acef5386c12d", // Using myjson.com to store the JSN
+    success: function(result2) {
+        document.getElementById("whenUpdate").innerHTML = result2.updateTime.replace("코로나바이러스감염증-19 국내 발생현황 (", "").replace(")", "");
+        document.getElementById("confirmed").innerHTML = result2.TotalCase;
+        document.getElementById("cure").innerHTML = result2.TotalRecovered;
+        document.getElementById("death").innerHTML = result2.TotalDeath;
+        nowcase = result2.NowCase;
+        nownewcase = result2.TotalCaseBefore;
+        document.getElementById("curePM").innerHTML = "+ " + result2.TodayRecovered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        document.getElementById("deathPM").innerHTML = "+ " + result2.TodayDeath;
+        $('#casePercent').attr("data-done", (result2.casePercentage) * 10.0);
+        $('#curePercent').attr("data-done", (result2.recoveredPercentage));
+        $('#deathPercent').attr("data-done", (result2.deathPercentage) * 10.0);
+
+        progressbar_case();
+        progressbar_cure();
+        progressbar_death();
+
+
 $.ajax({
     type: "GET",
     url: "https://ajax-api.corona-19.kr/?dir=country&serviceKey=5d4143bd958c16e18abe1acef5386c12d", // Using myjson.com to store the JSON
@@ -240,31 +267,6 @@ $.ajax({
 
     }
 });
-
-
-
-
-
-$.ajax({
-    type: "GET",
-    url: "https://ajax-api.corona-19.kr/?dir=korea&serviceKey=5d4143bd958c16e18abe1acef5386c12d", // Using myjson.com to store the JSN
-    success: function(result2) {
-        document.getElementById("whenUpdate").innerHTML = result2.updateTime.replace("코로나바이러스감염증-19 국내 발생현황 (", "").replace(")", "");
-        document.getElementById("confirmed").innerHTML = result2.TotalCase;
-        document.getElementById("cure").innerHTML = result2.TotalRecovered;
-        document.getElementById("death").innerHTML = result2.TotalDeath;
-        nowcase = result2.NowCase;
-        nownewcase = result2.TotalCaseBefore;
-        document.getElementById("curePM").innerHTML = "+ " + result2.TodayRecovered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        document.getElementById("deathPM").innerHTML = "+ " + result2.TodayDeath;
-        $('#casePercent').attr("data-done", (result2.casePercentage) * 10.0);
-        $('#curePercent').attr("data-done", (result2.recoveredPercentage));
-        $('#deathPercent').attr("data-done", (result2.deathPercentage) * 10.0);
-
-        progressbar_case();
-        progressbar_cure();
-        progressbar_death();
-
 
     }
 });
