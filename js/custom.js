@@ -535,8 +535,8 @@ function updateRoutesList(data) {
     $('.routes_container').append('<div class="box"  onclick="window.open(\'https://map.kakao.com/link/map/' + data.place + ',' + data.latlng + '\'' + ');"><div class="text"><h3 style="margin-bottom:10px;">' + data.place + '</h3><p><i class="fa fa-clock" style="margin-right:10px;"></i>' + data.visitedDate.toString().replace("T00:00:00.000Z", " 방문").replace("T", " ").replace(".000Z", " 방문") + '</p><p><i class="fa fa-map" style="margin-right:10px;"></i>' + data.address + '</p></div></div>');
 }
 
-var e = new Array("https://cors-coronacoc.herokuapp.com/", "https://cors-coronacoc-v2.herokuapp.com/", "https://cors-coronacoc-v3.herokuapp.com/"),
-    // var e = new Array("https://cors-anywhere.herokuapp.com/"),
+// var e = new Array("https://cors-coronacoc.herokuapp.com/", "https://cors-coronacoc-v2.herokuapp.com/", "https://cors-coronacoc-v3.herokuapp.com/"),
+    var e = new Array("https://cors-anywhere.herokuapp.com/"),
     proxyServer = randomItem(e);
 
 //질본 보도자료 크롤링
