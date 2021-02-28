@@ -1,6 +1,6 @@
 //프록시 서버 분산
 //var e = new Array("https://cors-coronacoc.herokuapp.com/", "https://cors-coronacoc-v2.herokuapp.com/", "https://cors-coronacoc-v3.herokuapp.com/"),
-    var e = new Array("https://thingproxy.freeboard.io/fetch/"),
+var e = new Array("http://cors-anywhere.herokuapp.com/"),
     proxyServer = randomItem(e);
 $('#singelBarChart').hide();
 
@@ -174,99 +174,99 @@ $.ajax({
         progressbar_death();
 
 
-$.ajax({
-    type: "GET",
-    url: "https://ajax-api.corona-19.kr/?dir=country&serviceKey=5d4143bd958c16e18abe1acef5386c12d", // Using myjson.com to store the JSON
-    success: function(result) {
-        document.getElementById("confirmedPM").innerHTML = "+ " + result.korea.newCase;
-        document.getElementById("nowcases").innerHTML = nowcase;
+        $.ajax({
+            type: "GET",
+            url: "https://ajax-api.corona-19.kr/?dir=country&serviceKey=5d4143bd958c16e18abe1acef5386c12d", // Using myjson.com to store the JSON
+            success: function(result) {
+                document.getElementById("confirmedPM").innerHTML = "+ " + result.korea.newCase;
+                document.getElementById("nowcases").innerHTML = nowcase;
 
-        if (nownewcase.toString().indexOf('-') != -1) {
-            document.getElementById("nowPM").innerHTML = nownewcase;
-        } else {
-            document.getElementById("nowPM").innerHTML = "+ " + nownewcase;
-        }
+                if (nownewcase.toString().indexOf('-') != -1) {
+                    document.getElementById("nowPM").innerHTML = nownewcase;
+                } else {
+                    document.getElementById("nowPM").innerHTML = "+ " + nownewcase;
+                }
 
-        document.getElementById("localConfirmed").innerHTML = result.korea.newCcase + "명";
-        document.getElementById("abroadConfirmed").innerHTML = result.korea.newFcase + "명";
+                document.getElementById("localConfirmed").innerHTML = result.korea.newCcase + "명";
+                document.getElementById("abroadConfirmed").innerHTML = result.korea.newFcase + "명";
 
-        //시도별 현황
-        document.getElementById('seoulCases').innerHTML = result.seoul.totalCase + "(+" + result.seoul.newCase + ")";
-        document.getElementById('seoulCure').innerHTML = result.seoul.recovered;
-        document.getElementById('seoulDeath').innerHTML = result.seoul.death;
+                //시도별 현황
+                document.getElementById('seoulCases').innerHTML = result.seoul.totalCase + "(+" + result.seoul.newCase + ")";
+                document.getElementById('seoulCure').innerHTML = result.seoul.recovered;
+                document.getElementById('seoulDeath').innerHTML = result.seoul.death;
 
-        document.getElementById('busanCases').innerHTML = result.busan.totalCase + "(+" + result.busan.newCase + ")";
-        document.getElementById('busanCure').innerHTML = result.busan.recovered;
-        document.getElementById('busanDeath').innerHTML = result.busan.death;
+                document.getElementById('busanCases').innerHTML = result.busan.totalCase + "(+" + result.busan.newCase + ")";
+                document.getElementById('busanCure').innerHTML = result.busan.recovered;
+                document.getElementById('busanDeath').innerHTML = result.busan.death;
 
-        document.getElementById('daeguCases').innerHTML = result.daegu.totalCase + "(+" + result.daegu.newCase + ")";
-        document.getElementById('daeguCure').innerHTML = result.daegu.recovered;
-        document.getElementById('daeguDeath').innerHTML = result.daegu.death;
+                document.getElementById('daeguCases').innerHTML = result.daegu.totalCase + "(+" + result.daegu.newCase + ")";
+                document.getElementById('daeguCure').innerHTML = result.daegu.recovered;
+                document.getElementById('daeguDeath').innerHTML = result.daegu.death;
 
-        document.getElementById('incheonCases').innerHTML = result.incheon.totalCase + "(+" + result.incheon.newCase + ")";
-        document.getElementById('incheonCure').innerHTML = result.incheon.recovered;
-        document.getElementById('incheonDeath').innerHTML = result.incheon.death;
+                document.getElementById('incheonCases').innerHTML = result.incheon.totalCase + "(+" + result.incheon.newCase + ")";
+                document.getElementById('incheonCure').innerHTML = result.incheon.recovered;
+                document.getElementById('incheonDeath').innerHTML = result.incheon.death;
 
-        document.getElementById('gwangjuCases').innerHTML = result.gwangju.totalCase + "(+" + result.gwangju.newCase + ")";
-        document.getElementById('gwangjuCure').innerHTML = result.gwangju.recovered;
-        document.getElementById('gwangjuDeath').innerHTML = result.gwangju.death;
+                document.getElementById('gwangjuCases').innerHTML = result.gwangju.totalCase + "(+" + result.gwangju.newCase + ")";
+                document.getElementById('gwangjuCure').innerHTML = result.gwangju.recovered;
+                document.getElementById('gwangjuDeath').innerHTML = result.gwangju.death;
 
-        document.getElementById('daejeonCases').innerHTML = result.daejeon.totalCase + "(+" + result.daejeon.newCase + ")";
-        document.getElementById('daejeonCure').innerHTML = result.daejeon.recovered;
-        document.getElementById('daejeonDeath').innerHTML = result.daejeon.death;
+                document.getElementById('daejeonCases').innerHTML = result.daejeon.totalCase + "(+" + result.daejeon.newCase + ")";
+                document.getElementById('daejeonCure').innerHTML = result.daejeon.recovered;
+                document.getElementById('daejeonDeath').innerHTML = result.daejeon.death;
 
-        document.getElementById('ulsanCases').innerHTML = result.ulsan.totalCase + "(+" + result.ulsan.newCase + ")";
-        document.getElementById('ulsanCure').innerHTML = result.ulsan.recovered;
-        document.getElementById('ulsanDeath').innerHTML = result.ulsan.death;
+                document.getElementById('ulsanCases').innerHTML = result.ulsan.totalCase + "(+" + result.ulsan.newCase + ")";
+                document.getElementById('ulsanCure').innerHTML = result.ulsan.recovered;
+                document.getElementById('ulsanDeath').innerHTML = result.ulsan.death;
 
-        document.getElementById('sejongCases').innerHTML = result.sejong.totalCase + "(+" + result.sejong.newCase + ")";
-        document.getElementById('sejongCure').innerHTML = result.sejong.recovered;
-        document.getElementById('sejongDeath').innerHTML = result.sejong.death;
+                document.getElementById('sejongCases').innerHTML = result.sejong.totalCase + "(+" + result.sejong.newCase + ")";
+                document.getElementById('sejongCure').innerHTML = result.sejong.recovered;
+                document.getElementById('sejongDeath').innerHTML = result.sejong.death;
 
-        document.getElementById('ggCases').innerHTML = result.gyeonggi.totalCase + "(+" + result.gyeonggi.newCase + ")";
-        document.getElementById('ggCure').innerHTML = result.gyeonggi.recovered;
-        document.getElementById('ggDeath').innerHTML = result.gyeonggi.death;
+                document.getElementById('ggCases').innerHTML = result.gyeonggi.totalCase + "(+" + result.gyeonggi.newCase + ")";
+                document.getElementById('ggCure').innerHTML = result.gyeonggi.recovered;
+                document.getElementById('ggDeath').innerHTML = result.gyeonggi.death;
 
-        document.getElementById('gangwonCases').innerHTML = result.gangwon.totalCase + "(+" + result.gangwon.newCase + ")";
-        document.getElementById('gangwonCure').innerHTML = result.gangwon.recovered;
-        document.getElementById('gangwonDeath').innerHTML = result.gangwon.death;
+                document.getElementById('gangwonCases').innerHTML = result.gangwon.totalCase + "(+" + result.gangwon.newCase + ")";
+                document.getElementById('gangwonCure').innerHTML = result.gangwon.recovered;
+                document.getElementById('gangwonDeath').innerHTML = result.gangwon.death;
 
-        document.getElementById('cbCases').innerHTML = result.chungbuk.totalCase + "(+" + result.chungbuk.newCase + ")";
-        document.getElementById('cbCure').innerHTML = result.chungbuk.recovered;
-        document.getElementById('cbDeath').innerHTML = result.chungbuk.death;
+                document.getElementById('cbCases').innerHTML = result.chungbuk.totalCase + "(+" + result.chungbuk.newCase + ")";
+                document.getElementById('cbCure').innerHTML = result.chungbuk.recovered;
+                document.getElementById('cbDeath').innerHTML = result.chungbuk.death;
 
-        document.getElementById('cnCases').innerHTML = result.chungnam.totalCase + "(+" + result.chungnam.newCase + ")";
-        document.getElementById('cnCure').innerHTML = result.chungnam.recovered;
-        document.getElementById('cnDeath').innerHTML = result.chungnam.death;
+                document.getElementById('cnCases').innerHTML = result.chungnam.totalCase + "(+" + result.chungnam.newCase + ")";
+                document.getElementById('cnCure').innerHTML = result.chungnam.recovered;
+                document.getElementById('cnDeath').innerHTML = result.chungnam.death;
 
-        document.getElementById('jbCases').innerHTML = result.jeonbuk.totalCase + "(+" + result.jeonbuk.newCase + ")";
-        document.getElementById('jbCure').innerHTML = result.jeonbuk.recovered;
-        document.getElementById('jbDeath').innerHTML = result.jeonbuk.death;
+                document.getElementById('jbCases').innerHTML = result.jeonbuk.totalCase + "(+" + result.jeonbuk.newCase + ")";
+                document.getElementById('jbCure').innerHTML = result.jeonbuk.recovered;
+                document.getElementById('jbDeath').innerHTML = result.jeonbuk.death;
 
-        document.getElementById('jnCases').innerHTML = result.jeonnam.totalCase + "(+" + result.jeonnam.newCase + ")";
-        document.getElementById('jnCure').innerHTML = result.jeonnam.recovered;
-        document.getElementById('jnDeath').innerHTML = result.jeonnam.death;
+                document.getElementById('jnCases').innerHTML = result.jeonnam.totalCase + "(+" + result.jeonnam.newCase + ")";
+                document.getElementById('jnCure').innerHTML = result.jeonnam.recovered;
+                document.getElementById('jnDeath').innerHTML = result.jeonnam.death;
 
-        document.getElementById('gbCases').innerHTML = result.gyeongbuk.totalCase + "(+" + result.gyeongbuk.newCase + ")";
-        document.getElementById('gbCure').innerHTML = result.gyeongbuk.recovered;
-        document.getElementById('gbDeath').innerHTML = result.gyeongbuk.death;
+                document.getElementById('gbCases').innerHTML = result.gyeongbuk.totalCase + "(+" + result.gyeongbuk.newCase + ")";
+                document.getElementById('gbCure').innerHTML = result.gyeongbuk.recovered;
+                document.getElementById('gbDeath').innerHTML = result.gyeongbuk.death;
 
-        document.getElementById('gnCases').innerHTML = result.gyeongnam.totalCase + "(+" + result.gyeongnam.newCase + ")";
-        document.getElementById('gnCure').innerHTML = result.gyeongnam.recovered;
-        document.getElementById('gnDeath').innerHTML = result.gyeongnam.death;
+                document.getElementById('gnCases').innerHTML = result.gyeongnam.totalCase + "(+" + result.gyeongnam.newCase + ")";
+                document.getElementById('gnCure').innerHTML = result.gyeongnam.recovered;
+                document.getElementById('gnDeath').innerHTML = result.gyeongnam.death;
 
-        document.getElementById('jejuCases').innerHTML = result.jeju.totalCase + "(+" + result.jeju.newCase + ")";
-        document.getElementById('jejuCure').innerHTML = result.jeju.recovered;
-        document.getElementById('jejuDeath').innerHTML = result.jeju.death;
+                document.getElementById('jejuCases').innerHTML = result.jeju.totalCase + "(+" + result.jeju.newCase + ")";
+                document.getElementById('jejuCure').innerHTML = result.jeju.recovered;
+                document.getElementById('jejuDeath').innerHTML = result.jeju.death;
 
-        document.getElementById('gumCases').innerHTML = result.quarantine.totalCase + "(+" + result.quarantine.newCase + ")";
-        document.getElementById('gumCure').innerHTML = result.quarantine.recovered;
-        document.getElementById('gumDeath').innerHTML = result.quarantine.death;
+                document.getElementById('gumCases').innerHTML = result.quarantine.totalCase + "(+" + result.quarantine.newCase + ")";
+                document.getElementById('gumCure').innerHTML = result.quarantine.recovered;
+                document.getElementById('gumDeath').innerHTML = result.quarantine.death;
 
 
 
-    }
-});
+            }
+        });
 
     }
 });
