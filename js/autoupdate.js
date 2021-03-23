@@ -1,6 +1,6 @@
 //프록시 서버 분산
 var e = new Array("https://cors-coronacoc.herokuapp.com/", "https://cors-coronacoc-v2.herokuapp.com/", "https://cors-coronacoc-v3.herokuapp.com/"),
-// var e = new Array("https://thingproxy.freeboard.io/fetch/"),
+    // var e = new Array("https://thingproxy.freeboard.io/fetch/"),
     proxyServer = randomItem(e);
 $('#singelBarChart').hide();
 
@@ -337,7 +337,7 @@ function rtTodayGet() {
                 }
 
             }
-            $('#rtUpdates').prepend('<h3>실시간 확진자</h3>');
+            $('#rtUpdates').prepend('<h3>실시간 확진자<br></h3>');
 
 
 
@@ -347,6 +347,19 @@ function rtTodayGet() {
         }
     });
 }
+
+$.ajax({
+    type: "GET",
+    url: proxyServer + "https://apiv2.corona-live.com/vaccine.json", // Using myjson.com to store the JSON
+    success: function(result) {
+        var length = result.length;
+        $('#vacTotal').html(result.stats.first[0] + '건');
+        $('#vacPM').html('↑ ' + result.stats.first[1]);
+        $('#vacTotal2').html(result.stats.second[0] + '건');
+        $('#vacPM2').html('↑ ' + result.stats.second[1]);
+
+    }
+});
 
 //뉴스
 $.ajax({
