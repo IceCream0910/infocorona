@@ -155,7 +155,7 @@ var nownewcase;
 
 $.ajax({
     type: "GET",
-    url: "https://ajax-api.corona-19.kr/?dir=korea&serviceKey=5d4143bd958c16e18abe1acef5386c12d", // Using myjson.com to store the JSN
+    url: "https://api.corona-19.kr/korea/?serviceKey=5d4143bd958c16e18abe1acef5386c12d", // Using myjson.com to store the JSN
     success: function(result2) {
         document.getElementById("whenUpdate").innerHTML = result2.updateTime.replace("코로나바이러스감염증-19 국내 발생현황 (", "").replace(")", "");
         document.getElementById("confirmed").innerHTML = result2.TotalCase;
@@ -176,7 +176,7 @@ $.ajax({
 
         $.ajax({
             type: "GET",
-            url: "https://ajax-api.corona-19.kr/?dir=country&serviceKey=5d4143bd958c16e18abe1acef5386c12d", // Using myjson.com to store the JSON
+            url: "https://api.corona-19.kr/korea/country/new/?serviceKey=5d4143bd958c16e18abe1acef5386c12d", // Using myjson.com to store the JSON
             success: function(result) {
                 document.getElementById("confirmedPM").innerHTML = "+ " + result.korea.newCase;
                 document.getElementById("nowcases").innerHTML = nowcase;
