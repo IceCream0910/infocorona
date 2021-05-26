@@ -1,6 +1,6 @@
 //프록시 서버 분산
 // var e = new Array("https://cors-coronacoc.herokuapp.com/", "https://cors-coronacoc-v2.herokuapp.com/", "https://cors-coronacoc-v3.herokuapp.com/", "https://cors-coronacoc-v4.herokuapp.com/"),
-var e = new Array("https://cors-coronacoc-v2.herokuapp.com/", "https://cors-coronacoc-v3.herokuapp.com/", "https://cors-coronacoc-v4.herokuapp.com/"),
+var e = new Array("https://cors-coronacoc-v4.herokuapp.com/"),
     proxyServer = randomItem(e);
 $('#singelBarChart').hide();
 
@@ -353,10 +353,15 @@ $.ajax({
     url: proxyServer + "https://apiv2.corona-live.com/vaccine.json", // Using myjson.com to store the JSON
     success: function(result) {
         var length = result.length;
-        $('#vacTotal').html(result.stats.first[0] + '건');
-        $('#vacPM').html('↑ ' + result.stats.first[1]);
-        $('#vacTotal2').html(result.stats.second[0] + '건');
-        $('#vacPM2').html('↑ ' + result.stats.second[1]);
+        $('#vacTotal').html(result.stats.first[0].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + '건');
+        $('#vacPM').html('↑ ' + result.stats.first[1].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+        $('#vacTotal2').html(result.stats.second[0].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + '건');
+        $('#vacPM2').html('↑ ' + result.stats.second[1].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+
+        var first_percent = (((result.stats.first[0]) / 51821669) * 100).toFixed(2);
+        var second_percent = (((result.stats.second[0]) / 51821669) * 100).toFixed(2);
+        $('#first_vaccinePercent').html(first_percent + "%");
+        $('#second_vaccinePercent').html(second_percent + "%");
 
     }
 });
