@@ -245,7 +245,7 @@ box-shadow:  5px 5px 10px #0d0d0d,
 background: #4272d7;
 border:none;
 box-shadow:  5px 5px 10px #3861b7, 
-             -5px -5px 0px transparent;">
+             -5px -5px 0px transparent;display:none;">
                                 <button type="button" class="ripple-effect" style="color:white; text-align:left;" onclick="javascript:sendMsgToParent('socialdistancing');">
  여기를 눌러 지역별 사회적 거리두기 단계를 확인해보세요.
                                 </button>
@@ -418,13 +418,23 @@ box-shadow:  5px 5px 10px #3861b7,
                                             <br><br>
                                             <div style="float:left;text-align: center;width:50%;">
                                                 <h3 style="color:#4272d7; font-size:20px;" id="first_vaccinePercent">%</h3>
-                                                <h3 style="color:#a9a9a9; font-size:15px;">1차 접종률
-                                                </h3>
-                                            </div>
-                                            <div style="float:right;text-align: center;width:50%;">
-                                                <h3 style="color:#4272d7; font-size:20px;" id="second_vaccinePercent">%</h3>
-                                                <h3 style="color:#a9a9a9; font-size:15px;">2차 접종률
-                                            </div>
+                                                <h3 style="color:#a9a9a9; font-size:15px;">1차 접종률</h3>
+                                        </h3>
+                                        </div>
+                                        <div style="float:right;text-align: center;width:50%;">
+                                            <h3 style="color:#4272d7; font-size:20px;" id="second_vaccinePercent">%</h3>
+                                            <h3 style="color:#a9a9a9; font-size:15px;">2차 접종률</h3>
+                                        </div>
+
+                                        <br><br><br>
+                                        <div class="container" style="display:float;">
+                                            <h3 style="color:#a9a9a9; font-size:15px;padding-top:20px;margin-right:20px;float:left;">잔여백신 예약</h3>
+                                            <a style="margin-right:10px;" href="https://v-search.nid.naver.com/home" target="_blank" class="button_v button-gradient_n"><img src="https://www.seoulsochic.com/skin/m_modern/images/button/btn_nid_white_icon.png" style="width:20px;float:right;"> </a>
+                                            <a href="https://tg.kakao.com/bridge?q=%EC%9E%94%EC%97%AC%EB%B0%B1%EC%8B%A0&DA=CBP" target="_blank" class="button_v button-gradient_k"><img src="https://resource.grapplet.com/marketplace/1133/1566465128647/kakao_social.svg.preview.580x870.png" style="width:20px;float:right;"></a>
+                                            <a href="https://ncvr.kdca.go.kr/cobk/index.html" target="_blank" class="button_v button-gradient_g" style="width:100%;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Emblem_of_the_Government_of_the_Republic_of_Korea.svg/1024px-Emblem_of_the_Government_of_the_Republic_of_Korea.svg.png" style="margin-right:10px;width:20px;">백신
+                                                사전예약
+                                            </a>
+                                        </div>
 
                                     </div>
                                 </div>
@@ -1076,10 +1086,11 @@ box-shadow:  5px 5px 10px #0d0d0d,
                 <!-- Main JS-->
                 <script src="js/main.js"></script>
                 <script src="js/custom.js"></script>
-                <script src="js/autoupdate.js"></script>
                 <!-- 트래픽 과부화 방지를 위해 작업 시에는 autoUpdate 파일 비활성화 하고 사용해주세요 
-   
- -->
+   -->
+
+                <script src="js/autoupdate.js"></script>
+
 
 </body>
 
